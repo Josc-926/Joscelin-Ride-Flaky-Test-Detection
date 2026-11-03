@@ -1,0 +1,2107 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/gora
+# SHA: 6c6b06c916b969352a6757ba7025cc78055fa87a
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey   [module: gora-hive] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_gora__6c6b06c916b9__gora-hive/2026-10-31_05-09-25/flakesync.org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/gora   https://github.com/apache/gora
+# commit         : 6c6b06c916b969352a6757ba7025cc78055fa87a
+# module         : gora-hive
+# dataset        : pr-data
+# run            : 2026-10-31_05-09-25
+# test           : org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\apache_gora__6c6b06c916b9__gora-hive\logs\flakesync.org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\apache_gora__6c6b06c916b9__gora-hive\flakesync\org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__gora__6c6b06c916b9
+# written        : 2026-10-31T09:00:13.676Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.gora.hive.store.TestHiveStore#testResultSizeEndKey' -pl gora-hive
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-31T09:00:13.687Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.apache.gora:gora-hive >----------------------
+[INFO] Building Apache Gora :: Hive 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ gora-hive >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.6.0 during dependency collection step for project (use -X to see details)
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hbase:hbase-annotations:jar:1.1.1 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.1 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-hive ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-hive ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-hive ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-hive ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-hive ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ gora-hive <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ gora-hive ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 21.534 s <<< FAILURE! - in org.apache.gora.hive.store.TestHiveStore
+[ERROR] testResultSizeEndKey(org.apache.gora.hive.store.TestHiveStore)  Time elapsed: 21.4 s  <<< ERROR!
+java.lang.RuntimeException: Error applying authorization policy on hive configuration: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient
+Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient
+Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient
+Caused by: java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: org.apache.hadoop.hive.metastore.api.MetaException: Error creating transactional connection factory
+Caused by: org.apache.hadoop.hive.metastore.api.MetaException: Error creating transactional connection factory
+Caused by: javax.jdo.JDOFatalInternalException: Error creating transactional connection factory
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.apache.derby.jdbc.EmbeddedDriver
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestHiveStore>DataStoreTestBase.setUp:80->DataStoreTestBase.setUpClass:61 » Runtime
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_gk35WQHUENPlEgijYAAMRDp9Clg6Df22OMOXeiKW74Q= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.110 s
+[INFO] Finished at: 2026-10-31T04:00:41-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=27834
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 27.8 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.gora.hive.store.TestHiveStore#testResultSizeEndKey' -pl gora-hive
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-31T09:00:41.523Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.apache.gora:gora-hive >----------------------
+[INFO] Building Apache Gora :: Hive 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ gora-hive >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.6.0 during dependency collection step for project (use -X to see details)
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hbase:hbase-annotations:jar:1.1.1 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.1 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-hive ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-hive ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-hive ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-hive ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-hive ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ gora-hive <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ gora-hive ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040055_ba449f03-b4c7-492a-8f20-f3540bb41c28
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:00:57,646 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1162296957_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-00-55_833_8564580928808910255-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040057_7baec473-5356-47cc-9c05-4b282ed6d3b9
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:00:59,128 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local846393320_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-00-57_853_818660073669900509-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040059_c0310aa1-b665-42c9-be72-f608df7a65e4
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:00,501 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1957846761_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-00-59_261_7792944785735832163-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040100_90b01194-0323-4256-93f4-0719af4bf534
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:01,864 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1739858358_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-00_631_3096245258797712795-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040101_f85b1331-96e8-475e-91e6-8b8f870fe644
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:03,235 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1756951214_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-01_999_8865675548536003609-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040103_15399c88-e2c3-409b-ab12-1cc4b87c14f7
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:04,568 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1980698317_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-03_353_621212474039089683-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040104_dddf4bed-fb32-4262-a15a-995451f5ec96
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:05,940 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1883379017_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-04_692_4272364614040474840-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040106_ca3b8489-481c-418e-9a07-a24185c2a057
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:07,282 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local308007286_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-06_073_2683030561590045407-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040107_e0ef2460-a3d6-4836-b015-87b3e517a3be
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:08,600 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local826391652_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-07_398_5118517126953448429-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040108_1b5618aa-c548-45d9-b2f6-a67c8c449a0d
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:09,913 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local392600862_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-08_714_1725516219645342172-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.446 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040120_de3fcd40-6e3d-4840-850e-8a51d464c405
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:21,822 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local368022425_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-20_014_3834077024993064420-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040122_f6b7d246-3b31-4186-86a4-868b1495c51c
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:23,320 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local438571427_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-22_029_3136578034752655683-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040123_314ea8ef-cab5-4f0f-be80-5b573f90d7de
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:24,733 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local404869158_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-23_475_1260356343374226133-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040124_8035362b-3d43-4afe-9385-62810d894f1f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:26,106 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1199225306_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-24_883_3965413362217009568-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040126_c67dbc89-1011-440d-ad44-abf9364dcf08
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:27,496 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1696129078_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-26_268_8964477587087634553-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040127_ff9c2557-0356-41f0-b48a-ba7d07b41343
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:28,869 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local2046945522_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-27_638_6461176251213075362-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040129_3c19264d-eac0-4d36-86c9-7b07d72733d6
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:30,214 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local328157699_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-29_007_2782934386319070870-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040130_765d77f7-8727-4399-89bf-690415b8a42c
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:31,564 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local415505066_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-30_365_2084191049851830481-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040131_dfce7c4e-09a1-4ba1-9878-3cfb6eea590a
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:32,886 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1960372833_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-31_683_6582100049104939794-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040133_2b8ae408-0888-4a1f-aa38-70631e7fe6bb
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:34,252 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local864717629_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-33_035_4290564439155539314-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.671 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040144_3f34821a-7219-40e8-89b4-36bddbc93f45
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:46,065 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local959927607_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-44_252_2976352357519752800-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040146_e3aa8446-9758-41d3-b9d6-307f7bf240b2
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:47,576 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local308291773_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-46_314_3374974876047864550-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040147_99284dac-0c23-4602-a1e5-d01afd60b5ec
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:48,974 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1131341085_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-47_727_7127549847151052788-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040149_cae2b0e0-f185-4a33-adbd-0729a96fc077
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:50,356 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local768578369_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-49_140_5632056795361542620-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040150_15dec595-9b9a-417d-8776-6808014d0e28
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:51,745 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local357663384_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-50_501_4248516099326894280-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040151_42d9558c-1cd9-4391-a3da-3e70b3fab970
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:53,085 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1247638185_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-51_864_9096450762877753713-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040153_1fd3b671-2fb8-43cd-82a3-54fe81a65407
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:54,432 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1329499561_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-53_224_8192605940307915062-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040154_5e110cee-fbb4-4ad6-a720-c71c2fcee480
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:55,799 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local896222_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-54_589_7702528843849655957-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040155_4580196c-7143-4128-9513-6012ca9ace8a
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:57,152 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1070199065_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-55_933_1324636443121301950-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040157_b3c9181a-e651-4382-8312-39b36b7b4836
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:01:58,478 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local835718584_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-01-57_273_7838139636888061672-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.549 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040208_b633f3fc-5a6a-4dbf-940c-dbee78950ee6
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:10,358 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local92077056_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-08_536_3237192530992240017-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040210_26eee9b5-8704-402d-b5b8-ae05fad2eb4f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:11,828 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1546820833_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-10_558_8202951476009613432-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040211_33c2a9f8-8d5a-4d6d-b568-a7283800ed5f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:13,181 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local965344565_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-11_963_4799359411297175025-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040213_318fa25f-d0ba-4f27-a6d1-8f164d969036
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:14,556 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local233983781_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-13_331_4233862783675639894-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040214_349d4e80-8410-42c3-867f-9ffab0808584
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:15,924 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local181618479_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-14_703_2603407205968085384-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040216_fda50eda-f887-4d83-99ef-da37c86e1058
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:17,273 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1445945429_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-16_061_332863202249551128-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040217_b3b95d9f-c104-48a7-8209-ca22c0fe3a13
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:18,637 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local982700719_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-17_420_1211141516361081856-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040218_b3f1ac25-dadc-4aad-aedb-3a7e29c72860
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:19,977 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1679758637_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-18_777_211333769048710773-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040220_176dcc71-6b25-4e6e-9df6-e48883950feb
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:21,293 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local2034107973_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-20_098_4496864533210841400-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040221_3ee21b62-59d4-4909-99ba-f70dc270da2e
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:22,609 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local981043269_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-21_420_3318452698544606942-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.484 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040232_abb932f6-b4f1-4b5e-bca1-bfeb93bc4f85
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:34,496 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local869471519_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-32_691_9059082373420477030-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040234_1d57c666-0274-4038-9cef-2bccaab72b9a
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:35,987 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local682699233_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-34_703_1241430294458537553-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040236_49e5637f-0ebb-4687-8f4b-59d12321919b
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:37,352 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1259387078_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-36_128_6630336746357396119-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040237_77590e31-29ca-4bb5-8d1a-7634deb90447
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:38,701 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local494880261_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-37_482_7573021947275231028-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040238_09524162-842b-4c33-9f3a-f2ac96e05af0
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:40,026 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local650641002_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-38_819_2520947053618103634-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040240_afada247-25b2-4d91-82c2-274f4c18d4b5
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:41,370 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1322174705_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-40_150_4431543735681131128-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040241_0bb738af-0ea4-474a-abdb-206d2eb4b761
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:42,709 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1454908689_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-41_507_4365561685950103613-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040242_5a85ce4c-3c48-41ba-bc7b-8d2fa6795357
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:44,072 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local717293123_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-42_836_5267933747555101616-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040244_d98d49d6-0a3c-4c92-bd5c-5e97fdb6203f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:45,393 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local285491723_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-44_191_198475427610825165-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040245_b198cad9-6971-4efe-b38b-941592a6dfb9
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:46,703 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1234483521_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-45_506_3242801852068086357-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.361 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040256_93b61649-f02f-491c-acfe-854abc6f896d
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:02:58,548 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local725415092_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-56_727_6433255765794554001-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040258_dbf01830-8ed2-4055-9f78-90af56b0b990
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:00,032 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local190246902_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-02-58_771_6760435305077929754-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040300_01c1bc4f-8008-4eae-b35c-82472e175e49
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:01,410 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1413937462_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-00_176_1597130848101804082-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040301_004afd9b-1165-4056-880d-72aedac5467f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:02,780 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local725478603_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-01_565_8295961541185719158-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040302_03c5a65b-1ac4-4dc2-b065-83986af8fcba
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:04,152 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local60072042_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-02_923_7889333535890075766-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040304_1dddc0de-6f0f-4614-9ded-7ea4baa9bad8
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:05,503 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local182539492_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-04_287_6156615017740680084-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040305_f034d690-9074-4a82-82ee-d916e177f083
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:06,844 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1397496965_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-05_645_3217684376158632963-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040306_25f9c240-38f3-4627-9d64-d40c738d183f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:08,182 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1697713599_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-06_975_2162547560340113906-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040308_50e6f775-2636-4b7a-9db0-9c14d4b0de48
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:09,508 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local66640205_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-08_310_7074890975180474807-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040309_abecb6b9-fe07-4420-9039-76755fb90110
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:10,846 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local2045751886_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-09_661_6459853845167073955-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.475 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040320_59cb5d74-73d8-4764-b287-5e9e081eb8b5
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:22,729 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local648193023_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-20_873_545512978420711255-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040322_875c39dd-03b6-43ed-bdec-746f711a54d4
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:24,217 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1908092607_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-22_948_5536528653304171571-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040324_ecd0d02f-fd05-4ce4-a417-7b0881e228b8
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:25,613 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local349111915_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-24_372_4805365807837511918-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040325_64c0aef9-4e09-49de-8fc5-ca5fb8b2d590
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:27,004 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1562412219_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-25_781_8222829825085341835-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040327_e65bbf58-be84-4e20-bed2-fd67db789e73
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:28,383 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local691859519_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-27_144_8243558077705745336-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040328_92382caa-c520-454a-a245-21076eee1f79
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:29,751 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1202999713_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-28_533_2036735089403170011-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040329_b7d83231-5751-4f13-8440-34d8e9018a23
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:31,108 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1944790617_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-29_892_4262522469812154391-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040331_115d9531-1321-4c5d-b4e1-b5629f5e10ee
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:32,449 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local84066029_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-31_259_1355086339627035226-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040332_3065afa6-58be-4fa4-b205-ab868c3fca26
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:33,768 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local362998776_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-32_562_8820412476152430709-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040333_c164c41d-559c-4d12-b49e-b6fe6d42a4cf
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:35,090 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local907016466_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-33_892_715618389932815064-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.6 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040345_85181353-e1a1-489d-8889-b450609a062f
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:46,957 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1325131862_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-45_127_5844998727251015587-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040347_39c7a6d0-8ff2-4cbd-bb60-d5d9f9961cfe
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:48,503 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local2002694390_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-47_210_7614065095974739686-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040348_0ffb2e39-973a-4c67-b5f9-665da9865ddb
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:49,878 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local27285866_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-48_659_8627708397147604150-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040350_385d2a18-fe76-4dfd-9fbc-5dc9dc839973
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:51,280 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local2112500216_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-50_046_747878714108647031-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040351_cca3e941-e130-4287-9300-62eeab6e253c
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:52,630 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local790802995_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-51_414_8899198510301559000-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040352_c0bd92a9-8323-4e37-b43e-625d8dbd3ff7
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:54,033 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1630233108_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-52_788_6579559841614696403-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040354_94d3596d-23ca-46f1-a9b4-0fbb34bcc1d0
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:55,381 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local888741411_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-54_167_3659249390946038357-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040355_6c762d6a-30e9-41af-9abd-21ef50cca40a
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:56,709 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1382064801_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-55_519_51748788853604597-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040356_094fc103-eff4-4093-9837-b798379e663d
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:58,049 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local559406584_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-56_848_7368122619887431217-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040358_78ed606a-7880-49e5-a8e8-812baec5873a
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:03:59,388 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local727905292_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-03-58_184_6559207359462061008-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.633 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:18 min
+[INFO] Finished at: 2026-10-31T04:04:00-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=199249
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 199.2 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.gora.hive.store.TestHiveStore#testResultSizeEndKey' -pl gora-hive
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-31T09:04:00.774Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.apache.gora:gora-hive >----------------------
+[INFO] Building Apache Gora :: Hive 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ gora-hive >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.6.0 during dependency collection step for project (use -X to see details)
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hbase:hbase-annotations:jar:1.1.1 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.1 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-hive ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-hive ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-hive ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-hive ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-hive ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ gora-hive <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ gora-hive ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.690 s
+[INFO] Finished at: 2026-10-31T04:04:06-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=5485
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 5.5 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.gora.hive.store.TestHiveStore#testResultSizeEndKey' -pl gora-hive
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-31T09:04:06.266Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.apache.gora:gora-hive >----------------------
+[INFO] Building Apache Gora :: Hive 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ gora-hive >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.6.0 during dependency collection step for project (use -X to see details)
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hbase:hbase-annotations:jar:1.1.1 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.1 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-hive ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-hive ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-hive ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-hive ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-hive ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ gora-hive <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ gora-hive ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.hive.store.TestHiveStore
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
+OK
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040420_c7ff5867-2c92-4fc4-adb1-5422bcbcb8c2
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:22,346 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local376990416_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-20_496_8784770907955493658-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040422_f6f520e7-d93e-48b5-9d05-c23c4807a4a3
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:23,857 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local997351173_0002
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-22_562_3931694372567663445-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040423_d50c47b9-eb2c-49ea-acdc-812f6db73cfc
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:25,230 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local347579229_0003
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-23_993_2608864928666266138-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040425_3f25a8c0-3214-4068-b82f-896ae2345b19
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:26,604 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local166670233_0004
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-25_381_6095910249526592371-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040426_f87e6d41-9717-4cdf-b2a7-5df245819942
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:27,955 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local588975914_0005
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-26_727_158997047111919684-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040428_e00f9d29-0371-4411-b2f6-c9fc8df083d6
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:29,309 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local773655882_0006
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-28_095_494745498817100344-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040429_89bd829e-498d-47d6-a724-f6d2600cbe92
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:30,654 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local45864099_0007
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-29_440_1037861419402098618-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040430_d937c4a7-a01a-4ab7-ba49-64563cd99ada
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:32,015 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1724518542_0008
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-30_806_197208709665248608-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040432_a53a5458-4651-4a0c-a277-51a029e7c5ce
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:33,330 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local1285059404_0009
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-32_127_7603523514419337020-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = ectopic_20261031040433_b54adcbe-23e8-4ae5-866f-9ce6a6d96256
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Job running in-process (local Hadoop)
+2026-10-31 04:04:34,647 Stage-1 map = 100%,  reduce = 0%
+Ended Job = job_local835622916_0010
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory file:/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/hive/webpage/.hive-staging_hive_2026-10-31_04-04-33_451_7146909825843600838-1/-ext-10000
+Loading data to table default.webpage
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 0 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+OK
+OK
+OK
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.535 s - in org.apache.gora.hive.store.TestHiveStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  29.055 s
+[INFO] Finished at: 2026-10-31T04:04:35-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=29765
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 29.8 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.gora.hive.store.TestHiveStore#testResultSizeEndKey' -pl gora-hive
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-31T09:04:36.034Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.apache.gora:gora-hive >----------------------
+[INFO] Building Apache Gora :: Hive 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ gora-hive >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.6.0 during dependency collection step for project (use -X to see details)
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hbase:hbase-annotations:jar:1.1.1 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.1 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-hive ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-hive ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-hive ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-hive ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-hive ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-hive ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-hive ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ gora-hive <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ gora-hive ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.772 s
+[INFO] Finished at: 2026-10-31T04:04:41-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project gora-hive: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-hive/.flakesync/Results-CritSearch/org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=5570
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 5.6 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 267.9 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\apache_gora__6c6b06c916b9__gora-hive\flakesync\org.apache.gora.hive.store.TestHiveStore.testResultSizeEndKey\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 22, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

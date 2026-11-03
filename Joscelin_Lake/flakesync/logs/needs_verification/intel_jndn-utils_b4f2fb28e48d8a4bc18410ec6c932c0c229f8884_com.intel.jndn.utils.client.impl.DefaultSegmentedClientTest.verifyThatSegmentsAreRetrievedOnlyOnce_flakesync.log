@@ -1,0 +1,1078 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/intel/jndn-utils
+# SHA: b4f2fb28e48d8a4bc18410ec6c932c0c229f8884
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/intel_jndn-utils__b4f2fb28e48d___root/2026-10-29_02-42-22/flakesync.com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : intel/jndn-utils   https://github.com/intel/jndn-utils
+# commit         : b4f2fb28e48d8a4bc18410ec6c932c0c229f8884
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\intel_jndn-utils__b4f2fb28e48d___root\logs\flakesync.com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\intel_jndn-utils__b4f2fb28e48d___root\flakesync\com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\intel__jndn-utils__b4f2fb28e48d
+# written        : 2026-10-29T13:24:32.441Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#verifyThatSegmentsAreRetrievedOnlyOnce'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:32.452Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ jndn-utils ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_rI0XOV42FSxs5LJgHHi54XKufTHsPejwIlM2ZFOwhg=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:33 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:33 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.217 sec <<< FAILURE! - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+verifyThatSegmentsAreRetrievedOnlyOnce(com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest)  Time elapsed: 0.178 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for net.named_data.jndn.encoding.der.DerNode. (net.named_data.jndn.encoding.der.DerNode is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at net.named_data.jndn.security.certificate.PublicKey.<init>(PublicKey.java:57)
+	at net.named_data.jndn.security.identity.MemoryPrivateKeyStorage.setPublicKeyForKeyName(MemoryPrivateKeyStorage.java:56)
+	at net.named_data.jndn.security.identity.MemoryPrivateKeyStorage.setKeyPairForKeyName(MemoryPrivateKeyStorage.java:87)
+	at net.named_data.jndn.security.identity.MemoryPrivateKeyStorage.generateKeyPair(MemoryPrivateKeyStorage.java:146)
+	at net.named_data.jndn.security.identity.IdentityManager.generateKeyPair(IdentityManager.java:1100)
+	at net.named_data.jndn.security.identity.IdentityManager.createIdentityAndCertificate(IdentityManager.java:144)
+	at net.named_data.jndn.security.KeyChain.createIdentityAndCertificate(KeyChain.java:106)
+	at net.named_data.jndn.security.KeyChain.createIdentityAndCertificate(KeyChain.java:121)
+	at com.intel.jndn.mock.MockKeyChain.configure(MockKeyChain.java:54)
+	at com.intel.jndn.mock.MockForwarder.<init>(MockForwarder.java:152)
+	at com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce(DefaultSegmentedClientTest.java:76)
+
+
+Results :
+
+Tests in error: 
+  DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce:76 » Linkage
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_rI0XOV42FSxs5LJgHHi54XKufTHsPejwIlM2ZFOwhg= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.019 s
+[INFO] Finished at: 2026-10-29T08:24:34-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1740
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 1.7 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#verifyThatSegmentsAreRetrievedOnlyOnce'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:34.194Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ jndn-utils ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_3Q21TPZFhDL5sUlkpd1L72RbFzuGYX0H49Xosi5IQWE=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:35 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:35 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:35 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%96%7E%AA%FD
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%96%7E%AA%FD
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=a%12%DC%23
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=a%12%DC%23
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=a%12%DC%23
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=e%84%0D%01
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=e%84%0D%01
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=e%84%0D%01
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=4%1Ed%A4
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=4%1Ed%A4
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=4%1Ed%A4
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=Sz%82%F7
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=Sz%82%F7
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=Sz%82%F7
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:35 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:35 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_9E2UZkRYZr0KKYtjeThRPOa69iFq2EZHVwdNhy6ygHo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=Tu-%1D
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=Tu-%1D
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0DIG%D1
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0DIG%D1
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0DIG%D1
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%1A%9FJ%8E
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%1A%9FJ%8E
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%1A%9FJ%8E
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%9F%05%27%7F
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%9F%05%27%7F
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%9F%05%27%7F
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%05%D1F%1C
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%05%D1F%1C
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%05%D1F%1C
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.257 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_SV3y+BSgPWhzxCpd0ydlaB33R1LjHds30hQuzeDFJ+E=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%ABK%F8%85
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%ABK%F8%85
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%D4%00%D1%40
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%D4%00%D1%40
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%D4%00%D1%40
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%DE%22xf
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%DE%22xf
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%DE%22xf
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%FD%B1%C1I
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%FD%B1%C1I
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%FD%B1%C1I
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%D1%C0%27%04
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%D1%C0%27%04
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%D1%C0%27%04
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:36 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:36 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.255 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_DFeKhxGkphVHTYagjfKcM1NbmLRT2TVVjX8hS16jyw=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:36 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:37 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%3F%A1%F8%D8
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%3F%A1%F8%D8
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%98%FD%FF1
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%98%FD%FF1
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%98%FD%FF1
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%F6%01%AEG
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%F6%01%AEG
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%F6%01%AEG
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%DB%1By%9D
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%DB%1By%9D
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%DB%1By%9D
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%D5T%7B%8A
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%D5T%7B%8A
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%D5T%7B%8A
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_M+GCuNR5jgn3bYwZJL1uomkcZBc7L6mO8w+UzTpl11E=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:37 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:37 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:37 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=L%B94%E6
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=L%B94%E6
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%C67%98%3F
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%C67%98%3F
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%C67%98%3F
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=w%C6do
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=w%C6do
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=w%C6do
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%83%D7%17%AD
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%83%D7%17%AD
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%83%D7%17%AD
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%5Dn%81Z
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%5Dn%81Z
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%5Dn%81Z
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:37 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:37 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.294 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_KZvqIl1HEqYyrpfsLaZjCAVIObcdUx9y8y1MOLu5aM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:37 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:37 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%F5%C276
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%F5%C276
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%AD%B7k%25
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%AD%B7k%25
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%AD%B7k%25
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%28%B2%D3%21
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%28%B2%D3%21
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%28%B2%D3%21
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%BB%3D%B8%AD
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%BB%3D%B8%AD
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%BB%3D%B8%AD
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%B9%2Ak%E3
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%B9%2Ak%E3
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%B9%2Ak%E3
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_db383A5qeLK7S3somER6+1X64Ro4dBrgsY1NaQcBDME=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%0A%08%EB%CF
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%0A%08%EB%CF
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%A7%D2%85%03
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%A7%D2%85%03
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%A7%D2%85%03
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%9B%D2A%D6
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%9B%D2A%D6
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%9B%D2A%D6
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%AD%B1%E8%9D
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%AD%B1%E8%9D
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%AD%B1%E8%9D
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%F0%128t
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%F0%128t
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%F0%128t
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_XGUoKCZgsy1Xn1Mmj9RBw5f3PA4d96u7YamxFYX3yuk=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:38 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@34cd072c
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%8Fj%18%CE
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=%8Fj%18%CE
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0EL3%DB
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0EL3%DB
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0EL3%DB
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%D9%DB%A6%DA
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%D9%DB%A6%DA
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%D9%DB%A6%DA
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%90_F%40
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%90_F%40
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%90_F%40
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=Qh%29c
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=Qh%29c
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=Qh%29c
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:38 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@1563da5
+Oct 29, 2026 8:24:38 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.305 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.133 s
+[INFO] Finished at: 2026-10-29T08:24:39-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4846
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 4.8 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#verifyThatSegmentsAreRetrievedOnlyOnce'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:39.042Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ jndn-utils ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.491 s
+[INFO] Finished at: 2026-10-29T08:24:40-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1262
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.3 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#verifyThatSegmentsAreRetrievedOnlyOnce'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:40.306Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ jndn-utils ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_hFlUYJyodD5WY7n7CXE3RXziImHrzlTvWXzITwUGrI=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:41 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:41 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:42 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@4d95d2a2
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.MockForwarder register
+INFO: Registered new prefix to receive interests: /localhost/nfd/rib/register
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.MockForwarder connect
+INFO: Connected new face using transport: com.intel.jndn.mock.MockTransport@15d0c81b
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=.%D39e
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client?ndn.MustBeFresh=1&ndn.Nonce=.%D39e
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@15d0c81b
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%E0a%A1%F4
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%E0a%A1%F4
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%E0a%A1%F4
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=4%B6%93%01
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=4%B6%93%01
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=4%B6%93%01
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=0%A6%DC%BC
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=0%A6%DC%BC
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=0%A6%DC%BC
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Adding interest to PIT: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%CDC8T
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Forwarding interest: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%CDC8T
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%CDC8T
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@15d0c81b
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@15d0c81b
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@15d0c81b
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.BufferHandler forward
+INFO: Found 1 pending interests
+Oct 29, 2026 8:24:42 AM com.intel.jndn.mock.forwarder.PitEntryImpl forward
+INFO: Forwarding data on: com.intel.jndn.mock.MockTransport@15d0c81b
+Oct 29, 2026 8:24:42 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.289 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.097 s
+[INFO] Finished at: 2026-10-29T08:24:42-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1815
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 1.8 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#verifyThatSegmentsAreRetrievedOnlyOnce'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:42.123Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ jndn-utils ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.499 s
+[INFO] Finished at: 2026-10-29T08:24:43-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project jndn-utils: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/Results-CritSearch/com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1199
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.2 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 10.9 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\intel_jndn-utils__b4f2fb28e48d___root\flakesync\com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.verifyThatSegmentsAreRetrievedOnlyOnce\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

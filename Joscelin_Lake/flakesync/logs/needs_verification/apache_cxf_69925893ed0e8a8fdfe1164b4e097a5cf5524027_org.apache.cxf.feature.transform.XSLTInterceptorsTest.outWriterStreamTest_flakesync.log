@@ -1,0 +1,611 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/cxf
+# SHA: 69925893ed0e8a8fdfe1164b4e097a5cf5524027
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.cxf.feature.transform.XSLTInterceptorsTest.outWriterStreamTest   [module: core] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_cxf__69925893ed0e__core/2026-10-17_18-07-52/flakesync.org.apache.cxf.feature.transform.XSLTInterceptorsTest.outWriterStreamTest.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.cxf.feature.transform.XSLTInterceptorsTest#outWriterStreamTest' -pl core
+# cwd: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e
+# started: 2026-10-17T19:46:38.373Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.apache.cxf:cxf-core >-----------------------
+[INFO] Building Apache CXF Core 3.5.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ cxf-core >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven) @ cxf-core ---
+[INFO] 
+[INFO] --- bundle:5.1.1:cleanVersions (versions) @ cxf-core ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:checkstyle (validate) @ cxf-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] >>> pmd:3.13.0:check (validate) > :pmd @ cxf-core >>>
+[INFO] 
+[INFO] --- pmd:3.13.0:pmd (pmd) @ cxf-core ---
+[INFO] Analysis cache loaded
+[INFO] Analysis cache updated
+[INFO] 
+[INFO] <<< pmd:3.13.0:check (validate) < :pmd @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.13.0:check (validate) @ cxf-core ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (create-noncanonicalrev) @ cxf-core ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (create-buildnumber) @ cxf-core ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildNumber: 69925893ed0e8a8fdfe1164b4e097a5cf5524027 at timestamp: 1792266402240
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- cxf-xml2fastinfoset:3.4.4:xml2fastinfoset (xml2fastinfoset) @ cxf-core ---
+[INFO] 
+[INFO] --- cxf-xjc:3.3.1:xsdtojava (generate-sources) @ cxf-core ---
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.2-GA during dependency collection step for plugin (use -X to see details)
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ cxf-core ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 27 resources
+[INFO] Copying 35 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper:3.1.0:add-test-source (default) @ cxf-core ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/src/test/java8 added.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 84 resources
+[INFO] Copying 8 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/target/generated/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ cxf-core ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.262 s <<< FAILURE! - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[ERROR] org.apache.cxf.feature.transform.XSLTInterceptorsTest.outWriterStreamTest  Time elapsed: 0.217 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.xerces.dom.DocumentImpl. (org.apache.xerces.dom.DocumentImpl is in unnamed module of loader 'app')
+	at org.apache.cxf.feature.transform.XSLTInterceptorsTest.setUp(XSLTInterceptorsTest.java:73)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   XSLTInterceptorsTest.setUp:73 » Linkage loader 'app' attempted duplicate class...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_albtbTakJWaa4qfNjopd0vkysNzEK4QKQ6C9Z4s77x4= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.485 s
+[INFO] Finished at: 2026-10-17T14:46:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=5242
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.cxf.feature.transform.XSLTInterceptorsTest#outWriterStreamTest' -pl core
+# cwd: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e
+# started: 2026-10-17T19:46:43.617Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.apache.cxf:cxf-core >-----------------------
+[INFO] Building Apache CXF Core 3.5.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ cxf-core >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven) @ cxf-core ---
+[INFO] 
+[INFO] --- bundle:5.1.1:cleanVersions (versions) @ cxf-core ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:checkstyle (validate) @ cxf-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] >>> pmd:3.13.0:check (validate) > :pmd @ cxf-core >>>
+[INFO] 
+[INFO] --- pmd:3.13.0:pmd (pmd) @ cxf-core ---
+[INFO] Analysis cache loaded
+[INFO] Analysis cache updated
+[INFO] 
+[INFO] <<< pmd:3.13.0:check (validate) < :pmd @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.13.0:check (validate) @ cxf-core ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (create-noncanonicalrev) @ cxf-core ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (create-buildnumber) @ cxf-core ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildNumber: 69925893ed0e8a8fdfe1164b4e097a5cf5524027 at timestamp: 1792266407352
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- cxf-xml2fastinfoset:3.4.4:xml2fastinfoset (xml2fastinfoset) @ cxf-core ---
+[INFO] 
+[INFO] --- cxf-xjc:3.3.1:xsdtojava (generate-sources) @ cxf-core ---
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.2-GA during dependency collection step for plugin (use -X to see details)
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ cxf-core ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 27 resources
+[INFO] Copying 35 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper:3.1.0:add-test-source (default) @ cxf-core ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/src/test/java8 added.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 84 resources
+[INFO] Copying 8 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/target/generated/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ cxf-core ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.429 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.362 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.341 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.329 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.34 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.745 s
+[INFO] Finished at: 2026-10-17T14:46:53-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9510
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.cxf.feature.transform.XSLTInterceptorsTest#outWriterStreamTest' -pl core
+# cwd: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e
+# started: 2026-10-17T19:46:53.129Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.apache.cxf:cxf-core >-----------------------
+[INFO] Building Apache CXF Core 3.5.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ cxf-core >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven) @ cxf-core ---
+[INFO] 
+[INFO] --- bundle:5.1.1:cleanVersions (versions) @ cxf-core ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:checkstyle (validate) @ cxf-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] >>> pmd:3.13.0:check (validate) > :pmd @ cxf-core >>>
+[INFO] 
+[INFO] --- pmd:3.13.0:pmd (pmd) @ cxf-core ---
+[INFO] Analysis cache loaded
+[INFO] Analysis cache updated
+[INFO] 
+[INFO] <<< pmd:3.13.0:check (validate) < :pmd @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.13.0:check (validate) @ cxf-core ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (create-noncanonicalrev) @ cxf-core ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (create-buildnumber) @ cxf-core ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildNumber: 69925893ed0e8a8fdfe1164b4e097a5cf5524027 at timestamp: 1792266416594
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- cxf-xml2fastinfoset:3.4.4:xml2fastinfoset (xml2fastinfoset) @ cxf-core ---
+[INFO] 
+[INFO] --- cxf-xjc:3.3.1:xsdtojava (generate-sources) @ cxf-core ---
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.2-GA during dependency collection step for plugin (use -X to see details)
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ cxf-core ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 27 resources
+[INFO] Copying 35 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper:3.1.0:add-test-source (default) @ cxf-core ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/src/test/java8 added.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 84 resources
+[INFO] Copying 8 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/target/generated/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ cxf-core ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.472 s
+[INFO] Finished at: 2026-10-17T14:46:57-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4226
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.cxf.feature.transform.XSLTInterceptorsTest#outWriterStreamTest' -pl core
+# cwd: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e
+# started: 2026-10-17T19:46:57.357Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.apache.cxf:cxf-core >-----------------------
+[INFO] Building Apache CXF Core 3.5.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ cxf-core >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven) @ cxf-core ---
+[INFO] 
+[INFO] --- bundle:5.1.1:cleanVersions (versions) @ cxf-core ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:checkstyle (validate) @ cxf-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] >>> pmd:3.13.0:check (validate) > :pmd @ cxf-core >>>
+[INFO] 
+[INFO] --- pmd:3.13.0:pmd (pmd) @ cxf-core ---
+[INFO] Analysis cache loaded
+[INFO] Analysis cache updated
+[INFO] 
+[INFO] <<< pmd:3.13.0:check (validate) < :pmd @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.13.0:check (validate) @ cxf-core ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (create-noncanonicalrev) @ cxf-core ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (create-buildnumber) @ cxf-core ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildNumber: 69925893ed0e8a8fdfe1164b4e097a5cf5524027 at timestamp: 1792266420783
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- cxf-xml2fastinfoset:3.4.4:xml2fastinfoset (xml2fastinfoset) @ cxf-core ---
+[INFO] 
+[INFO] --- cxf-xjc:3.3.1:xsdtojava (generate-sources) @ cxf-core ---
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.2-GA during dependency collection step for plugin (use -X to see details)
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ cxf-core ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 27 resources
+[INFO] Copying 35 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper:3.1.0:add-test-source (default) @ cxf-core ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/src/test/java8 added.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 84 resources
+[INFO] Copying 8 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/target/generated/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ cxf-core ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.255 s - in org.apache.cxf.feature.transform.XSLTInterceptorsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.010 s
+[INFO] Finished at: 2026-10-17T14:47:02-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4769
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.cxf.feature.transform.XSLTInterceptorsTest#outWriterStreamTest' -pl core
+# cwd: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e
+# started: 2026-10-17T19:47:02.130Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.apache.cxf:cxf-core >-----------------------
+[INFO] Building Apache CXF Core 3.5.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ cxf-core >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven) @ cxf-core ---
+[INFO] 
+[INFO] --- bundle:5.1.1:cleanVersions (versions) @ cxf-core ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:checkstyle (validate) @ cxf-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] >>> pmd:3.13.0:check (validate) > :pmd @ cxf-core >>>
+[INFO] 
+[INFO] --- pmd:3.13.0:pmd (pmd) @ cxf-core ---
+[INFO] Analysis cache loaded
+[INFO] Analysis cache updated
+[INFO] 
+[INFO] <<< pmd:3.13.0:check (validate) < :pmd @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.13.0:check (validate) @ cxf-core ---
+[INFO] PMD version: 6.21.0
+[INFO] 
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (create-noncanonicalrev) @ cxf-core ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (create-buildnumber) @ cxf-core ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildNumber: 69925893ed0e8a8fdfe1164b4e097a5cf5524027 at timestamp: 1792266425721
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- cxf-xml2fastinfoset:3.4.4:xml2fastinfoset (xml2fastinfoset) @ cxf-core ---
+[INFO] 
+[INFO] --- cxf-xjc:3.3.1:xsdtojava (generate-sources) @ cxf-core ---
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.2-GA during dependency collection step for plugin (use -X to see details)
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ cxf-core ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 27 resources
+[INFO] Copying 35 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper:3.1.0:add-test-source (default) @ cxf-core ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/src/test/java8 added.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ cxf-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 84 resources
+[INFO] Copying 8 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/target/generated/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ cxf-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ cxf-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ cxf-core ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.562 s
+[INFO] Finished at: 2026-10-17T14:47:06-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project cxf-core: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__cxf__69925893ed0e/core/.flakesync/Results-CritSearch/org.apache.cxf.feature.transform.XSLTInterceptorsTest.outWriterStreamTest-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=4312

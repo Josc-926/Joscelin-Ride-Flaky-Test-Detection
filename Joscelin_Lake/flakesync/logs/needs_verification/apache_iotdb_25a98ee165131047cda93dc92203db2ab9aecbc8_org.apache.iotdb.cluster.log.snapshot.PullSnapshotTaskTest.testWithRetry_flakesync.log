@@ -1,0 +1,556 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/iotdb
+# SHA: 25a98ee165131047cda93dc92203db2ab9aecbc8
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry   [module: cluster] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_iotdb__25a98ee16513__cluster/2026-10-28_03-39-27/flakesync.org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/iotdb   https://github.com/apache/iotdb
+# commit         : 25a98ee165131047cda93dc92203db2ab9aecbc8
+# module         : cluster
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_iotdb__25a98ee16513__cluster\logs\flakesync.org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_iotdb__25a98ee16513__cluster\flakesync\org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__iotdb__25a98ee16513
+# written        : 2026-10-28T17:10:25.070Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest#testWithRetry' -pl cluster
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513
+# started : 2026-10-28T17:10:25.081Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:tsfile:jar:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ org.apache.iotdb:iotdb-parent:0.13.0-SNAPSHOT, /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/pom.xml, line 539, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:iotdb-parent:pom:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ line 539, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-cluster >-------------------
+[INFO] Building cluster 0.13.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ iotdb-cluster >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless:2.4.2:check (spotless-check) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ iotdb-cluster ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 220 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format:3.0.7:xml-format (xml-format) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 106 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ iotdb-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ iotdb-cluster ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest
+WARN  [2026-10-28 12:10:34,552] [main] org.apache.iotdb.tsfile.common.conf.TSFileDescriptor:100 - Fail to find config file file:/home/ectopic/.m2/repository/org/apache/iotdb/iotdb-server/0.13.0-SNAPSHOT/iotdb-server-0.13.0-SNAPSHOT-tests.jar!/iotdb-engine.properties 
+WARN  [2026-10-28 12:10:34,562] [main] org.apache.iotdb.cluster.config.ClusterDescriptor:80 - Cannot find IOTDB_HOME or IOTDB_CONF environment variable when loading config file iotdb-cluster.properties, use default configuration 
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.232 s <<< FAILURE! - in org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest
+[ERROR] testWithRetry(org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest)  Time elapsed: 0.207 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.iotdb.cluster.log.manage.FilePartitionedSnapshotLogManager. (org.apache.iotdb.cluster.log.manage.FilePartitionedSnapshotLogManager is in unnamed module of loader 'app')
+	at org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.setUp(PullSnapshotTaskTest.java:91)
+
+[ERROR] testWithRetry(org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest)  Time elapsed: 0.207 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.tearDown(PullSnapshotTaskTest.java:332)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry(org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest)
+[ERROR]   Run 1: PullSnapshotTaskTest.setUp:91->DataSnapshotTest.setUp:72 » Linkage loader 'app...
+[ERROR]   Run 2: PullSnapshotTaskTest.tearDown:332 NullPointer
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_6n7MDZyDpE2z3QDQkyPbOLmue1rViOqELURdblWUN+I= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.156 s
+[INFO] Finished at: 2026-10-28T12:10:34-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9925
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 9.9 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest#testWithRetry' -pl cluster
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513
+# started : 2026-10-28T17:10:35.008Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:tsfile:jar:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ org.apache.iotdb:iotdb-parent:0.13.0-SNAPSHOT, /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/pom.xml, line 539, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:iotdb-parent:pom:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ line 539, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-cluster >-------------------
+[INFO] Building cluster 0.13.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ iotdb-cluster >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless:2.4.2:check (spotless-check) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ iotdb-cluster ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 220 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format:3.0.7:xml-format (xml-format) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 106 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ iotdb-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ iotdb-cluster ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest
+WARN  [2026-10-28 12:10:44,387] [main] org.apache.iotdb.tsfile.common.conf.TSFileDescriptor:100 - Fail to find config file file:/home/ectopic/.m2/repository/org/apache/iotdb/iotdb-server/0.13.0-SNAPSHOT/iotdb-server-0.13.0-SNAPSHOT-tests.jar!/iotdb-engine.properties 
+WARN  [2026-10-28 12:10:44,397] [main] org.apache.iotdb.cluster.config.ClusterDescriptor:80 - Cannot find IOTDB_HOME or IOTDB_CONF environment variable when loading config file iotdb-cluster.properties, use default configuration 
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.201 s <<< FAILURE! - in org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest
+[ERROR] testWithRetry(org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest)  Time elapsed: 0.16 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.iotdb.cluster.log.manage.FilePartitionedSnapshotLogManager. (org.apache.iotdb.cluster.log.manage.FilePartitionedSnapshotLogManager is in unnamed module of loader 'app')
+	at org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.setUp(PullSnapshotTaskTest.java:91)
+
+[ERROR] testWithRetry(org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest)  Time elapsed: 0.16 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.tearDown(PullSnapshotTaskTest.java:332)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry(org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest)
+[ERROR]   Run 1: PullSnapshotTaskTest.setUp:91->DataSnapshotTest.setUp:72 » Linkage loader 'app...
+[ERROR]   Run 2: PullSnapshotTaskTest.tearDown:332 NullPointer
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_D9xrxhAbXR3knfsTTuc2G57IxJGBwaMgZYTl7Hwwuvw= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.046 s
+[INFO] Finished at: 2026-10-28T12:10:44-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9826
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 9.8 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest#testWithRetry' -pl cluster
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513
+# started : 2026-10-28T17:10:44.836Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:tsfile:jar:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ org.apache.iotdb:iotdb-parent:0.13.0-SNAPSHOT, /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/pom.xml, line 539, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:iotdb-parent:pom:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ line 539, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-cluster >-------------------
+[INFO] Building cluster 0.13.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ iotdb-cluster >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless:2.4.2:check (spotless-check) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ iotdb-cluster ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 220 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format:3.0.7:xml-format (xml-format) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 106 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ iotdb-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ iotdb-cluster ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.242 s
+[INFO] Finished at: 2026-10-28T12:10:53-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9028
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 9 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest#testWithRetry' -pl cluster
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513
+# started : 2026-10-28T17:10:53.866Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:tsfile:jar:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ org.apache.iotdb:iotdb-parent:0.13.0-SNAPSHOT, /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/pom.xml, line 539, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:iotdb-parent:pom:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ line 539, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-cluster >-------------------
+[INFO] Building cluster 0.13.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ iotdb-cluster >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless:2.4.2:check (spotless-check) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ iotdb-cluster ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 220 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format:3.0.7:xml-format (xml-format) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 106 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ iotdb-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ iotdb-cluster ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest
+WARN  [2026-10-28 12:11:03,161] [main] org.apache.iotdb.tsfile.common.conf.TSFileDescriptor:100 - Fail to find config file file:/home/ectopic/.m2/repository/org/apache/iotdb/iotdb-server/0.13.0-SNAPSHOT/iotdb-server-0.13.0-SNAPSHOT-tests.jar!/iotdb-engine.properties 
+WARN  [2026-10-28 12:11:03,172] [main] org.apache.iotdb.cluster.config.ClusterDescriptor:80 - Cannot find IOTDB_HOME or IOTDB_CONF environment variable when loading config file iotdb-cluster.properties, use default configuration 
+WARN  [2026-10-28 12:11:03,286] [main] org.apache.iotdb.db.utils.EnvironmentUtils:254 - EnvironmentUtil setup... 
+WARN  [2026-10-28 12:11:03,294] [main] org.apache.iotdb.db.service.StartupChecks:38 - iotdb.jmx.port missing from iotdb-env.sh(Unix or OS X, if you use Windows, check conf/iotdb-env.bat) 
+WARN  [2026-10-28 12:11:03,578] [main] org.apache.iotdb.db.engine.compaction.CompactionTaskManager:219 - A CompactionTask failed to be submitted to CompactionTaskManager because taskExecutionPool is null 
+target/tmp/system/remote/0/root.test0/0/0/0-0-0-0.tsfile
+startTime: 0 endTime: 9
+target/tmp/system/remote/1/root.test0/0/0/0-1-0-0.tsfile
+startTime: 10 endTime: 19
+target/tmp/system/remote/2/root.test0/0/0/0-2-0-0.tsfile
+startTime: 20 endTime: 29
+target/tmp/system/remote/3/root.test0/0/0/0-3-0-0.tsfile
+startTime: 30 endTime: 39
+target/tmp/system/remote/4/root.test0/0/0/0-4-0-0.tsfile
+startTime: 40 endTime: 49
+target/tmp/system/remote/5/root.test0/0/0/0-5-0-0.tsfile
+startTime: 50 endTime: 59
+target/tmp/system/remote/6/root.test0/0/0/0-6-0-0.tsfile
+startTime: 60 endTime: 69
+target/tmp/system/remote/7/root.test0/0/0/0-7-0-0.tsfile
+startTime: 70 endTime: 79
+target/tmp/system/remote/8/root.test0/0/0/0-8-0-0.tsfile
+startTime: 80 endTime: 89
+target/tmp/system/remote/9/root.test0/0/0/0-9-0-0.tsfile
+startTime: 90 endTime: 99
+ERROR [2026-10-28 12:11:03,601] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=0, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463579-0-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,601] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=1, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463583-1-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,601] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=2, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463586-2-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,602] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=3, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463588-3-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,602] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=4, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463590-4-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,602] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=5, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463592-5-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,602] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=6, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463594-6-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,602] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=7, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463596-7-0-0.tsfile 
+ERROR [2026-10-28 12:11:03,602] [main] org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest:306 - error occurred, i=8, minPlanIndex=-1, maxPlanIndex=-1, tsFileName=/home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/data/sequence/root.test0/0/0/1793207463598-8-0-0.tsfile 
+WARN  [2026-10-28 12:11:03,607] [main] org.apache.iotdb.db.utils.EnvironmentUtils:106 - EnvironmentUtil cleanEnv... 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.69 s - in org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.489 s
+[INFO] Finished at: 2026-10-28T12:11:04-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=10245
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 10.2 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest#testWithRetry' -pl cluster
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513
+# started : 2026-10-28T17:11:04.114Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:tsfile:jar:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ org.apache.iotdb:iotdb-parent:0.13.0-SNAPSHOT, /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/pom.xml, line 539, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.iotdb:iotdb-parent:pom:0.13.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.eclipse.jetty:jetty-server:jar -> version ${jetty.version} vs 11.0.6 @ line 539, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.apache.iotdb:iotdb-cluster >-------------------
+[INFO] Building cluster 0.13.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ iotdb-cluster >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-maven-version) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (enforce-version-convergence) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0-M2:enforce (vulnerability-checks) @ iotdb-cluster ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- spotless:2.4.2:check (spotless-check) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ iotdb-cluster ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 220 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/main/java/org/apache/iotdb/cluster/server/MetaClusterServer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- xml-format:3.0.7:xml-format (xml-format) @ iotdb-cluster ---
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ iotdb-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 10 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ iotdb-cluster ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 106 source files to /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/src/test/java/org/apache/iotdb/cluster/server/member/BaseMember.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ iotdb-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ iotdb-cluster ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.129 s
+[INFO] Finished at: 2026-10-28T12:11:12-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project iotdb-cluster: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__iotdb__25a98ee16513/cluster/.flakesync/Results-CritSearch/org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=8922
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 8.9 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 47.9 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_iotdb__25a98ee16513__cluster\flakesync\org.apache.iotdb.cluster.log.snapshot.PullSnapshotTaskTest.testWithRetry\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

@@ -1,0 +1,840 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/danfickle/openhtmltopdf
+# SHA: 4a0612fab7b3a55e3e11d485233b063006d03b0f
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz   [module: openhtmltopdf-examples] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/danfickle_openhtmltopdf__4a0612fab7b3__openhtmltopd~8b69c00d/2026-10-29_02-42-22/flakesync.com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492Infin~aa845b7c.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : danfickle/openhtmltopdf   https://github.com/danfickle/openhtmltopdf
+# commit         : 4a0612fab7b3a55e3e11d485233b063006d03b0f
+# module         : openhtmltopdf-examples
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\danfickle_openhtmltopdf__4a0612fab7b3__openhtmltopdf-examples\logs\flakesync.com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\danfickle_openhtmltopdf__4a0612fab7b3__openhtmltopdf-examples\flakesync\com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\danfickle__openhtmltopdf__4a0612fab7b3
+# written        : 2026-10-29T05:18:09.528Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest#testPr492InfiniteLoopBugsInLineBreakingFuzz' -pl openhtmltopdf-examples
+# cwd     : /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3
+# started : 2026-10-29T05:18:09.539Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.openhtmltopdf:openhtmltopdf-examples >--------------
+[INFO] Building Openhtmltopdf Examples 1.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ openhtmltopdf-examples >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openhtmltopdf-examples ---
+[INFO] Copying 620 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from .. to target/classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.3:compile (default-compile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ openhtmltopdf-examples ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.3:testCompile (default-testCompile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ openhtmltopdf-examples <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ openhtmltopdf-examples ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_op40PPVQxmxyWrTlaIOxjNZ4YeYYdO3qwLEa6ZVi0Bo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of -3198397526605551567 for Random instance.
+The test is 1291000 chars long.
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.135 sec <<< FAILURE! - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+testPr492InfiniteLoopBugsInLineBreakingFuzz(com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest)  Time elapsed: 0.096 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.openhtmltopdf.render.BlockBox. (com.openhtmltopdf.render.BlockBox is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.openhtmltopdf.pdfboxout.PdfRendererBuilder.buildPdfRenderer(PdfRendererBuilder.java:65)
+	at com.openhtmltopdf.pdfboxout.PdfRendererBuilder.run(PdfRendererBuilder.java:40)
+	at com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.runFuzzTest(NonVisualRegressionTest.java:889)
+	at com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz(NonVisualRegressionTest.java:1000)
+
+
+Results :
+
+Tests in error: 
+  NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz:1000->runFuzzTest:889 » Linkage
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_op40PPVQxmxyWrTlaIOxjNZ4YeYYdO3qwLEa6ZVi0Bo= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.101 s
+[INFO] Finished at: 2026-10-29T00:18:11-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1790
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 1.8 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest#testPr492InfiniteLoopBugsInLineBreakingFuzz' -pl openhtmltopdf-examples
+# cwd     : /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3
+# started : 2026-10-29T05:18:11.337Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.openhtmltopdf:openhtmltopdf-examples >--------------
+[INFO] Building Openhtmltopdf Examples 1.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ openhtmltopdf-examples >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openhtmltopdf-examples ---
+[INFO] Copying 620 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from .. to target/classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.3:compile (default-compile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ openhtmltopdf-examples ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.3:testCompile (default-testCompile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ openhtmltopdf-examples <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ openhtmltopdf-examples ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_MrUtnZpmWZHWBdlBsw2fkd23I1dK893iTT1zt7+QXc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 3348039885474856677 for Random instance.
+The test is 1236000 chars long.
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:13 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~82ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 30ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1557038 bytes long.
+The test is 1236000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~24ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 2073100 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.526 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_P3GPQdaaHZDjevNZHADA3o66EEjGY6hQo2sJSEVZ7E=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 281049062753675715 for Random instance.
+The test is 1161000 chars long.
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:16 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~82ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 37ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1335118 bytes long.
+The test is 1161000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~31ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1771544 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.26 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_fcEA1gGTY6PNrH+m6I8iZSMsQDrZAIUWuhBwhkWXAQ=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 5589349413251462506 for Random instance.
+The test is 1259000 chars long.
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:20 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~81ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 31ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1624445 bytes long.
+The test is 1259000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~28ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 2161446 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.608 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_NcQtWATFzzfX9SjyX7JsJ+I1+HRecvNDgGtl5K0zdjs=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 7054476377163250237 for Random instance.
+The test is 957000 chars long.
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:24 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~62ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 33ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 721380 bytes long.
+The test is 957000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~29ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 956843 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.272 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_D7mBAQkO5Xo9xOoH6J12PU5Q3cqHwR4LUfUvQ0zhaSY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 958725545548363571 for Random instance.
+The test is 1134000 chars long.
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:26 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~68ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 37ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1256596 bytes long.
+The test is 1134000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~31ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1667720 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.047 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_Qtk77lOAWZOMDdCpKGjD2QUsISmAcL8qOGWpRbTrY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 747864260655150544 for Random instance.
+The test is 1152000 chars long.
+Oct 29, 2026 12:18:29 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:30 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~71ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 39ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1306552 bytes long.
+The test is 1152000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~24ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1733455 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.051 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_vLROsPHnHrsQJtnMX5wi6MfsFNkoIIGPNE48hp1+pk=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of -3901534447108094300 for Random instance.
+The test is 1256000 chars long.
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:33 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~71ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 37ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1614073 bytes long.
+The test is 1256000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~29ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 1ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 2148942 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.624 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_VXWEQNniS3LolB2y5YW+G5uZjVwJrzIobB7+1p1rkow=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of 7991831097017866787 for Random instance.
+The test is 1293000 chars long.
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:37 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~72ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 30ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1725082 bytes long.
+The test is 1293000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~29ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 0ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 2299712 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.713 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  28.592 s
+[INFO] Finished at: 2026-10-29T00:18:40-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=29267
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 29.3 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest#testPr492InfiniteLoopBugsInLineBreakingFuzz' -pl openhtmltopdf-examples
+# cwd     : /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3
+# started : 2026-10-29T05:18:40.606Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.openhtmltopdf:openhtmltopdf-examples >--------------
+[INFO] Building Openhtmltopdf Examples 1.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ openhtmltopdf-examples >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openhtmltopdf-examples ---
+[INFO] Copying 620 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from .. to target/classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.3:compile (default-compile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ openhtmltopdf-examples ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.3:testCompile (default-testCompile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ openhtmltopdf-examples <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ openhtmltopdf-examples ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.661 s
+[INFO] Finished at: 2026-10-29T00:18:41-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1369
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.4 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest#testPr492InfiniteLoopBugsInLineBreakingFuzz' -pl openhtmltopdf-examples
+# cwd     : /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3
+# started : 2026-10-29T05:18:41.976Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.openhtmltopdf:openhtmltopdf-examples >--------------
+[INFO] Building Openhtmltopdf Examples 1.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ openhtmltopdf-examples >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openhtmltopdf-examples ---
+[INFO] Copying 620 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from .. to target/classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.3:compile (default-compile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ openhtmltopdf-examples ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.3:testCompile (default-testCompile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ openhtmltopdf-examples <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ openhtmltopdf-examples ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/clean_rH7brSu788aYucmWOnqfz3gXLxAWra5jXJHV9UUpHQo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+For NonVisualRegressionTest::testPr492InfiniteLoopBugsInLineBreakingFuzz using a random seed of -160962291768785092 for Random instance.
+The test is 1022000 chars long.
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Roman
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Bold
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-Italic
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Times-BoldItalic
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Bold
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-Oblique
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Bold
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-Oblique
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Courier-BoldOblique
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font Symbol
+Oct 29, 2026 12:18:43 AM org.apache.pdfbox.pdmodel.font.PDType1Font <init>
+WARNING: Using fallback font LiberationSans for base font ZapfDingbats
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~75ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 37ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 919466 bytes long.
+The test is 1022000 chars long.
+com.openhtmltopdf.load INFO:: SAX XMLReader in use (parser): com.sun.org.apache.xerces.internal.parsers.SAXParser
+com.openhtmltopdf.load INFO:: Loaded document in ~25ms
+com.openhtmltopdf.load INFO:: TIME: parse stylesheets 1ms
+com.openhtmltopdf.match INFO:: media = print
+com.openhtmltopdf.match INFO:: Matcher created with 159 selectors
+com.openhtmltopdf.load INFO:: Loading font(Liberation Sans) from InputStream supplier now.
+com.openhtmltopdf.general INFO:: Using fast-mode renderer. Prepare to fly.
+The result is 1221307 bytes long.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.622 sec - in com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.640 s
+[INFO] Finished at: 2026-10-29T00:18:46-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4312
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 4.3 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest#testPr492InfiniteLoopBugsInLineBreakingFuzz' -pl openhtmltopdf-examples
+# cwd     : /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3
+# started : 2026-10-29T05:18:46.290Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.openhtmltopdf:openhtmltopdf-examples >--------------
+[INFO] Building Openhtmltopdf Examples 1.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ openhtmltopdf-examples >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openhtmltopdf-examples ---
+[INFO] Copying 620 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from .. to target/classes/META-INF
+[INFO] 
+[INFO] --- compiler:3.3:compile (default-compile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ openhtmltopdf-examples ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.3:testCompile (default-testCompile) @ openhtmltopdf-examples ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ openhtmltopdf-examples <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ openhtmltopdf-examples ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.650 s
+[INFO] Finished at: 2026-10-29T00:18:47-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project openhtmltopdf-examples: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/danfickle__openhtmltopdf__4a0612fab7b3/openhtmltopdf-examples/.flakesync/Results-CritSearch/com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1343
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.3 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 38.1 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\danfickle_openhtmltopdf__4a0612fab7b3__openhtmltopdf-examples\flakesync\com.openhtmltopdf.nonvisualregressiontests.NonVisualRegressionTest.testPr492InfiniteLoopBugsInLineBreakingFuzz\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

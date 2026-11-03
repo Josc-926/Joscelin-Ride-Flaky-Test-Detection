@@ -1,0 +1,554 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/dubbo
+# SHA: 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService   [module: dubbo-rpc/dubbo-rpc-dubbo] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-dubbo/2026-10-28_03-39-27/flakesync.org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/dubbo   https://github.com/apache/dubbo
+# commit         : 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# module         : dubbo-rpc/dubbo-rpc-dubbo
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-dubbo\logs\flakesync.org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-dubbo\flakesync\org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__dubbo__737f7a7ea678
+# written        : 2026-10-28T08:44:38.519Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService' -pl dubbo-rpc/dubbo-rpc-dubbo
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T08:44:38.530Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-rpc-dubbo >------------------
+[INFO] Building dubbo-rpc-dubbo 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ dubbo-rpc-dubbo >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-dubbo/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ dubbo-rpc-dubbo <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ dubbo-rpc-dubbo ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:41,188 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:41,428 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:41,478 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:41,480 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:41,489 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.667 sec <<< FAILURE! - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+testInvokeDefaultSService(org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest)  Time elapsed: 0.635 sec  <<< FAILURE!
+java.lang.AssertionError
+	at org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService(InvokerTelnetHandlerTest.java:69)
+
+
+Results :
+
+Failed tests: 
+  InvokerTelnetHandlerTest.testInvokeDefaultSService:69
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_9CuqjxVGQZrEfmFRIKk0T1A6yt9cTJbokHnfWSdKXY= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.631 s
+[INFO] Finished at: 2026-10-28T03:44:41-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3414
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3.4 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService' -pl dubbo-rpc/dubbo-rpc-dubbo
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T08:44:41.946Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-rpc-dubbo >------------------
+[INFO] Building dubbo-rpc-dubbo 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ dubbo-rpc-dubbo >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-dubbo/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ dubbo-rpc-dubbo <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ dubbo-rpc-dubbo ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:44,510 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:44,712 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:44,765 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:44,767 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:44,776 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.587 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:45,611 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:45,836 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:45,891 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:45,892 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:45,900 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.633 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:46,724 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:46,944 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:47,005 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:47,007 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:47,014 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.629 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:47,838 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:48,045 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:48,098 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:48,101 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:48,109 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.615 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:48,908 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:49,105 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:49,169 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:49,172 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:49,180 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.589 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:50,006 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:50,238 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:50,290 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:50,293 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:50,300 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.636 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:51,129 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:51,353 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:51,407 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:51,408 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:51,416 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.631 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:52,225 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:52,440 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:52,493 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:52,495 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:52,503 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.606 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.237 s
+[INFO] Finished at: 2026-10-28T03:44:52-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=10947
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 10.9 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService' -pl dubbo-rpc/dubbo-rpc-dubbo
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T08:44:52.895Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-rpc-dubbo >------------------
+[INFO] Building dubbo-rpc-dubbo 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ dubbo-rpc-dubbo >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-dubbo/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ dubbo-rpc-dubbo <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ dubbo-rpc-dubbo ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.321 s
+[INFO] Finished at: 2026-10-28T03:44:54-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2054
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.1 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService' -pl dubbo-rpc/dubbo-rpc-dubbo
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T08:44:54.951Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-rpc-dubbo >------------------
+[INFO] Building dubbo-rpc-dubbo 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ dubbo-rpc-dubbo >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-dubbo/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ dubbo-rpc-dubbo <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ dubbo-rpc-dubbo ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+2026-10-28 03:44:57,590 INFO [org.apache.dubbo.common.logger.LoggerFactory:?] - using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-28 03:44:57,806 INFO [org.apache.dubbo.remoting.transport.AbstractServer:<init>] -  [DUBBO] Start NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:57,857 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Close dubbo server: /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:57,859 INFO [org.apache.dubbo.remoting.transport.AbstractServer:close] -  [DUBBO] Close NettyServer bind /0.0.0.0:20883, export /127.0.0.1:20883, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+2026-10-28 03:44:57,867 INFO [org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol:destroy] -  [DUBBO] Unexport service: dubbo://127.0.0.1:20883/demo, dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.608 sec - in org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.569 s
+[INFO] Finished at: 2026-10-28T03:44:58-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3294
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 3.3 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest#testInvokeDefaultSService' -pl dubbo-rpc/dubbo-rpc-dubbo
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T08:44:58.246Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-rpc-dubbo >------------------
+[INFO] Building dubbo-rpc-dubbo 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ dubbo-rpc-dubbo >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-dubbo/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-dubbo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ dubbo-rpc-dubbo <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ dubbo-rpc-dubbo ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.322 s
+[INFO] Finished at: 2026-10-28T03:45:00-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project dubbo-rpc-dubbo: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-dubbo/.flakesync/Results-CritSearch/org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2161
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2.2 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 21.9 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-dubbo\flakesync\org.apache.dubbo.rpc.protocol.dubbo.telnet.InvokerTelnetHandlerTest.testInvokeDefaultSService\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

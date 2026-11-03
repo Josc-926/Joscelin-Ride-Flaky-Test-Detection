@@ -1,0 +1,640 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/alibaba/jetcache
+# SHA: d9a26f0bcfaef1a7fb6b374be500d2f2d947306d
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.alicp.jetcache.RefreshCacheTest.baseTest   [module: jetcache-test] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/alibaba_jetcache__d9a26f0bcfae__jetcache-test/2026-10-23_02-54-45/flakesync.com.alicp.jetcache.RefreshCacheTest.baseTest.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.alicp.jetcache.RefreshCacheTest#baseTest' -pl jetcache-test
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae
+# started: 2026-10-23T04:35:14.436Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.alicp.jetcache:jetcache-test >------------------
+[INFO] Building jetcache-test 2.6.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ jetcache-test >>>
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (prepare-agent) @ jetcache-test ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jetcache-test ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jetcache-test ---
+[INFO] Copying 11 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ jetcache-test <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ jetcache-test ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:35:17.393 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+23:35:17.522 [Thread-41] WARN  com.alicp.jetcache.AbstractCache - loader wait interrupted
+23:35:18.908 [JetCacheHeavyIOExecutor7] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.497 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+multiLevelCacheRefreshTest  Time elapsed: 0.044 sec  <<< ERROR!
+java.lang.IllegalStateException: com.github.benmanes.caffeine.cache.SSMSA
+	at com.alicp.jetcache.RefreshCacheTest.buildLocalCache(RefreshCacheTest.java:301)
+	at com.alicp.jetcache.RefreshCacheTest.multiLevelCacheRefreshTest(RefreshCacheTest.java:318)
+Caused by: java.lang.reflect.InvocationTargetException
+	at com.alicp.jetcache.RefreshCacheTest.buildLocalCache(RefreshCacheTest.java:301)
+	at com.alicp.jetcache.RefreshCacheTest.multiLevelCacheRefreshTest(RefreshCacheTest.java:318)
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate interface definition for com.github.benmanes.caffeine.cache.Scheduler. (com.github.benmanes.caffeine.cache.Scheduler is in unnamed module of loader 'app')
+	at com.alicp.jetcache.RefreshCacheTest.buildLocalCache(RefreshCacheTest.java:301)
+	at com.alicp.jetcache.RefreshCacheTest.multiLevelCacheRefreshTest(RefreshCacheTest.java:318)
+
+
+Results :
+
+Tests in error: 
+  RefreshCacheTest.multiLevelCacheRefreshTest:318->buildLocalCache:301 » IllegalState
+
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_77dztD9VEWrlJJL6oo1rrEX2TVUhzHxRFeT4qACE= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.210 s
+[INFO] Finished at: 2026-10-22T23:35:19-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4921
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.alicp.jetcache.RefreshCacheTest#baseTest' -pl jetcache-test
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae
+# started: 2026-10-23T04:35:19.361Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.alicp.jetcache:jetcache-test >------------------
+[INFO] Building jetcache-test 2.6.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ jetcache-test >>>
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (prepare-agent) @ jetcache-test ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jetcache-test ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jetcache-test ---
+[INFO] Copying 11 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ jetcache-test <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ jetcache-test ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:35:32.312 [Thread-37] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:80)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:35:33.693 [Thread-39] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.2S
+23:35:33.693 [Thread-40] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.2S
+23:35:35.683 [JetCacheHeavyIOExecutor7] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.489 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 12.705 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<3>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<3>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_miJxhkM5Tb5vVWTxg97oqMpi8kRak4K9wrpLF3GEapA= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17.267 s
+[INFO] Finished at: 2026-10-22T23:35:37-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=17941
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.alicp.jetcache.RefreshCacheTest#baseTest' -pl jetcache-test
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae
+# started: 2026-10-23T04:35:37.305Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.alicp.jetcache:jetcache-test >------------------
+[INFO] Building jetcache-test 2.6.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ jetcache-test >>>
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (prepare-agent) @ jetcache-test ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jetcache-test ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jetcache-test ---
+[INFO] Copying 11 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ jetcache-test <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ jetcache-test ---
+INFO: Running DeltaDebugMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:35:44.840 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:80)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:35:46.759 [JetCacheHeavyIOExecutor6] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.726 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 5.946 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_wXbgq7OArnO+Wz+utTXeMWMsghq9HWmzjjrl5HwppM= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:35:50.469 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+23:35:50.598 [Thread-41] WARN  com.alicp.jetcache.AbstractCache - loader wait interrupted
+23:35:51.981 [JetCacheHeavyIOExecutor7] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.583 sec - in com.alicp.jetcache.RefreshCacheTest
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:35:58.653 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:80)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:36:00.571 [JetCacheHeavyIOExecutor6] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.938 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 5.143 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_8rjAGslxTgFZQnk4GIIVT22JmgjNqCsA8GnXjXYv+w= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:06.024 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:80)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:36:07.941 [JetCacheHeavyIOExecutor6] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.742 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 3.949 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_1D+ol90+5uRyPLDoXPvdIKjxuhDfAGI2ZI5hAu6uRj4= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:11.406 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+23:36:11.534 [Thread-41] WARN  com.alicp.jetcache.AbstractCache - loader wait interrupted
+23:36:12.916 [JetCacheHeavyIOExecutor8] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.322 sec - in com.alicp.jetcache.RefreshCacheTest
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:17.686 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:80)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:36:19.604 [JetCacheHeavyIOExecutor9] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.039 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 3.243 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_SikIFXEnQDZxTYER3A11BvSkFGsAh7iESAhmrLpawo= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:22.355 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:80)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:36:24.273 [JetCacheHeavyIOExecutor7] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.036 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 1.24 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_dVGWkqvy2qB0y88AXllGNc9RYSArxvAlrzko0SLT92E= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  47.883 s
+[INFO] Finished at: 2026-10-22T23:36:25-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=48571
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.alicp.jetcache.RefreshCacheTest#baseTest' -pl jetcache-test
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae
+# started: 2026-10-23T04:36:25.878Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.alicp.jetcache:jetcache-test >------------------
+[INFO] Building jetcache-test 2.6.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ jetcache-test >>>
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (prepare-agent) @ jetcache-test ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jetcache-test ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jetcache-test ---
+[INFO] Copying 11 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ jetcache-test <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ jetcache-test ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:28.750 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:90)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:36:31.069 [JetCacheHeavyIOExecutor6] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.422 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 1.641 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_kqfHFOQeLDXbmWeKk0lESHg0kSZUu9671oTi09a+UTI= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:33.808 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at edu.utexas.ece.flakesync.agent.Utility.delay(Utility.java:90)
+	at com.alicp.jetcache.test.AbstractCacheTest.lambda$penetrationProtectTimeoutTest$35(AbstractCacheTest.java:927)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+23:36:36.127 [JetCacheHeavyIOExecutor7] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.424 sec <<< FAILURE! - in com.alicp.jetcache.RefreshCacheTest
+baseTest  Time elapsed: 1.641 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.alicp.jetcache.RefreshCacheTest.baseTest(RefreshCacheTest.java:40)
+
+
+Results :
+
+Failed tests: 
+  RefreshCacheTest.baseTest:40->AbstractCacheTest.baseTest:66->AbstractCacheTest.penetrationProtectTestWrapper:736->AbstractCacheTest.penetrationProtectTest:754->AbstractCacheTest.penetrationProtectTimeoutTest:940 expected:<2> but was:<1>
+
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_WIDINQbGHlTPaa2Nhkx0ndUyR9aqpwr8FvayKkO2N8c= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.alicp.jetcache.RefreshCacheTest
+23:36:38.866 [Thread-38] INFO  com.alicp.jetcache.AbstractCache - loader wait timeout:PT0.001S
+23:36:38.995 [Thread-41] WARN  com.alicp.jetcache.AbstractCache - loader wait interrupted
+23:36:40.379 [JetCacheHeavyIOExecutor9] ERROR com.alicp.jetcache.RefreshCache - refresh error: key=K1
+java.sql.SQLException: null
+	at com.alicp.jetcache.RefreshCacheTest.lambda$badLoaderTest$0(RefreshCacheTest.java:52)
+	at com.alicp.jetcache.CacheUtil$1.load(CacheUtil.java:35)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.load(RefreshCache.java:167)
+	at com.alicp.jetcache.RefreshCache$RefreshTask.run(RefreshCache.java:251)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.618 sec - in com.alicp.jetcache.RefreshCacheTest
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.399 s
+[INFO] Finished at: 2026-10-22T23:36:41-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=16105
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.alicp.jetcache.RefreshCacheTest#baseTest' -pl jetcache-test
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae
+# started: 2026-10-23T04:36:41.985Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.alicp.jetcache:jetcache-test >------------------
+[INFO] Building jetcache-test 2.6.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ jetcache-test >>>
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (prepare-agent) @ jetcache-test ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jetcache-test ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__jetcache__d9a26f0bcfae/jetcache-test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jetcache-test ---
+[INFO] Copying 11 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ jetcache-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ jetcache-test <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ jetcache-test ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.777 s
+[INFO] Finished at: 2026-10-22T23:36:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1454

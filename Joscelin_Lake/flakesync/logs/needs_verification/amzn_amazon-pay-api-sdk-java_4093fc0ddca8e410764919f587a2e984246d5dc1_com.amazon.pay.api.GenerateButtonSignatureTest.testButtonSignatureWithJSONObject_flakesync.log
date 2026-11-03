@@ -1,0 +1,365 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/amzn/amazon-pay-api-sdk-java
+# SHA: 4093fc0ddca8e410764919f587a2e984246d5dc1
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.amazon.pay.api.GenerateButtonSignatureTest.testButtonSignatureWithJSONObject   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/amzn_amazon-pay-api-sdk-java__4093fc0ddca8___root/2026-10-17_03-02-53/flakesync.com.amazon.pay.api.GenerateButtonSignatureTest.testButtonSignatureWithJSONObject.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.amazon.pay.api.GenerateButtonSignatureTest#testButtonSignatureWithJSONObject'
+# cwd: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8
+# started: 2026-10-17T15:26:57.332Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< software.amazon.pay:amazon-pay-api-sdk-java >-------------
+[INFO] Building Amazon Pay Java SDK 2.4.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ amazon-pay-api-sdk-java >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ amazon-pay-api-sdk-java <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ amazon-pay-api-sdk-java ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_4TEObts6yAOBKdH7lKWWI+i6QgnGInkghdfFGmISOo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.212 sec <<< FAILURE! - in com.amazon.pay.api.GenerateButtonSignatureTest
+testButtonSignatureWithJSONObject(com.amazon.pay.api.GenerateButtonSignatureTest)  Time elapsed: 0.183 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.bouncycastle.asn1.DERSet. (org.bouncycastle.asn1.DERSet is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.bouncycastle.asn1.DLFactory.<clinit>(DLFactory.java:6)
+	at org.bouncycastle.asn1.ASN1InputStream.buildObject(ASN1InputStream.java:192)
+	at org.bouncycastle.asn1.ASN1InputStream.readObject(ASN1InputStream.java:293)
+	at org.bouncycastle.asn1.ASN1Primitive.fromByteArray(ASN1Primitive.java:40)
+	at org.bouncycastle.asn1.ASN1Sequence.getInstance(ASN1Sequence.java:88)
+	at org.bouncycastle.asn1.pkcs.PrivateKeyInfo.getInstance(PrivateKeyInfo.java:82)
+	at org.bouncycastle.jcajce.provider.asymmetric.rsa.KeyFactorySpi.engineGeneratePrivate(Unknown Source)
+	at java.base/java.security.KeyFactory.generatePrivate(KeyFactory.java:390)
+	at com.amazon.pay.api.Util.buildPrivateKey(Util.java:185)
+	at com.amazon.pay.api.PayConfiguration.setPrivateKey(PayConfiguration.java:89)
+	at com.amazon.pay.api.GenerateButtonSignatureTest.setUp(GenerateButtonSignatureTest.java:51)
+
+
+Results :
+
+Tests in error: 
+  GenerateButtonSignatureTest.setUp:51 » Linkage loader 'app' attempted duplicat...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_4TEObts6yAOBKdH7lKWWI+i6QgnGInkghdfFGmISOo= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.028 s
+[INFO] Finished at: 2026-10-17T10:26:58-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1692
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.amazon.pay.api.GenerateButtonSignatureTest#testButtonSignatureWithJSONObject'
+# cwd: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8
+# started: 2026-10-17T15:26:59.025Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< software.amazon.pay:amazon-pay-api-sdk-java >-------------
+[INFO] Building Amazon Pay Java SDK 2.4.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ amazon-pay-api-sdk-java >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ amazon-pay-api-sdk-java <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ amazon-pay-api-sdk-java ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_IrWfMkTamb2bg11HbzbIhKpzYvBPKs7QiYEqqyqQZw=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_ne5nzZT61nnH8jRp0FV10W8C96VVyXJ5dWLTAk+hIo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_Os7FFuARnY0wscLZyyXozaXe1Iceznr5mQYDcycH6fY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_Ya+zoU7QVVL3Zsd5cAjHJi10JUQs8DGlY9Gvtx7Phc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_GllTJJM1YwbClH5flKbswfyJidotLCcbeiUKZfiHihc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_1tVtNSTAPNWj7yRpqwyC5Oak1cClLo4pz4ZCRAkLQ=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_e4mApi0CaeImdqJB47VmPfh9kPjVwqFnY9FGI9Grms=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_ePGTM5fzEWJxxaAZlre6ffaiKybwl55rfZ8CZL6kAI=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.188 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.983 s
+[INFO] Finished at: 2026-10-17T10:27:03-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4626
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.amazon.pay.api.GenerateButtonSignatureTest#testButtonSignatureWithJSONObject'
+# cwd: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8
+# started: 2026-10-17T15:27:03.652Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< software.amazon.pay:amazon-pay-api-sdk-java >-------------
+[INFO] Building Amazon Pay Java SDK 2.4.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ amazon-pay-api-sdk-java >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ amazon-pay-api-sdk-java <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ amazon-pay-api-sdk-java ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.427 s
+[INFO] Finished at: 2026-10-17T10:27:04-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1099
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.amazon.pay.api.GenerateButtonSignatureTest#testButtonSignatureWithJSONObject'
+# cwd: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8
+# started: 2026-10-17T15:27:04.752Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< software.amazon.pay:amazon-pay-api-sdk-java >-------------
+[INFO] Building Amazon Pay Java SDK 2.4.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ amazon-pay-api-sdk-java >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ amazon-pay-api-sdk-java <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ amazon-pay-api-sdk-java ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/clean_uMwtxIKf1kzislwV6hds1xYmUy0prXJxFKHXy5TMd9s=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.amazon.pay.api.GenerateButtonSignatureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 sec - in com.amazon.pay.api.GenerateButtonSignatureTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.962 s
+[INFO] Finished at: 2026-10-17T10:27:06-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1626
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.amazon.pay.api.GenerateButtonSignatureTest#testButtonSignatureWithJSONObject'
+# cwd: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8
+# started: 2026-10-17T15:27:06.379Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< software.amazon.pay:amazon-pay-api-sdk-java >-------------
+[INFO] Building Amazon Pay Java SDK 2.4.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ amazon-pay-api-sdk-java >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ amazon-pay-api-sdk-java ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ amazon-pay-api-sdk-java ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ amazon-pay-api-sdk-java <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ amazon-pay-api-sdk-java ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.436 s
+[INFO] Finished at: 2026-10-17T10:27:07-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project amazon-pay-api-sdk-java: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/amzn__amazon-pay-api-sdk-java__4093fc0ddca8/.flakesync/Results-CritSearch/com.amazon.pay.api.GenerateButtonSignatureTest.testButtonSignatureWithJSONObject-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1107

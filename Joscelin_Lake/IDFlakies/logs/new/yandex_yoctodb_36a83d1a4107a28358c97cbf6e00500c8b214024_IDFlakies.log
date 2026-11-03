@@ -1,0 +1,99 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/yandex/yoctodb
+# SHA: 36a83d1a4107a28358c97cbf6e00500c8b214024
+# Flaky tests iDFlakies found in this log (1):
+#   - com.yandex.yoctodb.v1.immutable.segment.SegmentRegistryTest.notExisting   [module: core] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/yandex_yoctodb__36a83d1a4107__core/2026-10-31_20-18-18/idflakies.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : yandex/yoctodb   https://github.com/yandex/yoctodb
+# commit         : 36a83d1a4107a28358c97cbf6e00500c8b214024
+# module         : core
+# dataset        : pr-data
+# run            : 2026-10-31_20-18-18
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 6 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\pr-data\yandex_yoctodb__36a83d1a4107__core\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\pr-data\yandex_yoctodb__36a83d1a4107__core\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\yandex__yoctodb__36a83d1a4107
+# written        : 2026-10-31T22:19:39.802Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 6 rounds) ====================
+$ mvn -B -pl core edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=6 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107
+# started : 2026-10-31T22:19:39.810Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.yandex.yoctodb:yoctodb-core >-------------------
+[INFO] Building YoctoDB core 0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ yoctodb-core >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce) @ yoctodb-core ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (prepare-agent) @ yoctodb-core ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ yoctodb-core ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.5.1:compile (default-compile) @ yoctodb-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ yoctodb-core ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.5.1:testCompile (default-testCompile) @ yoctodb-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ yoctodb-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ yoctodb-core ---
+INFO: No timeout specified. Using randomize.rounds: 6
+INFO: ROUNDS_CALCULATED: Giving com.yandex.yoctodb:yoctodb-core:0.1-SNAPSHOT 6 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 392 tests. Time taken: 0.15899991989135742 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/.dtfixingtools/original-order
+[INFO] Getting original results (392 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 6 (0.0 seconds elapsed (1.1 total), 0.0 seconds remaining).
+Verified com.yandex.yoctodb.v1.immutable.segment.SegmentRegistryTest.notExisting, status: expected PASS, got PASS
+Verified com.yandex.yoctodb.v1.immutable.segment.SegmentRegistryTest.notExisting, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 6 (1.1 seconds elapsed (3.8 total), 2.2 seconds remaining).
+[INFO] Found 0 tests in round 3 of 6 (0.0 seconds elapsed (4.8 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 4 of 6 (1.0 seconds elapsed (5.9 total), 0.5 seconds remaining).
+[INFO] Found 0 tests in round 5 of 6 (2.1 seconds elapsed (7.0 total), 0.4 seconds remaining).
+[INFO] Found 0 tests in round 6 of 6 (3.2 seconds elapsed (8.1 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/yandex__yoctodb__36a83d1a4107/core/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.305 s
+[INFO] Finished at: 2026-10-31T17:19:52-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=13423
+==================== end iDFlakies detect (random-class-method, 6 rounds): completed, exit 0, 13.4 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 13.4 s
+# flaky reported : 1
+#   - com.yandex.yoctodb.v1.immutable.segment.SegmentRegistryTest.notExisting
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\pr-data\yandex_yoctodb__36a83d1a4107__core\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+

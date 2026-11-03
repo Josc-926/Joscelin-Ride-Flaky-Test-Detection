@@ -1,0 +1,997 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/hbase
+# SHA: 881c92b892844be567d5f26b161a820ebf319f84
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues   [module: hbase-replication] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_hbase__881c92b89284__hbase-replication/2026-10-28_03-39-27/flakesync.org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/hbase   https://github.com/apache/hbase
+# commit         : 881c92b892844be567d5f26b161a820ebf319f84
+# module         : hbase-replication
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hbase__881c92b89284__hbase-replication\logs\flakesync.org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hbase__881c92b89284__hbase-replication\flakesync\org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__hbase__881c92b89284
+# written        : 2026-10-28T14:10:15.635Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl#testHfileRefsReplicationQueues' -pl hbase-replication
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:10:15.646Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------------< org.apache.hbase:hbase-replication >-----------------
+[INFO] Building Apache HBase - Replication 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ hbase-replication >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-replication ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-replication ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-replication ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-replication ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-replication ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-replication ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ hbase-replication <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ hbase-replication ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:19,338 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:19,581 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/082fb400-a417-b8dc-23ef-6ce4a75b5506/cluster_c8eb007e-0d51-3a21-4e30-4b7c55679f9e, deleteOnExit=true
+2026-10-28 09:10:19,726 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/082fb400-a417-b8dc-23ef-6ce4a75b5506/cluster_c8eb007e-0d51-3a21-4e30-4b7c55679f9e/zookeeper_0, clientPort=61302, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/082fb400-a417-b8dc-23ef-6ce4a75b5506/cluster_c8eb007e-0d51-3a21-4e30-4b7c55679f9e/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/082fb400-a417-b8dc-23ef-6ce4a75b5506/cluster_c8eb007e-0d51-3a21-4e30-4b7c55679f9e/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:19,741 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=61302
+2026-10-28 09:10:19,754 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:61302
+2026-10-28 09:10:19,765 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[ERROR] org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.zookeeper.client.StaticHostProvider. (org.apache.zookeeper.client.StaticHostProvider is in unnamed module of loader 'app')
+	at org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.setUpBeforeClass(TestReplicationStateZKImpl.java:59)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestReplicationStateZKImpl.setUpBeforeClass:59 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_E6sp3BXvAHp9vp2WVW0Izyu5GjZpcbcQO+XNxRtnvPs= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.828 s
+[INFO] Finished at: 2026-10-28T09:10:20-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4540
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 4.5 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl#testHfileRefsReplicationQueues' -pl hbase-replication
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:10:20.188Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------------< org.apache.hbase:hbase-replication >-----------------
+[INFO] Building Apache HBase - Replication 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ hbase-replication >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-replication ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-replication ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-replication ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-replication ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-replication ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-replication ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ hbase-replication <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ hbase-replication ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:23,945 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:24,076 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1c705a7a-adbb-d8b4-80d8-95d16ea60efc/cluster_6aebf6bd-2993-dd41-8a5b-852497520816, deleteOnExit=true
+2026-10-28 09:10:24,178 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1c705a7a-adbb-d8b4-80d8-95d16ea60efc/cluster_6aebf6bd-2993-dd41-8a5b-852497520816/zookeeper_0, clientPort=58052, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1c705a7a-adbb-d8b4-80d8-95d16ea60efc/cluster_6aebf6bd-2993-dd41-8a5b-852497520816/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1c705a7a-adbb-d8b4-80d8-95d16ea60efc/cluster_6aebf6bd-2993-dd41-8a5b-852497520816/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:24,187 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=58052
+2026-10-28 09:10:24,197 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:58052
+2026-10-28 09:10:24,207 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:58052
+2026-10-28 09:10:24,233 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:58052, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:24,233 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:24,235 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c303a0000 connected
+2026-10-28 09:10:24,235 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c303a0001 connected
+2026-10-28 09:10:24,280 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:58052
+2026-10-28 09:10:24,286 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:58052, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:24,287 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c303a0002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:24,363 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:24,371 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:24,376 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:24,381 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:24,382 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:24,386 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:24,386 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:24,391 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:24,392 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:24,393 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:24,400 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:24,401 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:24,401 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:24,401 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:24,401 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:24,402 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:24,403 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:24,406 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:24,410 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:24,410 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:24,411 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:24,411 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:24,411 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:24,411 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c303a0000, quorum=127.0.0.1:58052, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:24,425 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:25,089 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:25,203 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/81be0ede-d72f-b225-d950-aa845d284849/cluster_0ad5de9c-9d97-d521-c44a-06c383ca7f04, deleteOnExit=true
+2026-10-28 09:10:25,310 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/81be0ede-d72f-b225-d950-aa845d284849/cluster_0ad5de9c-9d97-d521-c44a-06c383ca7f04/zookeeper_0, clientPort=60481, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/81be0ede-d72f-b225-d950-aa845d284849/cluster_0ad5de9c-9d97-d521-c44a-06c383ca7f04/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/81be0ede-d72f-b225-d950-aa845d284849/cluster_0ad5de9c-9d97-d521-c44a-06c383ca7f04/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:25,319 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=60481
+2026-10-28 09:10:25,328 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:60481
+2026-10-28 09:10:25,338 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:60481
+2026-10-28 09:10:25,364 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:60481, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:25,364 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:25,366 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c34a30001 connected
+2026-10-28 09:10:25,366 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c34a30000 connected
+2026-10-28 09:10:25,417 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:60481
+2026-10-28 09:10:25,423 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:60481, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:25,424 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c34a30002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:25,487 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:25,495 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:25,501 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:25,506 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:25,507 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:25,511 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:25,511 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:25,517 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:25,518 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:25,519 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:25,527 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:25,528 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:25,528 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:25,528 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:25,528 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:25,529 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:25,530 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:25,533 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:25,537 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:25,538 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:25,538 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:25,538 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:25,538 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:25,538 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c34a30001, quorum=127.0.0.1:60481, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:25,551 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:26,190 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:26,320 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/87d76fc3-daf0-356f-3ed6-5b2158c0531d/cluster_66a334a8-338c-030a-018e-d1fa77d1b84e, deleteOnExit=true
+2026-10-28 09:10:26,424 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/87d76fc3-daf0-356f-3ed6-5b2158c0531d/cluster_66a334a8-338c-030a-018e-d1fa77d1b84e/zookeeper_0, clientPort=55837, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/87d76fc3-daf0-356f-3ed6-5b2158c0531d/cluster_66a334a8-338c-030a-018e-d1fa77d1b84e/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/87d76fc3-daf0-356f-3ed6-5b2158c0531d/cluster_66a334a8-338c-030a-018e-d1fa77d1b84e/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:26,433 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=55837
+2026-10-28 09:10:26,443 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:55837
+2026-10-28 09:10:26,455 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:55837
+2026-10-28 09:10:26,479 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:55837, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:26,479 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:26,482 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c38ff0000 connected
+2026-10-28 09:10:26,482 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c38ff0001 connected
+2026-10-28 09:10:26,542 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:55837
+2026-10-28 09:10:26,548 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:55837, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:26,549 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c38ff0002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:26,610 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:26,618 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:26,626 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:26,633 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:26,634 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:26,639 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:26,639 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:26,645 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:26,646 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:26,646 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:26,654 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:26,654 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:26,654 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:26,654 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:26,654 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:26,655 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:26,656 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:26,659 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:26,663 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:26,664 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:26,664 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:26,664 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:26,664 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:26,664 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c38ff0001, quorum=127.0.0.1:55837, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:26,675 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:27,321 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:27,464 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1a378a8a-8e15-7061-aee9-0a9e30dece24/cluster_f29851f5-c148-99ac-c851-c7747b9dfa7e, deleteOnExit=true
+2026-10-28 09:10:27,567 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1a378a8a-8e15-7061-aee9-0a9e30dece24/cluster_f29851f5-c148-99ac-c851-c7747b9dfa7e/zookeeper_0, clientPort=54229, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1a378a8a-8e15-7061-aee9-0a9e30dece24/cluster_f29851f5-c148-99ac-c851-c7747b9dfa7e/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/1a378a8a-8e15-7061-aee9-0a9e30dece24/cluster_f29851f5-c148-99ac-c851-c7747b9dfa7e/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:27,576 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=54229
+2026-10-28 09:10:27,587 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:54229
+2026-10-28 09:10:27,599 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:54229
+2026-10-28 09:10:27,623 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:54229, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:27,623 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:27,626 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c3d760000 connected
+2026-10-28 09:10:27,626 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c3d760001 connected
+2026-10-28 09:10:27,686 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:54229
+2026-10-28 09:10:27,692 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:54229, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:27,692 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c3d760002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:27,754 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:27,763 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:27,768 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:27,773 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:27,773 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:27,778 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:27,778 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:27,783 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:27,784 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:27,785 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:27,793 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:27,793 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:27,793 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:27,793 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:27,793 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:27,795 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:27,796 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:27,798 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:27,803 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:27,803 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:27,803 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:27,804 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:27,804 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:27,804 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c3d760000, quorum=127.0.0.1:54229, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:27,818 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:28,465 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:28,584 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/e7f01ac5-c112-4ba6-008d-4070eb1fe40e/cluster_c07b6629-108c-a22a-f09b-a2fe9717d20b, deleteOnExit=true
+2026-10-28 09:10:28,694 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/e7f01ac5-c112-4ba6-008d-4070eb1fe40e/cluster_c07b6629-108c-a22a-f09b-a2fe9717d20b/zookeeper_0, clientPort=49650, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/e7f01ac5-c112-4ba6-008d-4070eb1fe40e/cluster_c07b6629-108c-a22a-f09b-a2fe9717d20b/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/e7f01ac5-c112-4ba6-008d-4070eb1fe40e/cluster_c07b6629-108c-a22a-f09b-a2fe9717d20b/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:28,704 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=49650
+2026-10-28 09:10:28,716 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:49650
+2026-10-28 09:10:28,728 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:49650
+2026-10-28 09:10:28,753 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:49650, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:28,753 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:28,756 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c41d40000 connected
+2026-10-28 09:10:28,756 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c41d40001 connected
+2026-10-28 09:10:28,803 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:49650
+2026-10-28 09:10:28,810 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:49650, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:28,811 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c41d40002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:28,871 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:28,880 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:28,886 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:28,892 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:28,893 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:28,898 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:28,899 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:28,905 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:28,906 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:28,907 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:28,917 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:28,917 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:28,917 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:28,918 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:28,918 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:28,918 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:28,919 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:28,922 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:28,927 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:28,927 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:28,927 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:28,927 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:28,927 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:28,928 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c41d40000, quorum=127.0.0.1:49650, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:28,943 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:29,602 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:29,719 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/6ccb0ac9-7931-2b50-e22e-f1309046c5a4/cluster_44e47903-b233-451d-0eab-a7526bb7e3c5, deleteOnExit=true
+2026-10-28 09:10:29,828 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/6ccb0ac9-7931-2b50-e22e-f1309046c5a4/cluster_44e47903-b233-451d-0eab-a7526bb7e3c5/zookeeper_0, clientPort=60223, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/6ccb0ac9-7931-2b50-e22e-f1309046c5a4/cluster_44e47903-b233-451d-0eab-a7526bb7e3c5/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/6ccb0ac9-7931-2b50-e22e-f1309046c5a4/cluster_44e47903-b233-451d-0eab-a7526bb7e3c5/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:29,838 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=60223
+2026-10-28 09:10:29,850 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:60223
+2026-10-28 09:10:29,860 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:60223
+2026-10-28 09:10:29,883 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:29,883 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:60223, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:29,885 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c46440000 connected
+2026-10-28 09:10:29,886 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c46440001 connected
+2026-10-28 09:10:29,934 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:60223
+2026-10-28 09:10:29,939 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:60223, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:29,940 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c46440002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:30,000 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:30,008 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:30,015 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:30,026 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:30,027 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:30,038 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:30,038 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:30,045 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:30,046 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:30,047 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:30,056 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:30,057 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:30,057 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:30,057 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:30,057 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:30,058 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:30,060 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:30,063 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:30,067 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:30,067 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:30,067 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:30,067 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:30,067 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:30,068 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c46440001, quorum=127.0.0.1:60223, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:30,080 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:30,733 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:30,849 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/93fc185b-67ea-35f7-b78d-cc1f8186ce53/cluster_6abe1106-0c29-a666-3e9e-9c30c958e800, deleteOnExit=true
+2026-10-28 09:10:30,957 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/93fc185b-67ea-35f7-b78d-cc1f8186ce53/cluster_6abe1106-0c29-a666-3e9e-9c30c958e800/zookeeper_0, clientPort=57396, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/93fc185b-67ea-35f7-b78d-cc1f8186ce53/cluster_6abe1106-0c29-a666-3e9e-9c30c958e800/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/93fc185b-67ea-35f7-b78d-cc1f8186ce53/cluster_6abe1106-0c29-a666-3e9e-9c30c958e800/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:30,967 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=57396
+2026-10-28 09:10:30,979 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:57396
+2026-10-28 09:10:30,990 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:57396
+2026-10-28 09:10:31,015 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:31,015 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:57396, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:31,017 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c4aae0001 connected
+2026-10-28 09:10:31,017 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c4aae0000 connected
+2026-10-28 09:10:31,063 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:57396
+2026-10-28 09:10:31,068 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:57396, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:31,069 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c4aae0002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:31,132 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:31,141 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:31,148 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:31,154 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:31,155 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:31,160 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:31,161 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:31,168 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:31,170 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:31,171 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:31,180 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:31,180 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:31,180 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:31,180 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:31,180 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:31,182 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:31,183 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:31,186 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:31,191 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:31,191 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:31,191 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:31,192 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:31,192 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:31,192 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4aae0001, quorum=127.0.0.1:57396, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:31,205 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:31,865 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:31,988 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/7d700edb-dac1-afb6-4117-cc4898479b91/cluster_50927c66-5bb2-045a-accf-bcf48c8985be, deleteOnExit=true
+2026-10-28 09:10:32,090 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/7d700edb-dac1-afb6-4117-cc4898479b91/cluster_50927c66-5bb2-045a-accf-bcf48c8985be/zookeeper_0, clientPort=64380, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/7d700edb-dac1-afb6-4117-cc4898479b91/cluster_50927c66-5bb2-045a-accf-bcf48c8985be/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/7d700edb-dac1-afb6-4117-cc4898479b91/cluster_50927c66-5bb2-045a-accf-bcf48c8985be/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:32,101 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=64380
+2026-10-28 09:10:32,113 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:64380
+2026-10-28 09:10:32,123 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:64380
+2026-10-28 09:10:32,148 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:32,148 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:64380, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:32,150 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c4f1e0000 connected
+2026-10-28 09:10:32,150 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c4f1e0001 connected
+2026-10-28 09:10:32,197 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:64380
+2026-10-28 09:10:32,202 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:64380, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:32,203 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c4f1e0002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:32,267 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:32,275 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:32,281 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:32,287 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:32,288 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:32,293 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:32,293 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:32,300 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:32,301 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:32,302 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:32,311 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:32,311 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:32,311 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:32,311 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:32,312 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:32,313 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:32,314 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:32,317 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:32,322 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:32,322 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:32,322 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:32,322 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:32,322 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:32,322 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c4f1e0001, quorum=127.0.0.1:64380, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:32,335 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.827 s
+[INFO] Finished at: 2026-10-28T09:10:32-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=12538
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 12.5 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl#testHfileRefsReplicationQueues' -pl hbase-replication
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:10:32.729Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------------< org.apache.hbase:hbase-replication >-----------------
+[INFO] Building Apache HBase - Replication 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ hbase-replication >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-replication ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-replication ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-replication ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-replication ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-replication ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-replication ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ hbase-replication <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ hbase-replication ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.517 s
+[INFO] Finished at: 2026-10-28T09:10:35-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3284
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 3.3 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl#testHfileRefsReplicationQueues' -pl hbase-replication
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:10:36.016Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------------< org.apache.hbase:hbase-replication >-----------------
+[INFO] Building Apache HBase - Replication 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ hbase-replication >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-replication ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-replication ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-replication ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-replication ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-replication ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-replication ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ hbase-replication <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ hbase-replication ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:10:39,697 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl timeout: 13 mins
+2026-10-28 09:10:39,814 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/b8988e9f-1698-7200-82a9-ef663337aa84/cluster_228ce316-b807-0478-83e9-a65becb38514, deleteOnExit=true
+2026-10-28 09:10:39,919 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/b8988e9f-1698-7200-82a9-ef663337aa84/cluster_228ce316-b807-0478-83e9-a65becb38514/zookeeper_0, clientPort=65225, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/b8988e9f-1698-7200-82a9-ef663337aa84/cluster_228ce316-b807-0478-83e9-a65becb38514/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/test-data/b8988e9f-1698-7200-82a9-ef663337aa84/cluster_228ce316-b807-0478-83e9-a65becb38514/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:10:39,929 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=65225
+2026-10-28 09:10:39,938 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=testing utility connecting to ZooKeeper ensemble=127.0.0.1:65225
+2026-10-28 09:10:39,951 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:65225
+2026-10-28 09:10:39,973 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility0x0, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:39,973 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:65225, baseZNode=/hbase1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:39,976 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): testing utility-0x100030c6db40000 connected
+2026-10-28 09:10:39,976 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c6db40001 connected
+2026-10-28 09:10:40,024 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=test1 connecting to ZooKeeper ensemble=127.0.0.1:65225
+2026-10-28 09:10:40,031 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): test10x0, quorum=127.0.0.1:65225, baseZNode=/hbase2 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:10:40,031 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): test1-0x100030c6db40002 connected
+[INFO] Running org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+2026-10-28 09:10:40,093 INFO  [Time-limited test] replication.ZKReplicationQueueStorage(554): Adding peer 1 to hfile reference queue.
+2026-10-28 09:10:40,101 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(583): Adding hfile references [{null,file_1}, {null,file_2}, {null,file_3}] in queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:40,107 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(587): The multi list size for adding hfile references in zk for node /hbase/replication/hfile-refs/1 is 3
+2026-10-28 09:10:40,113 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_2, file_3] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:40,114 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 2
+2026-10-28 09:10:40,120 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(599): Removing hfile references [file_1] from queue /hbase/replication/hfile-refs/1
+2026-10-28 09:10:40,120 DEBUG [Time-limited test] replication.ZKReplicationQueueStorage(603): The multi list size for removing hfile references in zk for node /hbase/replication/hfile-refs/1 is 1
+2026-10-28 09:10:40,126 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:40,126 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:40,127 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:40,134 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/new-sync-rep-state
+2026-10-28 09:10:40,134 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:40,134 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/peer-state
+2026-10-28 09:10:40,134 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1/sync-rep-state
+2026-10-28 09:10:40,135 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers/1
+2026-10-28 09:10:40,136 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/peers
+2026-10-28 09:10:40,136 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs
+2026-10-28 09:10:40,139 DEBUG [Time-limited test] zookeeper.ZKUtil(356): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Set watcher on existing znode=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:40,143 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs/1
+2026-10-28 09:10:40,144 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:40,144 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/hfile-refs
+2026-10-28 09:10:40,144 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:40,144 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication/peers
+2026-10-28 09:10:40,144 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): testing utility-0x100030c6db40000, quorum=127.0.0.1:65225, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/hbase/replication
+2026-10-28 09:10:40,158 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 s - in org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.823 s
+[INFO] Finished at: 2026-10-28T09:10:40-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4543
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 4.5 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl#testHfileRefsReplicationQueues' -pl hbase-replication
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:10:40.561Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------------< org.apache.hbase:hbase-replication >-----------------
+[INFO] Building Apache HBase - Replication 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ hbase-replication >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-replication ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-replication ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-replication ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-replication ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-replication ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-replication ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-replication ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-replication ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-replication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ hbase-replication <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ hbase-replication ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.514 s
+[INFO] Finished at: 2026-10-28T09:10:43-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project hbase-replication: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-replication/.flakesync/Results-CritSearch/org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=3247
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 3.2 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 28.2 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hbase__881c92b89284__hbase-replication\flakesync\org.apache.hadoop.hbase.replication.TestReplicationStateZKImpl.testHfileRefsReplicationQueues\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 267, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

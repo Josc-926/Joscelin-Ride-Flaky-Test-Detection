@@ -1,0 +1,853 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/fromage/redpipe
+# SHA: 0aff891d6befdf0dcc2bdbfda22262cdf82ac66f
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - net.redpipe.templating.freemarker.ApiTest.checkMail   [module: redpipe-templating-freemarker] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/fromage_redpipe__0aff891d6bef__redpipe-templating-freemarker/2026-10-29_02-42-22/flakesync.net.redpipe.templating.freemarker.ApiTest.checkMail.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : fromage/redpipe   https://github.com/fromage/redpipe
+# commit         : 0aff891d6befdf0dcc2bdbfda22262cdf82ac66f
+# module         : redpipe-templating-freemarker
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : net.redpipe.templating.freemarker.ApiTest.checkMail
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\fromage_redpipe__0aff891d6bef__redpipe-templating-freemarker\logs\flakesync.net.redpipe.templating.freemarker.ApiTest.checkMail.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\fromage_redpipe__0aff891d6bef__redpipe-templating-freemarker\flakesync\net.redpipe.templating.freemarker.ApiTest.checkMail\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\fromage__redpipe__0aff891d6bef
+# written        : 2026-10-29T11:25:18.308Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=net.redpipe.templating.freemarker.ApiTest#checkMail' -pl redpipe-templating-freemarker
+# cwd     : /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef
+# started : 2026-10-29T11:25:18.319Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< net.redpipe:redpipe-templating-freemarker >--------------
+[INFO] Building redpipe-templating-freemarker 0.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ redpipe-templating-freemarker >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.21.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ redpipe-templating-freemarker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ redpipe-templating-freemarker ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ redpipe-templating-freemarker <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ redpipe-templating-freemarker ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_PysVKv7wduaaaaUBLj0y3lkfKwEoVVgSA90osfOnPjY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+java.util.ServiceConfigurationError: net.redpipe.engine.template.TemplateRenderer: Provider net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer could not be instantiated
+	at java.base/java.util.ServiceLoader.fail(ServiceLoader.java:582)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:804)
+	at java.base/java.util.ServiceLoader$ProviderImpl.get(ServiceLoader.java:722)
+	at java.base/java.util.ServiceLoader$3.next(ServiceLoader.java:1395)
+	at net.redpipe.engine.core.Server.lambda$setupTemplateRenderers$5(Server.java:161)
+	at io.reactivex.internal.operators.completable.CompletableDefer.subscribeActual(CompletableDefer.java:36)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray$ConcatInnerObserver.next(CompletableConcatArray.java:89)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray.subscribeActual(CompletableConcatArray.java:33)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.single.SingleDelayWithCompletable.subscribeActual(SingleDelayWithCompletable.java:36)
+	at io.reactivex.Single.subscribe(Single.java:3310)
+	at io.reactivex.internal.operators.single.SingleFlatMapCompletable.subscribeActual(SingleFlatMapCompletable.java:44)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.Completable.subscribe(Completable.java:1988)
+	at net.redpipe.templating.freemarker.ApiTest.prepare(ApiTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.invokeTestMethod(VertxUnitRunner.java:95)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.lambda$invokeExplosively$0(VertxUnitRunner.java:114)
+	at io.vertx.ext.unit.impl.TestContextImpl$Step.run(TestContextImpl.java:128)
+	at io.vertx.ext.unit.impl.TestContextImpl$Step.access$200(TestContextImpl.java:30)
+	at io.vertx.ext.unit.impl.TestContextImpl.run(TestContextImpl.java:237)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.invokeExplosively(VertxUnitRunner.java:130)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.access$000(VertxUnitRunner.java:39)
+	at io.vertx.ext.unit.junit.VertxUnitRunner$2.evaluate(VertxUnitRunner.java:194)
+	at io.vertx.ext.unit.junit.VertxUnitRunner$3.evaluate(VertxUnitRunner.java:211)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:254)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:149)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for freemarker.log.Logger. (freemarker.log.Logger is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at freemarker.template.Configuration.<clinit>(Configuration.java:125)
+	at io.vertx.ext.web.templ.impl.FreeMarkerTemplateEngineImpl.<init>(FreeMarkerTemplateEngineImpl.java:46)
+	at io.vertx.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:47)
+	at io.vertx.reactivex.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:79)
+	at net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer.<init>(FreeMarkerTemplateRenderer.java:18)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:780)
+	... 42 more
+io.reactivex.exceptions.UndeliverableException: java.util.ServiceConfigurationError: net.redpipe.engine.template.TemplateRenderer: Provider net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer could not be instantiated
+	at io.reactivex.plugins.RxJavaPlugins.onError(RxJavaPlugins.java:367)
+	at io.reactivex.internal.observers.CallbackCompletableObserver.onError(CallbackCompletableObserver.java:68)
+	at io.reactivex.internal.operators.single.SingleFlatMapCompletable$FlatMapCompletableObserver.onError(SingleFlatMapCompletable.java:97)
+	at io.reactivex.internal.operators.single.SingleDelayWithCompletable$OtherObserver.onError(SingleDelayWithCompletable.java:65)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray$ConcatInnerObserver.onError(CompletableConcatArray.java:60)
+	at io.reactiverse.reactivecontexts.propagators.rxjava2.ContextPropagatorOnCompletableCreateAction$ContextCapturerCompletable.onError(ContextPropagatorOnCompletableCreateAction.java:32)
+	at io.reactivex.internal.disposables.EmptyDisposable.error(EmptyDisposable.java:73)
+	at io.reactivex.internal.operators.completable.CompletableDefer.subscribeActual(CompletableDefer.java:39)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray$ConcatInnerObserver.next(CompletableConcatArray.java:89)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray.subscribeActual(CompletableConcatArray.java:33)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.single.SingleDelayWithCompletable.subscribeActual(SingleDelayWithCompletable.java:36)
+	at io.reactivex.Single.subscribe(Single.java:3310)
+	at io.reactivex.internal.operators.single.SingleFlatMapCompletable.subscribeActual(SingleFlatMapCompletable.java:44)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.Completable.subscribe(Completable.java:1988)
+	at net.redpipe.templating.freemarker.ApiTest.prepare(ApiTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.invokeTestMethod(VertxUnitRunner.java:95)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.lambda$invokeExplosively$0(VertxUnitRunner.java:114)
+	at io.vertx.ext.unit.impl.TestContextImpl$Step.run(TestContextImpl.java:128)
+	at io.vertx.ext.unit.impl.TestContextImpl$Step.access$200(TestContextImpl.java:30)
+	at io.vertx.ext.unit.impl.TestContextImpl.run(TestContextImpl.java:237)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.invokeExplosively(VertxUnitRunner.java:130)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.access$000(VertxUnitRunner.java:39)
+	at io.vertx.ext.unit.junit.VertxUnitRunner$2.evaluate(VertxUnitRunner.java:194)
+	at io.vertx.ext.unit.junit.VertxUnitRunner$3.evaluate(VertxUnitRunner.java:211)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:254)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:149)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.util.ServiceConfigurationError: net.redpipe.engine.template.TemplateRenderer: Provider net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer could not be instantiated
+	at java.base/java.util.ServiceLoader.fail(ServiceLoader.java:582)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:804)
+	at java.base/java.util.ServiceLoader$ProviderImpl.get(ServiceLoader.java:722)
+	at java.base/java.util.ServiceLoader$3.next(ServiceLoader.java:1395)
+	at net.redpipe.engine.core.Server.lambda$setupTemplateRenderers$5(Server.java:161)
+	at io.reactivex.internal.operators.completable.CompletableDefer.subscribeActual(CompletableDefer.java:36)
+	... 38 more
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for freemarker.log.Logger. (freemarker.log.Logger is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at freemarker.template.Configuration.<clinit>(Configuration.java:125)
+	at io.vertx.ext.web.templ.impl.FreeMarkerTemplateEngineImpl.<init>(FreeMarkerTemplateEngineImpl.java:46)
+	at io.vertx.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:47)
+	at io.vertx.reactivex.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:79)
+	at net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer.<init>(FreeMarkerTemplateRenderer.java:18)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:780)
+	... 42 more
+Exception in thread "main" io.reactivex.exceptions.UndeliverableException: java.util.ServiceConfigurationError: net.redpipe.engine.template.TemplateRenderer: Provider net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer could not be instantiated
+	at io.reactivex.plugins.RxJavaPlugins.onError(RxJavaPlugins.java:367)
+	at io.reactivex.internal.observers.CallbackCompletableObserver.onError(CallbackCompletableObserver.java:68)
+	at io.reactivex.internal.operators.single.SingleFlatMapCompletable$FlatMapCompletableObserver.onError(SingleFlatMapCompletable.java:97)
+	at io.reactivex.internal.operators.single.SingleDelayWithCompletable$OtherObserver.onError(SingleDelayWithCompletable.java:65)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray$ConcatInnerObserver.onError(CompletableConcatArray.java:60)
+	at io.reactiverse.reactivecontexts.propagators.rxjava2.ContextPropagatorOnCompletableCreateAction$ContextCapturerCompletable.onError(ContextPropagatorOnCompletableCreateAction.java:32)
+	at io.reactivex.internal.disposables.EmptyDisposable.error(EmptyDisposable.java:73)
+	at io.reactivex.internal.operators.completable.CompletableDefer.subscribeActual(CompletableDefer.java:39)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray$ConcatInnerObserver.next(CompletableConcatArray.java:89)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray.subscribeActual(CompletableConcatArray.java:33)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.single.SingleDelayWithCompletable.subscribeActual(SingleDelayWithCompletable.java:36)
+	at io.reactivex.Single.subscribe(Single.java:3310)
+	at io.reactivex.internal.operators.single.SingleFlatMapCompletable.subscribeActual(SingleFlatMapCompletable.java:44)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.Completable.subscribe(Completable.java:1988)
+	at net.redpipe.templating.freemarker.ApiTest.prepare(ApiTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.invokeTestMethod(VertxUnitRunner.java:95)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.lambda$invokeExplosively$0(VertxUnitRunner.java:114)
+	at io.vertx.ext.unit.impl.TestContextImpl$Step.run(TestContextImpl.java:128)
+	at io.vertx.ext.unit.impl.TestContextImpl$Step.access$200(TestContextImpl.java:30)
+	at io.vertx.ext.unit.impl.TestContextImpl.run(TestContextImpl.java:237)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.invokeExplosively(VertxUnitRunner.java:130)
+	at io.vertx.ext.unit.junit.VertxUnitRunner.access$000(VertxUnitRunner.java:39)
+	at io.vertx.ext.unit.junit.VertxUnitRunner$2.evaluate(VertxUnitRunner.java:194)
+	at io.vertx.ext.unit.junit.VertxUnitRunner$3.evaluate(VertxUnitRunner.java:211)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:254)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:149)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.util.ServiceConfigurationError: net.redpipe.engine.template.TemplateRenderer: Provider net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer could not be instantiated
+	at java.base/java.util.ServiceLoader.fail(ServiceLoader.java:582)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:804)
+	at java.base/java.util.ServiceLoader$ProviderImpl.get(ServiceLoader.java:722)
+	at java.base/java.util.ServiceLoader$3.next(ServiceLoader.java:1395)
+	at net.redpipe.engine.core.Server.lambda$setupTemplateRenderers$5(Server.java:161)
+	at io.reactivex.internal.operators.completable.CompletableDefer.subscribeActual(CompletableDefer.java:36)
+	... 38 more
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for freemarker.log.Logger. (freemarker.log.Logger is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at freemarker.template.Configuration.<clinit>(Configuration.java:125)
+	at io.vertx.ext.web.templ.impl.FreeMarkerTemplateEngineImpl.<init>(FreeMarkerTemplateEngineImpl.java:46)
+	at io.vertx.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:47)
+	at io.vertx.reactivex.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:79)
+	at net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer.<init>(FreeMarkerTemplateRenderer.java:18)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:780)
+	... 42 more
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.366 sec <<< FAILURE! - in net.redpipe.templating.freemarker.ApiTest
+checkMail(net.redpipe.templating.freemarker.ApiTest)  Time elapsed: 0.324 sec  <<< ERROR!
+java.util.ServiceConfigurationError: net.redpipe.engine.template.TemplateRenderer: Provider net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer could not be instantiated
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at freemarker.template.Configuration.<clinit>(Configuration.java:125)
+	at io.vertx.ext.web.templ.impl.FreeMarkerTemplateEngineImpl.<init>(FreeMarkerTemplateEngineImpl.java:46)
+	at io.vertx.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:47)
+	at io.vertx.reactivex.ext.web.templ.FreeMarkerTemplateEngine.create(FreeMarkerTemplateEngine.java:79)
+	at net.redpipe.templating.freemarker.FreeMarkerTemplateRenderer.<init>(FreeMarkerTemplateRenderer.java:18)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:780)
+	at java.base/java.util.ServiceLoader$ProviderImpl.get(ServiceLoader.java:722)
+	at java.base/java.util.ServiceLoader$3.next(ServiceLoader.java:1395)
+	at net.redpipe.engine.core.Server.lambda$setupTemplateRenderers$5(Server.java:161)
+	at io.reactivex.internal.operators.completable.CompletableDefer.subscribeActual(CompletableDefer.java:36)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray$ConcatInnerObserver.next(CompletableConcatArray.java:89)
+	at io.reactivex.internal.operators.completable.CompletableConcatArray.subscribeActual(CompletableConcatArray.java:33)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.internal.operators.single.SingleDelayWithCompletable.subscribeActual(SingleDelayWithCompletable.java:36)
+	at io.reactivex.Single.subscribe(Single.java:3310)
+	at io.reactivex.internal.operators.single.SingleFlatMapCompletable.subscribeActual(SingleFlatMapCompletable.java:44)
+	at io.reactivex.Completable.subscribe(Completable.java:1919)
+	at io.reactivex.Completable.subscribe(Completable.java:1988)
+	at net.redpipe.templating.freemarker.ApiTest.prepare(ApiTest.java:37)
+
+checkMail(net.redpipe.templating.freemarker.ApiTest)  Time elapsed: 0.325 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at net.redpipe.templating.freemarker.ApiTest.finish(ApiTest.java:50)
+
+
+Results :
+
+Tests in error: 
+  ApiTest.prepare:37 » ServiceConfiguration net.redpipe.engine.template.Template...
+  ApiTest.finish:50 NullPointer
+
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_PysVKv7wduaaaaUBLj0y3lkfKwEoVVgSA90osfOnPjY= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.415 s
+[INFO] Finished at: 2026-10-29T06:25:20-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2125
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 2.1 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=net.redpipe.templating.freemarker.ApiTest#checkMail' -pl redpipe-templating-freemarker
+# cwd     : /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef
+# started : 2026-10-29T11:25:20.447Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< net.redpipe:redpipe-templating-freemarker >--------------
+[INFO] Building redpipe-templating-freemarker 0.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ redpipe-templating-freemarker >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.21.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ redpipe-templating-freemarker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ redpipe-templating-freemarker ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ redpipe-templating-freemarker <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ redpipe-templating-freemarker ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_oWd7stp1+dg5h1nHeYEesxENkQsdosRcrj+turdIJEc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:22 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:22 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:22 AM org.reflections.Reflections scan
+INFO: Reflections took 14 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:22 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:22 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 196931270
+Got variants for txt
+Got variants for html
+body: null
+using mailer 196931270
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.103 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_3qFjvdvfhneanzd952IiPbch0rrlprUJ5bewuq2cYuY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:23 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:23 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:24 AM org.reflections.Reflections scan
+INFO: Reflections took 19 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:24 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:24 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 82248123
+Got variants for txt
+Got variants for html
+body: null
+using mailer 82248123
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.08 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_svp3CpbKCeAz87cOWALU0nHkBRJMpDiW+8OPDBrM1U=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:25 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:25 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:25 AM org.reflections.Reflections scan
+INFO: Reflections took 15 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:25 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:25 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 200301172
+Got variants for txt
+Got variants for html
+body: null
+using mailer 200301172
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.118 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_3xfW5Un6j1NcvWaIv6gxnU2Ks2D2P4ipNjBGEp3QM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:26 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:26 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:26 AM org.reflections.Reflections scan
+INFO: Reflections took 19 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:26 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:26 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 1559543815
+Got variants for txt
+Got variants for html
+body: null
+using mailer 1559543815
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.071 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_8PQOlP03SUgU+uDgu0K1nzpXzrkNVRiD0bGgEctkJA=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:27 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:27 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:27 AM org.reflections.Reflections scan
+INFO: Reflections took 20 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:27 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:28 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 82248123
+Got variants for txt
+Got variants for html
+body: null
+using mailer 82248123
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.082 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_slwHnczKbl65EsP8LHKtm6yO+lNujPXLkhDho1Fvo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:29 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:29 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:29 AM org.reflections.Reflections scan
+INFO: Reflections took 14 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:29 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:29 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 1823226962
+Got variants for txt
+Got variants for html
+body: null
+using mailer 1823226962
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.093 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_gfZqKK4eGQlVlXpE3im7a1wTWEkuuN2iMSxej0kFWw=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:30 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:30 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:30 AM org.reflections.Reflections scan
+INFO: Reflections took 24 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:30 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:30 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 1921747019
+Got variants for txt
+Got variants for html
+body: null
+using mailer 1921747019
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.123 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_mw9WPWyebP9ZFPX5xoLJpKVDYFPerl1jFZDz1P2q9+4=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:31 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:31 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:31 AM org.reflections.Reflections scan
+INFO: Reflections took 15 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:31 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:31 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 2082606896
+Got variants for txt
+Got variants for html
+body: null
+using mailer 2082606896
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.129 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.229 s
+[INFO] Finished at: 2026-10-29T06:25:32-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=11937
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 11.9 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=net.redpipe.templating.freemarker.ApiTest#checkMail' -pl redpipe-templating-freemarker
+# cwd     : /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef
+# started : 2026-10-29T11:25:32.386Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< net.redpipe:redpipe-templating-freemarker >--------------
+[INFO] Building redpipe-templating-freemarker 0.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ redpipe-templating-freemarker >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.21.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ redpipe-templating-freemarker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ redpipe-templating-freemarker ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ redpipe-templating-freemarker <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ redpipe-templating-freemarker ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.706 s
+[INFO] Finished at: 2026-10-29T06:25:33-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1466
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.5 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=net.redpipe.templating.freemarker.ApiTest#checkMail' -pl redpipe-templating-freemarker
+# cwd     : /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef
+# started : 2026-10-29T11:25:33.854Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< net.redpipe:redpipe-templating-freemarker >--------------
+[INFO] Building redpipe-templating-freemarker 0.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ redpipe-templating-freemarker >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.21.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ redpipe-templating-freemarker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ redpipe-templating-freemarker ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ redpipe-templating-freemarker <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ redpipe-templating-freemarker ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/clean_963W4ZWKCd+TYu6iwL3GNjo4xqwRFZyvI5DBDXCyKDo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.redpipe.templating.freemarker.ApiTest
+/home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/conf/config.json
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/ectopic/.m2/repository/io/netty/netty-common/4.1.19.Final/netty-common-4.1.19.Final.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 29, 2026 6:25:35 AM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 6.0.13.Final
+Oct 29, 2026 6:25:35 AM org.jboss.resteasy.plugins.validation.AbstractValidatorContextResolver getValidatorFactory
+INFO: RESTEASY008550: Unable to find CDI supporting ValidatorFactory. Using default ValidatorFactory
+Oct 29, 2026 6:25:36 AM org.reflections.Reflections scan
+INFO: Reflections took 17 ms to scan 2 urls, producing 8 keys and 8 values 
+Oct 29, 2026 6:25:36 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: MLog clients using slf4j logging.
+Oct 29, 2026 6:25:36 AM com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger log
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Server started on port 9000
+new MockMailer 643821325
+Got variants for txt
+Got variants for html
+body: null
+using mailer 643821325
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.085 sec - in net.redpipe.templating.freemarker.ApiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.181 s
+[INFO] Finished at: 2026-10-29T06:25:36-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2869
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 2.9 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=net.redpipe.templating.freemarker.ApiTest#checkMail' -pl redpipe-templating-freemarker
+# cwd     : /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef
+# started : 2026-10-29T11:25:36.725Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< net.redpipe:redpipe-templating-freemarker >--------------
+[INFO] Building redpipe-templating-freemarker 0.0.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ redpipe-templating-freemarker >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.21.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ redpipe-templating-freemarker ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ redpipe-templating-freemarker ---
+[INFO] Copying 8 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ redpipe-templating-freemarker ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ redpipe-templating-freemarker <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ redpipe-templating-freemarker ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.708 s
+[INFO] Finished at: 2026-10-29T06:25:38-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project redpipe-templating-freemarker: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/fromage__redpipe__0aff891d6bef/redpipe-templating-freemarker/.flakesync/Results-CritSearch/net.redpipe.templating.freemarker.ApiTest.checkMail-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1431
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.4 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 19.8 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\fromage_redpipe__0aff891d6bef__redpipe-templating-freemarker\flakesync\net.redpipe.templating.freemarker.ApiTest.checkMail\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

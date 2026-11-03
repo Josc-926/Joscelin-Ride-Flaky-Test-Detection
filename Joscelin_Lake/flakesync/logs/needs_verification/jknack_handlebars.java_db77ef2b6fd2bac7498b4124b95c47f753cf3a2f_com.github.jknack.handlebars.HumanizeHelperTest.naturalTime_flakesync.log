@@ -1,0 +1,461 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/jknack/handlebars.java
+# SHA: db77ef2b6fd2bac7498b4124b95c47f753cf3a2f
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.github.jknack.handlebars.HumanizeHelperTest.naturalTime   [module: handlebars-humanize] [found by: FlakeSync] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/jknack_handlebars.java__db77ef2b6fd2__handlebars-humanize/2026-10-29_02-42-22/flakesync.com.github.jknack.handlebars.HumanizeHelperTest.naturalTime.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : jknack/handlebars.java   https://github.com/jknack/handlebars.java
+# commit         : db77ef2b6fd2bac7498b4124b95c47f753cf3a2f
+# module         : handlebars-humanize
+# dataset        : flakeflagger
+# run            : 2026-10-29_02-42-22
+# test           : com.github.jknack.handlebars.HumanizeHelperTest.naturalTime
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\flakeflagger\jknack_handlebars.java__db77ef2b6fd2__handlebars-humanize\logs\flakesync.com.github.jknack.handlebars.HumanizeHelperTest.naturalTime.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\flakeflagger\jknack_handlebars.java__db77ef2b6fd2__handlebars-humanize\flakesync\com.github.jknack.handlebars.HumanizeHelperTest.naturalTime\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\jknack__handlebars.java__db77ef2b6fd2
+# written        : 2026-10-30T17:46:34.606Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.github.jknack.handlebars.HumanizeHelperTest#naturalTime' -pl handlebars-humanize
+# cwd     : /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2
+# started : 2026-10-30T17:46:34.618Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.github.jknack:handlebars-humanize >----------------
+[INFO] Building Humanize helpers 0.10.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ handlebars-humanize >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:testCompile (default-testCompile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ handlebars-humanize <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ handlebars-humanize ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_1bAEksnsri+1vmisKdPrgHtT615ZUXAA+9LPRDtmwcg=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:37.199 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:37.201 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.129 sec <<< FAILURE!
+naturalTime(com.github.jknack.handlebars.HumanizeHelperTest)  Time elapsed: 1019 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.antlr.v4.runtime.atn.PredictionContext. (org.antlr.v4.runtime.atn.PredictionContext is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.github.jknack.handlebars.internal.HbsLexer.<clinit>(HbsLexer.java:15)
+	at com.github.jknack.handlebars.internal.HbsParserFactory$1.parse(HbsParserFactory.java:67)
+	at com.github.jknack.handlebars.Handlebars.compile(Handlebars.java:449)
+	at com.github.jknack.handlebars.Handlebars.compile(Handlebars.java:421)
+	at com.github.jknack.handlebars.Handlebars.compile(Handlebars.java:407)
+	at com.github.jknack.handlebars.HumanizeHelperTest.naturalTime(HumanizeHelperTest.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:242)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:137)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+
+Results :
+
+Tests in error: 
+  naturalTime(com.github.jknack.handlebars.HumanizeHelperTest): loader 'app' attempted duplicate abstract class definition for org.antlr.v4.runtime.atn.PredictionContext. (org.antlr.v4.runtime.atn.PredictionContext is in unnamed module of loader 'app')
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_1bAEksnsri+1vmisKdPrgHtT615ZUXAA+9LPRDtmwcg= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.924 s
+[INFO] Finished at: 2026-10-30T12:46:37-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2953
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.github.jknack.handlebars.HumanizeHelperTest#naturalTime' -pl handlebars-humanize
+# cwd     : /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2
+# started : 2026-10-30T17:46:37.871Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.github.jknack:handlebars-humanize >----------------
+[INFO] Building Humanize helpers 0.10.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ handlebars-humanize >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:testCompile (default-testCompile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ handlebars-humanize <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ handlebars-humanize ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_Il7d7Gcwpe28zEp9+9wj8C+oDZbbl0wo5NZmX1wlR8=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:40.342 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:40.344 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:40.366 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.154 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_ocrxbVdNTe13hAvih6aBm61X7D+YFD06VIN879W1+6Y=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:41.629 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:41.630 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:41.655 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.162 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_c3nYUmFJlBCNhlZ40gGTLwiCK8l5wHrzIDSHBopfkM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:42.933 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:42.935 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:42.959 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.165 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_774MwjvQXqZlvM9fAERsNXGmaIjxjmb4lwwofkOYM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:44.224 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:44.225 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:44.248 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.171 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_bwxbqMXdhv7EtgulkQ9CWQ3t1OVwTHUnIrQiCNwx8g=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:45.516 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:45.517 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:45.541 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.169 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_FQ5UScJLH8tVPjEaSmQJyJr1plNJ5e65K1QM1sKxI=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:46.806 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:46.807 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:46.831 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.174 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_B8fc1kbvUZEohCMFfhCwNLn6B7UZTlhcE+UoH4QjrDk=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:48.103 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:48.104 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:48.129 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.169 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_iRYlrfyW1bt4veW0U2H6a9slkcGWhRnvmlxRGVUc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:49.390 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:49.391 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:49.416 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.166 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.916 s
+[INFO] Finished at: 2026-10-30T12:46:49-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=11868
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 11.9 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.github.jknack.handlebars.HumanizeHelperTest#naturalTime' -pl handlebars-humanize
+# cwd     : /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2
+# started : 2026-10-30T17:46:49.740Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.github.jknack:handlebars-humanize >----------------
+[INFO] Building Humanize helpers 0.10.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ handlebars-humanize >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:testCompile (default-testCompile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ handlebars-humanize <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ handlebars-humanize ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.426 s
+[INFO] Finished at: 2026-10-30T12:46:50-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1176
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.2 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.github.jknack.handlebars.HumanizeHelperTest#naturalTime' -pl handlebars-humanize
+# cwd     : /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2
+# started : 2026-10-30T17:46:50.917Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.github.jknack:handlebars-humanize >----------------
+[INFO] Building Humanize helpers 0.10.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ handlebars-humanize >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:testCompile (default-testCompile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ handlebars-humanize <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ handlebars-humanize ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/clean_F0zAXKChBLHQF7hBodjyQ23rINeHlNTDhnbklgmrk=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.jknack.handlebars.HumanizeHelperTest
+12:46:53.397 [main] DEBUG c.g.jknack.handlebars.Handlebars - Looking for: inline@{{-317252347}}
+12:46:53.398 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key not found: inline@{{-317252347}}
+12:46:53.422 [main] DEBUG c.g.jknack.handlebars.Handlebars - Key saved: inline@{{-317252347}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.169 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.898 s
+[INFO] Finished at: 2026-10-30T12:46:53-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3129
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 3.1 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.github.jknack.handlebars.HumanizeHelperTest#naturalTime' -pl handlebars-humanize
+# cwd     : /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2
+# started : 2026-10-30T17:46:54.048Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.github.jknack:handlebars-humanize >----------------
+[INFO] Building Humanize helpers 0.10.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ handlebars-humanize >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ handlebars-humanize ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:testCompile (default-testCompile) @ handlebars-humanize ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ handlebars-humanize <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ handlebars-humanize ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.453 s
+[INFO] Finished at: 2026-10-30T12:46:55-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project handlebars-humanize: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/jknack__handlebars.java__db77ef2b6fd2/handlebars-humanize/.flakesync/Results-CritSearch/com.github.jknack.handlebars.HumanizeHelperTest.naturalTime-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1436
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.4 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 20.6 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\flakeflagger\jknack_handlebars.java__db77ef2b6fd2__handlebars-humanize\flakesync\com.github.jknack.handlebars.HumanizeHelperTest.naturalTime\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

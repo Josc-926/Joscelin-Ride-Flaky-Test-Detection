@@ -1,0 +1,86 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/alibaba/nacos
+# SHA: 0ac96e1602baf1f516c3c614f13523adb2992e69
+# Flaky tests iDFlakies found in this log (1):
+#   - com.alibaba.nacos.common.utils.PropertyUtilsTest.getPropertyWithDefaultValue   [module: common] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/alibaba_nacos__0ac96e1602ba__common/2026-10-28_00-07-13/idflakies.log
+#==============================================================================
+
+$ mvn -B -pl common edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba
+# started: 2026-10-28T00:07:59.925Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.alibaba.nacos:nacos-common >-------------------
+[INFO] Building nacos-common 2.1.1 2.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ nacos-common >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-ban-circular-dependencies) @ nacos-common ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ nacos-common ---
+[WARNING] Old version of checkstyle detected. Consider updating to >= v8.30
+[WARNING] For more information see: https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/upgrading-checkstyle.html
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (default-prepare-agent) @ nacos-common ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/target/coverage-reports/jacoco-unit.exec,append=true,output=file
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ nacos-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ nacos-common ---
+[INFO] Generating flattened POM of project com.alibaba.nacos:nacos-common:jar:2.1.1...
+[INFO] 
+[INFO] --- compiler:3.5.1:compile (default-compile) @ nacos-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 179 source files to /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/src/main/java/com/alibaba/nacos/common/spi/NacosServiceLoader.java:[85,25] newInstance() in java.lang.Class has been deprecated
+[WARNING] /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/src/main/java/com/alibaba/nacos/common/model/RestResultUtils.java:[64,49] com.alibaba.nacos.common.model.core.IResultCode in com.alibaba.nacos.common.model.core has been deprecated
+[WARNING] /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/src/main/java/com/alibaba/nacos/common/notify/NotifyCenter.java:[89,49] newInstance() in java.lang.Class has been deprecated
+[INFO] /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/src/main/java/com/alibaba/nacos/common/remote/client/grpc/GrpcConnection.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/src/main/java/com/alibaba/nacos/common/remote/client/grpc/GrpcConnection.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ nacos-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.5.1:testCompile (default-testCompile) @ nacos-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ nacos-common <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ nacos-common ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving com.alibaba.nacos:nacos-common:2.1.1 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 276 tests. Time taken: 0.41499996185302734 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/.dtfixingtools/original-order
+[INFO] Getting original results (276 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 3 (0.0 seconds elapsed (44.4 total), 0.0 seconds remaining).
+Verified com.alibaba.nacos.common.utils.PropertyUtilsTest.getPropertyWithDefaultValue, status: expected PASS, got PASS
+Verified com.alibaba.nacos.common.utils.PropertyUtilsTest.getPropertyWithDefaultValue, status: expected FAILURE, got FAILURE
+[INFO] Found 1 tests in round 2 of 3 (44.4 seconds elapsed (101.3 total), 22.2 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (0.0 seconds elapsed (144.0 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/alibaba__nacos__0ac96e1602ba/common/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:22 min
+[INFO] Finished at: 2026-10-27T19:11:22-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=203038

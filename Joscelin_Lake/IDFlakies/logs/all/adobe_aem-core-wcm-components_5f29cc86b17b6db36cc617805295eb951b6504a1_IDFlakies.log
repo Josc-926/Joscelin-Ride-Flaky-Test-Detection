@@ -1,0 +1,102 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/adobe/aem-core-wcm-components
+# SHA: 5f29cc86b17b6db36cc617805295eb951b6504a1
+# Flaky tests iDFlakies found in this log (2):
+#   - com.adobe.cq.wcm.core.components.internal.models.v1.form.ContainerImplTest#testFormWithCustomAttributesAndFields()   [module: bundles/core] [found by: iDFlakies] [in IDoFT: No]
+#   - com.adobe.cq.wcm.core.components.internal.models.v1.form.TextImplTest#testDefaultInput()   [module: bundles/core] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/adobe_aem-core-wcm-components__5f29cc86b17b__bundles_core/2026-10-15_03-33-05/idflakies.log
+#==============================================================================
+
+$ mvn -B -pl bundles/core edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/adobe__aem-core-wcm-components__5f29cc86b17b
+# started: 2026-10-15T04:37:36.909Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.adobe.cq:core.wcm.components.core >----------------
+[INFO] Building Adobe Experience Manager Core WCM Components Core Bundle 2.17.13-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ core.wcm.components.core >>>
+[WARNING] The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available: 1 problem was encountered while building the effective model for com.sun.xml.bind:jaxb-core:2.2.11
+[ERROR] 'dependencyManagement.dependencies.dependency.systemPath' for com.sun:tools:jar must specify an absolute path but is ${tools.jar} @ 
+
+[WARNING] The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available: 1 problem was encountered while building the effective model for com.sun.xml.bind:jaxb-impl:2.2.11
+[ERROR] 'dependencyManagement.dependencies.dependency.systemPath' for com.sun:tools:jar must specify an absolute path but is ${tools.jar} @ 
+
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven) @ core.wcm.components.core ---
+[INFO] 
+[INFO] --- resources:2.7:resources (default-resources) @ core.wcm.components.core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/adobe__aem-core-wcm-components__5f29cc86b17b/bundles/core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ core.wcm.components.core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:4.2.1:manifest (scr-metadata) @ core.wcm.components.core ---
+[INFO] Stale files detected, re-generating manifest.
+[INFO] 
+[INFO] >>> spotbugs:4.0.4:check (find-bugs) > :spotbugs @ core.wcm.components.core >>>
+[INFO] 
+[INFO] --- spotbugs:4.0.4:spotbugs (spotbugs) @ core.wcm.components.core ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] 
+[INFO] <<< spotbugs:4.0.4:check (find-bugs) < :spotbugs @ core.wcm.components.core <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.0.4:check (find-bugs) @ core.wcm.components.core ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] --- jacoco:0.8.3:instrument (default-instrument) @ core.wcm.components.core ---
+[INFO] 
+[INFO] --- resources:2.7:testResources (default-testResources) @ core.wcm.components.core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 462 resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ core.wcm.components.core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ core.wcm.components.core <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ core.wcm.components.core ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving com.adobe.cq:core.wcm.components.core:2.17.13-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 774 tests. Time taken: 1.9509999752044678 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/adobe__aem-core-wcm-components__5f29cc86b17b/bundles/core/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/adobe__aem-core-wcm-components__5f29cc86b17b/bundles/core/.dtfixingtools/original-order
+[INFO] Getting original results (774 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified com.adobe.cq.wcm.core.components.internal.models.v1.form.TextImplTest#testDefaultInput(), status: expected PASS, got PASS
+Verified com.adobe.cq.wcm.core.components.internal.models.v1.form.TextImplTest#testDefaultInput(), status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 1 of 10 (0.0 seconds elapsed (166.3 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 2 of 10 (0.0 seconds elapsed (238.3 total), 0.0 seconds remaining).
+Verified com.adobe.cq.wcm.core.components.internal.models.v1.form.ContainerImplTest#testFormWithCustomAttributesAndFields(), status: expected ERROR, got ERROR
+Verified com.adobe.cq.wcm.core.components.internal.models.v1.form.ContainerImplTest#testFormWithCustomAttributesAndFields(), status: expected PASS, got PASS
+[INFO] Found 1 tests in round 3 of 10 (72.0 seconds elapsed (410.1 total), 167.9 seconds remaining).
+[INFO] Found 0 tests in round 4 of 10 (0.0 seconds elapsed (481.1 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (71.0 seconds elapsed (554.7 total), 71.0 seconds remaining).
+[INFO] Found 0 tests in round 6 of 10 (144.6 seconds elapsed (625.3 total), 96.4 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (215.2 seconds elapsed (694.4 total), 92.2 seconds remaining).
+[INFO] Found 0 tests in round 8 of 10 (284.3 seconds elapsed (762.5 total), 71.1 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (352.4 seconds elapsed (833.2 total), 39.2 seconds remaining).
+[INFO] Found 0 tests in round 10 of 10 (423.1 seconds elapsed (901.6 total), 0.0 seconds remaining).
+
+[INFO] Found 2 tests, writing list to /home/ectopic/flaky-work/checkouts/adobe__aem-core-wcm-components__5f29cc86b17b/bundles/core/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/adobe__aem-core-wcm-components__5f29cc86b17b/bundles/core/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18:47 min
+[INFO] Finished at: 2026-10-14T23:56:25-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1128903

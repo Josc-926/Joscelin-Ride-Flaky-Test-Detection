@@ -1,0 +1,839 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/dubbo
+# SHA: 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired   [module: dubbo-filter/dubbo-filter-cache] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_dubbo__737f7a7ea678__dubbo-filter_dubbo-filter-cache/2026-10-19_21-48-49/flakesync.org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.dubbo.cache.support.jcache.JCacheFactoryTest#testJCacheGetExpired' -pl dubbo-filter/dubbo-filter-cache
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-19T21:57:39.069Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-filter-cache >-----------------
+[INFO] Building dubbo-filter-cache 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ dubbo-filter-cache >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-filter-cache ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ dubbo-filter-cache <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ dubbo-filter-cache ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:41 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:41 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:41 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:57:41 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:57:41 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:57:41 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:57:41 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:57:41 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.556 sec <<< FAILURE! - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+testJCacheGetExpired(org.apache.dubbo.cache.support.jcache.JCacheFactoryTest)  Time elapsed: 0.53 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for com.hazelcast.internal.util.counters.SwCounter. (com.hazelcast.internal.util.counters.SwCounter is in unnamed module of loader 'app')
+	at org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired(JCacheFactoryTest.java:44)
+
+
+Results :
+
+Tests in error: 
+  JCacheFactoryTest.testJCacheGetExpired:44 » Linkage loader 'app' attempted dup...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_vdrBTzoyBU5nJ+jP3WqxQfoJGBm3rO7Cgop5nPOVe+s= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.455 s
+[INFO] Finished at: 2026-10-19T16:57:42-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3165
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.dubbo.cache.support.jcache.JCacheFactoryTest#testJCacheGetExpired' -pl dubbo-filter/dubbo-filter-cache
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-19T21:57:42.236Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-filter-cache >-----------------
+[INFO] Building dubbo-filter-cache 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ dubbo-filter-cache >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-filter-cache ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ dubbo-filter-cache <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ dubbo-filter-cache ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:44 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:44 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:44 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:57:44 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:57:44 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:57:44 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:57:44 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:57:44 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:57:45 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:57:45 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:57:45 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:57:45 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:57:48 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:57:48 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - b34d38f8-5aa4-4ebe-8336-66f27e383e4b this
+]
+
+Oct 19, 2026 4:57:48 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:57:48 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:57:48 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.389 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:48 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:49 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:49 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:49 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:57:49 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:57:49 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:57:49 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:57:49 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:57:49 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:57:50 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:57:50 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:57:50 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:57:50 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:57:53 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:57:53 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - 4f1d1713-a474-4e3d-ad13-31912d79ad83 this
+]
+
+Oct 19, 2026 4:57:53 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:57:53 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:57:53 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.057 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:53 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:54 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:54 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:54 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:57:54 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:57:54 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:57:54 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:57:54 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:57:54 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:57:54 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:57:54 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:57:54 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:57:54 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:57:58 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:57:58 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - 0e790a99-8f9f-4bed-8416-0af2c8d1d71d this
+]
+
+Oct 19, 2026 4:57:58 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:57:58 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:57:58 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.136 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:58 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:57:58 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:59 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:57:59 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:57:59 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:57:59 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:57:59 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:57:59 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:57:59 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:57:59 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:57:59 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:57:59 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:57:59 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:58:02 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:58:02 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - 16f265bd-f695-4c3c-a872-ee62e4622dc9 this
+]
+
+Oct 19, 2026 4:58:02 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:58:02 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:58:02 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.605 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:02 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:02 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:03 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:03 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:58:03 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:58:03 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:58:03 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:58:03 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:58:03 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:58:03 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:58:03 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:58:03 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:58:03 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:58:06 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:58:06 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - c8fbb409-4948-4c6f-9834-d2474f9d7e7f this
+]
+
+Oct 19, 2026 4:58:06 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:58:06 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:58:06 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.934 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:06 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:07 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:07 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:07 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:58:07 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:58:07 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:58:07 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:58:07 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:58:07 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:58:07 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:58:08 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:58:08 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:58:08 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:58:10 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:58:10 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - f0065060-a041-418b-b176-17a231dbd974 this
+]
+
+Oct 19, 2026 4:58:10 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:58:10 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:58:10 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.696 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:11 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:11 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:11 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:11 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:58:11 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:58:11 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:58:11 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:58:11 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:58:11 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:58:12 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:58:12 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:58:12 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:58:12 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:58:15 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:58:15 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - 3baecb99-34c0-48db-bb6c-439d7439cdfe this
+]
+
+Oct 19, 2026 4:58:15 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:58:15 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:58:15 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.91 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:15 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:16 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:16 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:16 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:58:16 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:58:16 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:58:16 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:58:16 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:58:16 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:58:16 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:58:16 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:58:16 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:58:16 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:58:19 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:58:19 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - 700f304a-78e3-4040-b5ae-214a9286f780 this
+]
+
+Oct 19, 2026 4:58:19 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:58:19 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:58:19 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.531 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:19 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Running shutdown hook... Current state: ACTIVE
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  37.003 s
+[INFO] Finished at: 2026-10-19T16:58:19-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=37706
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.dubbo.cache.support.jcache.JCacheFactoryTest#testJCacheGetExpired' -pl dubbo-filter/dubbo-filter-cache
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-19T21:58:19.946Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-filter-cache >-----------------
+[INFO] Building dubbo-filter-cache 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ dubbo-filter-cache >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-filter-cache ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ dubbo-filter-cache <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ dubbo-filter-cache ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.289 s
+[INFO] Finished at: 2026-10-19T16:58:21-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1987
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.dubbo.cache.support.jcache.JCacheFactoryTest#testJCacheGetExpired' -pl dubbo-filter/dubbo-filter-cache
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-19T21:58:21.935Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-filter-cache >-----------------
+[INFO] Building dubbo-filter-cache 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ dubbo-filter-cache >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-filter-cache ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ dubbo-filter-cache <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ dubbo-filter-cache ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+Oct 19, 2026 4:58:24 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:24 PM com.hazelcast.config.XmlConfigLocator
+INFO: Loading 'hazelcast-default.xml' from classpath.
+Oct 19, 2026 4:58:24 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Prefer IPv4 stack is true.
+Oct 19, 2026 4:58:24 PM com.hazelcast.instance.AddressPicker
+INFO: [LOCAL] [dev] [3.9-EA] Picked [172.19.37.89]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+Oct 19, 2026 4:58:24 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Hazelcast 3.9-EA (20170704 - f594093) starting at [172.19.37.89]:5701
+Oct 19, 2026 4:58:24 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+Oct 19, 2026 4:58:24 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Configured Hazelcast Serialization version: 1
+Oct 19, 2026 4:58:24 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Backpressure is disabled
+Oct 19, 2026 4:58:24 PM com.hazelcast.instance.Node
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Creating MulticastJoiner
+Oct 19, 2026 4:58:24 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 16 partition threads
+Oct 19, 2026 4:58:24 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Starting 9 generic threads (1 dedicated for priority tasks)
+Oct 19, 2026 4:58:24 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTING
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.hazelcast.internal.networking.nio.SelectorOptimizer (file:/home/ectopic/.m2/repository/com/hazelcast/hazelcast/3.9-EA/hazelcast-3.9-EA.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of com.hazelcast.internal.networking.nio.SelectorOptimizer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 19, 2026 4:58:28 PM com.hazelcast.system
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Cluster version set to 3.9
+Oct 19, 2026 4:58:28 PM com.hazelcast.internal.cluster.ClusterService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] 
+
+Members {size:1, ver:1} [
+	Member [172.19.37.89]:5701 - 95f357ee-3942-411e-8f53-3d1f32d4a0f1 this
+]
+
+Oct 19, 2026 4:58:28 PM com.hazelcast.core.LifecycleService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] [172.19.37.89]:5701 is STARTED
+Oct 19, 2026 4:58:28 PM com.hazelcast.internal.partition.impl.PartitionStateManager
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Initializing cluster partition table arrangement...
+Oct 19, 2026 4:58:28 PM com.hazelcast.cache.impl.CacheService
+INFO: [172.19.37.89]:5701 [dev] [3.9-EA] Added cache config: CacheConfig{name='test:11.test.', managerPrefix='/hz/', inMemoryFormat=BINARY, backupCount=1, hotRestart=HotRestartConfig{enabled=false, fsync=false}}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.136 sec - in org.apache.dubbo.cache.support.jcache.JCacheFactoryTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.121 s
+[INFO] Finished at: 2026-10-19T16:58:28-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=6792
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.dubbo.cache.support.jcache.JCacheFactoryTest#testJCacheGetExpired' -pl dubbo-filter/dubbo-filter-cache
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-19T21:58:28.729Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-filter-cache >-----------------
+[INFO] Building dubbo-filter-cache 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ dubbo-filter-cache >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-filter-cache ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ dubbo-filter-cache <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ dubbo-filter-cache ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.330 s
+[INFO] Finished at: 2026-10-19T16:58:30-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project dubbo-filter-cache: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/.flakesync/Results-CritSearch/org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2040

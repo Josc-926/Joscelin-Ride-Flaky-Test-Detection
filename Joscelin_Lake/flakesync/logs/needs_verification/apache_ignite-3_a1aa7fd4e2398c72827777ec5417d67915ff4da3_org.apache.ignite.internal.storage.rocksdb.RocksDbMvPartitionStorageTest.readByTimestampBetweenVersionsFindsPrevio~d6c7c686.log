@@ -1,0 +1,539 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/ignite-3
+# SHA: a1aa7fd4e2398c72827777ec5417d67915ff4da3
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion   [module: modules/storage-rocksdb] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_ignite-3__a1aa7fd4e239__modules_storage-rocksdb/2026-10-28_03-39-27/flakesync.org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestam~d1ce0f92.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/ignite-3   https://github.com/apache/ignite-3
+# commit         : a1aa7fd4e2398c72827777ec5417d67915ff4da3
+# module         : modules/storage-rocksdb
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_storage-rocksdb\logs\flakesync.org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_storage-rocksdb\flakesync\org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__ignite-3__a1aa7fd4e239
+# written        : 2026-10-28T16:02:33.316Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest#readByTimestampBetweenVersionsFindsPreviousVersion' -pl modules/storage-rocksdb
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T16:02:33.327Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.ignite:ignite-storage-rocksdb >--------------
+[INFO] Building ignite-storage-rocksdb 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ ignite-storage-rocksdb >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-rocksdb ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-rocksdb ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-rocksdb ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-rocksdb:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/test/resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ ignite-storage-rocksdb <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ ignite-storage-rocksdb ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.134 s <<< FAILURE! - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion  Time elapsed: 0.075 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: Failed to resolve parameter [org.apache.ignite.internal.storage.rocksdb.configuration.schema.RocksDbStorageEngineConfiguration arg1] in method [public void org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.setUp(java.nio.file.Path,org.apache.ignite.internal.storage.rocksdb.configuration.schema.RocksDbStorageEngineConfiguration,org.apache.ignite.configuration.schemas.table.TableConfiguration) throws java.lang.Exception]: loader 'app' attempted duplicate interface definition for it.unimi.dsi.fastutil.ints.IntSet. (it.unimi.dsi.fastutil.ints.IntSet is in unnamed module of loader 'app')
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate interface definition for it.unimi.dsi.fastutil.ints.IntSet. (it.unimi.dsi.fastutil.ints.IntSet is in unnamed module of loader 'app')
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion » ParameterResolution
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_i6RLvIT1oG+7M6OnvAPbstCJ7xBxKE7HL0Z0BIwutI= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.514 s
+[INFO] Finished at: 2026-10-28T11:02:36-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3210
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3.2 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest#readByTimestampBetweenVersionsFindsPreviousVersion' -pl modules/storage-rocksdb
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T16:02:36.539Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.ignite:ignite-storage-rocksdb >--------------
+[INFO] Building ignite-storage-rocksdb 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ ignite-storage-rocksdb >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-rocksdb ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-rocksdb ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-rocksdb ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-rocksdb:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/test/resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ ignite-storage-rocksdb <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ ignite-storage-rocksdb ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.549 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.557 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.563 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.561 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.558 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.568 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.556 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.572 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.794 s
+[INFO] Finished at: 2026-10-28T11:02:47-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=10532
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 10.5 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest#readByTimestampBetweenVersionsFindsPreviousVersion' -pl modules/storage-rocksdb
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T16:02:47.074Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.ignite:ignite-storage-rocksdb >--------------
+[INFO] Building ignite-storage-rocksdb 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ ignite-storage-rocksdb >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-rocksdb ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-rocksdb ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-rocksdb ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-rocksdb:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/test/resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ ignite-storage-rocksdb <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ ignite-storage-rocksdb ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.713 s
+[INFO] Finished at: 2026-10-28T11:02:49-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2431
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.4 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest#readByTimestampBetweenVersionsFindsPreviousVersion' -pl modules/storage-rocksdb
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T16:02:49.507Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.ignite:ignite-storage-rocksdb >--------------
+[INFO] Building ignite-storage-rocksdb 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ ignite-storage-rocksdb >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-rocksdb ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-rocksdb ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-rocksdb ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-rocksdb:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/test/resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ ignite-storage-rocksdb <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ ignite-storage-rocksdb ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.549 s - in org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.876 s
+[INFO] Finished at: 2026-10-28T11:02:53-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3593
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 3.6 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest#readByTimestampBetweenVersionsFindsPreviousVersion' -pl modules/storage-rocksdb
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T16:02:53.103Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.ignite:ignite-storage-rocksdb >--------------
+[INFO] Building ignite-storage-rocksdb 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ ignite-storage-rocksdb >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-rocksdb ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-rocksdb ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-rocksdb ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-rocksdb:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-rocksdb ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/test/resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-rocksdb ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-rocksdb ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ ignite-storage-rocksdb <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ ignite-storage-rocksdb ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.711 s
+[INFO] Finished at: 2026-10-28T11:02:55-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project ignite-storage-rocksdb: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-rocksdb/.flakesync/Results-CritSearch/org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2449
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2.4 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 22.2 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_storage-rocksdb\flakesync\org.apache.ignite.internal.storage.rocksdb.RocksDbMvPartitionStorageTest.readByTimestampBetweenVersionsFindsPreviousVersion\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

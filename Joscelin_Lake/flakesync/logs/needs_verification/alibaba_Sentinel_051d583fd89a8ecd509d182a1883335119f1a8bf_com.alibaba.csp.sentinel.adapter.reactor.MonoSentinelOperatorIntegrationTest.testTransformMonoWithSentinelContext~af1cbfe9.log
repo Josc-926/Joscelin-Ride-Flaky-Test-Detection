@@ -1,0 +1,446 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/alibaba/Sentinel
+# SHA: 051d583fd89a8ecd509d182a1883335119f1a8bf
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest.testTransformMonoWithSentinelContextEnter   [module: sentinel-adapter/sentinel-reactor-adapter] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/alibaba_Sentinel__051d583fd89a__sentinel-adapter_se~92201fe9/2026-10-17_03-02-53/flakesync.com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest.test~9f91d7c1.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest#testTransformMonoWithSentinelContextEnter' -pl sentinel-adapter/sentinel-reactor-adapter
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a
+# started: 2026-10-17T05:10:40.102Z
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-annotation-quarkus-adapter-deployment:jar:1.8.2
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: io.quarkus:quarkus-arc-deployment:jar -> duplicate declaration of version (?) @ line 47, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-demo-log-logback:jar:1.8.2
+[WARNING] 'dependencies.dependency.version' for com.github.stefanbirkner:system-rules:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 40, column 22
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.alibaba.csp:sentinel-reactor-adapter >--------------
+[INFO] Building sentinel-reactor-adapter 1.8.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ sentinel-reactor-adapter >>>
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ sentinel-reactor-adapter ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ sentinel-reactor-adapter <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ sentinel-reactor-adapter ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.17 s <<< FAILURE! - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[ERROR] testTransformMonoWithSentinelContextEnter(com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest)  Time elapsed: 0.127 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for reactor.core.publisher.Flux. (reactor.core.publisher.Flux is in unnamed module of loader 'app')
+	at com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest.testTransformMonoWithSentinelContextEnter(MonoSentinelOperatorIntegrationTest.java:36)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   MonoSentinelOperatorIntegrationTest.testTransformMonoWithSentinelContextEnter:36 » Linkage
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_cLyTkvw2qf63KIbLfIuKniMQ7dKvClbdsX3Hwcgung= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.364 s
+[INFO] Finished at: 2026-10-17T00:10:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3453
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest#testTransformMonoWithSentinelContextEnter' -pl sentinel-adapter/sentinel-reactor-adapter
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a
+# started: 2026-10-17T05:10:43.558Z
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-annotation-quarkus-adapter-deployment:jar:1.8.2
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: io.quarkus:quarkus-arc-deployment:jar -> duplicate declaration of version (?) @ line 47, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-demo-log-logback:jar:1.8.2
+[WARNING] 'dependencies.dependency.version' for com.github.stefanbirkner:system-rules:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 40, column 22
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.alibaba.csp:sentinel-reactor-adapter >--------------
+[INFO] Building sentinel-reactor-adapter 1.8.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ sentinel-reactor-adapter >>>
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ sentinel-reactor-adapter ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ sentinel-reactor-adapter <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ sentinel-reactor-adapter ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.259 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.254 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.263 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.251 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.265 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.142 s
+[INFO] Finished at: 2026-10-17T00:10:52-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9208
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest#testTransformMonoWithSentinelContextEnter' -pl sentinel-adapter/sentinel-reactor-adapter
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a
+# started: 2026-10-17T05:10:52.769Z
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-annotation-quarkus-adapter-deployment:jar:1.8.2
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: io.quarkus:quarkus-arc-deployment:jar -> duplicate declaration of version (?) @ line 47, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-demo-log-logback:jar:1.8.2
+[WARNING] 'dependencies.dependency.version' for com.github.stefanbirkner:system-rules:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 40, column 22
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.alibaba.csp:sentinel-reactor-adapter >--------------
+[INFO] Building sentinel-reactor-adapter 1.8.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ sentinel-reactor-adapter >>>
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ sentinel-reactor-adapter ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ sentinel-reactor-adapter <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ sentinel-reactor-adapter ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.332 s
+[INFO] Finished at: 2026-10-17T00:10:55-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2457
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest#testTransformMonoWithSentinelContextEnter' -pl sentinel-adapter/sentinel-reactor-adapter
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a
+# started: 2026-10-17T05:10:55.229Z
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-annotation-quarkus-adapter-deployment:jar:1.8.2
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: io.quarkus:quarkus-arc-deployment:jar -> duplicate declaration of version (?) @ line 47, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-demo-log-logback:jar:1.8.2
+[WARNING] 'dependencies.dependency.version' for com.github.stefanbirkner:system-rules:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 40, column 22
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.alibaba.csp:sentinel-reactor-adapter >--------------
+[INFO] Building sentinel-reactor-adapter 1.8.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ sentinel-reactor-adapter >>>
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ sentinel-reactor-adapter ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ sentinel-reactor-adapter <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ sentinel-reactor-adapter ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+INFO: Sentinel log output type is: file
+INFO: Sentinel log charset is: utf-8
+INFO: Sentinel log base directory is: /home/ectopic/logs/csp/
+INFO: Sentinel log name use pid is: false
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s - in com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.322 s
+[INFO] Finished at: 2026-10-17T00:10:58-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3365
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest#testTransformMonoWithSentinelContextEnter' -pl sentinel-adapter/sentinel-reactor-adapter
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a
+# started: 2026-10-17T05:10:58.597Z
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-annotation-quarkus-adapter-deployment:jar:1.8.2
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: io.quarkus:quarkus-arc-deployment:jar -> duplicate declaration of version (?) @ line 47, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-demo-log-logback:jar:1.8.2
+[WARNING] 'dependencies.dependency.version' for com.github.stefanbirkner:system-rules:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 40, column 22
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.alibaba.csp:sentinel-reactor-adapter >--------------
+[INFO] Building sentinel-reactor-adapter 1.8.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ sentinel-reactor-adapter >>>
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ sentinel-reactor-adapter ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sentinel-reactor-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ sentinel-reactor-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ sentinel-reactor-adapter <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ sentinel-reactor-adapter ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.286 s
+[INFO] Finished at: 2026-10-17T00:11:00-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project sentinel-reactor-adapter: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__051d583fd89a/sentinel-adapter/sentinel-reactor-adapter/.flakesync/Results-CritSearch/com.alibaba.csp.sentinel.adapter.reactor.MonoSentinelOperatorIntegrationTest.testTransformMonoWithSentinelContextEnter-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2289

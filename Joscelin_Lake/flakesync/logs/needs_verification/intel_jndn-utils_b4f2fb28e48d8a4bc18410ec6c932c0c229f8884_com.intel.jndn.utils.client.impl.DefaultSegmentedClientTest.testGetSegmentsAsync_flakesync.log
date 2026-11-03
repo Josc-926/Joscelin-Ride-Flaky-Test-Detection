@@ -1,0 +1,665 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/intel/jndn-utils
+# SHA: b4f2fb28e48d8a4bc18410ec6c932c0c229f8884
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/intel_jndn-utils__b4f2fb28e48d___root/2026-10-29_02-42-22/flakesync.com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : intel/jndn-utils   https://github.com/intel/jndn-utils
+# commit         : b4f2fb28e48d8a4bc18410ec6c932c0c229f8884
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\intel_jndn-utils__b4f2fb28e48d___root\logs\flakesync.com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\intel_jndn-utils__b4f2fb28e48d___root\flakesync\com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\intel__jndn-utils__b4f2fb28e48d
+# written        : 2026-10-29T13:24:21.244Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#testGetSegmentsAsync'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:21.255Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ jndn-utils ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_+JuoOV9thJXjp89sG9MVjed+lIPXjm02qikE6w5Nk8Y=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:22 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:22 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.213 sec <<< FAILURE! - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+testGetSegmentsAsync(com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest)  Time elapsed: 0.173 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for net.named_data.jndn.encoding.der.DerNode. (net.named_data.jndn.encoding.der.DerNode is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at net.named_data.jndn.security.certificate.PublicKey.<init>(PublicKey.java:57)
+	at net.named_data.jndn.security.identity.MemoryPrivateKeyStorage.setPublicKeyForKeyName(MemoryPrivateKeyStorage.java:56)
+	at net.named_data.jndn.security.identity.MemoryPrivateKeyStorage.setKeyPairForKeyName(MemoryPrivateKeyStorage.java:87)
+	at net.named_data.jndn.security.identity.MemoryPrivateKeyStorage.generateKeyPair(MemoryPrivateKeyStorage.java:146)
+	at net.named_data.jndn.security.identity.IdentityManager.generateKeyPair(IdentityManager.java:1100)
+	at net.named_data.jndn.security.identity.IdentityManager.createIdentityAndCertificate(IdentityManager.java:144)
+	at net.named_data.jndn.security.KeyChain.createIdentityAndCertificate(KeyChain.java:106)
+	at net.named_data.jndn.security.KeyChain.createIdentityAndCertificate(KeyChain.java:121)
+	at com.intel.jndn.mock.MockKeyChain.configure(MockKeyChain.java:54)
+	at com.intel.jndn.mock.MockFace.<init>(MockFace.java:194)
+	at com.intel.jndn.mock.MockFace.<init>(MockFace.java:167)
+	at com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync(DefaultSegmentedClientTest.java:41)
+
+
+Results :
+
+Tests in error: 
+  DefaultSegmentedClientTest.testGetSegmentsAsync:41 » Linkage loader 'app' atte...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_+JuoOV9thJXjp89sG9MVjed+lIPXjm02qikE6w5Nk8Y= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.058 s
+[INFO] Finished at: 2026-10-29T08:24:22-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1754
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 1.8 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#testGetSegmentsAsync'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:23.011Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ jndn-utils ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_pgL5J94v8jovsxCpRzgdFmWFvrwpxBLrb+WJhe0bw=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:24 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:24 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:24 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=x%E3%C7%E5
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%D6%D1%A7I
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%BA%D2%28%FC
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=kk%F6%10
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:24 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.251 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_mDFll9fPWdc3dwAnBFIWcZcjKT0Yv00aZNc2CrPvCKo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:24 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:24 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%A2%60%29%E6
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%AD%1As%E2
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%80.%06%FB
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%1Au%3E%BA
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_Pa0nFEgam9slR6fhMf1zlNOHPGA3iwJiCOSug3nuSk=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%95L%B5%F1
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%88%E3%D0N
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=E%A6%24%10
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%CCyv9
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_zGRb8EUJ7cAUyVXWOzPbbtKmNf4U46xCmp8vSNk+C8=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:25 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%B9%3F%E6%C2
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%E1a%26p
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=Kl%D0%AC
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%1Duv0
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:25 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_enG+K31LHdOvsM6tqh+zVejRfHrw1INzwQW+OORX+U=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%CC%7F%E1%3C
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%02%A1%C5%F7
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%EB%03c%97
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%E1%BB%1C%18
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_rF84ncgaB70T6ki6FhHymmLSDcZGbc+ltnMtc04VyQ=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%3C%2Ar%EC
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%7D%AD%CC%29
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%F2X%86%F1
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=g%0Bb%A1
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:26 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_mO6kSe5v5KtJB8Tw6f1MnpWnVdHaXBX7cUdI0PYRbxc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:26 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:27 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%F7%1F%D1%F1
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%DA%8E%C7W
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%B4%27%BFp
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%06f%B0%81
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.387 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_Rs7lKJYiv4nFgPqoFi4tfnzfle10icwW4RQPTlsU0=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:27 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:27 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:27 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%0CX%3CV
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%E3%DE%D5%0A
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%9E%B5M%A2
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%B8N%98%F3
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:27 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.383 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.137 s
+[INFO] Finished at: 2026-10-29T08:24:27-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4825
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 4.8 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#testGetSegmentsAsync'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:27.838Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ jndn-utils ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.516 s
+[INFO] Finished at: 2026-10-29T08:24:29-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1207
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.2 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#testGetSegmentsAsync'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:29.047Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ jndn-utils ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/clean_uoOAybR3+hwIIxjFkvJv50QYnLi8BXJVx0d1ai2u89E=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+Oct 29, 2026 8:24:30 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Get new key ID
+Oct 29, 2026 8:24:30 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Generate key pair in private storage
+Oct 29, 2026 8:24:30 AM net.named_data.jndn.security.identity.IdentityManager generateKeyPair
+INFO: Create a key record in public storage
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient getSegmentsAsync
+INFO: Interest requested: /test/segmented/client?ndn.MustBeFresh=1
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%00
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext requestRemainingSegments
+INFO: Requesting remaining segments: from #1 to #4
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%01?ndn.MustBeFresh=1&ndn.Nonce=%24M%40%CE
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%02?ndn.MustBeFresh=1&ndn.Nonce=%C1%40%F0%11
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%03?ndn.MustBeFresh=1&ndn.Nonce=%81%EEgW
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.DefaultSegmentedClient$SegmentationContext request
+INFO: Interest sent: /test/segmented/client/%00%04?ndn.MustBeFresh=1&ndn.Nonce=%B4%C9v%FF
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%01
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%02
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%03
+Oct 29, 2026 8:24:30 AM com.intel.jndn.utils.client.impl.SegmentedDataStream onData
+INFO: Data received: /test/segmented/client/%00%04
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 sec - in com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.032 s
+[INFO] Finished at: 2026-10-29T08:24:30-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1713
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 1.7 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest#testGetSegmentsAsync'
+# cwd     : /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d
+# started : 2026-10-29T13:24:30.762Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.intel.jndn.utils:jndn-utils >-------------------
+[INFO] Building jndn-utils 1.1.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ jndn-utils >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jndn-utils ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ jndn-utils ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ jndn-utils <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ jndn-utils ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.477 s
+[INFO] Finished at: 2026-10-29T08:24:31-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project jndn-utils: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/intel__jndn-utils__b4f2fb28e48d/.flakesync/Results-CritSearch/com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1217
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.2 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 10.7 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\intel_jndn-utils__b4f2fb28e48d___root\flakesync\com.intel.jndn.utils.client.impl.DefaultSegmentedClientTest.testGetSegmentsAsync\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

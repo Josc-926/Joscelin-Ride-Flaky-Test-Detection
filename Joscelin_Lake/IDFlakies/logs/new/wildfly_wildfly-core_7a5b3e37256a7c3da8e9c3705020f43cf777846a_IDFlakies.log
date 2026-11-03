@@ -1,0 +1,95 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/wildfly/wildfly-core
+# SHA: 7a5b3e37256a7c3da8e9c3705020f43cf777846a
+# Flaky tests iDFlakies found in this log (1):
+#   - org.jboss.as.controller.registry.ExtendWildCardRegistrationUnitTestCase.testDuplicateSubModel   [module: controller] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/wildfly_wildfly-core__7a5b3e37256a__controller/2026-10-23_00-30-42/idflakies.log
+#==============================================================================
+
+$ mvn -B -pl controller edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a
+# started: 2026-10-23T02:19:46.778Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.wildfly.core:wildfly-controller >-----------------
+[INFO] Building WildFly: Controller Core 27.0.0.Beta5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ wildfly-controller >>>
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ban-bad-dependencies) @ wildfly-controller ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ wildfly-controller ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.BannedRepositories passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ wildfly-controller ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- buildnumber:3.2.1:create (get-scm-revision) @ wildfly-controller ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller
+[INFO] Storing buildNumber: 39bf6b130a4c6b5db531124ed46c8d8b55e9a8dc at timestamp: 1792721988518
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller' && 'git' 'symbolic-ref' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller
+[INFO] Storing scmBranch: UNKNOWN
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ wildfly-controller ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ wildfly-controller ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- checkstyle:3.6.0:checkstyle (check-style) @ wildfly-controller ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/47/jboss-parent-47-site.xml
+Oct 22, 2026 9:19:49 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+WARNING: Invalid cookie header: "set-cookie: __cf_bm=BpLbwwp6Zf_S1GmW3ISAYcm7BRw9dHP3NduVf1.7Y.4-1792721989.268385-1.0.1.1-BxNHJTWOVKiu.Z9UdD9h__AD3xugFVj1GCqvC9zry7Yg4PYJiTtxHswEL0Jkie55..DJpIa5MQU_c0pIYH2f3s1v4zrda77At34UjQg.M.04Jv60sNMAcqGsbAxxdpJ0; HttpOnly; SameSite=None; Secure; Path=/; Domain=repo.maven.apache.org; Expires=Fri, 23 Oct 2026 02:49:49 GMT". Invalid 'expires' attribute: Fri, 23 Oct 2026 02:49:49 GMT
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ wildfly-controller ---
+[INFO] Copying 31 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ wildfly-controller ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ wildfly-controller <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ wildfly-controller ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.wildfly.core:wildfly-controller:27.0.0.Beta5-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 1174 tests. Time taken: 3.8410000801086426 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller/.dtfixingtools/original-order
+[INFO] Getting original results (1174 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 3 (0.0 seconds elapsed (55.7 total), 0.0 seconds remaining).
+Verified org.jboss.as.controller.registry.ExtendWildCardRegistrationUnitTestCase.testDuplicateSubModel, status: expected PASS, got PASS
+Verified org.jboss.as.controller.registry.ExtendWildCardRegistrationUnitTestCase.testDuplicateSubModel, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 3 (55.7 seconds elapsed (202.8 total), 27.8 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (0.0 seconds elapsed (258.7 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/wildfly__wildfly-core__7a5b3e37256a/controller/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  07:19 min
+[INFO] Finished at: 2026-10-22T21:27:07-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=440540

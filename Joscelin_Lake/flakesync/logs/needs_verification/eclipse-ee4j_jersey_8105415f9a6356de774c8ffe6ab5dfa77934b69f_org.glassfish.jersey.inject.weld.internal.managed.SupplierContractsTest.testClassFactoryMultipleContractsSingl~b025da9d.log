@@ -1,0 +1,819 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/eclipse-ee4j/jersey
+# SHA: 8105415f9a6356de774c8ffe6ab5dfa77934b69f
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton   [module: incubator/cdi-inject-weld] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/eclipse-ee4j_jersey__8105415f9a63__incubator_cdi-inject-weld/2026-10-29_02-42-22/flakesync.org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClass~c90be97f.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : eclipse-ee4j/jersey   https://github.com/eclipse-ee4j/jersey
+# commit         : 8105415f9a6356de774c8ffe6ab5dfa77934b69f
+# module         : incubator/cdi-inject-weld
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\eclipse-ee4j_jersey__8105415f9a63__incubator_cdi-inject-weld\logs\flakesync.org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\eclipse-ee4j_jersey__8105415f9a63__incubator_cdi-inject-weld\flakesync\org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\eclipse-ee4j__jersey__8105415f9a63
+# written        : 2026-10-29T07:28:24.731Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest#testClassFactoryMultipleContractsSingleton' -pl incubator/cdi-inject-weld
+# cwd     : /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+# started : 2026-10-29T07:28:24.742Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------< org.glassfish.jersey.incubator:jersey-cdi-inject-weld >--------
+[INFO] Building jersey-inject-cdi-weld 2.42-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ jersey-cdi-inject-weld >>>
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-versions) @ jersey-cdi-inject-weld ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+[INFO] 
+[INFO] --- checkstyle:3.3.0:check (verify) @ jersey-cdi-inject-weld ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:1.0:highest-basedir (directories) @ jersey-cdi-inject-weld ---
+[INFO] Highest basedir set to: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+[INFO] 
+[INFO] --- build-helper:3.4.0:parse-version (parse-version) @ jersey-cdi-inject-weld ---
+[INFO] 
+[INFO] --- istack-commons:4.2.0:rs-gen (default) @ jersey-cdi-inject-weld ---
+[INFO] Resources:
+[INFO] org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] Skipping /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/src/main/resources/org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] 
+[INFO] --- build-helper:3.4.0:add-source (default) @ jersey-cdi-inject-weld ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/target/generated-sources/rsrc-gen added.
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/classes/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-sources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/generated-sources/rsrc-gen/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-osgi-bundles) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/legal/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (default-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (base-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.9.0:testCompile (default-testCompile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ jersey-cdi-inject-weld <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ jersey-cdi-inject-weld ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:27 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.140 s <<< FAILURE! -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[ERROR] org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton -- Time elapsed: 0.127 s <<< ERROR!
+java.util.ServiceConfigurationError: Error instantiating :org.glassfish.jersey.inject.weld.internal.managed.BinderRegisterExtension
+	at org.jboss.weld.util.ServiceLoader.createInstance(ServiceLoader.java:315)
+	at org.jboss.weld.util.ServiceLoader.prepareInstance(ServiceLoader.java:247)
+	at org.jboss.weld.util.ServiceLoader.loadService(ServiceLoader.java:215)
+	at org.jboss.weld.util.ServiceLoader.loadServiceFile(ServiceLoader.java:185)
+	at org.jboss.weld.util.ServiceLoader.reload(ServiceLoader.java:165)
+	at org.jboss.weld.util.ServiceLoader.iterator(ServiceLoader.java:289)
+	at org.jboss.weld.util.collections.Iterables.addAll(Iterables.java:45)
+	at org.jboss.weld.environment.se.Weld.getExtensions(Weld.java:1058)
+	at org.jboss.weld.environment.se.Weld.createDeployment(Weld.java:947)
+	at org.jboss.weld.environment.se.Weld.initialize(Weld.java:787)
+	at org.jboss.weld.environment.se.Weld.initialize(Weld.java:176)
+	at org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.setup(SupplierContractsTest.java:69)
+	at org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton(SupplierContractsTest.java:208)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.glassfish.jersey.server.ResourceConfig. (org.glassfish.jersey.server.ResourceConfig is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137)
+	at java.base/java.lang.Class.getConstructor0(Class.java:3342)
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2553)
+	at org.jboss.weld.util.ServiceLoader.createInstance(ServiceLoader.java:311)
+	... 83 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   SupplierContractsTest.testClassFactoryMultipleContractsSingleton:208->setup:69 » ServiceConfiguration Error instantiating :org.glassfish.jersey.inject.weld.internal.managed.BinderRegisterExtension
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_i5djFSemhPPXFNyl8ilRJDaikKQZaAwzSidJnl1P4= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.722 s
+[INFO] Finished at: 2026-10-29T02:28:28-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3453
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3.5 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest#testClassFactoryMultipleContractsSingleton' -pl incubator/cdi-inject-weld
+# cwd     : /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+# started : 2026-10-29T07:28:28.197Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------< org.glassfish.jersey.incubator:jersey-cdi-inject-weld >--------
+[INFO] Building jersey-inject-cdi-weld 2.42-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ jersey-cdi-inject-weld >>>
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-versions) @ jersey-cdi-inject-weld ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+[INFO] 
+[INFO] --- checkstyle:3.3.0:check (verify) @ jersey-cdi-inject-weld ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:1.0:highest-basedir (directories) @ jersey-cdi-inject-weld ---
+[INFO] Highest basedir set to: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+[INFO] 
+[INFO] --- build-helper:3.4.0:parse-version (parse-version) @ jersey-cdi-inject-weld ---
+[INFO] 
+[INFO] --- istack-commons:4.2.0:rs-gen (default) @ jersey-cdi-inject-weld ---
+[INFO] Resources:
+[INFO] org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] Skipping /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/src/main/resources/org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] 
+[INFO] --- build-helper:3.4.0:add-source (default) @ jersey-cdi-inject-weld ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/target/generated-sources/rsrc-gen added.
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/classes/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-sources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/generated-sources/rsrc-gen/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-osgi-bundles) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/legal/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (default-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (base-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.9.0:testCompile (default-testCompile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ jersey-cdi-inject-weld <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ jersey-cdi-inject-weld ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:31 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:31 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:31 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:31 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:31 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:31 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:32 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container a196829c-eb90-48c9-8e68-70a72f08c562 initialized
+Oct 29, 2026 2:28:32 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container a196829c-eb90-48c9-8e68-70a72f08c562 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.698 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:32 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:32 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:32 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:32 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:32 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:32 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:33 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container 7d6f6104-9959-487c-b8f2-6130d7976929 initialized
+Oct 29, 2026 2:28:33 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container 7d6f6104-9959-487c-b8f2-6130d7976929 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.694 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:33 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:33 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:33 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:33 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:33 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:34 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:34 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container fbe5f554-e144-42c5-89bd-217b95b912f2 initialized
+Oct 29, 2026 2:28:34 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container fbe5f554-e144-42c5-89bd-217b95b912f2 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.698 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:34 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:34 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:34 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:34 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:34 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:35 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:35 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container d666bc43-056e-46b7-9042-9c221ffbb559 initialized
+Oct 29, 2026 2:28:35 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container d666bc43-056e-46b7-9042-9c221ffbb559 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.692 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:35 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:35 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:35 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:36 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:36 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:36 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:36 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container 894b9f1e-3036-499c-9ab4-464c41bf396e initialized
+Oct 29, 2026 2:28:36 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container 894b9f1e-3036-499c-9ab4-464c41bf396e shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.720 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:36 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:36 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:36 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:37 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:37 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:37 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:37 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container f0ce84c6-0dab-41ef-85a5-07e47658b1f9 initialized
+Oct 29, 2026 2:28:37 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container f0ce84c6-0dab-41ef-85a5-07e47658b1f9 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.708 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:37 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:37 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:38 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:38 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:38 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:38 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:38 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container 05c810e1-2dcf-48c7-8a6a-a5ebc77ced8a initialized
+Oct 29, 2026 2:28:38 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container 05c810e1-2dcf-48c7-8a6a-a5ebc77ced8a shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.675 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:38 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:39 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:39 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:39 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:39 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:39 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:39 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container 5977d4ec-4abe-4ea7-977f-c8573dbbb284 initialized
+Oct 29, 2026 2:28:39 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container 5977d4ec-4abe-4ea7-977f-c8573dbbb284 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.689 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.751 s
+[INFO] Finished at: 2026-10-29T02:28:39-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=11487
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 11.5 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest#testClassFactoryMultipleContractsSingleton' -pl incubator/cdi-inject-weld
+# cwd     : /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+# started : 2026-10-29T07:28:39.686Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------< org.glassfish.jersey.incubator:jersey-cdi-inject-weld >--------
+[INFO] Building jersey-inject-cdi-weld 2.42-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ jersey-cdi-inject-weld >>>
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-versions) @ jersey-cdi-inject-weld ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+[INFO] 
+[INFO] --- checkstyle:3.3.0:check (verify) @ jersey-cdi-inject-weld ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:1.0:highest-basedir (directories) @ jersey-cdi-inject-weld ---
+[INFO] Highest basedir set to: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+[INFO] 
+[INFO] --- build-helper:3.4.0:parse-version (parse-version) @ jersey-cdi-inject-weld ---
+[INFO] 
+[INFO] --- istack-commons:4.2.0:rs-gen (default) @ jersey-cdi-inject-weld ---
+[INFO] Resources:
+[INFO] org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] Skipping /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/src/main/resources/org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] 
+[INFO] --- build-helper:3.4.0:add-source (default) @ jersey-cdi-inject-weld ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/target/generated-sources/rsrc-gen added.
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/classes/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-sources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/generated-sources/rsrc-gen/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-osgi-bundles) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/legal/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (default-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (base-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.9.0:testCompile (default-testCompile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ jersey-cdi-inject-weld <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ jersey-cdi-inject-weld ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.096 s
+[INFO] Finished at: 2026-10-29T02:28:42-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2846
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.8 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest#testClassFactoryMultipleContractsSingleton' -pl incubator/cdi-inject-weld
+# cwd     : /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+# started : 2026-10-29T07:28:42.534Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------< org.glassfish.jersey.incubator:jersey-cdi-inject-weld >--------
+[INFO] Building jersey-inject-cdi-weld 2.42-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ jersey-cdi-inject-weld >>>
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-versions) @ jersey-cdi-inject-weld ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+[INFO] 
+[INFO] --- checkstyle:3.3.0:check (verify) @ jersey-cdi-inject-weld ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:1.0:highest-basedir (directories) @ jersey-cdi-inject-weld ---
+[INFO] Highest basedir set to: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+[INFO] 
+[INFO] --- build-helper:3.4.0:parse-version (parse-version) @ jersey-cdi-inject-weld ---
+[INFO] 
+[INFO] --- istack-commons:4.2.0:rs-gen (default) @ jersey-cdi-inject-weld ---
+[INFO] Resources:
+[INFO] org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] Skipping /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/src/main/resources/org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] 
+[INFO] --- build-helper:3.4.0:add-source (default) @ jersey-cdi-inject-weld ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/target/generated-sources/rsrc-gen added.
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/classes/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-sources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/generated-sources/rsrc-gen/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-osgi-bundles) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/legal/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (default-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (base-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.9.0:testCompile (default-testCompile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ jersey-cdi-inject-weld <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ jersey-cdi-inject-weld ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+Oct 29, 2026 2:28:45 AM org.jboss.weld.bootstrap.WeldStartup <clinit>
+INFO: WELD-000900: 3.1.9 (Final)
+Oct 29, 2026 2:28:45 AM org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy processAnnotatedDiscovery
+INFO: WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+Oct 29, 2026 2:28:45 AM org.jboss.weld.bootstrap.WeldStartup startContainer
+INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+Oct 29, 2026 2:28:46 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:46 AM org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder bindToBinder
+WARNING: A class javax.activation.DataSource for a default provider MessageBodyWriter<javax.activation.DataSource> was not found. The provider is not available.
+Oct 29, 2026 2:28:46 AM org.glassfish.jersey.server.wadl.WadlFeature configure
+WARNING: JAX-B API not found . WADL feature is disabled.
+Oct 29, 2026 2:28:46 AM org.jboss.weld.environment.se.WeldContainer fireContainerInitializedEvent
+INFO: WELD-ENV-002003: Weld SE container 22981362-ea38-44a3-9180-d704f9423100 initialized
+Oct 29, 2026 2:28:46 AM org.jboss.weld.environment.se.WeldContainer shutdown
+INFO: WELD-ENV-002001: Weld SE container 22981362-ea38-44a3-9180-d704f9423100 shut down
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.652 s -- in org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.211 s
+[INFO] Finished at: 2026-10-29T02:28:46-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3933
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 3.9 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest#testClassFactoryMultipleContractsSingleton' -pl incubator/cdi-inject-weld
+# cwd     : /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+# started : 2026-10-29T07:28:46.469Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------< org.glassfish.jersey.incubator:jersey-cdi-inject-weld >--------
+[INFO] Building jersey-inject-cdi-weld 2.42-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ jersey-cdi-inject-weld >>>
+[INFO] 
+[INFO] --- enforcer:3.3.0:enforce (enforce-versions) @ jersey-cdi-inject-weld ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+[INFO] 
+[INFO] --- checkstyle:3.3.0:check (verify) @ jersey-cdi-inject-weld ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- directory:1.0:highest-basedir (directories) @ jersey-cdi-inject-weld ---
+[INFO] Highest basedir set to: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63
+[INFO] 
+[INFO] --- build-helper:3.4.0:parse-version (parse-version) @ jersey-cdi-inject-weld ---
+[INFO] 
+[INFO] --- istack-commons:4.2.0:rs-gen (default) @ jersey-cdi-inject-weld ---
+[INFO] Resources:
+[INFO] org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] Skipping /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/src/main/resources/org/glassfish/jersey/inject/weld/internal/managed/localization.properties
+[INFO] 
+[INFO] --- build-helper:3.4.0:add-source (default) @ jersey-cdi-inject-weld ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/target/generated-sources/rsrc-gen added.
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/classes/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-sources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/generated-sources/rsrc-gen/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:copy-resources (copy-legaldocs-to-osgi-bundles) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from ../.. to target/legal/META-INF
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (default-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.9.0:compile (base-compile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jersey-cdi-inject-weld ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.9.0:testCompile (default-testCompile) @ jersey-cdi-inject-weld ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ jersey-cdi-inject-weld <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ jersey-cdi-inject-weld ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.080 s
+[INFO] Finished at: 2026-10-29T02:28:49-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project jersey-cdi-inject-weld: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/eclipse-ee4j__jersey__8105415f9a63/incubator/cdi-inject-weld/.flakesync/Results-CritSearch/org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2807
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2.8 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 24.5 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\eclipse-ee4j_jersey__8105415f9a63__incubator_cdi-inject-weld\flakesync\org.glassfish.jersey.inject.weld.internal.managed.SupplierContractsTest.testClassFactoryMultipleContractsSingleton\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

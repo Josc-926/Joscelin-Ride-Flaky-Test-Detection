@@ -1,0 +1,871 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/ignite-3
+# SHA: a1aa7fd4e2398c72827777ec5417d67915ff4da3
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread   [module: modules/page-memory] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_ignite-3__a1aa7fd4e239__modules_page-memory/2026-10-28_03-39-27/flakesync.org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/ignite-3   https://github.com/apache/ignite-3
+# commit         : a1aa7fd4e2398c72827777ec5417d67915ff4da3
+# module         : modules/page-memory
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_page-memory\logs\flakesync.org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_page-memory\flakesync\org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__ignite-3__a1aa7fd4e239
+# written        : 2026-10-28T15:42:44.458Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest#testMultiThread' -pl modules/page-memory
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:42:44.469Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-page-memory >----------------
+[INFO] Building ignite-page-memory 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ ignite-page-memory >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-page-memory ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-page-memory ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-page-memory ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-page-memory:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-page-memory ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ ignite-page-memory <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ ignite-page-memory ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[ERROR] Tests run: 10, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.717 s <<< FAILURE! - in org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[1]  Time elapsed: 0.054 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate interface definition for it.unimi.dsi.fastutil.ints.IntSet. (it.unimi.dsi.fastutil.ints.IntSet is in unnamed module of loader 'app')
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[2]  Time elapsed: 0.366 s  <<< ERROR!
+java.util.ServiceConfigurationError: org.apache.ignite.internal.pagememory.io.PageIoModule: org.apache.ignite.internal.pagememory.TestPageIoModule Unable to get public no-arg constructor
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createPageMemory(AbstractFreeListTest.java:177)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:137)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.io.PageIo. (org.apache.ignite.internal.pagememory.io.PageIo is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createPageMemory(AbstractFreeListTest.java:177)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:137)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[3]  Time elapsed: 0.079 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for it.unimi.dsi.fastutil.longs.AbstractLongList. (it.unimi.dsi.fastutil.longs.AbstractLongList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[4]  Time elapsed: 0.039 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[5]  Time elapsed: 0.024 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[6]  Time elapsed: 0.027 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[7]  Time elapsed: 0.022 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[8]  Time elapsed: 0.019 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[9]  Time elapsed: 0.019 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[10]  Time elapsed: 0.017 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.apache.ignite.internal.pagememory.freelist.PagesList$PagesCache
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.prepare(AbstractFreeListTest.java:196)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:104)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[ERROR]   AbstractFreeListTest.testMultiThread(int, boolean)[1] » Linkage loader 'app' a...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:137->createPageMemory:177 » ServiceConfiguration
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » Linkage loader 'app' a...
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[ERROR]   AbstractFreeListTest.testMultiThread:104->prepare:196 » NoClassDefFound Could ...
+[INFO] 
+[ERROR] Tests run: 10, Failures: 0, Errors: 10, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_fgsSNMsC2GL28WcXBcSlIPM3xIBL0BpihFhV5lXlUxs= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.995 s
+[INFO] Finished at: 2026-10-28T10:42:48-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3719
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3.7 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest#testMultiThread' -pl modules/page-memory
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:42:48.194Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-page-memory >----------------
+[INFO] Building ignite-page-memory 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ ignite-page-memory >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-page-memory ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-page-memory ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-page-memory ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-page-memory:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-page-memory ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ ignite-page-memory <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ ignite-page-memory ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+[ERROR] Tests run: 10, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.566 s <<< FAILURE! - in org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[1]  Time elapsed: 0.355 s  <<< ERROR!
+java.util.ServiceConfigurationError: org.apache.ignite.internal.pagememory.io.PageIoModule: org.apache.ignite.internal.pagememory.TestPageIoModule Unable to get public no-arg constructor
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createPageMemory(AbstractFreeListTest.java:177)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:137)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.io.PageIo. (org.apache.ignite.internal.pagememory.io.PageIo is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createPageMemory(AbstractFreeListTest.java:177)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:137)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[2]  Time elapsed: 0.06 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[3]  Time elapsed: 0.025 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[4]  Time elapsed: 0.016 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[5]  Time elapsed: 0.012 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[6]  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[7]  Time elapsed: 0.012 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[8]  Time elapsed: 0.015 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[9]  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[ERROR] org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(int, boolean)[10]  Time elapsed: 0.012 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.apache.ignite.internal.pagememory.freelist.AbstractFreeList. (org.apache.ignite.internal.pagememory.freelist.AbstractFreeList is in unnamed module of loader 'app')
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.createFreeList(AbstractFreeListTest.java:143)
+	at org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread(AbstractFreeListTest.java:98)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:137->createPageMemory:177 » ServiceConfiguration
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 » Linkage loader '...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[ERROR]   AbstractFreeListTest.testMultiThread:98->createFreeList:143 Linkage loader 'ap...
+[INFO] 
+[ERROR] Tests run: 10, Failures: 0, Errors: 10, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_uvi9IGHHli2gC2IjJ2xAypOAd3xYeJ90nXOYhzGbPdM= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.864 s
+[INFO] Finished at: 2026-10-28T10:42:51-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3580
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 3.6 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest#testMultiThread' -pl modules/page-memory
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:42:51.776Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-page-memory >----------------
+[INFO] Building ignite-page-memory 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ ignite-page-memory >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-page-memory ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-page-memory ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-page-memory ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-page-memory:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-page-memory ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ ignite-page-memory <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ ignite-page-memory ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.679 s
+[INFO] Finished at: 2026-10-28T10:42:54-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2435
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.4 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest#testMultiThread' -pl modules/page-memory
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:42:54.213Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-page-memory >----------------
+[INFO] Building ignite-page-memory 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ ignite-page-memory >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-page-memory ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-page-memory ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-page-memory ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-page-memory:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-page-memory ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ ignite-page-memory <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ ignite-page-memory ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by org.apache.ignite.internal.util.GridUnsafe$2 (file:/home/ectopic/.m2/repository/org/apache/ignite/ignite-core/3.0.0-SNAPSHOT/ignite-core-3.0.0-SNAPSHOT.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of org.apache.ignite.internal.util.GridUnsafe$2
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20063]
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20051]
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [19988]
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:42:57 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20024]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20032]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20047]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20018]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [1000]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:42:58 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20025]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:42:59 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20008]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20013]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20052]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20103]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20026]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20040]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:00 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:01 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20045]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20035]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20009]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20133]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20015]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20011]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20020]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:02 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20077]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [19965]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:03 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20013]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20046]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [19984]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20028]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20014]
+Oct 28, 2026 10:43:04 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20067]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20047]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [997]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20029]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20004]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [996]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:05 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20003]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20036]
+Oct 28, 2026 10:43:06 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20012]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20014]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20021]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20014]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20019]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20020]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:07 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [998]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:08 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:09 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20002]
+Oct 28, 2026 10:43:09 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+Oct 28, 2026 10:43:09 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Shrink... [20001]
+Oct 28, 2026 10:43:09 AM org.apache.ignite.lang.IgniteLogger logInternal
+INFO: Grow... [999]
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.386 s - in org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.662 s
+[INFO] Finished at: 2026-10-28T10:43:09-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=15360
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 15.4 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest#testMultiThread' -pl modules/page-memory
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:43:09.575Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-page-memory >----------------
+[INFO] Building ignite-page-memory 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ ignite-page-memory >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-page-memory ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-page-memory ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-page-memory ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-page-memory ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-page-memory:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-page-memory ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-page-memory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-page-memory ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ ignite-page-memory <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ ignite-page-memory ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.687 s
+[INFO] Finished at: 2026-10-28T10:43:11-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project ignite-page-memory: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/page-memory/.flakesync/Results-CritSearch/org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2396
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2.4 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 27.5 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_page-memory\flakesync\org.apache.ignite.internal.pagememory.freelist.AbstractFreeListTest.testMultiThread\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 59, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

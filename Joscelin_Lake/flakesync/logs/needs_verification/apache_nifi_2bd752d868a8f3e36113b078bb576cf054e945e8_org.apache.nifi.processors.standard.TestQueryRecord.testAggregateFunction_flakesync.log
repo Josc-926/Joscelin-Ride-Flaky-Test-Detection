@@ -1,0 +1,609 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/nifi
+# SHA: 2bd752d868a8f3e36113b078bb576cf054e945e8
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction   [module: nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_nifi__2bd752d868a8__nifi-nar-bundles_nifi-st~99f60d51/2026-10-28_03-39-27/flakesync.org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/nifi   https://github.com/apache/nifi
+# commit         : 2bd752d868a8f3e36113b078bb576cf054e945e8
+# module         : nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_nifi__2bd752d868a8__nifi-nar-bundles_nifi-standard-bundle_nifi-standard-processors\logs\flakesync.org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_nifi__2bd752d868a8__nifi-nar-bundles_nifi-standard-bundle_nifi-standard-processors\flakesync\org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__nifi__2bd752d868a8
+# written        : 2026-10-28T21:06:02.293Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.nifi.processors.standard.TestQueryRecord#testAggregateFunction' -pl nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8
+# started : 2026-10-28T21:06:02.307Z
+
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] --------------< org.apache.nifi:nifi-standard-processors >--------------
+[INFO] Building nifi-standard-processors 1.15.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ nifi-standard-processors >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven-version) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-no-snapshots) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-banned-dependencies) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (default) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ nifi-standard-processors ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 234 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (groovy-tests) @ nifi-standard-processors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Compiling in a forked process using /home/ectopic/.m2/repository/org/codehaus/groovy/groovy-eclipse-batch/2.5.14-01/groovy-eclipse-batch-2.5.14-01.jar
+[WARNING] Error output from groovy-eclipse compiler:
+----------
+1. WARNING in /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/src/test/groovy/org/apache/nifi/security/util/crypto/PasswordBasedEncryptorGroovyTest.groovy (at line 256)
+	NiFiLegacyCipherProvider legacyCipherProvider = new NiFiLegacyCipherProvider()
+	^^^^^^^^^^^^^^^^^^^^^^^^
+The type NiFiLegacyCipherProvider is deprecated
+----------
+1 problem (1 warning)
+
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ nifi-standard-processors <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ nifi-standard-processors ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.237 s <<< FAILURE! - in org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction  Time elapsed: 0.221 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.calcite.avatica.ColumnMetaData$AvaticaType. (org.apache.calcite.avatica.ColumnMetaData$AvaticaType is in unnamed module of loader 'app')
+	at org.apache.nifi.processors.standard.TestQueryRecord.getRunner(TestQueryRecord.java:81)
+	at org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction(TestQueryRecord.java:1049)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestQueryRecord.testAggregateFunction:1049->getRunner:81 » Linkage loader 'app...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_l2N84xTy3Ki0ReHUeKavatqoLf0VrrTKr+vDtrU8vqg= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.794 s
+[INFO] Finished at: 2026-10-28T16:06:14-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=11961
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 12 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.nifi.processors.standard.TestQueryRecord#testAggregateFunction' -pl nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8
+# started : 2026-10-28T21:06:14.279Z
+
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] --------------< org.apache.nifi:nifi-standard-processors >--------------
+[INFO] Building nifi-standard-processors 1.15.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ nifi-standard-processors >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven-version) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-no-snapshots) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-banned-dependencies) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (default) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ nifi-standard-processors ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 234 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (groovy-tests) @ nifi-standard-processors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Compiling in a forked process using /home/ectopic/.m2/repository/org/codehaus/groovy/groovy-eclipse-batch/2.5.14-01/groovy-eclipse-batch-2.5.14-01.jar
+[WARNING] Error output from groovy-eclipse compiler:
+----------
+1. WARNING in /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/src/test/groovy/org/apache/nifi/security/util/crypto/PasswordBasedEncryptorGroovyTest.groovy (at line 256)
+	NiFiLegacyCipherProvider legacyCipherProvider = new NiFiLegacyCipherProvider()
+	^^^^^^^^^^^^^^^^^^^^^^^^
+The type NiFiLegacyCipherProvider is deprecated
+----------
+1 problem (1 warning)
+
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ nifi-standard-processors <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ nifi-standard-processors ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1492 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=e6340ad8-7878-4bc6-bdfb-a63e84ab3ebd] Successfully queried FlowFile[0,76092161775668.mockFlowFile,0B] in 1172 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.593 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1496 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=2a1a8ee2-814d-4ea9-8551-17433d3277ce] Successfully queried FlowFile[0,76094541212315.mockFlowFile,0B] in 1163 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.599 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1528 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=b659ebb6-920a-409e-ba55-b2ea462889ee] Successfully queried FlowFile[0,76096895688903.mockFlowFile,0B] in 1178 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.639 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1574 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=7d8ccf64-1b25-433d-874d-c2d53248ccc6] Successfully queried FlowFile[0,76099231398976.mockFlowFile,0B] in 1216 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.674 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1499 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=788467c9-fa27-4859-800a-a6038a674a17] Successfully queried FlowFile[0,76101539938266.mockFlowFile,0B] in 1156 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.618 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1578 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=5eaead82-9378-47e8-a255-d99ee7d65685] Successfully queried FlowFile[0,76103841185707.mockFlowFile,0B] in 1222 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.672 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1503 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=bfd3f357-03e1-48b7-bf40-ad20730333de] Successfully queried FlowFile[0,76106190965447.mockFlowFile,0B] in 1158 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.597 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1494 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=00aaf771-3451-4646-b0a5-0b5de61204a0] Successfully queried FlowFile[0,76108471522012.mockFlowFile,0B] in 1193 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.599 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  28.141 s
+[INFO] Finished at: 2026-10-28T16:06:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=29311
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 29.3 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.nifi.processors.standard.TestQueryRecord#testAggregateFunction' -pl nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8
+# started : 2026-10-28T21:06:43.593Z
+
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] --------------< org.apache.nifi:nifi-standard-processors >--------------
+[INFO] Building nifi-standard-processors 1.15.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ nifi-standard-processors >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven-version) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-no-snapshots) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-banned-dependencies) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (default) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ nifi-standard-processors ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 234 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (groovy-tests) @ nifi-standard-processors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Compiling in a forked process using /home/ectopic/.m2/repository/org/codehaus/groovy/groovy-eclipse-batch/2.5.14-01/groovy-eclipse-batch-2.5.14-01.jar
+[WARNING] Error output from groovy-eclipse compiler:
+----------
+1. WARNING in /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/src/test/groovy/org/apache/nifi/security/util/crypto/PasswordBasedEncryptorGroovyTest.groovy (at line 256)
+	NiFiLegacyCipherProvider legacyCipherProvider = new NiFiLegacyCipherProvider()
+	^^^^^^^^^^^^^^^^^^^^^^^^
+The type NiFiLegacyCipherProvider is deprecated
+----------
+1 problem (1 warning)
+
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ nifi-standard-processors <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ nifi-standard-processors ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.036 s
+[INFO] Finished at: 2026-10-28T16:06:53-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=10207
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 10.2 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.nifi.processors.standard.TestQueryRecord#testAggregateFunction' -pl nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8
+# started : 2026-10-28T21:06:53.803Z
+
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] --------------< org.apache.nifi:nifi-standard-processors >--------------
+[INFO] Building nifi-standard-processors 1.15.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ nifi-standard-processors >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven-version) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-no-snapshots) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-banned-dependencies) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (default) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ nifi-standard-processors ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 234 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (groovy-tests) @ nifi-standard-processors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Compiling in a forked process using /home/ectopic/.m2/repository/org/codehaus/groovy/groovy-eclipse-batch/2.5.14-01/groovy-eclipse-batch-2.5.14-01.jar
+[WARNING] Error output from groovy-eclipse compiler:
+----------
+1. WARNING in /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/src/test/groovy/org/apache/nifi/security/util/crypto/PasswordBasedEncryptorGroovyTest.groovy (at line 256)
+	NiFiLegacyCipherProvider legacyCipherProvider = new NiFiLegacyCipherProvider()
+	^^^^^^^^^^^^^^^^^^^^^^^^
+The type NiFiLegacyCipherProvider is deprecated
+----------
+1 problem (1 warning)
+
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ nifi-standard-processors <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ nifi-standard-processors ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.nifi.processors.standard.TestQueryRecord
+[ERROR] WARNING: An illegal reflective access operation has occurred
+[ERROR] WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/ectopic/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar) to field java.nio.Buffer.address
+[ERROR] WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+[ERROR] WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[ERROR] WARNING: All illegal access operations will be denied in a future release
+1555 [pool-2-thread-1] INFO org.apache.nifi.processors.standard.QueryRecord - QueryRecord[id=06e6bb04-dc3c-422a-a8b2-37b70f2dc2d3] Successfully queried FlowFile[0,76131809069979.mockFlowFile,0B] in 1212 millis
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.642 s - in org.apache.nifi.processors.standard.TestQueryRecord
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.045 s
+[INFO] Finished at: 2026-10-28T16:07:06-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=13324
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 13.3 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.nifi.processors.standard.TestQueryRecord#testAggregateFunction' -pl nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8
+# started : 2026-10-28T21:07:07.130Z
+
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] --------------< org.apache.nifi:nifi-standard-processors >--------------
+[INFO] Building nifi-standard-processors 1.15.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ nifi-standard-processors >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven-version) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-no-snapshots) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-banned-dependencies) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create (default) @ nifi-standard-processors ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ nifi-standard-processors ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 38 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ nifi-standard-processors ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 234 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ nifi-standard-processors ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (groovy-tests) @ nifi-standard-processors ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Compiling in a forked process using /home/ectopic/.m2/repository/org/codehaus/groovy/groovy-eclipse-batch/2.5.14-01/groovy-eclipse-batch-2.5.14-01.jar
+[WARNING] Error output from groovy-eclipse compiler:
+----------
+1. WARNING in /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/src/test/groovy/org/apache/nifi/security/util/crypto/PasswordBasedEncryptorGroovyTest.groovy (at line 256)
+	NiFiLegacyCipherProvider legacyCipherProvider = new NiFiLegacyCipherProvider()
+	^^^^^^^^^^^^^^^^^^^^^^^^
+The type NiFiLegacyCipherProvider is deprecated
+----------
+1 problem (1 warning)
+
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ nifi-standard-processors <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ nifi-standard-processors ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.189 s
+[INFO] Finished at: 2026-10-28T16:07:17-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project nifi-standard-processors: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__nifi__2bd752d868a8/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/.flakesync/Results-CritSearch/org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=10349
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 10.3 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 75.2 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_nifi__2bd752d868a8__nifi-nar-bundles_nifi-standard-bundle_nifi-standard-processors\flakesync\org.apache.nifi.processors.standard.TestQueryRecord.testAggregateFunction\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

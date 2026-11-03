@@ -1,0 +1,348 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/stanfordnlp/CoreNLP
+# SHA: 08f6dca23e5296d6affdc40895bf294d9b3144f6
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/stanfordnlp_CoreNLP__08f6dca23e52___root/2026-10-29_02-42-22/flakesync.edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : stanfordnlp/CoreNLP   https://github.com/stanfordnlp/CoreNLP
+# commit         : 08f6dca23e5296d6affdc40895bf294d9b3144f6
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\stanfordnlp_CoreNLP__08f6dca23e52___root\logs\flakesync.edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\stanfordnlp_CoreNLP__08f6dca23e52___root\flakesync\edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\stanfordnlp__CoreNLP__08f6dca23e52
+# written        : 2026-10-30T04:36:33.684Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=edu.stanford.nlp.semgraph.semgrex.SemgrexTest#testNotEquals'
+# cwd     : /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52
+# started : 2026-10-30T04:36:33.696Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< edu.stanford.nlp:stanford-corenlp >------------------
+[INFO] Building Stanford CoreNLP 3.9.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ stanford-corenlp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ stanford-corenlp <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ stanford-corenlp ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/.flakesync/clean_aInDSExrdUj4ABildtruYYKkivxT5GW8NHoykwso+fE=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running edu.stanford.nlp.semgraph.semgrex.SemgrexTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.119 sec <<< FAILURE! - in edu.stanford.nlp.semgraph.semgrex.SemgrexTest
+testNotEquals(edu.stanford.nlp.semgraph.semgrex.SemgrexTest)  Time elapsed: 0.089 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for edu.stanford.nlp.trees.tregex.Relation. (edu.stanford.nlp.trees.tregex.Relation is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at edu.stanford.nlp.trees.tregex.TregexParser.Root(TregexParser.java:51)
+	at edu.stanford.nlp.trees.tregex.TregexPatternCompiler.compile(TregexPatternCompiler.java:140)
+	at edu.stanford.nlp.trees.tregex.TregexPattern.compile(TregexPattern.java:446)
+	at edu.stanford.nlp.parser.lexparser.ArabicTreebankParserParams.initializeAnnotationPatterns(ArabicTreebankParserParams.java:301)
+	at edu.stanford.nlp.parser.lexparser.ArabicTreebankParserParams.<init>(ArabicTreebankParserParams.java:70)
+	at edu.stanford.nlp.international.Language.<clinit>(Language.java:19)
+	at edu.stanford.nlp.semgraph.SemanticGraph.valueOf(SemanticGraph.java:1705)
+	at edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals(SemgrexTest.java:516)
+
+
+Results :
+
+Tests in error: 
+  SemgrexTest.testNotEquals:516 » Linkage loader 'app' attempted duplicate abstr...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_aInDSExrdUj4ABildtruYYKkivxT5GW8NHoykwso+fE= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.033 s
+[INFO] Finished at: 2026-10-29T23:36:35-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1735
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 1.7 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=edu.stanford.nlp.semgraph.semgrex.SemgrexTest#testNotEquals'
+# cwd     : /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52
+# started : 2026-10-30T04:36:35.433Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< edu.stanford.nlp:stanford-corenlp >------------------
+[INFO] Building Stanford CoreNLP 3.9.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ stanford-corenlp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ stanford-corenlp <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ stanford-corenlp ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/.flakesync/clean_iDDJ6pRs7EhCLcUUHygsq6haUZJ8chuC5gGwW1+Qg=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running edu.stanford.nlp.semgraph.semgrex.SemgrexTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.317 sec <<< FAILURE! - in edu.stanford.nlp.semgraph.semgrex.SemgrexTest
+testNotEquals(edu.stanford.nlp.semgraph.semgrex.SemgrexTest)  Time elapsed: 0.259 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for edu.stanford.nlp.trees.tregex.Relation. (edu.stanford.nlp.trees.tregex.Relation is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at edu.stanford.nlp.trees.tregex.TregexParser.Root(TregexParser.java:51)
+	at edu.stanford.nlp.trees.tregex.TregexPatternCompiler.compile(TregexPatternCompiler.java:140)
+	at edu.stanford.nlp.trees.tregex.TregexPattern.compile(TregexPattern.java:446)
+	at edu.stanford.nlp.parser.lexparser.ArabicTreebankParserParams.initializeAnnotationPatterns(ArabicTreebankParserParams.java:301)
+	at edu.stanford.nlp.parser.lexparser.ArabicTreebankParserParams.<init>(ArabicTreebankParserParams.java:70)
+	at edu.stanford.nlp.international.Language.<clinit>(Language.java:19)
+	at edu.stanford.nlp.semgraph.SemanticGraph.valueOf(SemanticGraph.java:1705)
+	at edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals(SemgrexTest.java:516)
+
+
+Results :
+
+Tests in error: 
+  SemgrexTest.testNotEquals:516 » Linkage loader 'app' attempted duplicate abstr...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_iDDJ6pRs7EhCLcUUHygsq6haUZJ8chuC5gGwW1+Qg= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.270 s
+[INFO] Finished at: 2026-10-29T23:36:37-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1950
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 2 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=edu.stanford.nlp.semgraph.semgrex.SemgrexTest#testNotEquals'
+# cwd     : /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52
+# started : 2026-10-30T04:36:37.385Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< edu.stanford.nlp:stanford-corenlp >------------------
+[INFO] Building Stanford CoreNLP 3.9.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ stanford-corenlp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ stanford-corenlp <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ stanford-corenlp ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.578 s
+[INFO] Finished at: 2026-10-29T23:36:38-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1259
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.3 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=edu.stanford.nlp.semgraph.semgrex.SemgrexTest#testNotEquals'
+# cwd     : /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52
+# started : 2026-10-30T04:36:38.646Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< edu.stanford.nlp:stanford-corenlp >------------------
+[INFO] Building Stanford CoreNLP 3.9.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ stanford-corenlp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ stanford-corenlp <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ stanford-corenlp ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/.flakesync/clean_U3BB2HmCkd9qHpefbBDLQk5zZfcca+qy8f8Na1zWU=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running edu.stanford.nlp.semgraph.semgrex.SemgrexTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in edu.stanford.nlp.semgraph.semgrex.SemgrexTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.027 s
+[INFO] Finished at: 2026-10-29T23:36:40-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1712
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 1.7 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=edu.stanford.nlp.semgraph.semgrex.SemgrexTest#testNotEquals'
+# cwd     : /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52
+# started : 2026-10-30T04:36:40.360Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< edu.stanford.nlp:stanford-corenlp >------------------
+[INFO] Building Stanford CoreNLP 3.9.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ stanford-corenlp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ stanford-corenlp ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ stanford-corenlp ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ stanford-corenlp <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ stanford-corenlp ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.592 s
+[INFO] Finished at: 2026-10-29T23:36:41-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project stanford-corenlp: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/stanfordnlp__CoreNLP__08f6dca23e52/.flakesync/Results-CritSearch/edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1282
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.3 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 7.9 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\stanfordnlp_CoreNLP__08f6dca23e52___root\flakesync\edu.stanford.nlp.semgraph.semgrex.SemgrexTest.testNotEquals\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

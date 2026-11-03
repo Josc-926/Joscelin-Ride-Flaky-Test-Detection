@@ -1,0 +1,1247 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/dnsjava/dnsjava
+# SHA: d97b6a0685d59143372bb392ab591dd8dd840b61
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.xbill.DNS.APLRecordTest.test_malformed_address   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/dnsjava_dnsjava__d97b6a0685d5___root/2026-10-29_02-42-22/flakesync.org.xbill.DNS.APLRecordTest.test_malformed_address.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : dnsjava/dnsjava   https://github.com/dnsjava/dnsjava
+# commit         : d97b6a0685d59143372bb392ab591dd8dd840b61
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : org.xbill.DNS.APLRecordTest.test_malformed_address
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\dnsjava_dnsjava__d97b6a0685d5___root\logs\flakesync.org.xbill.DNS.APLRecordTest.test_malformed_address.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\dnsjava_dnsjava__d97b6a0685d5___root\flakesync\org.xbill.DNS.APLRecordTest.test_malformed_address\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\dnsjava__dnsjava__d97b6a0685d5
+# written        : 2026-10-29T07:07:53.483Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.xbill.DNS.APLRecordTest#test_malformed_address'
+# cwd     : /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5
+# started : 2026-10-29T07:07:53.493Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< dnsjava:dnsjava >---------------------------
+[INFO] Building dnsjava 2.1.8
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ dnsjava >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ dnsjava ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:compile (default-compile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.4.0:manifest (bundle-manifest) @ dnsjava ---
+in default pack? dig
+in default pack? jnamed$1
+in default pack? jnamed
+in default pack? jnamed$2
+in default pack? jnamed$3
+in default pack? lookup
+in default pack? update
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ dnsjava <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ dnsjava ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/.flakesync/clean_J4ih88bK8co4shEQiYd4erTpNGLO8ysW28phZRRxR0=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.xbill.DNS.APLRecordTest
+Tests run: 38, Failures: 0, Errors: 25, Skipped: 0, Time elapsed: 0.099 sec <<< FAILURE! - in org.xbill.DNS.APLRecordTest
+test_valid_IPv6(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_valid_IPv6(APLRecordTest.java:82)
+
+test_invalid_IPv4(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_invalid_IPv4(APLRecordTest.java:74)
+
+test_valid_IPv4(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_valid_IPv4(APLRecordTest.java:64)
+
+test_invalid_IPv6(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_invalid_IPv6(APLRecordTest.java:92)
+
+test_0arg(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_getObject(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_basic(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_empty_elements(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_relative_name(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_invalid_elements(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_validIPv4_short_address(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_validIPv4_short_address(APLRecordTest.java:227)
+
+test_multiple_validIPv4(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_multiple_validIPv4(APLRecordTest.java:278)
+
+test_validIPv6(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_validIPv6(APLRecordTest.java:300)
+
+test_valid_nonIP(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:23)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:166)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_valid_nonIP(APLRecordTest.java:314)
+
+test_validIPv4(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_validIPv4(APLRecordTest.java:212)
+
+test_valid_multi(org.xbill.DNS.APLRecordTest$Test_rdataFromString)  Time elapsed: 0.027 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rdataFromString(APLRecord.java:228)
+	at org.xbill.DNS.APLRecordTest$Test_rdataFromString.test_valid_multi(APLRecordTest.java:368)
+
+test_validIPv6(org.xbill.DNS.APLRecordTest$Test_rdataFromString)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rdataFromString(APLRecord.java:228)
+	at org.xbill.DNS.APLRecordTest$Test_rdataFromString.test_validIPv6(APLRecordTest.java:381)
+
+test_validIPv4(org.xbill.DNS.APLRecordTest$Test_rdataFromString)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rdataFromString(APLRecord.java:228)
+	at org.xbill.DNS.APLRecordTest$Test_rdataFromString.test_validIPv4(APLRecordTest.java:353)
+
+test(org.xbill.DNS.APLRecordTest$Test_rrToString)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToString.setUp(APLRecordTest.java:541)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_empty(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_basic(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_non_IP(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_address_with_embedded_zero(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_short_address(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_wildcard_address(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+
+Results :
+
+Tests in error: 
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_valid_IPv6 LinkageError loa...
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_invalid_IPv4 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_valid_IPv4 LinkageError loa...
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_invalid_IPv6 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_init#test_0arg LinkageError loader 'app' atte...
+  org.xbill.DNS.APLRecordTest$Test_init#test_getObject LinkageError loader 'app'...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_basic LinkageError loader 'app...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_empty_elements LinkageError lo...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_relative_name LinkageError loa...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_invalid_elements LinkageError ...
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_validIPv4_short_address LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_multiple_validIPv4 LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_validIPv6 LinkageError loader...
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_valid_nonIP LinkageError load...
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_validIPv4 LinkageError loader...
+  org.xbill.DNS.APLRecordTest$Test_rdataFromString#test_valid_multi LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rdataFromString#test_validIPv6 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_rdataFromString#test_validIPv4 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_rrToString#test LinkageError loader 'app' att...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_empty LinkageError loader 'app'...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_basic LinkageError loader 'app'...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_non_IP LinkageError loader 'app...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_address_with_embedded_zero LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_short_address LinkageError load...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_wildcard_address LinkageError l...
+
+Tests run: 38, Failures: 0, Errors: 25, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_J4ih88bK8co4shEQiYd4erTpNGLO8ysW28phZRRxR0= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.482 s
+[INFO] Finished at: 2026-10-29T02:07:55-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2179
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 2.2 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.xbill.DNS.APLRecordTest#test_malformed_address'
+# cwd     : /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5
+# started : 2026-10-29T07:07:55.674Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< dnsjava:dnsjava >---------------------------
+[INFO] Building dnsjava 2.1.8
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ dnsjava >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ dnsjava ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:compile (default-compile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.4.0:manifest (bundle-manifest) @ dnsjava ---
+in default pack? dig
+in default pack? jnamed$1
+in default pack? jnamed
+in default pack? jnamed$2
+in default pack? jnamed$3
+in default pack? lookup
+in default pack? update
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ dnsjava <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ dnsjava ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/.flakesync/clean_aJlcSksE0Zzgi4uJUT9+awsAx4JyYUmdEPg6RqYYrag=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.xbill.DNS.APLRecordTest
+Tests run: 38, Failures: 0, Errors: 25, Skipped: 0, Time elapsed: 0.108 sec <<< FAILURE! - in org.xbill.DNS.APLRecordTest
+test_valid_IPv4(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0.031 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_valid_IPv4(APLRecordTest.java:64)
+
+test_valid_IPv6(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_valid_IPv6(APLRecordTest.java:82)
+
+test_invalid_IPv4(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_invalid_IPv4(APLRecordTest.java:74)
+
+test_invalid_IPv6(org.xbill.DNS.APLRecordTest$Test_Element_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_Element_init.test_invalid_IPv6(APLRecordTest.java:92)
+
+test_4arg_basic(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.021 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_empty_elements(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_relative_name(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_4arg_invalid_elements(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_0arg(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_getObject(org.xbill.DNS.APLRecordTest$Test_init)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_init.setUp(APLRecordTest.java:126)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_validIPv4(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_validIPv4(APLRecordTest.java:212)
+
+test_validIPv4_short_address(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_validIPv4_short_address(APLRecordTest.java:227)
+
+test_multiple_validIPv4(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_multiple_validIPv4(APLRecordTest.java:278)
+
+test_validIPv6(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:164)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_validIPv6(APLRecordTest.java:300)
+
+test_valid_nonIP(org.xbill.DNS.APLRecordTest$Test_rrFromWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:23)
+	at org.xbill.DNS.APLRecord.rrFromWire(APLRecord.java:166)
+	at org.xbill.DNS.APLRecordTest$Test_rrFromWire.test_valid_nonIP(APLRecordTest.java:314)
+
+test_valid_multi(org.xbill.DNS.APLRecordTest$Test_rdataFromString)  Time elapsed: 0.022 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rdataFromString(APLRecord.java:228)
+	at org.xbill.DNS.APLRecordTest$Test_rdataFromString.test_valid_multi(APLRecordTest.java:368)
+
+test_validIPv4(org.xbill.DNS.APLRecordTest$Test_rdataFromString)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rdataFromString(APLRecord.java:228)
+	at org.xbill.DNS.APLRecordTest$Test_rdataFromString.test_validIPv4(APLRecordTest.java:353)
+
+test_validIPv6(org.xbill.DNS.APLRecordTest$Test_rdataFromString)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecord.rdataFromString(APLRecord.java:228)
+	at org.xbill.DNS.APLRecordTest$Test_rdataFromString.test_validIPv6(APLRecordTest.java:381)
+
+test(org.xbill.DNS.APLRecordTest$Test_rrToString)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToString.setUp(APLRecordTest.java:541)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_empty(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_basic(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_non_IP(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_address_with_embedded_zero(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_short_address(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+test_wildcard_address(org.xbill.DNS.APLRecordTest$Test_rrToWire)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate abstract class definition for org.xbill.DNS.Record. (org.xbill.DNS.Record is in unnamed module of loader 'app')
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:36)
+	at org.xbill.DNS.APLRecord$Element.<init>(APLRecord.java:51)
+	at org.xbill.DNS.APLRecordTest$Test_rrToWire.setUp(APLRecordTest.java:583)
+	at junit.framework.TestCase.runBare(TestCase.java:128)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:120)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at junit.framework.TestSuite.runTest(TestSuite.java:230)
+	at junit.framework.TestSuite.run(TestSuite.java:225)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.junit.JUnitTestSet.execute(JUnitTestSet.java:95)
+	at org.apache.maven.surefire.junit.JUnit3Provider.executeTestSet(JUnit3Provider.java:131)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:108)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+
+Results :
+
+Tests in error: 
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_valid_IPv4 LinkageError loa...
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_valid_IPv6 LinkageError loa...
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_invalid_IPv4 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_Element_init#test_invalid_IPv6 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_basic LinkageError loader 'app...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_empty_elements LinkageError lo...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_relative_name LinkageError loa...
+  org.xbill.DNS.APLRecordTest$Test_init#test_4arg_invalid_elements LinkageError ...
+  org.xbill.DNS.APLRecordTest$Test_init#test_0arg LinkageError loader 'app' atte...
+  org.xbill.DNS.APLRecordTest$Test_init#test_getObject LinkageError loader 'app'...
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_validIPv4 LinkageError loader...
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_validIPv4_short_address LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_multiple_validIPv4 LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_validIPv6 LinkageError loader...
+  org.xbill.DNS.APLRecordTest$Test_rrFromWire#test_valid_nonIP LinkageError load...
+  org.xbill.DNS.APLRecordTest$Test_rdataFromString#test_valid_multi LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rdataFromString#test_validIPv4 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_rdataFromString#test_validIPv6 LinkageError l...
+  org.xbill.DNS.APLRecordTest$Test_rrToString#test LinkageError loader 'app' att...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_empty LinkageError loader 'app'...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_basic LinkageError loader 'app'...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_non_IP LinkageError loader 'app...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_address_with_embedded_zero LinkageError
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_short_address LinkageError load...
+  org.xbill.DNS.APLRecordTest$Test_rrToWire#test_wildcard_address LinkageError l...
+
+Tests run: 38, Failures: 0, Errors: 25, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_aJlcSksE0Zzgi4uJUT9+awsAx4JyYUmdEPg6RqYYrag= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.426 s
+[INFO] Finished at: 2026-10-29T02:07:57-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2121
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 2.1 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.xbill.DNS.APLRecordTest#test_malformed_address'
+# cwd     : /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5
+# started : 2026-10-29T07:07:57.797Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< dnsjava:dnsjava >---------------------------
+[INFO] Building dnsjava 2.1.8
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ dnsjava >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ dnsjava ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:compile (default-compile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.4.0:manifest (bundle-manifest) @ dnsjava ---
+in default pack? dig
+in default pack? jnamed$1
+in default pack? jnamed
+in default pack? jnamed$2
+in default pack? jnamed$3
+in default pack? lookup
+in default pack? update
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ dnsjava <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ dnsjava ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.047 s
+[INFO] Finished at: 2026-10-29T02:07:59-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1733
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.7 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.xbill.DNS.APLRecordTest#test_malformed_address'
+# cwd     : /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5
+# started : 2026-10-29T07:07:59.532Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< dnsjava:dnsjava >---------------------------
+[INFO] Building dnsjava 2.1.8
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ dnsjava >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ dnsjava ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:compile (default-compile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.4.0:manifest (bundle-manifest) @ dnsjava ---
+in default pack? dig
+in default pack? jnamed$1
+in default pack? jnamed
+in default pack? jnamed$2
+in default pack? jnamed$3
+in default pack? lookup
+in default pack? update
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ dnsjava <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ dnsjava ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/.flakesync/clean_KQuoE9BYJIQXUt2ZdVEUlhb95mBtYprAIuUbZWoksA=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.xbill.DNS.APLRecordTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec - in org.xbill.DNS.APLRecordTest
+
+Results :
+
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.412 s
+[INFO] Finished at: 2026-10-29T02:08:01-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2105
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 2.1 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.xbill.DNS.APLRecordTest#test_malformed_address'
+# cwd     : /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5
+# started : 2026-10-29T07:08:01.639Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< dnsjava:dnsjava >---------------------------
+[INFO] Building dnsjava 2.1.8
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ dnsjava >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ dnsjava ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:compile (default-compile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.4.0:manifest (bundle-manifest) @ dnsjava ---
+in default pack? dig
+in default pack? jnamed$1
+in default pack? jnamed
+in default pack? jnamed$2
+in default pack? jnamed$3
+in default pack? lookup
+in default pack? update
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dnsjava ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ dnsjava ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ dnsjava <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ dnsjava ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.092 s
+[INFO] Finished at: 2026-10-29T02:08:03-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project dnsjava: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/dnsjava__dnsjava__d97b6a0685d5/.flakesync/Results-CritSearch/org.xbill.DNS.APLRecordTest.test_malformed_address-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1801
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.8 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 9.9 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\dnsjava_dnsjava__d97b6a0685d5___root\flakesync\org.xbill.DNS.APLRecordTest.test_malformed_address\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

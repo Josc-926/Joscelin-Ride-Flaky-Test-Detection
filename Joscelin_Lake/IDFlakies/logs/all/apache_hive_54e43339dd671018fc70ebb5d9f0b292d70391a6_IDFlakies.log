@@ -1,0 +1,290 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/apache/hive
+# SHA: 54e43339dd671018fc70ebb5d9f0b292d70391a6
+# Flaky tests iDFlakies found in this log (4):
+#   - org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testDelayedLocalityNodeCommErrorDelayedAllocation   [module: llap-tez] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testHostPreferenceMissesConsistentPartialAlive   [module: llap-tez] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.hadoop.hive.serde2.avro.TestAvroDeserializer.canDeserializeTimestamps   [module: serde] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.hadoop.hive.serde2.objectinspector.TestObjectInspectorUtils.testBucketHashGeneration   [module: serde] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_hive__54e43339dd67__llap-tez/2026-10-28_03-39-27/idflakies.log; logs/apache_hive__54e43339dd67__serde/2026-10-28_03-39-27/idflakies.log
+#==============================================================================
+
+########## [1/2] logs/apache_hive__54e43339dd67__llap-tez/2026-10-28_03-39-27/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/hive   https://github.com/apache/hive
+# commit         : 54e43339dd671018fc70ebb5d9f0b292d70391a6
+# module         : llap-tez
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hive__54e43339dd67__llap-tez\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hive__54e43339dd67__llap-tez\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__hive__54e43339dd67
+# written        : 2026-10-28T15:03:31.066Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl llap-tez edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67
+# started : 2026-10-28T15:03:31.078Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.hive:hive-llap-tez >--------------------
+[INFO] Building Hive Llap Tez 4.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ hive-llap-tez >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ hive-llap-tez ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-no-snapshots) @ hive-llap-tez ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-banned-dependencies-licenses) @ hive-llap-tez ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-banned-dependencies-logging) @ hive-llap-tez ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (check-banned-imports) @ hive-llap-tez ---
+[INFO] 
+[INFO] --- build-helper:1.12:add-source (add-source) @ hive-llap-tez ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/src/gen/protobuf/gen-java added.
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/src/gen/thrift/gen-javabean added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hive-llap-tez ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hive-llap-tez ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- antrun:1.8:run (define-classpath) @ hive-llap-tez ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- apache-rat:0.13:check (default) @ hive-llap-tez ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 48 explicit excludes (use -debug for more details).
+[INFO] 23 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 23 licenses.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hive-llap-tez ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hive-llap-tez ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- antrun:1.8:run (setup-test-dirs) @ hive-llap-tez ---
+[INFO] Executing tasks
+
+main:
+   [delete] Deleting directory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/tmp
+   [delete] Deleting directory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/testconf
+   [delete] Deleting directory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/warehouse
+    [mkdir] Created dir: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/tmp
+    [mkdir] Created dir: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/warehouse
+    [mkdir] Created dir: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/testconf
+     [copy] Copying 24 files to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/target/testconf
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hive-llap-tez ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ hive-llap-tez <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ hive-llap-tez ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.hive:hive-llap-tez:4.0.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 53 tests. Time taken: 0.2869999408721924 seconds
+INFO: Locating tests...
+INFO: Located 0 tests. Time taken: 0.2090001106262207 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/.dtfixingtools/original-order
+[INFO] Getting original results (53 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 3 (0.0 seconds elapsed (6.8 total), 0.0 seconds remaining).
+Verified org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testDelayedLocalityNodeCommErrorDelayedAllocation, status: expected PASS, got PASS
+Verified org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testDelayedLocalityNodeCommErrorDelayedAllocation, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 3 (6.8 seconds elapsed (47.9 total), 3.4 seconds remaining).
+Verified org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testHostPreferenceMissesConsistentPartialAlive, status: expected PASS, got PASS
+Verified org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testHostPreferenceMissesConsistentPartialAlive, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 3 of 3 (0.0 seconds elapsed (77.0 total), 0.0 seconds remaining).
+
+[INFO] Found 2 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/llap-tez/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:28 min
+[INFO] Finished at: 2026-10-28T10:04:59-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=88861
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 88.9 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 88.9 s
+# flaky reported : 2
+#   - org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testDelayedLocalityNodeCommErrorDelayedAllocation
+#   - org.apache.hadoop.hive.llap.tezplugins.TestLlapTaskSchedulerService.testHostPreferenceMissesConsistentPartialAlive
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hive__54e43339dd67__llap-tez\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+
+
+########## [2/2] logs/apache_hive__54e43339dd67__serde/2026-10-28_03-39-27/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/hive   https://github.com/apache/hive
+# commit         : 54e43339dd671018fc70ebb5d9f0b292d70391a6
+# module         : serde
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hive__54e43339dd67__serde\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hive__54e43339dd67__serde\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__hive__54e43339dd67
+# written        : 2026-10-28T15:06:29.095Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl serde edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67
+# started : 2026-10-28T15:06:29.106Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< org.apache.hive:hive-serde >---------------------
+[INFO] Building Hive Serde 4.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ hive-serde >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ hive-serde ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-no-snapshots) @ hive-serde ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-banned-dependencies-licenses) @ hive-serde ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-banned-dependencies-logging) @ hive-serde ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (check-banned-imports) @ hive-serde ---
+[INFO] 
+[INFO] --- build-helper:1.12:add-source (add-source) @ hive-serde ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/src/gen/protobuf/gen-java added.
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/src/gen/thrift/gen-javabean added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hive-serde ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hive-serde ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- antrun:1.8:run (define-classpath) @ hive-serde ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- apache-rat:0.13:check (default) @ hive-serde ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 48 explicit excludes (use -debug for more details).
+[INFO] 438 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 438 licenses.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hive-serde ---
+[INFO] Compiling 1 source file to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/classes
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hive-serde ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- antrun:1.8:run (setup-test-dirs) @ hive-serde ---
+[INFO] Executing tasks
+
+main:
+   [delete] Deleting directory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/tmp
+   [delete] Deleting directory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/testconf
+   [delete] Deleting directory /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/warehouse
+    [mkdir] Created dir: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/tmp
+    [mkdir] Created dir: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/warehouse
+    [mkdir] Created dir: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/testconf
+     [copy] Copying 24 files to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/target/testconf
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hive-serde ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ hive-serde <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ hive-serde ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.hive:hive-serde:4.0.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 321 tests. Time taken: 1.0099999904632568 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/.dtfixingtools/original-order
+[INFO] Getting original results (321 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 3 (0.0 seconds elapsed (29.9 total), 0.0 seconds remaining).
+Verified org.apache.hadoop.hive.serde2.avro.TestAvroDeserializer.canDeserializeTimestamps, status: expected ERROR, got ERROR
+Verified org.apache.hadoop.hive.serde2.avro.TestAvroDeserializer.canDeserializeTimestamps, status: expected PASS, got PASS
+Verified org.apache.hadoop.hive.serde2.objectinspector.TestObjectInspectorUtils.testBucketHashGeneration, status: expected ERROR, got ERROR
+Verified org.apache.hadoop.hive.serde2.objectinspector.TestObjectInspectorUtils.testBucketHashGeneration, status: expected PASS, got PASS
+[INFO] Found 2 tests in round 2 of 3 (29.9 seconds elapsed (156.7 total), 14.9 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (0.0 seconds elapsed (186.3 total), 0.0 seconds remaining).
+
+[INFO] Found 2 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__hive__54e43339dd67/serde/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  04:35 min
+[INFO] Finished at: 2026-10-28T10:11:05-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=276094
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 276.1 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 276.1 s
+# flaky reported : 2
+#   - org.apache.hadoop.hive.serde2.avro.TestAvroDeserializer.canDeserializeTimestamps
+#   - org.apache.hadoop.hive.serde2.objectinspector.TestObjectInspectorUtils.testBucketHashGeneration
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hive__54e43339dd67__serde\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+

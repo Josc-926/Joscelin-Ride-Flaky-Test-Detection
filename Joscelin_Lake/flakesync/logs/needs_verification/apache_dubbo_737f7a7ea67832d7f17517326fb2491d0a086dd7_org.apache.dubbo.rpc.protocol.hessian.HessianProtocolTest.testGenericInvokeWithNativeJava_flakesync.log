@@ -1,0 +1,571 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/dubbo
+# SHA: 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest.testGenericInvokeWithNativeJava   [module: dubbo-rpc/dubbo-rpc-hessian] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-hessian/2026-10-23_02-54-45/flakesync.org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest.testGenericInvokeWithNativeJava.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest#testGenericInvokeWithNativeJava' -pl dubbo-rpc/dubbo-rpc-hessian
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-23T11:43:45.636Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-rpc-hessian >-----------------
+[INFO] Building dubbo-rpc-hessian 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ dubbo-rpc-hessian >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-hessian ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ dubbo-rpc-hessian <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ dubbo-rpc-hessian ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:48.123:INFO::main: Logging initialized @398ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:48.170:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:48.226:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:48.226:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:48.227:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:48.229:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@a38c7fe{/,null,AVAILABLE}
+2026-10-23 06:43:48.261:INFO:oejs.AbstractConnector:main: Started ServerConnector@795509d9{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:48.262:INFO:oejs.Server:main: Started @537ms
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.415 sec <<< FAILURE! - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+testGenericInvokeWithNativeJava(org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest)  Time elapsed: 0.381 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.caucho.hessian.io.UnsafeSerializer. (com.caucho.hessian.io.UnsafeSerializer is in unnamed module of loader 'app')
+	at org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest.testGenericInvokeWithNativeJava(HessianProtocolTest.java:91)
+
+
+Results :
+
+Tests in error: 
+  HessianProtocolTest.testGenericInvokeWithNativeJava:91 » Linkage loader 'app' ...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_L2YPpzsEybf9RHU5tGa+5m6ht90gREGN9JB1kuNrfwU= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.367 s
+[INFO] Finished at: 2026-10-23T06:43:48-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3029
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest#testGenericInvokeWithNativeJava' -pl dubbo-rpc/dubbo-rpc-hessian
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-23T11:43:48.667Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-rpc-hessian >-----------------
+[INFO] Building dubbo-rpc-hessian 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ dubbo-rpc-hessian >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-hessian ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ dubbo-rpc-hessian <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ dubbo-rpc-hessian ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:51.176:INFO::main: Logging initialized @361ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:51.218:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:51.276:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:51.276:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:51.277:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:51.280:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:51.306:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:51.306:INFO:oejs.Server:main: Started @491ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.438 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:52.125:INFO::main: Logging initialized @366ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:52.168:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:52.228:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:52.228:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:52.229:INFO:oejs.session:main: node0 Scavenging every 600000ms
+2026-10-23 06:43:52.232:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:52.266:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:52.266:INFO:oejs.Server:main: Started @506ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.465 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:53.077:INFO::main: Logging initialized @359ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:53.134:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:53.197:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:53.197:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:53.198:INFO:oejs.session:main: node0 Scavenging every 600000ms
+2026-10-23 06:43:53.203:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:53.250:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:53.250:INFO:oejs.Server:main: Started @533ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.491 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:54.068:INFO::main: Logging initialized @375ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:54.112:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:54.177:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:54.177:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:54.178:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:54.181:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:54.222:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:54.223:INFO:oejs.Server:main: Started @529ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.501 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:55.048:INFO::main: Logging initialized @363ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:55.095:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:55.153:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:55.153:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:55.154:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:55.157:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@3527942a{/,null,AVAILABLE}
+2026-10-23 06:43:55.186:INFO:oejs.AbstractConnector:main: Started ServerConnector@3e27ba32{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:55.187:INFO:oejs.Server:main: Started @501ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.478 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:55.991:INFO::main: Logging initialized @350ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:56.031:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:56.088:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:56.088:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:56.089:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:56.092:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:56.118:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:56.119:INFO:oejs.Server:main: Started @478ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.449 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:56.942:INFO::main: Logging initialized @360ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:56.995:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:57.051:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:57.052:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:57.052:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:57.057:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:57.086:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:57.086:INFO:oejs.Server:main: Started @504ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.476 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:43:57.919:INFO::main: Logging initialized @376ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:43:57.958:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:43:58.016:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:43:58.016:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:43:58.017:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:43:58.019:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@60bd273d{/,null,AVAILABLE}
+2026-10-23 06:43:58.054:INFO:oejs.AbstractConnector:main: Started ServerConnector@58cbafc2{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:43:58.055:INFO:oejs.Server:main: Started @512ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.479 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.207 s
+[INFO] Finished at: 2026-10-23T06:43:58-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9864
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest#testGenericInvokeWithNativeJava' -pl dubbo-rpc/dubbo-rpc-hessian
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-23T11:43:58.533Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-rpc-hessian >-----------------
+[INFO] Building dubbo-rpc-hessian 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ dubbo-rpc-hessian >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-hessian ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ dubbo-rpc-hessian <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ dubbo-rpc-hessian ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.387 s
+[INFO] Finished at: 2026-10-23T06:44:00-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2058
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest#testGenericInvokeWithNativeJava' -pl dubbo-rpc/dubbo-rpc-hessian
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-23T11:44:00.592Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-rpc-hessian >-----------------
+[INFO] Building dubbo-rpc-hessian 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ dubbo-rpc-hessian >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-hessian ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ dubbo-rpc-hessian <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ dubbo-rpc-hessian ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+log4j:WARN No appenders could be found for logger (org.apache.dubbo.common.logger.LoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2026-10-23 06:44:03.074:INFO::main: Logging initialized @343ms to org.eclipse.jetty.util.log.StdErrLog
+2026-10-23 06:44:03.113:INFO:oejs.Server:main: jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+2026-10-23 06:44:03.170:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2026-10-23 06:44:03.170:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2026-10-23 06:44:03.171:INFO:oejs.session:main: node0 Scavenging every 660000ms
+2026-10-23 06:44:03.174:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@1151e434{/,null,AVAILABLE}
+2026-10-23 06:44:03.210:INFO:oejs.AbstractConnector:main: Started ServerConnector@2e8c1c9b{HTTP/1.1,[http/1.1]}{0.0.0.0:5342}
+2026-10-23 06:44:03.211:INFO:oejs.Server:main: Started @480ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.45 sec - in org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.420 s
+[INFO] Finished at: 2026-10-23T06:44:03-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3108
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest#testGenericInvokeWithNativeJava' -pl dubbo-rpc/dubbo-rpc-hessian
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-23T11:44:03.702Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-rpc-hessian >-----------------
+[INFO] Building dubbo-rpc-hessian 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ dubbo-rpc-hessian >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-hessian ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-hessian ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-hessian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-hessian ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ dubbo-rpc-hessian <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ dubbo-rpc-hessian ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.359 s
+[INFO] Finished at: 2026-10-23T06:44:05-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project dubbo-rpc-hessian: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-hessian/.flakesync/Results-CritSearch/org.apache.dubbo.rpc.protocol.hessian.HessianProtocolTest.testGenericInvokeWithNativeJava-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2034

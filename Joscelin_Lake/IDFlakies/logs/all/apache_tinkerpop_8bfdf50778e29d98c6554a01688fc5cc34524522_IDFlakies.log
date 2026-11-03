@@ -1,0 +1,184 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/apache/tinkerpop
+# SHA: 8bfdf50778e29d98c6554a01688fc5cc34524522
+# Flaky tests iDFlakies found in this log (3):
+#   - org.apache.tinkerpop.gremlin.spark.structure.io.InputOutputRDDTest.shouldReadFromWriteToArbitraryRDD   [module: spark-gremlin] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.tinkerpop.gremlin.spark.structure.io.InputRDDTest.shouldSupportHadoopGraphOLTP   [module: spark-gremlin] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.tinkerpop.gremlin.spark.structure.io.SparkRDDLoadTest.shouldLoadVerticesRDDWithInputRDD   [module: spark-gremlin] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_tinkerpop__8bfdf50778e2__spark-gremlin/2026-10-31_05-09-25/idflakies.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/tinkerpop   https://github.com/apache/tinkerpop
+# commit         : 8bfdf50778e29d98c6554a01688fc5cc34524522
+# module         : spark-gremlin
+# dataset        : pr-data
+# run            : 2026-10-31_05-09-25
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\apache_tinkerpop__8bfdf50778e2__spark-gremlin\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\apache_tinkerpop__8bfdf50778e2__spark-gremlin\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__tinkerpop__8bfdf50778e2
+# written        : 2026-10-31T10:42:05.907Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl spark-gremlin edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2
+# started : 2026-10-31T10:42:05.917Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.tinkerpop:spark-gremlin >-----------------
+[INFO] Building Apache TinkerPop :: Spark Gremlin 4.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ spark-gremlin >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ spark-gremlin ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-java-version) @ spark-gremlin ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-all) @ spark-gremlin ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (build-helper-regex-is-snapshot-used) @ spark-gremlin ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (build-helper-regex-is-prerelease-version) @ spark-gremlin ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (build-helper-regex-is-prerelease-version2) @ spark-gremlin ---
+[INFO] No match to regex '4.0.0-SNAPSHOT' found in 'true'. The initial value 'true' is left as-is...
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (build-helper-regex-set-docker-version-tag) @ spark-gremlin ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (build-helper-regex-set-docker-latest-tag) @ spark-gremlin ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:parse-version (parse-version) @ spark-gremlin ---
+[INFO] 
+[INFO] --- apache-rat:0.13:check (rat-checks) @ spark-gremlin ---
+[INFO] Added 1 additional default licenses.
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 69 explicit excludes (use -debug for more details).
+[INFO] 82 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 82 licenses.
+[INFO] 
+[INFO] --- buildnumber:3.2.0:create (default) @ spark-gremlin ---
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin
+[INFO] Storing buildNumber: 8bfdf50778e29d98c6554a01688fc5cc34524522 at timestamp: 1793443328710
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin' && 'git' 'symbolic-ref' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin
+[INFO] Storing scmBranch: UNKNOWN
+[INFO] 
+[INFO] --- gplus:2.1.0:addSources (default) @ spark-gremlin ---
+[INFO] 
+[INFO] --- gplus:2.1.0:addTestSources (default) @ spark-gremlin ---
+[INFO] 
+[INFO] --- gplus:2.1.0:generateStubs (default) @ spark-gremlin ---
+[INFO] Using isolated classloader, without GMavenPlus classpath.
+[INFO] Using Groovy 4.0.9 to perform generateStubs.
+[INFO] Generated 2 stubs.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ spark-gremlin ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ spark-gremlin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ spark-gremlin ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- gplus:2.1.0:compile (default) @ spark-gremlin ---
+[INFO] Using isolated classloader, without GMavenPlus classpath.
+[INFO] Using Groovy 4.0.9 to perform compile.
+[INFO] invokedynamic enabled.
+[INFO] Parallel parsing enabled.
+[INFO] Compiled 3 files.
+[INFO] 
+[INFO] --- gplus:2.1.0:removeStubs (default) @ spark-gremlin ---
+[WARNING] Plugin is modifying compileSourceRoots through iterator.remove(), which will not work in Maven 4.0.0. Use MavenProject.addCompileSourceRoot()/removeCompileSourceRoot() methods instead. If using a plugin, please upgrade to the latest version or report the issue to the plugin maintainer. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+[INFO] 
+[INFO] --- gplus:2.1.0:generateTestStubs (default) @ spark-gremlin ---
+[INFO] No sources specified for stub generation. Skipping.
+[INFO] Generated 0 stubs.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ spark-gremlin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ spark-gremlin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/src/test/java/org/apache/tinkerpop/gremlin/spark/process/computer/traversal/strategy/optimization/interceptor/SparkCloneVertexProgramInterceptorTest.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/src/test/java/org/apache/tinkerpop/gremlin/spark/process/computer/traversal/strategy/optimization/interceptor/SparkCloneVertexProgramInterceptorTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/src/test/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorageCheck.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/src/test/java/org/apache/tinkerpop/gremlin/hadoop/structure/io/FileSystemStorageCheck.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- gplus:2.1.0:compileTests (default) @ spark-gremlin ---
+[INFO] No sources specified for compilation. Skipping.
+[INFO] 
+[INFO] --- gplus:2.1.0:removeTestStubs (default) @ spark-gremlin ---
+[WARNING] Plugin is modifying testCompileSourceRoots through iterator.remove(), which will not work in Maven 4.0.0. Use MavenProject.addTestCompileSourceRoot()/removeTestCompileSourceRoot() methods instead. If using a plugin, please upgrade to the latest version or report the issue to the plugin maintainer. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ spark-gremlin <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ spark-gremlin ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.tinkerpop:spark-gremlin:4.0.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 39 tests. Time taken: 0.8029999732971191 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/.dtfixingtools/original-order
+[INFO] Getting original results (39 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.tinkerpop.gremlin.spark.structure.io.InputRDDTest.shouldSupportHadoopGraphOLTP, status: expected PASS, got PASS
+Verified org.apache.tinkerpop.gremlin.spark.structure.io.InputRDDTest.shouldSupportHadoopGraphOLTP, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 1 of 3 (0.0 seconds elapsed (87.0 total), 0.0 seconds remaining).
+Verified org.apache.tinkerpop.gremlin.spark.structure.io.InputOutputRDDTest.shouldReadFromWriteToArbitraryRDD, status: expected PASS, got PASS
+Verified org.apache.tinkerpop.gremlin.spark.structure.io.InputOutputRDDTest.shouldReadFromWriteToArbitraryRDD, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 3 (0.0 seconds elapsed (174.0 total), 0.0 seconds remaining).
+Verified org.apache.tinkerpop.gremlin.spark.structure.io.SparkRDDLoadTest.shouldLoadVerticesRDDWithInputRDD, status: expected ERROR, got ERROR
+Verified org.apache.tinkerpop.gremlin.spark.structure.io.SparkRDDLoadTest.shouldLoadVerticesRDDWithInputRDD, status: expected PASS, got PASS
+[INFO] Found 1 tests in round 3 of 3 (0.0 seconds elapsed (286.5 total), 0.0 seconds remaining).
+
+[INFO] Found 3 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__tinkerpop__8bfdf50778e2/spark-gremlin/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  07:37 min
+[INFO] Finished at: 2026-10-31T05:49:44-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=458671
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 458.7 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 458.7 s
+# flaky reported : 3
+#   - org.apache.tinkerpop.gremlin.spark.structure.io.InputRDDTest.shouldSupportHadoopGraphOLTP
+#   - org.apache.tinkerpop.gremlin.spark.structure.io.InputOutputRDDTest.shouldReadFromWriteToArbitraryRDD
+#   - org.apache.tinkerpop.gremlin.spark.structure.io.SparkRDDLoadTest.shouldLoadVerticesRDDWithInputRDD
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\apache_tinkerpop__8bfdf50778e2__spark-gremlin\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+

@@ -1,0 +1,568 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/dubbo
+# SHA: 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.dubbo.config.AbstractInterfaceConfigTest.checkStubAndMock7   [module: dubbo-config/dubbo-config-api] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-api/2026-10-19_21-48-49/flakesync.org.apache.dubbo.config.AbstractInterfaceConfigTest.checkStubAndMock7.log
+#==============================================================================
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.dubbo.config.AbstractInterfaceConfigTest#checkStubAndMock7' -pl dubbo-config/dubbo-config-api
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-20T02:22:11.660Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-config-api >------------------
+[INFO] Building dubbo-config-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ dubbo-config-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ dubbo-config-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ dubbo-config-api ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:14:014 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.328 sec <<< FAILURE! - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+checkStubAndMock7(org.apache.dubbo.config.AbstractInterfaceConfigTest)  Time elapsed: 0.24 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.IllegalStateException> but was<java.lang.LinkageError>
+	at org.apache.dubbo.config.AbstractInterfaceConfigTest.checkStubAndMock7(AbstractInterfaceConfigTest.java:230)
+
+[19/10/26 09:22:14:014 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:14:014 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests in error: 
+  AbstractInterfaceConfigTest.checkStubAndMock7 »  Unexpected exception, expecte...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_Fy88RKZsqcXZZ9jNxFosEeQaJvP4n0k8AYXff5yx+4= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.758 s
+[INFO] Finished at: 2026-10-19T21:22:15-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3480
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.dubbo.config.AbstractInterfaceConfigTest#checkStubAndMock7' -pl dubbo-config/dubbo-config-api
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-20T02:22:15.142Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-config-api >------------------
+[INFO] Building dubbo-config-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ dubbo-config-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ dubbo-config-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ dubbo-config-api ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:18:018 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.326 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:18:018 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:18:018 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:19:019 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:19:019 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:20:020 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:20:020 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.349 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:21:021 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:22:022 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:22:022 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.34 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:24:024 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:25:025 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:26:026 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:29:029 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:31:031 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:31:031 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:38:038 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:22:41:041 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:42:042 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.381 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:22:55:055 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:23:01:001 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:23:02:002 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:23:27:027 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:16 min
+[INFO] Finished at: 2026-10-19T21:23:32-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=77599
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.dubbo.config.AbstractInterfaceConfigTest#checkStubAndMock7' -pl dubbo-config/dubbo-config-api
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-20T02:23:32.744Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-config-api >------------------
+[INFO] Building dubbo-config-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ dubbo-config-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ dubbo-config-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ dubbo-config-api ---
+INFO: Running DeltaDebugMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:23:35:035 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.328 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:23:35:035 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:23:48:048 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:23:49:049 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.304 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:24:15:015 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:24:15:015 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+DELTA UPDATE DELAY: 25600
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:24:15:015 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:24:15:015 CDT] DubboShutdownHook  INFO config.DubboShutdownHook:  [DUBBO] Run shutdown hook now., dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+[19/10/26 09:24:41:041 CDT] DubboShutdownHook  INFO support.AbstractRegistryFactory:  [DUBBO] Close all registries [], dubbo version: 2.7.0-SNAPSHOT, current host: 172.19.37.89
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:24:42:042 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.317 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+DELTA UPDATE DELAY: 51200
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:39 min
+[INFO] Finished at: 2026-10-19T21:25:12-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=100027
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.dubbo.config.AbstractInterfaceConfigTest#checkStubAndMock7' -pl dubbo-config/dubbo-config-api
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-20T02:25:12.773Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-config-api >------------------
+[INFO] Building dubbo-config-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ dubbo-config-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ dubbo-config-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ dubbo-config-api ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.dubbo.config.AbstractInterfaceConfigTest
+[19/10/26 09:25:15:015 CDT] main  INFO logger.LoggerFactory: using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by javassist.ClassPool (file:/home/ectopic/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of javassist.ClassPool
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 sec - in org.apache.dubbo.config.AbstractInterfaceConfigTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32.718 s
+[INFO] Finished at: 2026-10-19T21:25:46-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=33536
+
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.dubbo.config.AbstractInterfaceConfigTest#checkStubAndMock7' -pl dubbo-config/dubbo-config-api
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-20T02:25:46.311Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-config-api >------------------
+[INFO] Building dubbo-config-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ dubbo-config-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ dubbo-config-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ dubbo-config-api ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.735 s
+[INFO] Finished at: 2026-10-19T21:25:48-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project dubbo-config-api: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/.flakesync/Results-CritSearch/org.apache.dubbo.config.AbstractInterfaceConfigTest.checkStubAndMock7-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2575

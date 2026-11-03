@@ -1,0 +1,85 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/alibaba/nacos
+# SHA: aeaaded00a70d7ea11982a0826cef1d7b3203d32
+# Flaky tests iDFlakies found in this log (1):
+#   - com.alibaba.nacos.client.auth.ram.injector.NamingResourceInjectorTest#testDoInjectForStsWithException()   [module: client] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/alibaba_nacos__aeaaded00a70__client/2026-10-16_00-20-02/idflakies.log
+#==============================================================================
+
+$ mvn -B -pl client edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__nacos__aeaaded00a70
+# started: 2026-10-16T02:17:08.941Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.alibaba.nacos:nacos-client >-------------------
+[INFO] Building nacos-client 2.5.0-SNAPSHOT 2.5.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ nacos-client >>>
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-ban-circular-dependencies) @ nacos-client ---
+[INFO] Rule 0: org.codehaus.mojo.extraenforcer.dependencies.BanCircularDependencies passed
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ nacos-client ---
+[WARNING] Old version of checkstyle detected. Consider updating to >= v8.30
+[WARNING] For more information see: https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/upgrading-checkstyle.html
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco:0.8.7:prepare-agent (default-prepare-agent) @ nacos-client ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__nacos__aeaaded00a70/client/target/coverage-reports/jacoco-unit.exec,append=true,excludes=**/grpc/auto/**:**/packagescan/classreading/**:**/packagescan/resource/**:**/packagescan/util/**,output=file
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ nacos-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- compiler:3.5.1:compile (default-compile) @ nacos-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ nacos-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- compiler:3.5.1:testCompile (default-testCompile) @ nacos-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ nacos-client <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ nacos-client ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving com.alibaba.nacos:nacos-client:2.5.0-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 740 tests. Time taken: 0.6009998321533203 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__nacos__aeaaded00a70/client/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__nacos__aeaaded00a70/client/.dtfixingtools/original-order
+[INFO] Getting original results (740 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 10 (0.0 seconds elapsed (79.1 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 2 of 10 (79.1 seconds elapsed (157.8 total), 316.4 seconds remaining).
+[INFO] Found 0 tests in round 3 of 10 (157.8 seconds elapsed (236.6 total), 368.1 seconds remaining).
+[INFO] Found 0 tests in round 4 of 10 (236.6 seconds elapsed (315.8 total), 354.9 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (315.8 seconds elapsed (395.1 total), 315.8 seconds remaining).
+[INFO] Found 0 tests in round 6 of 10 (395.1 seconds elapsed (473.8 total), 263.4 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (473.8 seconds elapsed (553.0 total), 203.0 seconds remaining).
+Verified com.alibaba.nacos.client.auth.ram.injector.NamingResourceInjectorTest#testDoInjectForStsWithException(), status: expected PASS, got PASS
+Verified com.alibaba.nacos.client.auth.ram.injector.NamingResourceInjectorTest#testDoInjectForStsWithException(), status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 8 of 10 (553.0 seconds elapsed (672.3 total), 138.3 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (0.0 seconds elapsed (751.7 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 10 of 10 (79.4 seconds elapsed (829.9 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/alibaba__nacos__aeaaded00a70/client/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/alibaba__nacos__aeaaded00a70/client/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17:51 min
+[INFO] Finished at: 2026-10-15T21:35:01-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1072776

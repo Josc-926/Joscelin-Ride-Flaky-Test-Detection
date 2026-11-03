@@ -1,0 +1,870 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/hbase
+# SHA: 881c92b892844be567d5f26b161a820ebf319f84
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes   [module: hbase-zookeeper] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_hbase__881c92b89284__hbase-zookeeper/2026-10-28_03-39-27/flakesync.org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/hbase   https://github.com/apache/hbase
+# commit         : 881c92b892844be567d5f26b161a820ebf319f84
+# module         : hbase-zookeeper
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hbase__881c92b89284__hbase-zookeeper\logs\flakesync.org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hbase__881c92b89284__hbase-zookeeper\flakesync\org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__hbase__881c92b89284
+# written        : 2026-10-28T14:37:19.212Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.hadoop.hbase.zookeeper.TestZKUtil#testZNodeDeletes' -pl hbase-zookeeper
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:37:19.223Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------------< org.apache.hbase:hbase-zookeeper >------------------
+[INFO] Building Apache HBase - Zookeeper 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ hbase-zookeeper >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-zookeeper ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-zookeeper ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-zookeeper ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- dependency:3.1.1:build-classpath (create-mrapp-generated-classpath) @ hbase-zookeeper ---
+[INFO] Skipped writing classpath file '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-classes/mrapp-generated-classpath'.  No changes found.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources/META-INF
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ hbase-zookeeper <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ hbase-zookeeper ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:22,980 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:23,187 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a037e084-d8eb-97a4-80f6-d20d482891cf/cluster_a5f5d30b-44dc-60cb-2eab-dce6862dd20d, deleteOnExit=true
+2026-10-28 09:37:23,335 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a037e084-d8eb-97a4-80f6-d20d482891cf/cluster_a5f5d30b-44dc-60cb-2eab-dce6862dd20d/zookeeper_0, clientPort=57552, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a037e084-d8eb-97a4-80f6-d20d482891cf/cluster_a5f5d30b-44dc-60cb-2eab-dce6862dd20d/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a037e084-d8eb-97a4-80f6-d20d482891cf/cluster_a5f5d30b-44dc-60cb-2eab-dce6862dd20d/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:23,347 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=57552
+2026-10-28 09:37:23,358 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:57552
+2026-10-28 09:37:23,373 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[ERROR] org.apache.hadoop.hbase.zookeeper.TestZKUtil  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.zookeeper.client.StaticHostProvider. (org.apache.zookeeper.client.StaticHostProvider is in unnamed module of loader 'app')
+	at org.apache.hadoop.hbase.zookeeper.TestZKUtil.setUp(TestZKUtil.java:69)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestZKUtil.setUp:69 » Linkage loader 'app' attempted duplicate class definitio...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_LJQ26xpA2BuQediNS0y+p2Gg7xj1ieFj6oYIU4EKTzc= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.888 s
+[INFO] Finished at: 2026-10-28T09:37:23-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4576
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 4.6 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.hadoop.hbase.zookeeper.TestZKUtil#testZNodeDeletes' -pl hbase-zookeeper
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:37:23.801Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------------< org.apache.hbase:hbase-zookeeper >------------------
+[INFO] Building Apache HBase - Zookeeper 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ hbase-zookeeper >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-zookeeper ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-zookeeper ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-zookeeper ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- dependency:3.1.1:build-classpath (create-mrapp-generated-classpath) @ hbase-zookeeper ---
+[INFO] Skipped writing classpath file '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-classes/mrapp-generated-classpath'.  No changes found.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources/META-INF
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ hbase-zookeeper <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ hbase-zookeeper ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:27,503 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:27,620 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/9d1a3752-03ec-d869-8f59-a65ad41b825b/cluster_d9f751d7-4997-7d11-204b-98ea838856ed, deleteOnExit=true
+2026-10-28 09:37:27,734 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/9d1a3752-03ec-d869-8f59-a65ad41b825b/cluster_d9f751d7-4997-7d11-204b-98ea838856ed/zookeeper_0, clientPort=59755, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/9d1a3752-03ec-d869-8f59-a65ad41b825b/cluster_d9f751d7-4997-7d11-204b-98ea838856ed/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/9d1a3752-03ec-d869-8f59-a65ad41b825b/cluster_d9f751d7-4997-7d11-204b-98ea838856ed/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:27,743 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=59755
+2026-10-28 09:37:27,754 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:59755
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:27,786 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:27,788 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000 connected
+2026-10-28 09:37:27,822 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:27,825 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:27,833 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:27,833 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:27,833 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:27,833 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:27,834 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:27,834 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:27,835 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:27,840 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:27,945 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:27,945 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:27,945 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:27,946 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324f6320000, quorum=127.0.0.1:59755, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:27,963 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.212 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:28,634 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:28,744 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/add6953b-ecf2-b8d7-adb8-9056ed06068f/cluster_c18d49b8-cc15-0dd6-1994-1e21d2ae05ce, deleteOnExit=true
+2026-10-28 09:37:28,865 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/add6953b-ecf2-b8d7-adb8-9056ed06068f/cluster_c18d49b8-cc15-0dd6-1994-1e21d2ae05ce/zookeeper_0, clientPort=54405, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/add6953b-ecf2-b8d7-adb8-9056ed06068f/cluster_c18d49b8-cc15-0dd6-1994-1e21d2ae05ce/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/add6953b-ecf2-b8d7-adb8-9056ed06068f/cluster_c18d49b8-cc15-0dd6-1994-1e21d2ae05ce/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:28,873 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=54405
+2026-10-28 09:37:28,883 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:54405
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:28,912 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:28,914 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000 connected
+2026-10-28 09:37:28,944 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:28,947 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:28,954 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:28,954 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:28,955 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:28,955 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:28,955 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:28,955 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:28,957 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:28,963 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:29,068 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:29,068 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:29,068 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324faa30000, quorum=127.0.0.1:54405, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:29,082 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:29,732 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:29,856 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/b1754678-eaa1-299c-40d8-9130fd5fb2d9/cluster_7946c700-787c-46c6-ce2b-366d1a267c15, deleteOnExit=true
+2026-10-28 09:37:29,968 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/b1754678-eaa1-299c-40d8-9130fd5fb2d9/cluster_7946c700-787c-46c6-ce2b-366d1a267c15/zookeeper_0, clientPort=51688, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/b1754678-eaa1-299c-40d8-9130fd5fb2d9/cluster_7946c700-787c-46c6-ce2b-366d1a267c15/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/b1754678-eaa1-299c-40d8-9130fd5fb2d9/cluster_7946c700-787c-46c6-ce2b-366d1a267c15/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:29,977 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=51688
+2026-10-28 09:37:29,986 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:51688
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:30,015 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:30,017 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000 connected
+2026-10-28 09:37:30,050 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:30,053 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:30,060 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:30,061 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:30,061 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:30,061 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:30,061 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:30,062 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:30,063 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:30,067 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:30,172 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:30,173 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:30,173 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:30,173 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000324fef60000, quorum=127.0.0.1:51688, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:30,187 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:30,842 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:30,964 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/7fd7f7ca-b5a2-6d0e-47fb-b92cc3e753d5/cluster_83344cfa-a60e-a75f-04f9-9e6782781b14, deleteOnExit=true
+2026-10-28 09:37:31,074 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/7fd7f7ca-b5a2-6d0e-47fb-b92cc3e753d5/cluster_83344cfa-a60e-a75f-04f9-9e6782781b14/zookeeper_0, clientPort=52555, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/7fd7f7ca-b5a2-6d0e-47fb-b92cc3e753d5/cluster_83344cfa-a60e-a75f-04f9-9e6782781b14/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/7fd7f7ca-b5a2-6d0e-47fb-b92cc3e753d5/cluster_83344cfa-a60e-a75f-04f9-9e6782781b14/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:31,083 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=52555
+2026-10-28 09:37:31,092 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:52555
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:31,125 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:31,127 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000 connected
+2026-10-28 09:37:31,159 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:31,161 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:31,169 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:31,169 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:31,169 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:31,169 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:31,169 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:31,170 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:31,171 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:31,176 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:31,280 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:31,280 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:31,280 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:31,281 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032503450000, quorum=127.0.0.1:52555, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:31,298 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:31,940 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:32,063 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/afd71224-bb22-89db-5417-bab11008c4a9/cluster_71415357-81ac-d1c6-2b74-424f591c88a5, deleteOnExit=true
+2026-10-28 09:37:32,173 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/afd71224-bb22-89db-5417-bab11008c4a9/cluster_71415357-81ac-d1c6-2b74-424f591c88a5/zookeeper_0, clientPort=62740, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/afd71224-bb22-89db-5417-bab11008c4a9/cluster_71415357-81ac-d1c6-2b74-424f591c88a5/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/afd71224-bb22-89db-5417-bab11008c4a9/cluster_71415357-81ac-d1c6-2b74-424f591c88a5/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:32,182 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=62740
+2026-10-28 09:37:32,192 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:62740
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:32,223 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:32,226 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000 connected
+2026-10-28 09:37:32,259 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:32,261 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:32,269 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:32,269 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:32,269 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:32,270 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:32,270 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:32,270 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:32,271 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:32,277 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:32,381 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:32,381 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:32,382 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032507940000, quorum=127.0.0.1:62740, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:32,399 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:33,046 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:33,155 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a55528a6-7556-beb2-a13d-09de6d51599c/cluster_903cd9cc-1a95-5f03-1429-f073231431d7, deleteOnExit=true
+2026-10-28 09:37:33,274 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a55528a6-7556-beb2-a13d-09de6d51599c/cluster_903cd9cc-1a95-5f03-1429-f073231431d7/zookeeper_0, clientPort=58261, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a55528a6-7556-beb2-a13d-09de6d51599c/cluster_903cd9cc-1a95-5f03-1429-f073231431d7/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/a55528a6-7556-beb2-a13d-09de6d51599c/cluster_903cd9cc-1a95-5f03-1429-f073231431d7/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:33,284 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=58261
+2026-10-28 09:37:33,295 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:58261
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:33,327 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:33,329 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000 connected
+2026-10-28 09:37:33,362 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:33,364 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:33,372 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:33,372 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:33,372 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:33,373 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:33,373 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:33,374 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:33,374 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:33,380 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:33,485 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:33,485 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:33,485 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:33,486 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x10003250bd70000, quorum=127.0.0.1:58261, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:33,502 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.204 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:34,165 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:34,282 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/fa21db99-fcb0-10d0-794f-a4860d5e9c3e/cluster_9a0a7559-c40b-3852-ac3c-ac7224df2368, deleteOnExit=true
+2026-10-28 09:37:34,388 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/fa21db99-fcb0-10d0-794f-a4860d5e9c3e/cluster_9a0a7559-c40b-3852-ac3c-ac7224df2368/zookeeper_0, clientPort=49625, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/fa21db99-fcb0-10d0-794f-a4860d5e9c3e/cluster_9a0a7559-c40b-3852-ac3c-ac7224df2368/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/fa21db99-fcb0-10d0-794f-a4860d5e9c3e/cluster_9a0a7559-c40b-3852-ac3c-ac7224df2368/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:34,397 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=49625
+2026-10-28 09:37:34,408 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:49625
+2026-10-28 09:37:34,443 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:34,445 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000 connected
+2026-10-28 09:37:34,476 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:34,479 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:34,487 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:34,487 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:34,487 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:34,487 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:34,487 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:34,488 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:34,488 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:34,494 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:34,598 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:34,598 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:34,598 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:34,599 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325103b0000, quorum=127.0.0.1:49625, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:34,615 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:35,297 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:35,403 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/877a0d46-7120-8abc-acf2-21c5078b6fe6/cluster_2d237790-f07d-ed20-50f0-0f7e2db5cd5b, deleteOnExit=true
+2026-10-28 09:37:35,515 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/877a0d46-7120-8abc-acf2-21c5078b6fe6/cluster_2d237790-f07d-ed20-50f0-0f7e2db5cd5b/zookeeper_0, clientPort=57582, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/877a0d46-7120-8abc-acf2-21c5078b6fe6/cluster_2d237790-f07d-ed20-50f0-0f7e2db5cd5b/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/877a0d46-7120-8abc-acf2-21c5078b6fe6/cluster_2d237790-f07d-ed20-50f0-0f7e2db5cd5b/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:35,524 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=57582
+2026-10-28 09:37:35,534 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:57582
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:35,569 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:35,571 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000 connected
+2026-10-28 09:37:35,604 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:35,606 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:35,614 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:35,614 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:35,614 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:35,615 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:35,615 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:35,615 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:35,616 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:35,621 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:35,726 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:35,727 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:35,727 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:35,727 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x100032514a00000, quorum=127.0.0.1:57582, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:35,743 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.2 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.596 s
+[INFO] Finished at: 2026-10-28T09:37:36-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=12329
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 12.3 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.hadoop.hbase.zookeeper.TestZKUtil#testZNodeDeletes' -pl hbase-zookeeper
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:37:36.133Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------------< org.apache.hbase:hbase-zookeeper >------------------
+[INFO] Building Apache HBase - Zookeeper 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ hbase-zookeeper >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-zookeeper ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-zookeeper ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-zookeeper ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- dependency:3.1.1:build-classpath (create-mrapp-generated-classpath) @ hbase-zookeeper ---
+[INFO] Skipped writing classpath file '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-classes/mrapp-generated-classpath'.  No changes found.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources/META-INF
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ hbase-zookeeper <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ hbase-zookeeper ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.569 s
+[INFO] Finished at: 2026-10-28T09:37:39-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3284
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 3.3 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.hadoop.hbase.zookeeper.TestZKUtil#testZNodeDeletes' -pl hbase-zookeeper
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:37:39.419Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------------< org.apache.hbase:hbase-zookeeper >------------------
+[INFO] Building Apache HBase - Zookeeper 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ hbase-zookeeper >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-zookeeper ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-zookeeper ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-zookeeper ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- dependency:3.1.1:build-classpath (create-mrapp-generated-classpath) @ hbase-zookeeper ---
+[INFO] Skipped writing classpath file '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-classes/mrapp-generated-classpath'.  No changes found.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources/META-INF
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ hbase-zookeeper <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ hbase-zookeeper ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+2026-10-28 09:37:43,123 INFO  [main] hbase.HBaseClassTestRule(94): Test class org.apache.hadoop.hbase.zookeeper.TestZKUtil timeout: 13 mins
+2026-10-28 09:37:43,244 INFO  [Time-limited test] hbase.HBaseZKTestingUtility(83): Created new mini-cluster data directory: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/c5d59253-5b87-a8da-7c26-7ae52fe90af6/cluster_fc67c738-8d4f-2ba3-0546-69ff1fddb6e6, deleteOnExit=true
+2026-10-28 09:37:43,354 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(262): Started connectionTimeout=30000, dir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/c5d59253-5b87-a8da-7c26-7ae52fe90af6/cluster_fc67c738-8d4f-2ba3-0546-69ff1fddb6e6/zookeeper_0, clientPort=52037, secureClientPort=-1, dataDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/c5d59253-5b87-a8da-7c26-7ae52fe90af6/cluster_fc67c738-8d4f-2ba3-0546-69ff1fddb6e6/zookeeper_0/version-2, dataDirSize=424
+dataLogDir=/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-data/c5d59253-5b87-a8da-7c26-7ae52fe90af6/cluster_fc67c738-8d4f-2ba3-0546-69ff1fddb6e6/zookeeper_0/version-2, dataLogSize=424
+tickTime=2000, maxClientCnxns=300, minSessionTimeout=4000, maxSessionTimeout=40000, serverId=0
+
+2026-10-28 09:37:43,363 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(288): Started MiniZooKeeperCluster and ran 'stat' on client port=52037
+2026-10-28 09:37:43,374 INFO  [Time-limited test] zookeeper.RecoverableZooKeeper(100): Process identifier=org.apache.hadoop.hbase.zookeeper.TestZKUtil connecting to ZooKeeper ensemble=127.0.0.1:52037
+[INFO] Running org.apache.hadoop.hbase.zookeeper.TestZKUtil
+2026-10-28 09:37:43,409 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil0x0, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+2026-10-28 09:37:43,412 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(582): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000 connected
+2026-10-28 09:37:43,444 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3
+2026-10-28 09:37:43,447 DEBUG [Time-limited test] zookeeper.ZKUtil(356): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Set watcher on existing znode=/l1/l2/l3/l4
+2026-10-28 09:37:43,455 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3/l4
+2026-10-28 09:37:43,455 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:43,456 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2/l3
+2026-10-28 09:37:43,456 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=NodeChildrenChanged, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:43,456 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=NodeDeleted, state=SyncConnected, path=/l1/l2
+2026-10-28 09:37:43,457 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Unable to get data of znode /l1/l2/l3/l4 because node does not exist (not necessarily an error)
+2026-10-28 09:37:43,458 DEBUG [Time-limited test] zookeeper.ZKUtil(446): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Unable to list children of znode /l1/l2 because node does not exist (not an error)
+2026-10-28 09:37:43,463 DEBUG [Time-limited test] zookeeper.ZKUtil(723): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Unable to get data of znode /l1/l2 because node does not exist (not necessarily an error)
+2026-10-28 09:37:43,567 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:43,568 DEBUG [Time-limited test-EventThread] zookeeper.ZKWatcher(557): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase Received ZooKeeper Event, type=None, state=Closed, path=null
+2026-10-28 09:37:43,568 DEBUG [zk-event-processor-pool-0] zookeeper.ZKWatcher(591): org.apache.hadoop.hbase.zookeeper.TestZKUtil-0x1000325333a0000, quorum=127.0.0.1:52037, baseZNode=/hbase ZooKeeper client closed, ignoring
+2026-10-28 09:37:43,582 INFO  [Time-limited test] zookeeper.MiniZooKeeperCluster(347): Shutdown MiniZK cluster with all ZK servers
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.204 s - in org.apache.hadoop.hbase.zookeeper.TestZKUtil
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.847 s
+[INFO] Finished at: 2026-10-28T09:37:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4571
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 4.6 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.hadoop.hbase.zookeeper.TestZKUtil#testZNodeDeletes' -pl hbase-zookeeper
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284
+# started : 2026-10-28T14:37:43.992Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------------< org.apache.hbase:hbase-zookeeper >------------------
+[INFO] Building Apache HBase - Zookeeper 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ hbase-zookeeper >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- build-helper:3.0.0:bsh-property (negate-license-bundles-property) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- build-helper:3.0.0:regex-property (create-license-file-path-property) @ hbase-zookeeper ---
+[INFO] No match to regex '\\' found in '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE'. The initial value '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/maven-shared-archive-resources/META-INF/LICENSE' is left as-is...
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-maven-version) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (hadoop-profile-min-maven-min-java-banned-xerces) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jsr305) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-scala) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-commons-logging) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jetty) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-jersey) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- buildnumber:1.4:create-timestamp (default) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (banned-illegal-imports) @ hbase-zookeeper ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ hbase-zookeeper ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (check-aggregate-license) @ hbase-zookeeper ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- dependency:3.1.1:build-classpath (create-mrapp-generated-classpath) @ hbase-zookeeper ---
+[INFO] Skipped writing classpath file '/home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/target/test-classes/mrapp-generated-classpath'.  No changes found.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hbase-zookeeper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources/META-INF
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ hbase-zookeeper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ hbase-zookeeper <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ hbase-zookeeper ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.535 s
+[INFO] Finished at: 2026-10-28T09:37:47-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project hbase-zookeeper: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__hbase__881c92b89284/hbase-zookeeper/.flakesync/Results-CritSearch/org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=3255
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 3.3 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 28 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_hbase__881c92b89284__hbase-zookeeper\flakesync\org.apache.hadoop.hbase.zookeeper.TestZKUtil.testZNodeDeletes\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 271, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

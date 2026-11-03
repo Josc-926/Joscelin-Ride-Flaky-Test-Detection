@@ -1,0 +1,1015 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: NonDex
+# Project: https://github.com/apache/dubbo
+# SHA: 3720471e56717b7e3494a7352aa437ef95507fe1
+# Flaky tests NonDex found in this log (3):
+#   - org.apache.dubbo.common.URLTest.testHashcode   [module: dubbo-common] [found by: NonDex] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName   [module: dubbo-common] [found by: NonDex] [in IDoFT: Yes]
+#   - org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject   [module: dubbo-common] [found by: NonDex] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_dubbo__3720471e5671__dubbo-common/2026-10-23_18-50-47/nondex.log
+#==============================================================================
+
+$ mvn -B -pl dubbo-common edu.illinois:nondex-maven-plugin:2.2.1:nondex '-Dtest=org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName,org.apache.dubbo.common.URLTest#testHashcode,org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest#testBuilderComplexObject' -DnondexRuns=6 -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoSpecifiedTests=false
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671
+# started: 2026-10-23T19:11:58.840Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-common >--------------------
+[INFO] Building dubbo-common 3.3.6
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> nondex:2.2.1:nondex (default-cli) > test-compile @ dubbo-common >>>
+[INFO] 
+[INFO] --- enforcer:3.4.1:enforce (enforce-maven-version) @ dubbo-common ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- enforcer:3.4.1:enforce (enforce-java-version) @ dubbo-common ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ dubbo-common ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-unix-validation) @ dubbo-common ---
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (jacoco-initialize) @ dubbo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- spotless:2.45.0:check (default) @ dubbo-common ---
+[INFO] Spotless.Java is keeping 863 files clean - 0 needs changes to be clean, 0 were already clean, 863 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 0 were already clean, 1 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.1.0:process (process-resource-bundles) @ dubbo-common ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.5
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dubbo-common ---
+[INFO] Copying 27 resources from src/main/resources to target/classes
+[INFO] Copying 2 resources from .. to target/classes/META-INF
+[INFO] Copying 1 resource from .. to target/classes/META-INF/dubbo-versions
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.0:flatten (flatten) @ dubbo-common ---
+[INFO] Generating flattened POM of project org.apache.dubbo:dubbo-common:jar:3.3.6...
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- antrun:3.1.0:run (get-version-infos) @ dubbo-common ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dubbo-common ---
+[INFO] Copying 66 resources from src/test/resources to target/test-classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< nondex:2.2.1:nondex (default-cli) < test-compile @ dubbo-common <<<
+[INFO] 
+[INFO] 
+[INFO] --- nondex:2.2.1:nondex (default-cli) @ dubbo-common ---
+INFO: The original argline is: -server -Xms256m -Xmx512m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Dfile.encoding=UTF-8
+      -Djava.net.preferIPv4Stack=true
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_XaXvBma9aHiZc3BRomA5OtIOjus0GvnYrdgPL1AGg4M=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:02.731 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.742 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.768 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.769 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.786 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.786 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.789 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.789 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.790 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.796 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.797 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.360 s -- in org.apache.dubbo.common.URLTest
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:02.840 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.840 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.848 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.848 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.850 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.850 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.850 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.851 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.856 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.856 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.856 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.857 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.857 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.857 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.858 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.858 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.859 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.859 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.866 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.867 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.874 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.875 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.876 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.876 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.876 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.879 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.879 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.898 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.898 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.905 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.905 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.906 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.906 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.907 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.907 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.911 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.916 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.917 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.917 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.917 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.917 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in org.apache.dubbo.config.context.ConfigManagerTest
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:02.944 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.955 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.956 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.962 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.962 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.963 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.963 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.963 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.965 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.965 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.984 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.985 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:02.985 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexExecid=Cinz8Ztwvcw7folshhSwEkUTFNgjxyo3FYL7XHV6W10=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:04.177 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.189 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.222 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.223 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.247 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.248 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.252 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.253 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.254 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.274 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.275 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.445 s <<< FAILURE! -- in org.apache.dubbo.common.URLTest
+[ERROR] org.apache.dubbo.common.URLTest.testHashcode -- Time elapsed: 0.431 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1251375316> but was: <2044269844>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.dubbo.common.URLTest.testHashcode(URLTest.java:1064)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:04.360 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.360 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.368 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.369 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.370 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.370 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.371 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.371 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.378 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.379 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.379 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.380 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.380 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.380 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.381 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.382 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.383 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.384 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.393 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.394 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.405 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.405 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.407 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.407 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.407 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.433 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.434 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.480 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.480 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.487 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.488 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.489 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.489 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.489 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.489 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.494 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.500 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.501 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.501 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.502 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.502 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.164 s <<< FAILURE! -- in org.apache.dubbo.config.context.ConfigManagerTest
+[ERROR] org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName -- Time elapsed: 0.160 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol name="dubbo" port="9103" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName(ConfigManagerTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:04.526 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.532 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.532 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.539 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.540 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.541 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.541 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.541 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.551 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.551 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.601 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.602 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:04.602 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.077 s <<< FAILURE! -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[ERROR] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.checkComplexObjectAsParam(ServiceDefinitionBuilderTest.java:97)
+	at org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject(ServiceDefinitionBuilderTest.java:56)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   URLTest.testHashcode:1064 expected: <1251375316> but was: <2044269844>
+[ERROR]   ConfigManagerTest.testGetConfigByIdOrName:413 expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol name="dubbo" port="9103" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+[ERROR]   ServiceDefinitionBuilderTest.testBuilderComplexObject:56->checkComplexObjectAsParam:97 expected: <true> but was: <false>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for Cinz8Ztwvcw7folshhSwEkUTFNgjxyo3FYL7XHV6W10=
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexExecid=Ez2HeZSQUMWzOkS1kXdrzF7o6rRpJe5SeVP1exgnks=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:05.743 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.754 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.789 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.790 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.812 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.812 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.815 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.815 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.816 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.842 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.843 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.448 s <<< FAILURE! -- in org.apache.dubbo.common.URLTest
+[ERROR] org.apache.dubbo.common.URLTest.testHashcode -- Time elapsed: 0.434 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-245731208> but was: <-526113818>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.dubbo.common.URLTest.testHashcode(URLTest.java:1064)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:05.940 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.940 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.949 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.949 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.950 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.951 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.951 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.951 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.959 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.960 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.960 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.961 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.961 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.961 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.962 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.963 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.964 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.964 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.973 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.973 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.984 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.984 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.986 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.986 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:05.987 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.005 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.006 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.036 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.037 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.047 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.047 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.048 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.048 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.048 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.048 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.053 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.059 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.061 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.061 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.061 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.061 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.142 s <<< FAILURE! -- in org.apache.dubbo.config.context.ConfigManagerTest
+[ERROR] org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName -- Time elapsed: 0.140 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol port="9103" name="dubbo" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName(ConfigManagerTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:06.082 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.087 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.088 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.095 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.095 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.096 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.096 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.097 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.106 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.107 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.152 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.153 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:06.153 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.073 s <<< FAILURE! -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[ERROR] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject -- Time elapsed: 0.010 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.checkComplexObjectAsParam(ServiceDefinitionBuilderTest.java:97)
+	at org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject(ServiceDefinitionBuilderTest.java:56)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   URLTest.testHashcode:1064 expected: <-245731208> but was: <-526113818>
+[ERROR]   ConfigManagerTest.testGetConfigByIdOrName:413 expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol port="9103" name="dubbo" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+[ERROR]   ServiceDefinitionBuilderTest.testBuilderComplexObject:56->checkComplexObjectAsParam:97 expected: <true> but was: <false>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for Ez2HeZSQUMWzOkS1kXdrzF7o6rRpJe5SeVP1exgnks=
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexExecid=olDdcC9gBY73LprMv8GBcUNaM3S3GN8TamnjovTg=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:07.317 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.327 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.360 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.361 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.380 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.380 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.383 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.384 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.384 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.406 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.408 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.450 s <<< FAILURE! -- in org.apache.dubbo.common.URLTest
+[ERROR] org.apache.dubbo.common.URLTest.testHashcode -- Time elapsed: 0.436 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-526113818> but was: <301071654>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.dubbo.common.URLTest.testHashcode(URLTest.java:1064)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:07.498 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.498 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.510 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.510 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.512 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.512 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.512 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.513 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.522 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.523 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.523 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.524 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.524 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.524 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.525 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.525 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.526 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.527 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.536 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.536 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.547 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.548 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.549 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.549 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.550 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.574 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.576 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.608 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.609 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.616 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.616 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.618 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.618 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.618 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.618 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.623 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.629 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.630 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.630 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.631 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.631 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.155 s <<< FAILURE! -- in org.apache.dubbo.config.context.ConfigManagerTest
+[ERROR] org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName -- Time elapsed: 0.153 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol port="9103" name="dubbo" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName(ConfigManagerTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:07.657 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.664 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.664 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.673 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.673 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.674 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.675 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.675 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.685 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.686 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.725 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.726 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:07.726 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   URLTest.testHashcode:1064 expected: <-526113818> but was: <301071654>
+[ERROR]   ConfigManagerTest.testGetConfigByIdOrName:413 expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol port="9103" name="dubbo" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for olDdcC9gBY73LprMv8GBcUNaM3S3GN8TamnjovTg=
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1057510
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexExecid=+wmmPwfyDPsKQxXfm09pyCgp4cP2XU947XjCySuYHI=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:08.891 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.902 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.939 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.939 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.961 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.962 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.966 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.967 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.968 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.986 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:08.987 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.466 s <<< FAILURE! -- in org.apache.dubbo.common.URLTest
+[ERROR] org.apache.dubbo.common.URLTest.testHashcode -- Time elapsed: 0.451 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-1547988808> but was: <-1647812202>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.dubbo.common.URLTest.testHashcode(URLTest.java:1064)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:09.077 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.078 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.087 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.087 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.088 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.088 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.089 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.089 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.094 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.095 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.095 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.096 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.096 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.096 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.097 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.097 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.098 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.098 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.107 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.107 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.119 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.119 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.121 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.121 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.122 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.151 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.151 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.183 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.183 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.193 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.193 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.194 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.195 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.195 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.195 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.200 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.206 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.207 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.207 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.208 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.208 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.151 s <<< FAILURE! -- in org.apache.dubbo.config.context.ConfigManagerTest
+[ERROR] org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName -- Time elapsed: 0.149 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol name="dubbo" port="9103" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName(ConfigManagerTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:09.232 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.238 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.238 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.246 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.246 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.247 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.247 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.247 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.255 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.256 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.294 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.294 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:09.295 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.065 s <<< FAILURE! -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[ERROR] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.checkComplexObjectAsParam(ServiceDefinitionBuilderTest.java:97)
+	at org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest.testBuilderComplexObject(ServiceDefinitionBuilderTest.java:56)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   URLTest.testHashcode:1064 expected: <-1547988808> but was: <-1647812202>
+[ERROR]   ConfigManagerTest.testGetConfigByIdOrName:413 expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" />, <dubbo:protocol name="dubbo" port="9103" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+[ERROR]   ServiceDefinitionBuilderTest.testBuilderComplexObject:56->checkComplexObjectAsParam:97 expected: <true> but was: <false>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for +wmmPwfyDPsKQxXfm09pyCgp4cP2XU947XjCySuYHI=
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1098954
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexExecid=vJ+yHEW3zXVpfgTw4TckZqWwQHpXpiofQJNgSHUa0J0=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:10.442 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.452 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.483 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.484 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.503 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.504 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.507 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.507 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.508 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.532 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.534 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.436 s <<< FAILURE! -- in org.apache.dubbo.common.URLTest
+[ERROR] org.apache.dubbo.common.URLTest.testHashcode -- Time elapsed: 0.422 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-1534551102> but was: <-1547988808>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.dubbo.common.URLTest.testHashcode(URLTest.java:1064)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:10.619 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.619 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.627 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.627 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.628 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.628 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.629 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.629 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.636 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.637 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.637 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.638 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.638 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.638 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.639 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.639 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.641 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.641 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.652 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.652 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.668 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.669 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.670 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.671 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.671 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.693 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.694 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.726 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.726 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.734 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.734 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.736 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.736 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.736 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.736 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.741 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.746 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.747 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.747 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.747 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.747 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s -- in org.apache.dubbo.config.context.ConfigManagerTest
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:10.768 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.774 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.774 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.782 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.782 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.783 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.783 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.783 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.792 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.792 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.831 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.832 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:10.832 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   URLTest.testHashcode:1064 expected: <-1534551102> but was: <-1547988808>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for vJ+yHEW3zXVpfgTw4TckZqWwQHpXpiofQJNgSHUa0J0=
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1140398
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex
+nondexExecid=sxz2RrRlb2VL5RYVpHopsmtSr4OgSebMxgVQwWuvMzA=
+nondexLogging=CONFIG
+test=
+[WARNING]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: Instead use disable within statelessTestsetReporter since of 3.0.0-M6.
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.dubbo.common.URLTest
+14:12:11.994 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.005 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.040 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.041 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.064 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.064 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.067 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.068 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.068 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.085 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.086 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.469 s <<< FAILURE! -- in org.apache.dubbo.common.URLTest
+[ERROR] org.apache.dubbo.common.URLTest.testHashcode -- Time elapsed: 0.455 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <746389414> but was: <1179236738>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.dubbo.common.URLTest.testHashcode(URLTest.java:1064)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.config.context.ConfigManagerTest
+14:12:12.185 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.185 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.200 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.201 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.202 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.203 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.203 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.203 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.212 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:312 -|  [DUBBO] Reset global default application from Dubbo Application[1.1](unknown) to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.213 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:119 -|  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.213 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.214 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.214 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:332 -|  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.214 |-INFO  [main] ommon.resource.GlobalResourcesRepository:108 -|  [DUBBO] Destroying global resources ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.215 |-INFO  [main] ommon.resource.GlobalResourcesRepository:145 -|  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.215 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.217 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[2] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.217 |-INFO  [main] ommon.resource.GlobalResourcesRepository:96  -|  [DUBBO] Creating global shared handler ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.230 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.230 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.242 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.242 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.244 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.244 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.245 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.270 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.271 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.305 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[2.1](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.305 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.313 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.313 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.314 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.314 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.314 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.315 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.319 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[2.1.1] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.324 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.325 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.325 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.326 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.326 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.162 s <<< FAILURE! -- in org.apache.dubbo.config.context.ConfigManagerTest
+[ERROR] org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName -- Time elapsed: 0.160 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" port="9103" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at org.apache.dubbo.config.context.ConfigManagerTest.testGetConfigByIdOrName(ConfigManagerTest.java:413)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+[INFO] Running org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+14:12:12.348 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:86  -|  [DUBBO] Dubbo Framework[3] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.356 |-INFO  [main] .apache.dubbo.rpc.model.ApplicationModel:107 -|  [DUBBO] Dubbo Application[3.0](unknown) is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.357 |-INFO  [main]    org.apache.dubbo.rpc.model.ScopeModel:63  -|  [DUBBO] Dubbo Module[3.0.0] is created, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.364 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.364 |-INFO  [main] bbo.config.context.AbstractConfigManager:144 -|  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.365 |-INFO  [main] bo.common.utils.SerializeSecurityManager:107 -|  [DUBBO] Serialize check serializable: true, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.365 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.366 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:142 -|  [DUBBO] Read serialize allow list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.allowlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.376 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/test-classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.376 |-INFO  [main] mmon.utils.SerializeSecurityConfigurator:166 -|  [DUBBO] Read serialize blocked list from file:/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/target/classes/security/serialize.blockedlist, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.429 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:124 -|  [DUBBO] Dubbo Framework[3] is destroying ..., dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.430 |-INFO  [main] rg.apache.dubbo.rpc.model.FrameworkModel:139 -|  [DUBBO] Dubbo Framework[3] is destroyed, dubbo version: 3.3.6, current host: 172.19.37.89
+14:12:12.430 |-INFO  [main] pool.manager.FrameworkExecutorRepository:210 -|  [DUBBO] destroying framework executor repository .., dubbo version: 3.3.6, current host: 172.19.37.89
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   URLTest.testHashcode:1064 expected: <746389414> but was: <1179236738>
+[ERROR]   ConfigManagerTest.testGetConfigByIdOrName:413 expected: <Found more than one config by name: dubbo, instances: [<dubbo:protocol name="dubbo" port="9103" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.> but was: <Found more than one config by name: dubbo, instances: [<dubbo:protocol port="9103" name="dubbo" />, <dubbo:protocol name="dubbo" />]. Please remove redundant configs or get config by id.>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for sxz2RrRlb2VL5RYVpHopsmtSr4OgSebMxgVQwWuvMzA=
+[INFO] NonDex SUMMARY:
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexExecid=Cinz8Ztwvcw7folshhSwEkUTFNgjxyo3FYL7XHV6W10= -DnondexLogging=CONFIG
+[WARNING] org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName
+[WARNING] org.apache.dubbo.common.URLTest#testHashcode
+[WARNING] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest#testBuilderComplexObject
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexExecid=Ez2HeZSQUMWzOkS1kXdrzF7o6rRpJe5SeVP1exgnks= -DnondexLogging=CONFIG
+[WARNING] org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName
+[WARNING] org.apache.dubbo.common.URLTest#testHashcode
+[WARNING] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest#testBuilderComplexObject
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexExecid=olDdcC9gBY73LprMv8GBcUNaM3S3GN8TamnjovTg= -DnondexLogging=CONFIG
+[WARNING] org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName
+[WARNING] org.apache.dubbo.common.URLTest#testHashcode
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1057510 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexExecid=+wmmPwfyDPsKQxXfm09pyCgp4cP2XU947XjCySuYHI= -DnondexLogging=CONFIG
+[WARNING] org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName
+[WARNING] org.apache.dubbo.common.URLTest#testHashcode
+[WARNING] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest#testBuilderComplexObject
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1098954 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexExecid=vJ+yHEW3zXVpfgTw4TckZqWwQHpXpiofQJNgSHUa0J0= -DnondexLogging=CONFIG
+[WARNING] org.apache.dubbo.common.URLTest#testHashcode
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1140398 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex" -DnondexExecid=sxz2RrRlb2VL5RYVpHopsmtSr4OgSebMxgVQwWuvMzA= -DnondexLogging=CONFIG
+[WARNING] org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName
+[WARNING] org.apache.dubbo.common.URLTest#testHashcode
+[INFO] *********
+[INFO] All tests pass without NonDex shuffling
+[INFO] ####################
+[INFO] Across all seeds:
+[INFO] org.apache.dubbo.config.context.ConfigManagerTest#testGetConfigByIdOrName
+[INFO] org.apache.dubbo.common.URLTest#testHashcode
+[INFO] org.apache.dubbo.metadata.definition.ServiceDefinitionBuilderTest#testBuilderComplexObject
+[INFO] Test results can be found at: 
+[INFO] file:///home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex/Cinz8Ztwvcw7folshhSwEkUTFNgjxyo3FYL7XHV6W10=/test_results.html
+[INFO] [NonDex] The id of this run is: Cinz8Ztwvcw7folshhSwEkUTFNgjxyo3FYL7XHV6W10=
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.260 s
+[INFO] Finished at: 2026-10-23T14:12:12-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.illinois:nondex-maven-plugin:2.2.1:nondex (default-cli) on project dubbo-common: Unable to execute mojo: There are test failures.
+[ERROR] 
+[ERROR] See /home/ectopic/flaky-work/checkouts/apache__dubbo__3720471e5671/dubbo-common/.nondex/Cinz8Ztwvcw7folshhSwEkUTFNgjxyo3FYL7XHV6W10= for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=14312

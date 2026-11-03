@@ -1,0 +1,495 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/jnr/jnr-posix
+# SHA: dbda72ce198a8dd766c30c591d63d726d2a28a7c
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - jnr.posix.SpawnTest.inputPipe   [module: .] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/jnr_jnr-posix__dbda72ce198a___root/2026-10-29_02-42-22/flakesync.jnr.posix.SpawnTest.inputPipe.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : jnr/jnr-posix   https://github.com/jnr/jnr-posix
+# commit         : dbda72ce198a8dd766c30c591d63d726d2a28a7c
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : jnr.posix.SpawnTest.inputPipe
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jnr_jnr-posix__dbda72ce198a___root\logs\flakesync.jnr.posix.SpawnTest.inputPipe.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jnr_jnr-posix__dbda72ce198a___root\flakesync\jnr.posix.SpawnTest.inputPipe\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\jnr__jnr-posix__dbda72ce198a
+# written        : 2026-10-29T15:04:31.241Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=jnr.posix.SpawnTest#inputPipe'
+# cwd     : /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a
+# started : 2026-10-29T15:04:31.252Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.github.jnr:jnr-posix >----------------------
+[INFO] Building jnr-posix 3.1.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ jnr-posix >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (java9-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.3.7:manifest (bundle-manifest) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ jnr-posix <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ jnr-posix ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_1h4xBFnIgHxD9MJlXrylHSnoRW0zBJZQwEkH1SFtIc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Failed to load native POSIX impl; falling back on Java impl. Stacktrace follows.
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for jnr.ffi.provider.converters.CharSequenceParameterConverter. (jnr.ffi.provider.converters.CharSequenceParameterConverter is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at jnr.ffi.provider.jffi.InvokerTypeMapper.getToNativeConverter(InvokerTypeMapper.java:104)
+	at jnr.ffi.provider.jffi.InvokerTypeMapper.getToNativeType(InvokerTypeMapper.java:161)
+	at jnr.ffi.mapper.CachingTypeMapper.lookupAndCacheToNativeType(CachingTypeMapper.java:89)
+	at jnr.ffi.mapper.CachingTypeMapper.getToNativeType(CachingTypeMapper.java:61)
+	at jnr.ffi.mapper.CompositeTypeMapper.getToNativeType(CompositeTypeMapper.java:52)
+	at jnr.ffi.provider.jffi.InvokerUtil.getParameterTypes(InvokerUtil.java:174)
+	at jnr.ffi.provider.jffi.AsmLibraryLoader.generateInterfaceImpl(AsmLibraryLoader.java:146)
+	at jnr.ffi.provider.jffi.AsmLibraryLoader.loadLibrary(AsmLibraryLoader.java:86)
+	at jnr.ffi.provider.jffi.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:44)
+	at jnr.ffi.LibraryLoader.load(LibraryLoader.java:403)
+	at jnr.posix.POSIXFactory$DefaultLibCProvider$SingletonHolder.<clinit>(POSIXFactory.java:307)
+	at jnr.posix.POSIXFactory$DefaultLibCProvider.getLibC(POSIXFactory.java:335)
+	at jnr.posix.BaseNativePOSIX.<init>(BaseNativePOSIX.java:41)
+	at jnr.posix.LinuxPOSIX.<init>(LinuxPOSIX.java:23)
+	at jnr.posix.POSIXFactory.loadLinuxPOSIX(POSIXFactory.java:149)
+	at jnr.posix.POSIXFactory.loadNativePOSIX(POSIXFactory.java:124)
+	at jnr.posix.POSIXFactory.loadPOSIX(POSIXFactory.java:93)
+	at jnr.posix.LazyPOSIX.loadPOSIX(LazyPOSIX.java:40)
+	at jnr.posix.LazyPOSIX.posix(LazyPOSIX.java:34)
+	at jnr.posix.LazyPOSIX.libc(LazyPOSIX.java:408)
+	at jnr.posix.SpawnTest.closePipe(SpawnTest.java:52)
+	at jnr.posix.SpawnTest.inputPipe(SpawnTest.java:123)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:275)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:149)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.191 sec <<< FAILURE! - in jnr.posix.SpawnTest
+inputPipe(jnr.posix.SpawnTest)  Time elapsed: 0.038 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at jnr.posix.SpawnTest.closePipe(SpawnTest.java:52)
+	at jnr.posix.SpawnTest.inputPipe(SpawnTest.java:123)
+
+
+Results :
+
+Tests in error: 
+  SpawnTest.inputPipe:123->closePipe:52 NullPointer
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_1h4xBFnIgHxD9MJlXrylHSnoRW0zBJZQwEkH1SFtIc= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.619 s
+[INFO] Finished at: 2026-10-29T10:04:33-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2383
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 2.4 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=jnr.posix.SpawnTest#inputPipe'
+# cwd     : /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a
+# started : 2026-10-29T15:04:33.637Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.github.jnr:jnr-posix >----------------------
+[INFO] Building jnr-posix 3.1.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ jnr-posix >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (java9-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.3.7:manifest (bundle-manifest) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ jnr-posix <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ jnr-posix ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_etF63ukZEkpo6Z1gduiRt2Zpzu0IbGKgCXktvRDICGc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.231 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_hd9qU9C8aRWdDixiD8AAOCGxeHz0zRfWGljfkcQafM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.245 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_gDVuAGpgIwJlEu8CHSsP3+2XdwagO2MPceeaHEpBfyY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.248 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_+ZVZUns2VWG2BtHQWKBnr8RuwHjz8QTyrWAgtcyuwc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.236 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_v2Q1l2ZN5Kl0np0MRwmH0zFPQh18AMB8llSyc1oZPU=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.251 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_OqmFRDQZ+Jt+YITtk7MxSUCvEKvcXW3u2oybxPYj70=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_MEqnmTYMZRwkydeXO9xwpoCT+jjb9ciRRR7vOuwxhM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.229 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_av6cFKLH6o02qFz1pBoSur5r0MOYSHj8K7DhyfBLKI=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.226 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.779 s
+[INFO] Finished at: 2026-10-29T10:04:39-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=5499
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 5.5 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=jnr.posix.SpawnTest#inputPipe'
+# cwd     : /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a
+# started : 2026-10-29T15:04:39.138Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.github.jnr:jnr-posix >----------------------
+[INFO] Building jnr-posix 3.1.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ jnr-posix >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (java9-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.3.7:manifest (bundle-manifest) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ jnr-posix <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ jnr-posix ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.123 s
+[INFO] Finished at: 2026-10-29T10:04:40-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=1882
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 1.9 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=jnr.posix.SpawnTest#inputPipe'
+# cwd     : /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a
+# started : 2026-10-29T15:04:41.022Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.github.jnr:jnr-posix >----------------------
+[INFO] Building jnr-posix 3.1.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ jnr-posix >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (java9-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.3.7:manifest (bundle-manifest) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ jnr-posix <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ jnr-posix ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/clean_7ivqliook3lamLfJxYTJYm3mV+7IKYTCB2IJwjUidnE=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running jnr.posix.SpawnTest
+Successfully loaded native POSIX impl.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.19 sec - in jnr.posix.SpawnTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.617 s
+[INFO] Finished at: 2026-10-29T10:04:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2366
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 2.4 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=jnr.posix.SpawnTest#inputPipe'
+# cwd     : /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a
+# started : 2026-10-29T15:04:43.390Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.github.jnr:jnr-posix >----------------------
+[INFO] Building jnr-posix 3.1.5-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ jnr-posix >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (java9-compile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- bundle:2.3.7:manifest (bundle-manifest) @ jnr-posix ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ jnr-posix ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jnr-posix ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ jnr-posix <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ jnr-posix ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.156 s
+[INFO] Finished at: 2026-10-29T10:04:45-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project jnr-posix: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/jnr__jnr-posix__dbda72ce198a/.flakesync/Results-CritSearch/jnr.posix.SpawnTest.inputPipe-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1923
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.9 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 14.1 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jnr_jnr-posix__dbda72ce198a___root\flakesync\jnr.posix.SpawnTest.inputPipe\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

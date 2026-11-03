@@ -1,0 +1,977 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/gora
+# SHA: 6c6b06c916b969352a6757ba7025cc78055fa87a
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey   [module: gora-ignite] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_gora__6c6b06c916b9__gora-ignite/2026-10-28_03-39-27/flakesync.org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/gora   https://github.com/apache/gora
+# commit         : 6c6b06c916b969352a6757ba7025cc78055fa87a
+# module         : gora-ignite
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_gora__6c6b06c916b9__gora-ignite\logs\flakesync.org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_gora__6c6b06c916b9__gora-ignite\flakesync\org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__gora__6c6b06c916b9
+# written        : 2026-10-28T12:13:22.295Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.gora.ignite.store.TestIgniteStore#testResultSizeStartKey' -pl gora-ignite
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-28T12:13:22.306Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.apache.gora:gora-ignite >---------------------
+[INFO] Building Apache Gora :: Ignite 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ gora-ignite >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-ignite ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-ignite ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-ignite ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-ignite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/java/org/apache/gora/ignite/utils/IgniteSQLBuilder.java:[124,48] non-varargs call of varargs method with inexact argument type for last parameter;
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-ignite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ gora-ignite <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ gora-ignite ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:26] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.306 s <<< FAILURE! - in org.apache.gora.ignite.store.TestIgniteStore
+[ERROR] testResultSizeStartKey(org.apache.gora.ignite.store.TestIgniteStore)  Time elapsed: 0.192 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for org.apache.ignite.spi.discovery.tcp.ipfinder.multicast.TcpDiscoveryMulticastIpFinder$AddressSender. (org.apache.ignite.spi.discovery.tcp.ipfinder.multicast.TcpDiscoveryMulticastIpFinder$AddressSender is in unnamed module of loader 'app')
+
+[ERROR] org.apache.gora.ignite.store.TestIgniteStore  Time elapsed: 0.193 s  <<< ERROR!
+java.lang.NullPointerException
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TestIgniteStore>DataStoreTestBase.tearDownClass:70 » NullPointer
+[ERROR]   TestIgniteStore>DataStoreTestBase.setUp:80->DataStoreTestBase.setUpClass:61 » Linkage
+[INFO] 
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_PHKT3kg+8WsRZvGnHQR3hgVMW74u7VXM2Dy4vBvvQw= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.146 s
+[INFO] Finished at: 2026-10-28T07:13:27-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4833
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 4.8 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.gora.ignite.store.TestIgniteStore#testResultSizeStartKey' -pl gora-ignite
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-28T12:13:27.141Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.apache.gora:gora-ignite >---------------------
+[INFO] Building Apache Gora :: Ignite 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ gora-ignite >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-ignite ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-ignite ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-ignite ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-ignite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/java/org/apache/gora/ignite/utils/IgniteSQLBuilder.java:[124,48] non-varargs call of varargs method with inexact argument type for last parameter;
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-ignite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ gora-ignite <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ gora-ignite ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:31] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:31]    __________  ________________ 
+[07:13:31]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:31]  _/ // (7 7    // /  / / / _/   
+[07:13:31] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:31] 
+[07:13:31] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:31] 2022 Copyright(C) Apache Software Foundation
+[07:13:31] 
+[07:13:31] Ignite documentation: https://ignite.apache.org
+[07:13:31] 
+[07:13:31] Quiet mode.
+[07:13:31]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-02f9f05b.0.log'
+[07:13:31]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:31]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:31] 
+[07:13:31] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:31] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:31] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:31] Configured plugins:
+[07:13:31]   ^-- None
+[07:13:31] 
+[07:13:31] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:31] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:31] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:33] Data Regions Started: 4
+[07:13:33] 
+[07:13:33]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:33]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:33]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:33]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:33]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:33]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:33]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:33]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:33] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:33] Performance suggestions for grid  (fix if possible)
+[07:13:33] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:33]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:33]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:33]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:33]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:33]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:33] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:33] 
+[07:13:33] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:33] 
+[07:13:33] Ignite node started OK (id=02f9f05b)
+[07:13:33] Topology snapshot [ver=1, locNode=02f9f05b, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:33]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:34] Ignite node stopped OK [uptime=00:00:00.586]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.998 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:35] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:35]    __________  ________________ 
+[07:13:35]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:35]  _/ // (7 7    // /  / / / _/   
+[07:13:35] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:35] 
+[07:13:35] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:35] 2022 Copyright(C) Apache Software Foundation
+[07:13:35] 
+[07:13:35] Ignite documentation: https://ignite.apache.org
+[07:13:35] 
+[07:13:35] Quiet mode.
+[07:13:35]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-05efb734.0.log'
+[07:13:35]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:35]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:35] 
+[07:13:35] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:35] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:35] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:35] Configured plugins:
+[07:13:35]   ^-- None
+[07:13:35] 
+[07:13:35] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:35] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:35] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:37] Data Regions Started: 4
+[07:13:37] 
+[07:13:37]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:37]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:37]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:37]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:37]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:37]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:37]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:37]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:37] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:37] Performance suggestions for grid  (fix if possible)
+[07:13:37] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:37]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:37]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:37]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:37]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:37]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:37] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:37] 
+[07:13:37] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:37] 
+[07:13:37] Ignite node started OK (id=05efb734)
+[07:13:37] Topology snapshot [ver=1, locNode=05efb734, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:37]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:37] Ignite node stopped OK [uptime=00:00:00.596]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.006 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:38] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:38]    __________  ________________ 
+[07:13:38]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:38]  _/ // (7 7    // /  / / / _/   
+[07:13:38] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:38] 
+[07:13:38] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:38] 2022 Copyright(C) Apache Software Foundation
+[07:13:38] 
+[07:13:38] Ignite documentation: https://ignite.apache.org
+[07:13:38] 
+[07:13:38] Quiet mode.
+[07:13:38]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-ea3e762f.0.log'
+[07:13:38]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:38]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:38] 
+[07:13:38] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:38] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:38] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:38] Configured plugins:
+[07:13:38]   ^-- None
+[07:13:38] 
+[07:13:38] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:38] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:39] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:40] Data Regions Started: 4
+[07:13:40] 
+[07:13:40]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:40]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:40]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:40]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:40]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:40]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:40]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:40]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:40] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:40] Performance suggestions for grid  (fix if possible)
+[07:13:40] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:40]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:40]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:40]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:40]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:40]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:40] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:40] 
+[07:13:40] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:40] 
+[07:13:40] Ignite node started OK (id=ea3e762f)
+[07:13:40] Topology snapshot [ver=1, locNode=ea3e762f, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:40]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:41] Ignite node stopped OK [uptime=00:00:00.599]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.038 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:42] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:42]    __________  ________________ 
+[07:13:42]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:42]  _/ // (7 7    // /  / / / _/   
+[07:13:42] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:42] 
+[07:13:42] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:42] 2022 Copyright(C) Apache Software Foundation
+[07:13:42] 
+[07:13:42] Ignite documentation: https://ignite.apache.org
+[07:13:42] 
+[07:13:42] Quiet mode.
+[07:13:42]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-87eecac5.0.log'
+[07:13:42]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:42]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:42] 
+[07:13:42] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:42] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:42] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:42] Configured plugins:
+[07:13:42]   ^-- None
+[07:13:42] 
+[07:13:42] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:42] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:42] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:44] Data Regions Started: 4
+[07:13:44] 
+[07:13:44]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:44]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:44]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:44]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:44]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:44]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:44]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:44]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:44] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:44] Performance suggestions for grid  (fix if possible)
+[07:13:44] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:44]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:44]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:44]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:44]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:44]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:44] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:44] 
+[07:13:44] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:44] 
+[07:13:44] Ignite node started OK (id=87eecac5)
+[07:13:44] Topology snapshot [ver=1, locNode=87eecac5, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:44]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:45] Ignite node stopped OK [uptime=00:00:00.606]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.029 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:45] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:46]    __________  ________________ 
+[07:13:46]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:46]  _/ // (7 7    // /  / / / _/   
+[07:13:46] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:46] 
+[07:13:46] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:46] 2022 Copyright(C) Apache Software Foundation
+[07:13:46] 
+[07:13:46] Ignite documentation: https://ignite.apache.org
+[07:13:46] 
+[07:13:46] Quiet mode.
+[07:13:46]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-e0cea229.0.log'
+[07:13:46]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:46]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:46] 
+[07:13:46] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:46] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:46] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:46] Configured plugins:
+[07:13:46]   ^-- None
+[07:13:46] 
+[07:13:46] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:46] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:46] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:47] Data Regions Started: 4
+[07:13:47] 
+[07:13:47]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:47]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:47]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:47]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:47]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:47]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:47]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:47]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:48] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:48] Performance suggestions for grid  (fix if possible)
+[07:13:48] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:48]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:48]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:48]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:48]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:48]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:48] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:48] 
+[07:13:48] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:48] 
+[07:13:48] Ignite node started OK (id=e0cea229)
+[07:13:48] Topology snapshot [ver=1, locNode=e0cea229, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:48]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:48] Ignite node stopped OK [uptime=00:00:00.609]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.002 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:49] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:49]    __________  ________________ 
+[07:13:49]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:49]  _/ // (7 7    // /  / / / _/   
+[07:13:49] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:49] 
+[07:13:49] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:49] 2022 Copyright(C) Apache Software Foundation
+[07:13:49] 
+[07:13:49] Ignite documentation: https://ignite.apache.org
+[07:13:49] 
+[07:13:49] Quiet mode.
+[07:13:49]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-ce16aa98.0.log'
+[07:13:49]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:49]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:49] 
+[07:13:49] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:49] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:49] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:49] Configured plugins:
+[07:13:49]   ^-- None
+[07:13:49] 
+[07:13:49] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:49] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:49] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:51] Data Regions Started: 4
+[07:13:51] 
+[07:13:51]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:51]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:51]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:51]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:51]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:51]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:51]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:51]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:51] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:51] Performance suggestions for grid  (fix if possible)
+[07:13:51] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:51]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:51]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:51]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:51]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:51]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:51] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:51] 
+[07:13:51] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:51] 
+[07:13:51] Ignite node started OK (id=ce16aa98)
+[07:13:51] Topology snapshot [ver=1, locNode=ce16aa98, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:51]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:52] Ignite node stopped OK [uptime=00:00:00.588]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.992 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:53] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:53]    __________  ________________ 
+[07:13:53]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:53]  _/ // (7 7    // /  / / / _/   
+[07:13:53] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:53] 
+[07:13:53] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:53] 2022 Copyright(C) Apache Software Foundation
+[07:13:53] 
+[07:13:53] Ignite documentation: https://ignite.apache.org
+[07:13:53] 
+[07:13:53] Quiet mode.
+[07:13:53]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-7bf4fc25.0.log'
+[07:13:53]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:53]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:53] 
+[07:13:53] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:53] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:53] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:53] Configured plugins:
+[07:13:53]   ^-- None
+[07:13:53] 
+[07:13:53] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:53] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:53] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:55] Data Regions Started: 4
+[07:13:55] 
+[07:13:55]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:55]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:55]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:55]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:55]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:55]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:55]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:55]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:55] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:55] Performance suggestions for grid  (fix if possible)
+[07:13:55] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:55]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:55]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:55]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:55]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:55]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:55] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:55] 
+[07:13:55] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:55] 
+[07:13:55] Ignite node started OK (id=7bf4fc25)
+[07:13:55] Topology snapshot [ver=1, locNode=7bf4fc25, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:55]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:55] Ignite node stopped OK [uptime=00:00:00.595]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.989 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:13:56] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:13:56]    __________  ________________ 
+[07:13:56]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:13:56]  _/ // (7 7    // /  / / / _/   
+[07:13:56] /___/\___/_/|_/___/ /_/ /x___/  
+[07:13:56] 
+[07:13:56] ver. 2.14.0#20220929-sha1:951e8deb
+[07:13:56] 2022 Copyright(C) Apache Software Foundation
+[07:13:56] 
+[07:13:56] Ignite documentation: https://ignite.apache.org
+[07:13:56] 
+[07:13:56] Quiet mode.
+[07:13:56]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-0332d545.0.log'
+[07:13:56]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:13:56]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:13:56] 
+[07:13:56] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:13:56] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:13:56] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:13:56] Configured plugins:
+[07:13:56]   ^-- None
+[07:13:56] 
+[07:13:56] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:13:56] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:13:56] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:13:58] Data Regions Started: 4
+[07:13:58] 
+[07:13:58]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:58]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:58]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:13:58]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:58]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:13:58]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:13:58]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:13:58]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:13:58] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:13:58] Performance suggestions for grid  (fix if possible)
+[07:13:58] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:13:58]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:58]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:13:58]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:13:58]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:13:58]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:13:58] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:13:58] 
+[07:13:58] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:13:58] 
+[07:13:58] Ignite node started OK (id=0332d545)
+[07:13:58] Topology snapshot [ver=1, locNode=0332d545, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:13:58]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:13:59] Ignite node stopped OK [uptime=00:00:00.610]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.01 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  31.969 s
+[INFO] Finished at: 2026-10-28T07:13:59-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=32744
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 32.7 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.gora.ignite.store.TestIgniteStore#testResultSizeStartKey' -pl gora-ignite
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-28T12:13:59.887Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.apache.gora:gora-ignite >---------------------
+[INFO] Building Apache Gora :: Ignite 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ gora-ignite >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-ignite ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-ignite ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-ignite ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-ignite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/java/org/apache/gora/ignite/utils/IgniteSQLBuilder.java:[124,48] non-varargs call of varargs method with inexact argument type for last parameter;
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-ignite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ gora-ignite <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ gora-ignite ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.144 s
+[INFO] Finished at: 2026-10-28T07:14:03-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3852
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 3.9 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.gora.ignite.store.TestIgniteStore#testResultSizeStartKey' -pl gora-ignite
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-28T12:14:03.746Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.apache.gora:gora-ignite >---------------------
+[INFO] Building Apache Gora :: Ignite 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ gora-ignite >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-ignite ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-ignite ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-ignite ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-ignite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/java/org/apache/gora/ignite/utils/IgniteSQLBuilder.java:[124,48] non-varargs call of varargs method with inexact argument type for last parameter;
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-ignite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ gora-ignite <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ gora-ignite ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.gora.ignite.store.TestIgniteStore
+[07:14:07] (wrn) Default Spring XML file not found (is IGNITE_HOME set?): config/default-config.xml
+
+[07:14:08]    __________  ________________ 
+[07:14:08]   /  _/ ___/ |/ /  _/_  __/ __/ 
+[07:14:08]  _/ // (7 7    // /  / / / _/   
+[07:14:08] /___/\___/_/|_/___/ /_/ /x___/  
+[07:14:08] 
+[07:14:08] ver. 2.14.0#20220929-sha1:951e8deb
+[07:14:08] 2022 Copyright(C) Apache Software Foundation
+[07:14:08] 
+[07:14:08] Ignite documentation: https://ignite.apache.org
+[07:14:08] 
+[07:14:08] Quiet mode.
+[07:14:08]   ^-- Logging to file '/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/ignite/work/log/ignite-411f31ec.0.log'
+[07:14:08]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[07:14:08]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[07:14:08] 
+[07:14:08] OS: Linux 6.18.54.1-microsoft-standard-WSL2 amd64
+[07:14:08] VM information: OpenJDK Runtime Environment 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu Ubuntu OpenJDK 64-Bit Server VM 11.0.32.1+1-post-1ubuntu1-26.04-Ubuntu
+[07:14:08] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[07:14:08] Configured plugins:
+[07:14:08]   ^-- None
+[07:14:08] 
+[07:14:08] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=UnmodifiableSet [SYSTEM_WORKER_BLOCKED, SYSTEM_CRITICAL_OPERATION_TIMEOUT]]]]
+[07:14:08] Initial heap size is 244MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[07:14:08] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[07:14:10] Data Regions Started: 4
+[07:14:10] 
+[07:14:10]     ^--   sysMemPlc region [type=internal, persistence=false, lazyAlloc=false,
+[07:14:10]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:14:10]     ^--   default region [type=default, persistence=false, lazyAlloc=true,
+[07:14:10]       ...  initCfg=256MB, maxCfg=3113MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:14:10]     ^--   TxLog region [type=internal, persistence=false, lazyAlloc=false,
+[07:14:10]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=40MB]
+[07:14:10]     ^--   volatileDsMemPlc region [type=user, persistence=false, lazyAlloc=true,
+[07:14:10]       ...  initCfg=40MB, maxCfg=100MB, usedRam=0MB, freeRam=100%, allocRam=0MB]
+[07:14:10] Security status [authentication=off, sandbox=off, tls/ssl=off]
+[07:14:10] Performance suggestions for grid  (fix if possible)
+[07:14:10] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[07:14:10]   ^-- Specify JVM heap max size (add '-Xmx<size>[g|G|m|M|k|K]' to JVM options)
+[07:14:10]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[07:14:10]   ^-- Speed up flushing of dirty pages by OS (alter vm.dirty_expire_centisecs parameter by setting to 500)
+[07:14:10]   ^-- Reduce pages swapping ratio (set vm.swappiness=10 or less)
+[07:14:10]   ^-- Disable assertions (remove '-ea' from JVM options)
+[07:14:10] Refer to this page for more performance suggestions: https://ignite.apache.org/docs/latest/perf-and-troubleshooting/memory-tuning
+[07:14:10] 
+[07:14:10] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[07:14:10] 
+[07:14:10] Ignite node started OK (id=411f31ec)
+[07:14:10] Topology snapshot [ver=1, locNode=411f31ec, servers=1, clients=0, state=ACTIVE, CPUs=16, offheap=3.0GB, heap=3.8GB]
+[07:14:10]   ^-- Baseline [id=0, size=1, online=1, offline=0]
+[07:14:10] Ignite node stopped OK [uptime=00:00:00.610]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.962 s - in org.apache.gora.ignite.store.TestIgniteStore
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.745 s
+[INFO] Finished at: 2026-10-28T07:14:11-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=7448
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 7.4 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.gora.ignite.store.TestIgniteStore#testResultSizeStartKey' -pl gora-ignite
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9
+# started : 2026-10-28T12:14:11.197Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.apache.gora:gora-ignite >---------------------
+[INFO] Building Apache Gora :: Ignite 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ gora-ignite >>>
+[WARNING] 1 problem was encountered while building the effective model for org.apache.hadoop:hadoop-annotations:jar:2.5.2 during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.18.1-GA during dependency collection step for project (use -X to see details)
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-java-version) @ gora-ignite ---
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-output-timestamp-property) @ gora-ignite ---
+[INFO] 
+[INFO] --- build-helper:1.7:add-source (default) @ gora-ignite ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/examples/java added.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ gora-ignite ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:compile (default-compile) @ gora-ignite ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+/home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/src/main/java/org/apache/gora/ignite/utils/IgniteSQLBuilder.java:[124,48] non-varargs call of varargs method with inexact argument type for last parameter;
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ gora-ignite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.1:testCompile (default-testCompile) @ gora-ignite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ gora-ignite <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ gora-ignite ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.125 s
+[INFO] Finished at: 2026-10-28T07:14:14-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project gora-ignite: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__gora__6c6b06c916b9/gora-ignite/.flakesync/Results-CritSearch/org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=3844
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 3.8 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 52.7 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_gora__6c6b06c916b9__gora-ignite\flakesync\org.apache.gora.ignite.store.TestIgniteStore.testResultSizeStartKey\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 2, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

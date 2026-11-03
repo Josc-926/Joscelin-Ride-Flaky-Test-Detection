@@ -1,0 +1,653 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/jenkinsci/remoting
+# SHA: abf0455a68ad6c52a57e912bb89d51f883f77542
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - hudson.remoting.PrefetchingTest.testGetResourceAsStream   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/jenkinsci_remoting__abf0455a68ad___root/2026-10-29_02-42-22/flakesync.hudson.remoting.PrefetchingTest.testGetResourceAsStream.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : jenkinsci/remoting   https://github.com/jenkinsci/remoting
+# commit         : abf0455a68ad6c52a57e912bb89d51f883f77542
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : hudson.remoting.PrefetchingTest.testGetResourceAsStream
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_remoting__abf0455a68ad___root\logs\flakesync.hudson.remoting.PrefetchingTest.testGetResourceAsStream.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_remoting__abf0455a68ad___root\flakesync\hudson.remoting.PrefetchingTest.testGetResourceAsStream\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\jenkinsci__remoting__abf0455a68ad
+# written        : 2026-10-29T14:48:01.285Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=hudson.remoting.PrefetchingTest#testGetResourceAsStream'
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad
+# started : 2026-10-29T14:48:01.296Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jarsigner-plugin is missing. @ org.jenkins-ci.main:remoting:${revision}${changelist}, /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/pom.xml, line 287, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------< org.jenkins-ci.main:remoting >--------------------
+[INFO] Building Jenkins remoting layer 4.7-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ remoting >>>
+[INFO] 
+[INFO] --- build-helper:3.2.0:timestamp-property (timestamp-property) @ remoting ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (user.name) @ remoting ---
+[INFO] No match to regex '([$\\])' found in 'ectopic'. The initial value 'ectopic' is left as-is...
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (version-property) @ remoting ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ remoting ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ remoting ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-source (add-source) @ remoting ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/generated-sources/localizer added.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.2.5:flatten (flatten) @ remoting ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 185 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ remoting <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ remoting ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.066 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.018 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_5j5DOVMY301BPeuGc+hjyrIYUi8XHX8E5dLBGt2Sik= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.190 s
+[INFO] Finished at: 2026-10-29T09:48:06-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=5223
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 5.2 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=hudson.remoting.PrefetchingTest#testGetResourceAsStream'
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad
+# started : 2026-10-29T14:48:06.521Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jarsigner-plugin is missing. @ org.jenkins-ci.main:remoting:${revision}${changelist}, /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/pom.xml, line 287, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------< org.jenkins-ci.main:remoting >--------------------
+[INFO] Building Jenkins remoting layer 4.7-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ remoting >>>
+[INFO] 
+[INFO] --- build-helper:3.2.0:timestamp-property (timestamp-property) @ remoting ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (user.name) @ remoting ---
+[INFO] No match to regex '([$\\])' found in 'ectopic'. The initial value 'ectopic' is left as-is...
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (version-property) @ remoting ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ remoting ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ remoting ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-source (add-source) @ remoting ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/generated-sources/localizer added.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.2.5:flatten (flatten) @ remoting ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 185 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ remoting <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ remoting ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.127 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.065 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_mMA0oOJOuDJA+g1XARagLEMpPoB3g1NBwRDkzXFmk4= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.841 s
+[INFO] Finished at: 2026-10-29T09:48:11-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=4906
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 4.9 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=hudson.remoting.PrefetchingTest#testGetResourceAsStream'
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad
+# started : 2026-10-29T14:48:11.430Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jarsigner-plugin is missing. @ org.jenkins-ci.main:remoting:${revision}${changelist}, /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/pom.xml, line 287, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------< org.jenkins-ci.main:remoting >--------------------
+[INFO] Building Jenkins remoting layer 4.7-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ remoting >>>
+[INFO] 
+[INFO] --- build-helper:3.2.0:timestamp-property (timestamp-property) @ remoting ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (user.name) @ remoting ---
+[INFO] No match to regex '([$\\])' found in 'ectopic'. The initial value 'ectopic' is left as-is...
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (version-property) @ remoting ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ remoting ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ remoting ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-source (add-source) @ remoting ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/generated-sources/localizer added.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.2.5:flatten (flatten) @ remoting ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 185 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ remoting <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ remoting ---
+INFO: Running DeltaDebugMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.082 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.025 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_B9gkYsknxljq8pj6YQ8D+28guPgu9MxsY7T7NFWMU= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.072 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.018 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_toujafEELP152Yv4W8Az2HWG+Ps0Hkbn4AatKpIfY= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.077 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.02 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_SgZEwKH5Aa18xJU6NiGcXfQDQRI9lvfZ5s7NxzrxpY= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.078 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.025 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_XSGsgQXYTiXHaC8c4ux3eoQ5LZw1ka2bdLdzdMvYQ= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.071 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.018 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_LvnzxUDummKdAIu81XMo9voSMU2pzMKg7TvaAmkjA= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.076 s <<< FAILURE! - in hudson.remoting.PrefetchingTest
+[ERROR] hudson.remoting.PrefetchingTest.testGetResourceAsStream  Time elapsed: 0.022 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for hudson.remoting.ClassicCommandTransport. (hudson.remoting.ClassicCommandTransport is in unnamed module of loader 'app')
+	at hudson.remoting.PrefetchingTest.setUp(PrefetchingTest.java:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   PrefetchingTest.setUp:34->RmiTestBase.setUp:52 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_MP6KsjVkcfojVENJcHovb3qkMPlc6+r9aTbx6MCgCs= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.404 s
+[INFO] Finished at: 2026-10-29T09:48:18-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=7461
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 7.5 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=hudson.remoting.PrefetchingTest#testGetResourceAsStream'
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad
+# started : 2026-10-29T14:48:18.893Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jarsigner-plugin is missing. @ org.jenkins-ci.main:remoting:${revision}${changelist}, /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/pom.xml, line 287, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------< org.jenkins-ci.main:remoting >--------------------
+[INFO] Building Jenkins remoting layer 4.7-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ remoting >>>
+[INFO] 
+[INFO] --- build-helper:3.2.0:timestamp-property (timestamp-property) @ remoting ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (user.name) @ remoting ---
+[INFO] No match to regex '([$\\])' found in 'ectopic'. The initial value 'ectopic' is left as-is...
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (version-property) @ remoting ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ remoting ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ remoting ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-source (add-source) @ remoting ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/generated-sources/localizer added.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.2.5:flatten (flatten) @ remoting ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 185 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ remoting <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ remoting ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.remoting.PrefetchingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 37.097 s - in hudson.remoting.PrefetchingTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  40.850 s
+[INFO] Finished at: 2026-10-29T09:49:00-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=41904
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 41.9 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=hudson.remoting.PrefetchingTest#testGetResourceAsStream'
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad
+# started : 2026-10-29T14:49:00.799Z
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jarsigner-plugin is missing. @ org.jenkins-ci.main:remoting:${revision}${changelist}, /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/pom.xml, line 287, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------------< org.jenkins-ci.main:remoting >--------------------
+[INFO] Building Jenkins remoting layer 4.7-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ remoting >>>
+[INFO] 
+[INFO] --- build-helper:3.2.0:timestamp-property (timestamp-property) @ remoting ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (user.name) @ remoting ---
+[INFO] No match to regex '([$\\])' found in 'ectopic'. The initial value 'ectopic' is left as-is...
+[INFO] 
+[INFO] --- build-helper:3.2.0:regex-property (version-property) @ remoting ---
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ remoting ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ remoting ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-source (add-source) @ remoting ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/generated-sources/localizer added.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.2.5:flatten (flatten) @ remoting ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:remoting:jar:4.7-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 185 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/RemoteClassLoader.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/main/java/hudson/remoting/Request.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ remoting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ remoting ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 110 source files to /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/target/test-classes
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/hudson/remoting/RmiTestBase.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/src/test/java/org/jenkinsci/remoting/protocol/cert/KeyPairRule.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ remoting <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ remoting ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.301 s
+[INFO] Finished at: 2026-10-29T09:49:05-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project remoting: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/jenkinsci__remoting__abf0455a68ad/.flakesync/Results-CritSearch/hudson.remoting.PrefetchingTest.testGetResourceAsStream-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=4510
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 4.5 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 64 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_remoting__abf0455a68ad___root\flakesync\hudson.remoting.PrefetchingTest.testGetResourceAsStream\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 14, delay locations: 72, minimized: 2, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

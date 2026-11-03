@@ -1,0 +1,240 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/apache/incubator-dubbo
+# SHA: 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# Flaky tests iDFlakies found in this log (7):
+#   - org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger   [module: dubbo-common] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize   [module: dubbo-common] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.common.utils.ExecutorUtilTest.testShutdownNow   [module: dubbo-common] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: No]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_incubator-dubbo__737f7a7e__dubbo-common/2026-10-31_20-18-18/idflakies.log; logs/apache_incubator-dubbo__737f7a7e__dubbo-cluster/2026-10-31_20-18-18/idflakies.log
+#==============================================================================
+
+########## [1/2] logs/apache_incubator-dubbo__737f7a7e__dubbo-common/2026-10-31_20-18-18/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/incubator-dubbo   https://github.com/apache/incubator-dubbo
+# commit         : 737f7a7e
+# module         : dubbo-common
+# dataset        : flakeflagger
+# run            : 2026-10-31_20-18-18
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 6 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\flakeflagger\apache_incubator-dubbo__737f7a7e__dubbo-common\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\flakeflagger\apache_incubator-dubbo__737f7a7e__dubbo-common\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__incubator-dubbo__737f7a7e
+# written        : 2026-10-31T22:23:05.548Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 6 rounds) ====================
+$ mvn -B -pl dubbo-common edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=6 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e
+# started : 2026-10-31T22:23:05.559Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-common >--------------------
+[INFO] Building dubbo-common 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-common >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-common ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-common ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-common ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-common/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-common ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 24 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-common <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-common ---
+INFO: No timeout specified. Using randomize.rounds: 6
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-common:2.7.0-SNAPSHOT 6 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 520 tests. Time taken: 0.41900014877319336 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-common/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-common/.dtfixingtools/original-order
+[INFO] Getting original results (520 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.common.utils.ExecutorUtilTest.testShutdownNow, status: expected PASS, got PASS
+Verified org.apache.dubbo.common.utils.ExecutorUtilTest.testShutdownNow, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize, status: expected PASS, got PASS
+Verified org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize, status: expected ERROR, got ERROR
+[INFO] Found 2 tests in round 1 of 6 (0.0 seconds elapsed (122.8 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 2 of 6 (0.0 seconds elapsed (153.7 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 6 (30.8 seconds elapsed (184.4 total), 30.8 seconds remaining).
+Verified org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger, status: expected PASS, got PASS
+Verified org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 4 of 6 (61.6 seconds elapsed (228.3 total), 30.8 seconds remaining).
+[INFO] Found 0 tests in round 5 of 6 (0.0 seconds elapsed (259.1 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 6 of 6 (30.9 seconds elapsed (289.9 total), 0.0 seconds remaining).
+
+[INFO] Found 3 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-common/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-common/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  05:22 min
+[INFO] Finished at: 2026-10-31T17:28:29-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=323495
+==================== end iDFlakies detect (random-class-method, 6 rounds): completed, exit 0, 323.5 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 323.5 s
+# flaky reported : 3
+#   - org.apache.dubbo.common.utils.ExecutorUtilTest.testShutdownNow
+#   - org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize
+#   - org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\flakeflagger\apache_incubator-dubbo__737f7a7e__dubbo-common\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+
+
+########## [2/2] logs/apache_incubator-dubbo__737f7a7e__dubbo-cluster/2026-10-31_20-18-18/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/incubator-dubbo   https://github.com/apache/incubator-dubbo
+# commit         : 737f7a7e
+# module         : dubbo-cluster
+# dataset        : flakeflagger
+# run            : 2026-10-31_20-18-18
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 6 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\flakeflagger\apache_incubator-dubbo__737f7a7e__dubbo-cluster\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\flakeflagger\apache_incubator-dubbo__737f7a7e__dubbo-cluster\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__incubator-dubbo__737f7a7e
+# written        : 2026-10-31T22:21:28.518Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 6 rounds) ====================
+$ mvn -B -pl dubbo-cluster edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=6 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e
+# started : 2026-10-31T22:21:28.529Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-cluster >-------------------
+[INFO] Building dubbo-cluster 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-cluster >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-cluster ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-cluster ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-cluster ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-cluster/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-cluster ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-cluster ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-cluster ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-cluster ---
+INFO: No timeout specified. Using randomize.rounds: 6
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-cluster:2.7.0-SNAPSHOT 6 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 112 tests. Time taken: 0.28600001335144043 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-cluster/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-cluster/.dtfixingtools/original-order
+[INFO] Getting original results (112 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck, status: expected ERROR, got ERROR
+[INFO] Found 3 tests in round 1 of 6 (0.0 seconds elapsed (14.8 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected PASS, got PASS
+[INFO] Found 1 tests in round 2 of 6 (0.0 seconds elapsed (29.0 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 6 (0.0 seconds elapsed (32.5 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected PASS, got PASS
+[INFO] Found 0 tests in round 4 of 6 (3.4 seconds elapsed (38.3 total), 1.7 seconds remaining).
+[INFO] Found 0 tests in round 5 of 6 (9.3 seconds elapsed (42.3 total), 1.9 seconds remaining).
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck, status: expected ERROR, got ERROR
+[INFO] Found 0 tests in round 6 of 6 (13.3 seconds elapsed (48.9 total), 0.0 seconds remaining).
+
+[INFO] Found 4 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-cluster/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__incubator-dubbo__737f7a7e/dubbo-cluster/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:02 min
+[INFO] Finished at: 2026-10-31T17:22:31-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=63119
+==================== end iDFlakies detect (random-class-method, 6 rounds): completed, exit 0, 63.1 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 63.1 s
+# flaky reported : 4
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck
+#   - org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck
+#   - org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\flakeflagger\apache_incubator-dubbo__737f7a7e__dubbo-cluster\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+

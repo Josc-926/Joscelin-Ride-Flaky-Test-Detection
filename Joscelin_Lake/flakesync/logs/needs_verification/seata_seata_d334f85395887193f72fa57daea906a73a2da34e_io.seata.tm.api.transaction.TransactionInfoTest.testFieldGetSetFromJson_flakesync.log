@@ -1,0 +1,554 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/seata/seata
+# SHA: d334f85395887193f72fa57daea906a73a2da34e
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson   [module: tm] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/seata_seata__d334f8539588__tm/2026-10-29_02-42-22/flakesync.io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : seata/seata   https://github.com/seata/seata
+# commit         : d334f85395887193f72fa57daea906a73a2da34e
+# module         : tm
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\seata_seata__d334f8539588__tm\logs\flakesync.io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\seata_seata__d334f8539588__tm\flakesync\io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\seata__seata__d334f8539588
+# written        : 2026-10-30T02:49:52.731Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=io.seata.tm.api.transaction.TransactionInfoTest#testFieldGetSetFromJson' -pl tm
+# cwd     : /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588
+# started : 2026-10-30T02:49:52.742Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------------< io.seata:seata-tm >--------------------------
+[INFO] Building seata-tm 0.8.1-SNAPSHOT 0.8.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ seata-tm >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ seata-tm ---
+[INFO] Starting audit...
+[ERROR] /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/main/java/io/seata/tm/TransactionManagerHolder.java:35:43: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'. [StaticVariableName]
+Audit done.
+[INFO] There is 1 error reported by Checkstyle 6.18 with /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/style/feats_checkstyle.xml ruleset.
+[ERROR] src/main/java/io/seata/tm/TransactionManagerHolder.java:[35,43] (naming) StaticVariableName: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ seata-tm ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/jacoco.exec
+[INFO] 
+[INFO] --- license:3.0:remove (default) @ seata-tm ---
+[INFO] Removing license headers...
+[INFO] 
+[INFO] --- license:3.0:format (default) @ seata-tm ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ seata-tm ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ seata-tm ---
+[INFO] Generating flattened POM of project io.seata:seata-tm:jar:0.8.1-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ seata-tm ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/test-classes
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ seata-tm <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ seata-tm ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.032 s <<< FAILURE! - in io.seata.tm.api.transaction.TransactionInfoTest
+[ERROR] testFieldGetSetFromJson  Time elapsed: 0.03 s  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.alibaba.fastjson.util.ASMClassLoader. (com.alibaba.fastjson.util.ASMClassLoader is in unnamed module of loader 'app')
+	at io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson(TransactionInfoTest.java:59)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   TransactionInfoTest.testFieldGetSetFromJson:59 » Linkage loader 'app' attempte...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_KDPxXpdUbjqexPb+x1lQG2mhwxpfiP6uPsOdjyGSxUE= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.785 s
+[INFO] Finished at: 2026-10-29T21:49:56-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3500
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3.5 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=io.seata.tm.api.transaction.TransactionInfoTest#testFieldGetSetFromJson' -pl tm
+# cwd     : /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588
+# started : 2026-10-30T02:49:56.244Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------------< io.seata:seata-tm >--------------------------
+[INFO] Building seata-tm 0.8.1-SNAPSHOT 0.8.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ seata-tm >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ seata-tm ---
+[INFO] Starting audit...
+[ERROR] /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/main/java/io/seata/tm/TransactionManagerHolder.java:35:43: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'. [StaticVariableName]
+Audit done.
+[INFO] There is 1 error reported by Checkstyle 6.18 with /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/style/feats_checkstyle.xml ruleset.
+[ERROR] src/main/java/io/seata/tm/TransactionManagerHolder.java:[35,43] (naming) StaticVariableName: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ seata-tm ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/jacoco.exec
+[INFO] 
+[INFO] --- license:3.0:remove (default) @ seata-tm ---
+[INFO] Removing license headers...
+[INFO] 
+[INFO] --- license:3.0:format (default) @ seata-tm ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ seata-tm ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ seata-tm ---
+[INFO] Generating flattened POM of project io.seata:seata-tm:jar:0.8.1-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ seata-tm ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/test-classes
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ seata-tm <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ seata-tm ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.612 s
+[INFO] Finished at: 2026-10-29T21:50:04-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=8330
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 8.3 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=io.seata.tm.api.transaction.TransactionInfoTest#testFieldGetSetFromJson' -pl tm
+# cwd     : /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588
+# started : 2026-10-30T02:50:04.576Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------------< io.seata:seata-tm >--------------------------
+[INFO] Building seata-tm 0.8.1-SNAPSHOT 0.8.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ seata-tm >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ seata-tm ---
+[INFO] Starting audit...
+[ERROR] /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/main/java/io/seata/tm/TransactionManagerHolder.java:35:43: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'. [StaticVariableName]
+Audit done.
+[INFO] There is 1 error reported by Checkstyle 6.18 with /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/style/feats_checkstyle.xml ruleset.
+[ERROR] src/main/java/io/seata/tm/TransactionManagerHolder.java:[35,43] (naming) StaticVariableName: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ seata-tm ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/jacoco.exec
+[INFO] 
+[INFO] --- license:3.0:remove (default) @ seata-tm ---
+[INFO] Removing license headers...
+[INFO] 
+[INFO] --- license:3.0:format (default) @ seata-tm ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ seata-tm ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ seata-tm ---
+[INFO] Generating flattened POM of project io.seata:seata-tm:jar:0.8.1-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ seata-tm ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/test-classes
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ seata-tm <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ seata-tm ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.042 s
+[INFO] Finished at: 2026-10-29T21:50:07-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2774
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.8 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=io.seata.tm.api.transaction.TransactionInfoTest#testFieldGetSetFromJson' -pl tm
+# cwd     : /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588
+# started : 2026-10-30T02:50:07.352Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------------< io.seata:seata-tm >--------------------------
+[INFO] Building seata-tm 0.8.1-SNAPSHOT 0.8.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ seata-tm >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ seata-tm ---
+[INFO] Starting audit...
+[ERROR] /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/main/java/io/seata/tm/TransactionManagerHolder.java:35:43: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'. [StaticVariableName]
+Audit done.
+[INFO] There is 1 error reported by Checkstyle 6.18 with /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/style/feats_checkstyle.xml ruleset.
+[ERROR] src/main/java/io/seata/tm/TransactionManagerHolder.java:[35,43] (naming) StaticVariableName: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ seata-tm ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/jacoco.exec
+[INFO] 
+[INFO] --- license:3.0:remove (default) @ seata-tm ---
+[INFO] Removing license headers...
+[INFO] 
+[INFO] --- license:3.0:format (default) @ seata-tm ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ seata-tm ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ seata-tm ---
+[INFO] Generating flattened POM of project io.seata:seata-tm:jar:0.8.1-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ seata-tm ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/test-classes
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ seata-tm <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ seata-tm ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s - in io.seata.tm.api.transaction.TransactionInfoTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.840 s
+[INFO] Finished at: 2026-10-29T21:50:10-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3556
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 3.6 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=io.seata.tm.api.transaction.TransactionInfoTest#testFieldGetSetFromJson' -pl tm
+# cwd     : /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588
+# started : 2026-10-30T02:50:10.909Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------------< io.seata:seata-tm >--------------------------
+[INFO] Building seata-tm 0.8.1-SNAPSHOT 0.8.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ seata-tm >>>
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (validate) @ seata-tm ---
+[INFO] Starting audit...
+[ERROR] /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/main/java/io/seata/tm/TransactionManagerHolder.java:35:43: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'. [StaticVariableName]
+Audit done.
+[INFO] There is 1 error reported by Checkstyle 6.18 with /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/style/feats_checkstyle.xml ruleset.
+[ERROR] src/main/java/io/seata/tm/TransactionManagerHolder.java:[35,43] (naming) StaticVariableName: Name 'INSTANCE' must match pattern '^[a-z][a-zA-Z0-9]*$'.
+[WARNING] checkstyle:check violations detected but failOnViolation set to false
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ seata-tm ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/jacoco.exec
+[INFO] 
+[INFO] --- license:3.0:remove (default) @ seata-tm ---
+[INFO] Removing license headers...
+[INFO] 
+[INFO] --- license:3.0:format (default) @ seata-tm ---
+[INFO] Updating license headers...
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ seata-tm ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ seata-tm ---
+[INFO] Generating flattened POM of project io.seata:seata-tm:jar:0.8.1-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ seata-tm ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ seata-tm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/target/test-classes
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ seata-tm <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ seata-tm ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.082 s
+[INFO] Finished at: 2026-10-29T21:50:13-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project seata-tm: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/seata__seata__d334f8539588/tm/.flakesync/Results-CritSearch/io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2798
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2.8 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 21 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\seata_seata__d334f8539588__tm\flakesync\io.seata.tm.api.transaction.TransactionInfoTest.testFieldGetSetFromJson\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

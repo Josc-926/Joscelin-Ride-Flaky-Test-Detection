@@ -1,0 +1,964 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: NonDex
+# Project: https://github.com/GoogleCloudPlatform/DataflowTemplates
+# SHA: 8c035b9a1af1bec31caa16c2c178d8e0425fb4ea
+# Flaky tests NonDex found in this log (1):
+#   - com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testMapColumn   [module: v1] [found by: NonDex] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/GoogleCloudPlatform_DataflowTemplates__8c035b9a1af1__v1/2026-10-29_02-42-22/nondex.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : NonDex
+# project        : GoogleCloudPlatform/DataflowTemplates   https://github.com/GoogleCloudPlatform/DataflowTemplates
+# commit         : 8c035b9a1af1bec31caa16c2c178d8e0425fb4ea
+# module         : v1
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testMapColumn
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\GoogleCloudPlatform_DataflowTemplates__8c035b9a1af1__v1\logs\nondex.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\GoogleCloudPlatform_DataflowTemplates__8c035b9a1af1__v1\nondex\.nondex
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1
+# written        : 2026-10-29T12:26:30.682Z
+################################################################
+
+
+==================== NonDex (1 unshuffled run + 3 shuffled runs, 1 test(s)) ====================
+$ mvn -B -pl v1 edu.illinois:nondex-maven-plugin:2.2.1:nondex '-Dtest=com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapColumn' -DnondexRuns=3 -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoSpecifiedTests=false
+# cwd     : /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1
+# started : 2026-10-29T12:26:30.693Z
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 6.18
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 18
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 26.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] ------------< com.google.cloud.teleport:classic-templates >-------------
+[INFO] Building Google Cloud Teleport Classic 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> nondex:2.2.1:nondex (default-cli) > test-compile @ classic-templates >>>
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce) @ classic-templates ---
+[INFO] Rule 0: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] Rule 2: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-banned-dependencies) @ classic-templates ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default-prepare-agent) @ classic-templates ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/target/jacoco.exec,excludes=**/*InformationSchemaScanner.*:**/*AutoValue_*
+[INFO] 
+[INFO] --- protobuf:0.6.1:compile (default) @ classic-templates ---
+[INFO] Compiling 2 proto file(s) to /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/target/generated-sources/protobuf/java
+[INFO] 
+[INFO] --- protobuf:0.6.1:compile-custom (default) @ classic-templates ---
+[INFO] Compiling 2 proto file(s) to /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/target/generated-sources/protobuf/grpc-java
+[INFO] 
+[INFO] --- avro:1.11.3:schema (default) @ classic-templates ---
+[WARNING] Ignored the com.google.cloud.teleport.bigtable.BigtableCell.timestamp.logicalType property ("timestamp-micros"). It should probably be nested inside the "type" for the field.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ classic-templates ---
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/proto to target/classes
+[INFO] Copying 2 resources from src/main/proto to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ classic-templates ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 166 source files with javac [debug target 11] to target/classes
+[WARNING] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/main/java/com/google/cloud/teleport/splunk/HttpEventPublisher.java:[108,19] [AutoValueMutable] An @AutoValue property that is a primitive array returns the original array, which can therefore be modified by the caller. If this is OK, you can suppress this warning with @SuppressWarnings("mutable"). Otherwise, you should replace the property with an immutable type, perhaps a simple wrapper around the original array.
+[WARNING] Implicitly compiled files were not subject to annotation processing.
+  Use -proc:none to disable annotation processing or -implicit to specify a policy for implicit compilation.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/target/generated-sources/protobuf/java/com/google/cloud/teleport/spanner/proto/ExportProtos.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/target/generated-sources/protobuf/java/com/google/cloud/teleport/spanner/proto/ExportProtos.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/main/java/com/google/cloud/teleport/templates/common/FirestoreNestedValueProvider.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/main/java/com/google/cloud/teleport/templates/common/FirestoreNestedValueProvider.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- protobuf:0.6.1:test-compile (default) @ classic-templates ---
+[INFO] Compiling 1 proto file(s) to /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/target/generated-test-sources/protobuf/java
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ classic-templates ---
+[INFO] Copying 43 resources from src/test/resources to target/test-classes
+[INFO] Copying 1 resource from src/test/proto to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ classic-templates ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 152 source files with javac [debug target 11] to target/test-classes
+[WARNING] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/spanner/ddl/RandomDdlGenerator.java:[111,25] [AutoValueMutable] An @AutoValue property that is a primitive array returns the original array, which can therefore be modified by the caller. If this is OK, you can suppress this warning with @SuppressWarnings("mutable"). Otherwise, you should replace the property with an immutable type, perhaps a simple wrapper around the original array.
+[WARNING] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/templates/SpannerToTextIT.java:[126,57] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to java.lang.Object for a varargs call
+  cast to java.lang.Object[] for a non-varargs call and to suppress this warning
+[WARNING] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/templates/SpannerToTextIT.java:[209,57] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to java.lang.Object for a varargs call
+  cast to java.lang.Object[] for a non-varargs call and to suppress this warning
+[WARNING] Implicitly compiled files were not subject to annotation processing.
+  Use -proc:none to disable annotation processing or -implicit to specify a policy for implicit compilation.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/util/DatadogApiKeyNestedValueProviderTest.java: Some input files use or override a deprecated API.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/util/DatadogApiKeyNestedValueProviderTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/templates/WordCountTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/src/test/java/com/google/cloud/teleport/templates/WordCountTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- checkstyle:3.2.1:check (default) @ classic-templates ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] <<< nondex:2.2.1:nondex (default-cli) < test-compile @ classic-templates <<<
+[INFO] 
+[INFO] 
+[INFO] --- nondex:2.2.1:nondex (default-cli) @ classic-templates ---
+INFO: The original argline is: 
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_w4b9zzR60IKHhRktWWWqaQAyXh9Mo40WzL2lwWePST4=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/ch/qos/logback/logback-classic/1.2.10/logback-classic-1.2.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+[INFO] Running com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+2026-10-29 07:26:47 WARN  ControlConnection:390 - Cannot find Cassandra version for host localhost/127.0.0.1:40385 to parse the schema, using 2.2.0 based on protocol version in use. If parsing the schema fails, this could be the cause
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.711 s - in com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Adding excluded groups to existing ones
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexExecid=cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/ch/qos/logback/logback-classic/1.2.10/logback-classic-1.2.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+[INFO] Running com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+2026-10-29 07:26:49 ERROR OneForOneStrategy:66 - exception during creation
+akka.actor.ActorInitializationException: exception during creation
+	at akka.actor.ActorInitializationException$.apply(Actor.scala:164)
+	at akka.actor.ActorCell.create(ActorCell.scala:596)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at akka.util.Reflect$.instantiate(Reflect.scala:66)
+	at akka.actor.ArgsReflectConstructor.produce(Props.scala:352)
+	at akka.actor.Props.newActor(Props.scala:252)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:552)
+	at akka.actor.ActorCell.create(ActorCell.scala:578)
+	... 9 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.scassandra.server.priming.routes.PrimingPreparedRoute$class.$init$(PrimingPreparedRoute.scala:38)
+	at org.scassandra.server.priming.PrimingServerHttpService.<init>(PrimingServer.scala:102)
+	... 18 more
+Caused by: java.lang.RuntimeException: Cannot automatically determine case class field names and order for 'org.scassandra.server.priming.Query', please use the 'jsonFormat' overload with explicit field name specification
+	at spray.json.ProductFormats$class.extractFieldNames(ProductFormats.scala:84)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.extractFieldNames(PrimingJsonImplicits.scala:43)
+	at spray.json.ProductFormatsInstances$class.jsonFormat6(ProductFormatsInstances.scala:143)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.jsonFormat6(PrimingJsonImplicits.scala:43)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.<init>(PrimingJsonImplicits.scala:202)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.<clinit>(PrimingJsonImplicits.scala)
+	... 20 more
+Caused by: java.lang.RuntimeException: Cannot determine field order of case class org.scassandra.server.priming.Query
+	at scala.sys.package$.error(package.scala:27)
+	at spray.json.ProductFormats$class.extractFieldNames(ProductFormats.scala:81)
+	... 25 more
+2026-10-29 07:26:49 WARN  ActivityClient:271 - Clearing of connections failed
+org.apache.http.NoHttpResponseException: localhost:44185 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:268)
+	at org.scassandra.http.client.ActivityClient.clearConnections(ActivityClient.java:155)
+	at org.scassandra.http.client.ActivityClient.clearAllRecordedActivity(ActivityClient.java:210)
+	at com.google.cloud.teleport.bigtable.CassandraBaseTest.setup(CassandraBaseTest.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.153 s <<< FAILURE! - in com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+[ERROR] testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)  Time elapsed: 0.143 s  <<< ERROR!
+org.scassandra.http.client.ActivityRequestFailed: Clearing of connections failed
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:272)
+	at org.scassandra.http.client.ActivityClient.clearConnections(ActivityClient.java:155)
+	at org.scassandra.http.client.ActivityClient.clearAllRecordedActivity(ActivityClient.java:210)
+	at com.google.cloud.teleport.bigtable.CassandraBaseTest.setup(CassandraBaseTest.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+Caused by: org.apache.http.NoHttpResponseException: localhost:44185 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:268)
+	... 46 more
+
+[ERROR] testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)  Time elapsed: 0.143 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.teardownMapper(CassandraRowMapperFnTest.java:109)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)
+[ERROR]   Run 1: CassandraRowMapperFnTest>CassandraBaseTest.setup:70 » ActivityRequestFailed Cl...
+[ERROR]   Run 2: CassandraRowMapperFnTest.teardownMapper:109 NullPointer
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY=
+INFO: Adding excluded groups to existing ones
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexExecid=SEB69lsKsLdoz7h9fUWPgyjAXv9PDnSOsi3COhPsH6U=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/ch/qos/logback/logback-classic/1.2.10/logback-classic-1.2.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+[INFO] Running com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+2026-10-29 07:26:51 ERROR OneForOneStrategy:66 - exception during creation
+akka.actor.ActorInitializationException: exception during creation
+	at akka.actor.ActorInitializationException$.apply(Actor.scala:164)
+	at akka.actor.ActorCell.create(ActorCell.scala:596)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at akka.util.Reflect$.instantiate(Reflect.scala:66)
+	at akka.actor.ArgsReflectConstructor.produce(Props.scala:352)
+	at akka.actor.Props.newActor(Props.scala:252)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:552)
+	at akka.actor.ActorCell.create(ActorCell.scala:578)
+	... 9 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.scassandra.server.priming.routes.PrimingPreparedRoute$class.$init$(PrimingPreparedRoute.scala:38)
+	at org.scassandra.server.priming.PrimingServerHttpService.<init>(PrimingServer.scala:102)
+	... 18 more
+Caused by: java.lang.RuntimeException: Cannot automatically determine case class field names and order for 'org.scassandra.server.priming.Query', please use the 'jsonFormat' overload with explicit field name specification
+	at spray.json.ProductFormats$class.extractFieldNames(ProductFormats.scala:84)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.extractFieldNames(PrimingJsonImplicits.scala:43)
+	at spray.json.ProductFormatsInstances$class.jsonFormat6(ProductFormatsInstances.scala:143)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.jsonFormat6(PrimingJsonImplicits.scala:43)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.<init>(PrimingJsonImplicits.scala:202)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.<clinit>(PrimingJsonImplicits.scala)
+	... 20 more
+Caused by: java.lang.RuntimeException: Cannot determine field order of case class org.scassandra.server.priming.Query
+	at scala.sys.package$.error(package.scala:27)
+	at spray.json.ProductFormats$class.extractFieldNames(ProductFormats.scala:81)
+	... 25 more
+2026-10-29 07:26:51 WARN  ActivityClient:271 - Clearing of connections failed
+org.apache.http.NoHttpResponseException: localhost:43529 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:268)
+	at org.scassandra.http.client.ActivityClient.clearConnections(ActivityClient.java:155)
+	at org.scassandra.http.client.ActivityClient.clearAllRecordedActivity(ActivityClient.java:210)
+	at com.google.cloud.teleport.bigtable.CassandraBaseTest.setup(CassandraBaseTest.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.141 s <<< FAILURE! - in com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+[ERROR] testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)  Time elapsed: 0.131 s  <<< ERROR!
+org.scassandra.http.client.ActivityRequestFailed: Clearing of connections failed
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:272)
+	at org.scassandra.http.client.ActivityClient.clearConnections(ActivityClient.java:155)
+	at org.scassandra.http.client.ActivityClient.clearAllRecordedActivity(ActivityClient.java:210)
+	at com.google.cloud.teleport.bigtable.CassandraBaseTest.setup(CassandraBaseTest.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+Caused by: org.apache.http.NoHttpResponseException: localhost:43529 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:268)
+	... 46 more
+
+[ERROR] testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)  Time elapsed: 0.131 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.teardownMapper(CassandraRowMapperFnTest.java:109)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)
+[ERROR]   Run 1: CassandraRowMapperFnTest>CassandraBaseTest.setup:70 » ActivityRequestFailed Cl...
+[ERROR]   Run 2: CassandraRowMapperFnTest.teardownMapper:109 NullPointer
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for SEB69lsKsLdoz7h9fUWPgyjAXv9PDnSOsi3COhPsH6U=
+INFO: Adding excluded groups to existing ones
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex
+nondexExecid=d5O08O0t0bAaZb7vrE84asz+6LB2YhyOTfsTRyZ70Nc=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/ch/qos/logback/logback-classic/1.2.10/logback-classic-1.2.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ectopic/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+[INFO] Running com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+2026-10-29 07:26:52 ERROR OneForOneStrategy:66 - exception during creation
+akka.actor.ActorInitializationException: exception during creation
+	at akka.actor.ActorInitializationException$.apply(Actor.scala:164)
+	at akka.actor.ActorCell.create(ActorCell.scala:596)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at akka.util.Reflect$.instantiate(Reflect.scala:66)
+	at akka.actor.ArgsReflectConstructor.produce(Props.scala:352)
+	at akka.actor.Props.newActor(Props.scala:252)
+	at akka.actor.ActorCell.newActor(ActorCell.scala:552)
+	at akka.actor.ActorCell.create(ActorCell.scala:578)
+	... 9 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.scassandra.server.priming.routes.PrimingPreparedRoute$class.$init$(PrimingPreparedRoute.scala:38)
+	at org.scassandra.server.priming.PrimingServerHttpService.<init>(PrimingServer.scala:102)
+	... 18 more
+Caused by: java.lang.RuntimeException: Cannot automatically determine case class field names and order for 'org.scassandra.server.priming.Query', please use the 'jsonFormat' overload with explicit field name specification
+	at spray.json.ProductFormats$class.extractFieldNames(ProductFormats.scala:84)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.extractFieldNames(PrimingJsonImplicits.scala:43)
+	at spray.json.ProductFormatsInstances$class.jsonFormat6(ProductFormatsInstances.scala:143)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.jsonFormat6(PrimingJsonImplicits.scala:43)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.<init>(PrimingJsonImplicits.scala:202)
+	at org.scassandra.server.priming.json.PrimingJsonImplicits$.<clinit>(PrimingJsonImplicits.scala)
+	... 20 more
+Caused by: java.lang.RuntimeException: Cannot determine field order of case class org.scassandra.server.priming.Query
+	at scala.sys.package$.error(package.scala:27)
+	at spray.json.ProductFormats$class.extractFieldNames(ProductFormats.scala:81)
+	... 25 more
+2026-10-29 07:26:52 WARN  ActivityClient:271 - Clearing of connections failed
+org.apache.http.NoHttpResponseException: localhost:32847 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:268)
+	at org.scassandra.http.client.ActivityClient.clearConnections(ActivityClient.java:155)
+	at org.scassandra.http.client.ActivityClient.clearAllRecordedActivity(ActivityClient.java:210)
+	at com.google.cloud.teleport.bigtable.CassandraBaseTest.setup(CassandraBaseTest.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.155 s <<< FAILURE! - in com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest
+[ERROR] testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)  Time elapsed: 0.141 s  <<< ERROR!
+org.scassandra.http.client.ActivityRequestFailed: Clearing of connections failed
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:272)
+	at org.scassandra.http.client.ActivityClient.clearConnections(ActivityClient.java:155)
+	at org.scassandra.http.client.ActivityClient.clearAllRecordedActivity(ActivityClient.java:210)
+	at com.google.cloud.teleport.bigtable.CassandraBaseTest.setup(CassandraBaseTest.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+Caused by: org.apache.http.NoHttpResponseException: localhost:32847 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.scassandra.http.client.ActivityClient.httpDelete(ActivityClient.java:268)
+	... 46 more
+
+[ERROR] testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)  Time elapsed: 0.141 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.teardownMapper(CassandraRowMapperFnTest.java:109)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest.testMapColumn(com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest)
+[ERROR]   Run 1: CassandraRowMapperFnTest>CassandraBaseTest.setup:70 » ActivityRequestFailed Cl...
+[ERROR]   Run 2: CassandraRowMapperFnTest.teardownMapper:109 NullPointer
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for d5O08O0t0bAaZb7vrE84asz+6LB2YhyOTfsTRyZ70Nc=
+[INFO] NonDex SUMMARY:
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex" -DnondexExecid=cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY= -DnondexLogging=CONFIG
+[WARNING] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapColumn
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex" -DnondexExecid=SEB69lsKsLdoz7h9fUWPgyjAXv9PDnSOsi3COhPsH6U= -DnondexLogging=CONFIG
+[WARNING] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapColumn
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex" -DnondexExecid=d5O08O0t0bAaZb7vrE84asz+6LB2YhyOTfsTRyZ70Nc= -DnondexLogging=CONFIG
+[WARNING] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapColumn
+[INFO] *********
+[INFO] All tests pass without NonDex shuffling
+[INFO] ####################
+[INFO] Across all seeds:
+[INFO] com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapColumn
+[INFO] Test results can be found at: 
+[INFO] file:///home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex/cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY=/test_results.html
+[INFO] [NonDex] The id of this run is: cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY=
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.930 s
+[INFO] Finished at: 2026-10-29T07:26:53-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.illinois:nondex-maven-plugin:2.2.1:nondex (default-cli) on project classic-templates: Unable to execute mojo: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/ectopic/flaky-work/checkouts/GoogleCloudPlatform__DataflowTemplates__8c035b9a1af1/v1/.nondex/cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY= for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=22727
+==================== end NonDex (1 unshuffled run + 3 shuffled runs, 1 test(s)): FAILED, exit 1, 22.7 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 22.7 s
+# flaky reported : 1
+#   - com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapColumn
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\GoogleCloudPlatform_DataflowTemplates__8c035b9a1af1__v1\nondex\.nondex   (each <execution id>/failures file lists the tests that failed in that run)
+# note           : execution SEB69lsKsLdoz7h9fUWPgyjAXv9PDnSOsi3COhPsH6U=: 1 failing test(s)
+# note           : execution cpx9D6Rgz3bsVD6xvYn3oXLkWxjTjtu6bRrCSO5wwJY=: 1 failing test(s)
+# note           : execution d5O08O0t0bAaZb7vrE84asz+6LB2YhyOTfsTRyZ70Nc=: 1 failing test(s)
+########################################################
+

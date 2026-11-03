@@ -1,0 +1,815 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/EsotericSoftware/kryonet
+# SHA: 03a135e2039bd7eb20e436ad70539238563d15a4
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI   [module: .] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/EsotericSoftware_kryonet__03a135e2039b___root/2026-10-31_05-09-25/flakesync.com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : EsotericSoftware/kryonet   https://github.com/EsotericSoftware/kryonet
+# commit         : 03a135e2039bd7eb20e436ad70539238563d15a4
+# module         : .
+# dataset        : pr-data
+# run            : 2026-10-31_05-09-25
+# test           : com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\EsotericSoftware_kryonet__03a135e2039b___root\logs\flakesync.com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\EsotericSoftware_kryonet__03a135e2039b___root\flakesync\com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\EsotericSoftware__kryonet__03a135e2039b
+# written        : 2026-10-31T12:27:40.371Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=com.esotericsoftware.kryonet.rmi.RmiSendObjectTest#testRMI'
+# cwd     : /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b
+# started : 2026-10-31T12:27:40.383Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.esotericsoftware:kryonet >--------------------
+[INFO] Building kryonet 2.22.0-RC1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ kryonet >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ kryonet ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ kryonet <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ kryonet ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_YVsRsFzxh7Qv4YcCOBcccdIumfMpAsDtR96qbduqAo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:00  INFO: [kryonet] Server opened.
+00:00  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:00  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:00  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:11  INFO: [kryonet] Closing server connections...
+00:11  INFO: [kryonet] Connection 1 disconnected.
+00:11  INFO: [kryonet] Server closed.
+00:11  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.018 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 14.97 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_YVsRsFzxh7Qv4YcCOBcccdIumfMpAsDtR96qbduqAo= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.212 s
+[INFO] Finished at: 2026-10-31T07:27:57-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=17036
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 17 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=com.esotericsoftware.kryonet.rmi.RmiSendObjectTest#testRMI'
+# cwd     : /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b
+# started : 2026-10-31T12:27:57.421Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.esotericsoftware:kryonet >--------------------
+[INFO] Building kryonet 2.22.0-RC1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ kryonet >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ kryonet ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ kryonet <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ kryonet ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_dNLaLSQ9QeRN9G7eEomlfdeSy30VqfdVOc8x1PzAiXY=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:02  INFO: [kryonet] Server opened.
+00:06  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 12.673 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 12.618 sec  <<< ERROR!
+java.net.SocketTimeoutException: Connected, but timed out during TCP registration.
+Note: Client#update must be called in a separate thread during connect.
+	at com.esotericsoftware.kryonet.Client.connect(Client.java:186)
+	at com.esotericsoftware.kryonet.Client.connect(Client.java:129)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:90)
+
+
+Results :
+
+Tests in error: 
+  RmiSendObjectTest.testRMI:90 » SocketTimeout Connected, but timed out during T...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_dNLaLSQ9QeRN9G7eEomlfdeSy30VqfdVOc8x1PzAiXY= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.586 s
+[INFO] Finished at: 2026-10-31T07:28:11-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=14319
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 14.3 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=com.esotericsoftware.kryonet.rmi.RmiSendObjectTest#testRMI'
+# cwd     : /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b
+# started : 2026-10-31T12:28:11.742Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.esotericsoftware:kryonet >--------------------
+[INFO] Building kryonet 2.22.0-RC1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ kryonet >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ kryonet ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ kryonet <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ kryonet ---
+INFO: Running DeltaDebugMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_PeA9j3IwhhOUQCEeO3Q5XxSDDHq73vsZo2cTKc8mWM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:01  INFO: [kryonet] Server opened.
+00:36  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:38  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:41  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:52  INFO: [kryonet] Closing server connections...
+00:53  INFO: [kryonet] Connection 1 disconnected.
+00:53  INFO: [kryonet] Server closed.
+00:53  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 53.89 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 53.854 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_PeA9j3IwhhOUQCEeO3Q5XxSDDHq73vsZo2cTKc8mWM= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_OA043nyk+s9VxHoVQpv7WW1YfZJGaGjKn9iDFH77dxA=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:00  INFO: [kryonet] Server opened.
+00:28  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:28  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:29  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:40  INFO: [kryonet] Closing server connections...
+00:40  INFO: [kryonet] Connection 1 disconnected.
+00:40  INFO: [kryonet] Server closed.
+00:40  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 46.36 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 46.321 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_OA043nyk+s9VxHoVQpv7WW1YfZJGaGjKn9iDFH77dxA= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_2axNXm8VVIQXEO9bgBVIDYizGglbqsf271Ue1+pPLM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:00  INFO: [kryonet] Server opened.
+00:18  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:19  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:19  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:30  INFO: [kryonet] Closing server connections...
+00:30  INFO: [kryonet] Connection 1 disconnected.
+00:30  INFO: [kryonet] Server closed.
+00:30  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 31.258 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 31.21 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_2axNXm8VVIQXEO9bgBVIDYizGglbqsf271Ue1+pPLM= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_Bm1vbmnKIGhrl9bulEYsI7ozqjm3PYCxVFzGpF1qhbg=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:00  INFO: [kryonet] Server opened.
+00:12  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:12  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:12  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:23  INFO: [kryonet] Closing server connections...
+00:23  INFO: [kryonet] Connection 1 disconnected.
+00:23  INFO: [kryonet] Server closed.
+00:23  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 24.012 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 23.974 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_Bm1vbmnKIGhrl9bulEYsI7ozqjm3PYCxVFzGpF1qhbg= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_GzFMCigfssIXhTVkWANqUJOVF7GLeU2KlDpDUKIac=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:12  INFO: [kryonet] Server opened.
+00:21  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:21  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:21  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:32  INFO: [kryonet] Closing server connections...
+00:32  INFO: [kryonet] Connection 1 disconnected.
+00:33  INFO: [kryonet] Connection 1 disconnected.
+00:33  INFO: [kryonet] Server closed.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 39.925 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 39.887 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_GzFMCigfssIXhTVkWANqUJOVF7GLeU2KlDpDUKIac= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_F3IE2ZsI4wHk8p2FBFel4almJtCVQ+mNlqk+no1eO0M=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:09  INFO: [kryonet] Server opened.
+00:18  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:18  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:18  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:29  INFO: [kryonet] Closing server connections...
+00:29  INFO: [kryonet] Connection 1 disconnected.
+00:29  INFO: [kryonet] Server closed.
+00:29  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 38.339 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 38.294 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_F3IE2ZsI4wHk8p2FBFel4almJtCVQ+mNlqk+no1eO0M= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_CUIh7JcitZbvjGxxbFJz+7QHX6DpspK0QwCIfg4jOZc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:08  INFO: [kryonet] Server opened.
+00:21  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:21  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:21  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:32  INFO: [kryonet] Closing server connections...
+00:32  INFO: [kryonet] Connection 1 disconnected.
+00:32  INFO: [kryonet] Server closed.
+00:32  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 49.079 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 49.04 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_CUIh7JcitZbvjGxxbFJz+7QHX6DpspK0QwCIfg4jOZc= with delay: 100
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_9Llc24wxEmI9XmmVSmr1I12F+jhmxwNp8fRhgalSkc=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:05  INFO: [kryonet] Server opened.
+00:13  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:13  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:13  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+Exception in thread "pool-1-thread-1" java.lang.LinkageError: loader 'app' attempted duplicate class definition for com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler. (com.esotericsoftware.kryonet.rmi.ObjectSpace$RemoteInvocationHandler is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:295)
+	at com.esotericsoftware.kryonet.rmi.ObjectSpace.getRemoteObject(ObjectSpace.java:271)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest$2.connected(RmiSendObjectTest.java:79)
+	at com.esotericsoftware.kryonet.Listener$QueuedListener$1.run(Listener.java:105)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+00:24  INFO: [kryonet] Closing server connections...
+00:24  INFO: [kryonet] Connection 1 disconnected.
+00:24  INFO: [kryonet] Server closed.
+00:24  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 29.975 sec <<< FAILURE! - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+testRMI(com.esotericsoftware.kryonet.rmi.RmiSendObjectTest)  Time elapsed: 29.934 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Test did not complete in a timely manner.
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at com.esotericsoftware.kryonet.KryoNetTestCase.waitForThreads(KryoNetTestCase.java:109)
+	at com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI(RmiSendObjectTest.java:92)
+
+
+Results :
+
+Failed tests: 
+  RmiSendObjectTest.testRMI:92->KryoNetTestCase.waitForThreads:109 Test did not complete in a timely manner.
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_9Llc24wxEmI9XmmVSmr1I12F+jhmxwNp8fRhgalSkc= with delay: 100
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  05:14 min
+[INFO] Finished at: 2026-10-31T07:33:27-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=315396
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 315.4 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=com.esotericsoftware.kryonet.rmi.RmiSendObjectTest#testRMI'
+# cwd     : /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b
+# started : 2026-10-31T12:33:27.140Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.esotericsoftware:kryonet >--------------------
+[INFO] Building kryonet 2.22.0-RC1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ kryonet >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ kryonet ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ kryonet <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ kryonet ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/clean_gdjxVgu+xeS5+ihlJXrZGeOqLvygMD1u4JDYfzGYWm8=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+---- RmiSendObjectTest
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.esotericsoftware.kryo.util.UnsafeUtil (file:/home/ectopic/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar) to constructor java.nio.DirectByteBuffer(long,int,java.lang.Object)
+WARNING: Please consider reporting this to the maintainers of com.esotericsoftware.kryo.util.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+00:09  INFO: [kryonet] Server opened.
+00:11  INFO: [kryonet] Connecting: localhost/127.0.0.1:54555
+00:11  INFO: [kryonet] Connection 1 connected: /127.0.0.1
+00:11  INFO: [kryonet] Connection 1 connected: localhost/127.0.0.1
+00:12  INFO: [kryonet] Closing server connections...
+00:12  INFO: [kryonet] Connection 1 disconnected.
+00:12  INFO: [kryonet] Server closed.
+00:12  INFO: [kryonet] Connection 1 disconnected.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.123 sec - in com.esotericsoftware.kryonet.rmi.RmiSendObjectTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17.004 s
+[INFO] Finished at: 2026-10-31T07:33:44-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=17739
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 17.7 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=com.esotericsoftware.kryonet.rmi.RmiSendObjectTest#testRMI'
+# cwd     : /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b
+# started : 2026-10-31T12:33:44.881Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.esotericsoftware:kryonet >--------------------
+[INFO] Building kryonet 2.22.0-RC1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ kryonet >>>
+[INFO] 
+[INFO] --- enforcer:1.0:enforce (enforce-maven) @ kryonet ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kryonet ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kryonet ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ kryonet <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ kryonet ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.597 s
+[INFO] Finished at: 2026-10-31T07:33:46-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project kryonet: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/EsotericSoftware__kryonet__03a135e2039b/.flakesync/Results-CritSearch/com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1326
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 1.3 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 365.8 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_05-09-25\projects\pr-data\EsotericSoftware_kryonet__03a135e2039b___root\flakesync\com.esotericsoftware.kryonet.rmi.RmiSendObjectTest.testRMI\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 190, delay locations: 388, minimized: 2, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

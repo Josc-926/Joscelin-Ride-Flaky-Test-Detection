@@ -1,0 +1,845 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/apache/dubbo
+# SHA: 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# Flaky tests iDFlakies found in this log (32):
+#   - org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired   [module: dubbo-filter/dubbo-filter-cache] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.common.serialize.fst.FstObjectInputTest.testEmptyByteArrayForEmptyInput   [module: dubbo-serialization/dubbo-serialization-fst] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.AbstractInterfaceConfigTest.testCheckRegistry2   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.cache.CacheTest.testCache   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger   [module: dubbo-common] [found by: iDFlakies] [in IDoFT: No]
+#   - org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize   [module: dubbo-common] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.GenericServiceTest.testGenericImplementationWithBeanSerialization   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.GenericServiceTest.testGenericInvokeWithBeanSerialization   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.GenericServiceTest.testGenericReferenceException   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.GenericServiceTest.testGenericSerializationJava   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.GenericServiceTest.testGenericServiceException   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.ReferenceConfigTest.testInjvm   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.ReferenceConfigTest.testReferenceRetry   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.test   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedFieldReferenceBeanMap   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedMethodReferenceBeanMap   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetReferenceBeans   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testModuleInfo   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ServiceAnnotationBeanPostProcessorTest.test   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.context.annotation.DubboComponentScanRegistrarTest.test   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.spring.context.annotation.EnableDubboTest.test   [module: dubbo-config/dubbo-config-spring] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.validation.ValidationTest.testGenericValidation   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.validation.ValidationTest.testProviderValidation   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.config.validation.ValidationTest.testValidation   [module: dubbo-config/dubbo-config-api] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testDestoryRegistry   [module: dubbo-registry/dubbo-registry-default] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride   [module: dubbo-registry/dubbo-registry-default] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride_notmatch   [module: dubbo-registry/dubbo-registry-default] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext   [module: dubbo-cluster] [found by: iDFlakies] [in IDoFT: Yes]
+#   - org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactoryTest.testGetInvoker   [module: dubbo-rpc/dubbo-rpc-api] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_dubbo__737f7a7ea678__dubbo-filter_dubbo-filter-cache/2026-10-18_04-31-43/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-serialization_dub~c1a7d888/2026-10-18_05-49-59/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-api/2026-10-18_05-49-59/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-common/2026-10-31_20-18-18/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-spring/2026-10-28_03-39-27/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-registry_dubbo-re~1af31d27/2026-10-28_03-39-27/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-cluster/2026-10-28_03-39-27/idflakies.log; logs/apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-api/2026-10-28_03-39-27/idflakies.log
+#==============================================================================
+
+########## [1/8] logs/apache_dubbo__737f7a7ea678__dubbo-filter_dubbo-filter-cache/2026-10-18_04-31-43/idflakies.log
+
+$ mvn -B -pl dubbo-filter/dubbo-filter-cache edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-18T05:06:42.462Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-filter-cache >-----------------
+[INFO] Building dubbo-filter-cache 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-filter-cache >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-filter-cache ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-filter-cache ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-filter-cache ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-filter-cache ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-filter-cache <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-filter-cache ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-filter-cache:2.7.0-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 9 tests. Time taken: 0.05299997329711914 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/.dtfixingtools/original-order
+[INFO] Getting original results (9 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 10 (0.0 seconds elapsed (4.0 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired, status: expected PASS, got PASS
+Verified org.apache.dubbo.cache.support.jcache.JCacheFactoryTest.testJCacheGetExpired, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 10 (4.0 seconds elapsed (15.9 total), 16.1 seconds remaining).
+[INFO] Found 0 tests in round 3 of 10 (0.0 seconds elapsed (19.9 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 4 of 10 (4.0 seconds elapsed (23.8 total), 5.9 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (7.9 seconds elapsed (28.2 total), 7.9 seconds remaining).
+[INFO] Found 0 tests in round 6 of 10 (12.2 seconds elapsed (32.1 total), 8.2 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (16.1 seconds elapsed (36.0 total), 6.9 seconds remaining).
+[INFO] Found 0 tests in round 8 of 10 (20.0 seconds elapsed (40.3 total), 5.0 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (24.3 seconds elapsed (44.1 total), 2.7 seconds remaining).
+[INFO] Found 0 tests in round 10 of 10 (28.2 seconds elapsed (48.0 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-filter/dubbo-filter-cache/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  53.326 s
+[INFO] Finished at: 2026-10-18T00:07:36-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=54046
+
+########## [2/8] logs/apache_dubbo__737f7a7ea678__dubbo-serialization_dub~c1a7d888/2026-10-18_05-49-59/idflakies.log
+
+$ mvn -B -pl dubbo-serialization/dubbo-serialization-fst edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-18T06:00:05.264Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.dubbo:dubbo-serialization-fst >--------------
+[INFO] Building dubbo-serialization-fst 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-serialization-fst >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization-fst ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-serialization-fst ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization-fst ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-serialization/dubbo-serialization-fst/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-serialization-fst ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-serialization-fst ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-serialization-fst ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-serialization-fst ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-serialization-fst ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-serialization-fst <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-serialization-fst ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-serialization-fst:2.7.0-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 21 tests. Time taken: 0.039999961853027344 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-serialization/dubbo-serialization-fst/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-serialization/dubbo-serialization-fst/.dtfixingtools/original-order
+[INFO] Getting original results (21 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.common.serialize.fst.FstObjectInputTest.testEmptyByteArrayForEmptyInput, status: expected PASS, got PASS
+Verified org.apache.dubbo.common.serialize.fst.FstObjectInputTest.testEmptyByteArrayForEmptyInput, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 1 of 10 (0.0 seconds elapsed (1.4 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 2 of 10 (0.0 seconds elapsed (1.9 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 10 (0.5 seconds elapsed (2.4 total), 1.1 seconds remaining).
+[INFO] Found 0 tests in round 4 of 10 (0.9 seconds elapsed (2.8 total), 1.4 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (1.4 seconds elapsed (3.3 total), 1.4 seconds remaining).
+[INFO] Found 0 tests in round 6 of 10 (1.9 seconds elapsed (3.8 total), 1.3 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (2.3 seconds elapsed (4.3 total), 1.0 seconds remaining).
+[INFO] Found 0 tests in round 8 of 10 (2.9 seconds elapsed (4.8 total), 0.7 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (3.3 seconds elapsed (5.3 total), 0.4 seconds remaining).
+[INFO] Found 0 tests in round 10 of 10 (3.8 seconds elapsed (5.7 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-serialization/dubbo-serialization-fst/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-serialization/dubbo-serialization-fst/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.587 s
+[INFO] Finished at: 2026-10-18T01:00:13-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=8274
+
+########## [3/8] logs/apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-api/2026-10-18_05-49-59/idflakies.log
+
+$ mvn -B -pl dubbo-config/dubbo-config-api edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started: 2026-10-18T06:27:54.414Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.apache.dubbo:dubbo-config-api >------------------
+[INFO] Building dubbo-config-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-config-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-config-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-config-api ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-config-api:2.7.0-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 263 tests. Time taken: 0.32400012016296387 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/.dtfixingtools/original-order
+[INFO] Getting original results (263 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericReferenceException, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericReferenceException, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericImplementationWithBeanSerialization, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericImplementationWithBeanSerialization, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.AbstractInterfaceConfigTest.testCheckRegistry2, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.AbstractInterfaceConfigTest.testCheckRegistry2, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.ReferenceConfigTest.testReferenceRetry, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.ReferenceConfigTest.testReferenceRetry, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.ReferenceConfigTest.testInjvm, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.ReferenceConfigTest.testInjvm, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericInvokeWithBeanSerialization, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericInvokeWithBeanSerialization, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.validation.ValidationTest.testGenericValidation, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.validation.ValidationTest.testGenericValidation, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.validation.ValidationTest.testProviderValidation, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.validation.ValidationTest.testProviderValidation, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericSerializationJava, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericSerializationJava, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.cache.CacheTest.testCache, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.cache.CacheTest.testCache, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericServiceException, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericServiceException, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.validation.ValidationTest.testValidation, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.validation.ValidationTest.testValidation, status: expected ERROR, got ERROR
+[INFO] Found 12 tests in round 1 of 10 (0.0 seconds elapsed (76.2 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 2 of 10 (0.0 seconds elapsed (81.8 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericSerializationJava, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericSerializationJava, status: expected ERROR, got ERROR
+[INFO] Found 0 tests in round 3 of 10 (5.6 seconds elapsed (98.5 total), 13.0 seconds remaining).
+[INFO] Found 0 tests in round 4 of 10 (22.3 seconds elapsed (104.1 total), 33.4 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (27.9 seconds elapsed (106.0 total), 27.9 seconds remaining).
+[INFO] Found 0 tests in round 6 of 10 (29.8 seconds elapsed (111.6 total), 19.9 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (35.4 seconds elapsed (113.4 total), 15.2 seconds remaining).
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericImplementationWithBeanSerialization, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.GenericServiceTest.testGenericImplementationWithBeanSerialization, status: expected ERROR, got ERROR
+[INFO] Found 0 tests in round 8 of 10 (37.2 seconds elapsed (122.8 total), 9.3 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (46.5 seconds elapsed (128.3 total), 5.2 seconds remaining).
+[INFO] Found 0 tests in round 10 of 10 (52.1 seconds elapsed (133.3 total), 0.0 seconds remaining).
+
+[INFO] Found 12 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-api/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:21 min
+[INFO] Finished at: 2026-10-18T01:30:16-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=141810
+
+########## [4/8] logs/apache_dubbo__737f7a7ea678__dubbo-common/2026-10-31_20-18-18/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/dubbo   https://github.com/apache/dubbo
+# commit         : 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# module         : dubbo-common
+# dataset        : pr-data
+# run            : 2026-10-31_20-18-18
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 6 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-common\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-common\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__dubbo__737f7a7ea678
+# written        : 2026-10-31T20:27:25.021Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 6 rounds) ====================
+$ mvn -B -pl dubbo-common edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=6 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-31T20:27:25.032Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-common >--------------------
+[INFO] Building dubbo-common 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-common >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-common ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-common ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-common ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-common/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-common ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 24 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-common <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-common ---
+INFO: No timeout specified. Using randomize.rounds: 6
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-common:2.7.0-SNAPSHOT 6 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 520 tests. Time taken: 0.4269998073577881 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-common/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-common/.dtfixingtools/original-order
+[INFO] Getting original results (520 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize, status: expected PASS, got PASS
+Verified org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 1 of 6 (0.0 seconds elapsed (65.7 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger, status: expected PASS, got PASS
+Verified org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 6 (0.0 seconds elapsed (109.6 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 6 (0.0 seconds elapsed (140.6 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 4 of 6 (31.0 seconds elapsed (171.3 total), 15.5 seconds remaining).
+[INFO] Found 0 tests in round 5 of 6 (61.7 seconds elapsed (202.3 total), 12.3 seconds remaining).
+[INFO] Found 0 tests in round 6 of 6 (92.7 seconds elapsed (233.0 total), 0.0 seconds remaining).
+
+[INFO] Found 2 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-common/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-common/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  05:28 min
+[INFO] Finished at: 2026-10-31T15:32:53-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=328793
+==================== end iDFlakies detect (random-class-method, 6 rounds): completed, exit 0, 328.8 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 328.8 s
+# flaky reported : 2
+#   - org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.testSize
+#   - org.apache.dubbo.common.logger.slf4j.Slf4jLoggerTest.testLocationAwareLogger
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-31_20-18-18\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-common\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+
+
+########## [5/8] logs/apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-spring/2026-10-28_03-39-27/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/dubbo   https://github.com/apache/dubbo
+# commit         : 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# module         : dubbo-config/dubbo-config-spring
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-spring\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-spring\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__dubbo__737f7a7ea678
+# written        : 2026-10-28T06:25:49.199Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl dubbo-config/dubbo-config-spring edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T06:25:49.208Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-config-spring >----------------
+[INFO] Building dubbo-config-spring 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-config-spring >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-config-spring ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-config-spring ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-config-spring ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-spring/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-config-spring ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-config-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-config-spring ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-config-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 51 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-config-spring ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-config-spring <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-config-spring ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-config-spring:2.7.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 91 tests. Time taken: 0.3470001220703125 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-spring/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-spring/.dtfixingtools/original-order
+[INFO] Getting original results (91 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ServiceAnnotationBeanPostProcessorTest.test, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ServiceAnnotationBeanPostProcessorTest.test, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.context.annotation.DubboComponentScanRegistrarTest.test, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.context.annotation.DubboComponentScanRegistrarTest.test, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testModuleInfo, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testModuleInfo, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetReferenceBeans, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetReferenceBeans, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.test, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.test, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedFieldReferenceBeanMap, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedFieldReferenceBeanMap, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.context.annotation.EnableDubboTest.test, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.context.annotation.EnableDubboTest.test, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedMethodReferenceBeanMap, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedMethodReferenceBeanMap, status: expected PASS, got PASS
+[INFO] Found 8 tests in round 1 of 3 (0.0 seconds elapsed (37.7 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.config.spring.context.annotation.DubboComponentScanRegistrarTest.test, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.context.annotation.DubboComponentScanRegistrarTest.test, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.context.annotation.EnableDubboTest.test, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.context.annotation.EnableDubboTest.test, status: expected PASS, got PASS
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedMethodReferenceBeanMap, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedMethodReferenceBeanMap, status: expected PASS, got PASS
+[INFO] Found 0 tests in round 2 of 3 (0.0 seconds elapsed (51.9 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (14.2 seconds elapsed (64.5 total), 0.0 seconds remaining).
+
+[INFO] Found 8 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-spring/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-config/dubbo-config-spring/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:13 min
+[INFO] Finished at: 2026-10-28T01:27:03-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=74656
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 74.7 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 74.7 s
+# flaky reported : 8
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ServiceAnnotationBeanPostProcessorTest.test
+#   - org.apache.dubbo.config.spring.context.annotation.DubboComponentScanRegistrarTest.test
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testModuleInfo
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetReferenceBeans
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.test
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedFieldReferenceBeanMap
+#   - org.apache.dubbo.config.spring.context.annotation.EnableDubboTest.test
+#   - org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest.testGetInjectedMethodReferenceBeanMap
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-config_dubbo-config-spring\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+
+
+########## [6/8] logs/apache_dubbo__737f7a7ea678__dubbo-registry_dubbo-re~1af31d27/2026-10-28_03-39-27/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/dubbo   https://github.com/apache/dubbo
+# commit         : 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# module         : dubbo-registry/dubbo-registry-default
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-registry_dubbo-registry-default\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-registry_dubbo-registry-default\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__dubbo__737f7a7ea678
+# written        : 2026-10-28T06:39:14.203Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl dubbo-registry/dubbo-registry-default edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T06:39:14.214Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.apache.dubbo:dubbo-registry-default >---------------
+[INFO] Building dubbo-registry-default 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-registry-default >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-registry-default ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-registry-default ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-registry-default ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-registry/dubbo-registry-default/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-registry-default ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-registry-default ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-registry-default ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-registry-default ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-registry-default ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-registry-default <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-registry-default ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-registry-default:2.7.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 40 tests. Time taken: 0.10599994659423828 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-registry/dubbo-registry-default/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-registry/dubbo-registry-default/.dtfixingtools/original-order
+[INFO] Getting original results (40 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride, status: expected PASS, got PASS
+Verified org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testDestoryRegistry, status: expected PASS, got PASS
+Verified org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testDestoryRegistry, status: expected ERROR, got ERROR
+[INFO] Found 2 tests in round 1 of 3 (0.0 seconds elapsed (5.6 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride_notmatch, status: expected PASS, got PASS
+Verified org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride_notmatch, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 3 (0.0 seconds elapsed (9.1 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (0.0 seconds elapsed (10.3 total), 0.0 seconds remaining).
+
+[INFO] Found 3 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-registry/dubbo-registry-default/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-registry/dubbo-registry-default/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.279 s
+[INFO] Finished at: 2026-10-28T01:39:28-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=13970
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 14 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 14 s
+# flaky reported : 3
+#   - org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride
+#   - org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testDestoryRegistry
+#   - org.apache.dubbo.registry.dubbo.RegistryProtocolTest.testNotifyOverride_notmatch
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-registry_dubbo-registry-default\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+
+
+########## [7/8] logs/apache_dubbo__737f7a7ea678__dubbo-cluster/2026-10-28_03-39-27/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/dubbo   https://github.com/apache/dubbo
+# commit         : 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# module         : dubbo-cluster
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-cluster\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-cluster\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__dubbo__737f7a7ea678
+# written        : 2026-10-28T06:39:49.710Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl dubbo-cluster edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T06:39:49.722Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-cluster >-------------------
+[INFO] Building dubbo-cluster 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-cluster >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-cluster ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-cluster ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-cluster ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-cluster/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-cluster ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-cluster ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-cluster ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-cluster ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-cluster <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-cluster ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-cluster:2.7.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 112 tests. Time taken: 0.1959998607635498 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-cluster/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-cluster/.dtfixingtools/original-order
+[INFO] Getting original results (112 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected ERROR, got ERROR
+Verified org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck, status: expected ERROR, got ERROR
+[INFO] Found 3 tests in round 1 of 3 (0.0 seconds elapsed (14.4 total), 0.0 seconds remaining).
+Verified org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 3 (0.0 seconds elapsed (22.8 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (0.0 seconds elapsed (26.0 total), 0.0 seconds remaining).
+
+[INFO] Found 4 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-cluster/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-cluster/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  38.180 s
+[INFO] Finished at: 2026-10-28T01:40:28-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=38875
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 38.9 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 38.9 s
+# flaky reported : 4
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testMethodStickyNoCheck
+#   - org.apache.dubbo.rpc.cluster.support.AbstractClusterInvokerTest.testBindingAttachment
+#   - org.apache.dubbo.rpc.cluster.StickyTest.testStickyNoCheck
+#   - org.apache.dubbo.rpc.cluster.support.ForkingClusterInvokerTest.testClearRpcContext
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-cluster\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+
+
+########## [8/8] logs/apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-api/2026-10-28_03-39-27/idflakies.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : iDFlakies
+# project        : apache/dubbo   https://github.com/apache/dubbo
+# commit         : 737f7a7ea67832d7f17517326fb2491d0a086dd7
+# module         : dubbo-rpc/dubbo-rpc-api
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : whole module (iDFlakies runs every test: 1 run in the original order + 3 shuffled rounds)
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-api\logs\idflakies.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-api\idflakies\.dtfixingtools
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__dubbo__737f7a7ea678
+# written        : 2026-10-28T06:41:06.678Z
+################################################################
+
+
+==================== iDFlakies detect (random-class-method, 3 rounds) ====================
+$ mvn -B -pl dubbo-rpc/dubbo-rpc-api edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=3 -Ddt.detector.original_order.all_must_pass=false
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678
+# started : 2026-10-28T06:41:06.719Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-rpc-api >-------------------
+[INFO] Building dubbo-rpc-api 2.7.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ dubbo-rpc-api >>>
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-api ---
+[INFO] 
+[INFO] --- checkstyle:3.0.0:check (checkstyle-validation) @ dubbo-rpc-api ---
+[INFO] 
+[INFO] --- jacoco:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-api ---
+[INFO] jacocoArgLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-api/target/jacoco.exec
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ dubbo-rpc-api ---
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ dubbo-rpc-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ dubbo-rpc-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ dubbo-rpc-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ dubbo-rpc-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ dubbo-rpc-api ---
+INFO: No timeout specified. Using randomize.rounds: 3
+INFO: ROUNDS_CALCULATED: Giving org.apache.dubbo:dubbo-rpc-api:2.7.0-SNAPSHOT 3 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 60 tests. Time taken: 0.12800002098083496 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-api/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-api/.dtfixingtools/original-order
+[INFO] Getting original results (60 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+Verified org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactoryTest.testGetInvoker, status: expected PASS, got PASS
+Verified org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactoryTest.testGetInvoker, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 1 of 3 (0.0 seconds elapsed (10.7 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 2 of 3 (0.0 seconds elapsed (14.7 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 3 of 3 (4.0 seconds elapsed (18.6 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-api/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/apache__dubbo__737f7a7ea678/dubbo-rpc/dubbo-rpc-api/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32.205 s
+[INFO] Finished at: 2026-10-28T01:41:39-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=32885
+==================== end iDFlakies detect (random-class-method, 3 rounds): completed, exit 0, 32.9 s ====================
+
+######################## RESULT ########################
+# status         : completed
+# exit code      : 0
+# duration       : 32.9 s
+# flaky reported : 1
+#   - org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactoryTest.testGetInvoker
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_dubbo__737f7a7ea678__dubbo-rpc_dubbo-rpc-api\idflakies\.dtfixingtools\detection-results\flaky-lists.json
+########################################################
+

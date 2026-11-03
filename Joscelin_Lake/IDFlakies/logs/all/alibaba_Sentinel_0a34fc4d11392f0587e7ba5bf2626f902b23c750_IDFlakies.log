@@ -1,0 +1,96 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/alibaba/Sentinel
+# SHA: 0a34fc4d11392f0587e7ba5bf2626f902b23c750
+# Flaky tests iDFlakies found in this log (3):
+#   - com.alibaba.csp.sentinel.adapter.jaxrs.ClientFilterTest.testClientFallback   [module: sentinel-adapter/sentinel-jax-rs-adapter] [found by: iDFlakies] [in IDoFT: Yes]
+#   - com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testCustomRequestOriginParser   [module: sentinel-adapter/sentinel-jax-rs-adapter] [found by: iDFlakies] [in IDoFT: Yes]
+#   - com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testDefaultFallback   [module: sentinel-adapter/sentinel-jax-rs-adapter] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/alibaba_Sentinel__0a34fc4d1139__sentinel-adapter_se~e232510a/2026-10-17_03-02-53/idflakies.log
+#==============================================================================
+
+$ mvn -B -pl sentinel-adapter/sentinel-jax-rs-adapter edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139
+# started: 2026-10-17T03:03:00.854Z
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-annotation-quarkus-adapter-deployment:jar:1.8.2
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: io.quarkus:quarkus-arc-deployment:jar -> duplicate declaration of version (?) @ line 47, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.alibaba.csp:sentinel-demo-log-logback:jar:1.8.2
+[WARNING] 'dependencies.dependency.version' for com.github.stefanbirkner:system-rules:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 40, column 22
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] --------------< com.alibaba.csp:sentinel-jax-rs-adapter >---------------
+[INFO] Building sentinel-jax-rs-adapter 1.8.2
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ sentinel-jax-rs-adapter >>>
+[INFO] 
+[INFO] --- jacoco:0.8.3:prepare-agent (default) @ sentinel-jax-rs-adapter ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.3/org.jacoco.agent-0.8.3-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139/sentinel-adapter/sentinel-jax-rs-adapter/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sentinel-jax-rs-adapter ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139/sentinel-adapter/sentinel-jax-rs-adapter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.8.0:compile (default-compile) @ sentinel-jax-rs-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sentinel-jax-rs-adapter ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.8.0:testCompile (default-testCompile) @ sentinel-jax-rs-adapter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ sentinel-jax-rs-adapter <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ sentinel-jax-rs-adapter ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving com.alibaba.csp:sentinel-jax-rs-adapter:1.8.2 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 18 tests. Time taken: 0.17499995231628418 seconds
+INFO: Locating tests...
+INFO: Located 0 tests. Time taken: 0.13199996948242188 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139/sentinel-adapter/sentinel-jax-rs-adapter/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139/sentinel-adapter/sentinel-jax-rs-adapter/.dtfixingtools/original-order
+[INFO] Getting original results (18 tests).
+INFO: No passing order for tests (3 runs). Continuing anyway with last run.
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 10 (0.0 seconds elapsed (12.2 total), 0.0 seconds remaining).
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ClientFilterTest.testClientFallback, status: expected PASS, got PASS
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ClientFilterTest.testClientFallback, status: expected ERROR, got ERROR
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testCustomRequestOriginParser, status: expected ERROR, got ERROR
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testCustomRequestOriginParser, status: expected PASS, got PASS
+[INFO] Found 2 tests in round 2 of 10 (12.2 seconds elapsed (51.2 total), 48.7 seconds remaining).
+[INFO] Found 0 tests in round 3 of 10 (0.0 seconds elapsed (63.3 total), 0.0 seconds remaining).
+[INFO] Found 0 tests in round 4 of 10 (12.0 seconds elapsed (75.1 total), 18.0 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (23.9 seconds elapsed (86.9 total), 23.9 seconds remaining).
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ClientFilterTest.testClientFallback, status: expected PASS, got PASS
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ClientFilterTest.testClientFallback, status: expected ERROR, got ERROR
+[INFO] Found 0 tests in round 6 of 10 (35.7 seconds elapsed (106.0 total), 23.8 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (54.7 seconds elapsed (117.7 total), 23.5 seconds remaining).
+[INFO] Found 0 tests in round 8 of 10 (66.4 seconds elapsed (129.5 total), 16.6 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (78.2 seconds elapsed (141.4 total), 8.7 seconds remaining).
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testDefaultFallback, status: expected ERROR, got ERROR
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testDefaultFallback, status: expected PASS, got PASS
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testCustomRequestOriginParser, status: expected ERROR, got ERROR
+Verified com.alibaba.csp.sentinel.adapter.jaxrs.ProviderFilterTest.testCustomRequestOriginParser, status: expected PASS, got PASS
+[INFO] Found 1 tests in round 10 of 10 (90.2 seconds elapsed (181.0 total), 0.0 seconds remaining).
+
+[INFO] Found 3 tests, writing list to /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139/sentinel-adapter/sentinel-jax-rs-adapter/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/alibaba__Sentinel__0a34fc4d1139/sentinel-adapter/sentinel-jax-rs-adapter/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:40 min
+[INFO] Finished at: 2026-10-16T22:06:41-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=221046

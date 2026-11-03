@@ -1,0 +1,83 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: iDFlakies
+# Project: https://github.com/alibaba/nacos
+# SHA: 525672272ecb00cd769a13c7b21a8e51cf873f25
+# Flaky tests iDFlakies found in this log (1):
+#   - com.alibaba.nacos.api.naming.pojo.healthcheck.HealthCheckerFactoryTest.testDeserializeExtend   [module: api] [found by: iDFlakies] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/alibaba_nacos__525672272ecb__api/2026-10-16_00-20-02/idflakies.log
+#==============================================================================
+
+$ mvn -B -pl api edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+# cwd: /home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb
+# started: 2026-10-16T02:16:27.492Z
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.alibaba.nacos:nacos-api >---------------------
+[INFO] Building nacos-api 1.4.0-SNAPSHOT 1.4.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.0:detect (default-cli) > test-compile @ nacos-api >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-ban-circular-dependencies) @ nacos-api ---
+[INFO] 
+[INFO] --- checkstyle:3.1.1:check (validate) @ nacos-api ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- jacoco:0.7.8:prepare-agent (default-prepare-agent) @ nacos-api ---
+[INFO] argLine set to -javaagent:/home/ectopic/.m2/repository/org/jacoco/org.jacoco.agent/0.7.8/org.jacoco.agent-0.7.8-runtime.jar=destfile=/home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb/api/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.0.2:resources (default-resources) @ nacos-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.5.1:compile (default-compile) @ nacos-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ nacos-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb/api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.5.1:testCompile (default-testCompile) @ nacos-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< idflakies:2.0.0:detect (default-cli) < test-compile @ nacos-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- idflakies:2.0.0:detect (default-cli) @ nacos-api ---
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving com.alibaba.nacos:nacos-api:1.4.0-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Locating tests...
+INFO: Located 17 tests. Time taken: 0.05299997329711914 seconds
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb/api/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb/api/.dtfixingtools/original-order
+[INFO] Getting original results (17 tests).
+INFO: Created dependent test detector (class edu.illinois.cs.dt.tools.detection.detectors.RandomDetector).
+[INFO] Found 0 tests in round 1 of 10 (0.0 seconds elapsed (0.4 total), 0.0 seconds remaining).
+Verified com.alibaba.nacos.api.naming.pojo.healthcheck.HealthCheckerFactoryTest.testDeserializeExtend, status: expected PASS, got PASS
+Verified com.alibaba.nacos.api.naming.pojo.healthcheck.HealthCheckerFactoryTest.testDeserializeExtend, status: expected ERROR, got ERROR
+[INFO] Found 1 tests in round 2 of 10 (0.4 seconds elapsed (1.5 total), 1.5 seconds remaining).
+[INFO] Found 0 tests in round 3 of 10 (0.0 seconds elapsed (1.9 total), 0.0 seconds remaining).
+Verified com.alibaba.nacos.api.naming.pojo.healthcheck.HealthCheckerFactoryTest.testDeserializeExtend, status: expected PASS, got PASS
+Verified com.alibaba.nacos.api.naming.pojo.healthcheck.HealthCheckerFactoryTest.testDeserializeExtend, status: expected ERROR, got ERROR
+[INFO] Found 0 tests in round 4 of 10 (0.4 seconds elapsed (3.0 total), 0.6 seconds remaining).
+[INFO] Found 0 tests in round 5 of 10 (1.5 seconds elapsed (3.4 total), 1.5 seconds remaining).
+[INFO] Found 0 tests in round 6 of 10 (1.9 seconds elapsed (3.8 total), 1.3 seconds remaining).
+[INFO] Found 0 tests in round 7 of 10 (2.3 seconds elapsed (4.2 total), 1.0 seconds remaining).
+[INFO] Found 0 tests in round 8 of 10 (2.6 seconds elapsed (4.5 total), 0.7 seconds remaining).
+[INFO] Found 0 tests in round 9 of 10 (3.0 seconds elapsed (4.9 total), 0.3 seconds remaining).
+[INFO] Found 0 tests in round 10 of 10 (3.4 seconds elapsed (5.3 total), 0.0 seconds remaining).
+
+[INFO] Found 1 tests, writing list to /home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb/api/.dtfixingtools/detection-results/list.txt and dt lists to /home/ectopic/flaky-work/checkouts/alibaba__nacos__525672272ecb/api/.dtfixingtools/detection-results/flaky-lists.json
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.459 s
+[INFO] Finished at: 2026-10-15T21:16:35-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=8134

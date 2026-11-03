@@ -1,0 +1,480 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/orbit/orbit
+# SHA: c4904af2f3745fea93871493edd7e09348e77768
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues   [module: actors/test/actor-tests] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/orbit_orbit__c4904af2f374__actors_test_actor-tests/2026-10-29_02-42-22/flakesync.cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : orbit/orbit   https://github.com/orbit/orbit
+# commit         : c4904af2f3745fea93871493edd7e09348e77768
+# module         : actors/test/actor-tests
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# test           : cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\orbit_orbit__c4904af2f374__actors_test_actor-tests\logs\flakesync.cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\orbit_orbit__c4904af2f374__actors_test_actor-tests\flakesync\cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\orbit__orbit__c4904af2f374
+# written        : 2026-10-29T23:06:54.008Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest#testClassWithInnerValues' -pl actors/test/actor-tests
+# cwd     : /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374
+# started : 2026-10-29T23:06:54.019Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< cloud.orbit:orbit-actor-tests >--------------------
+[INFO] Building Orbit Actor Tests 1.10.2-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> ea-async:1.2.1:instrument (default) > process-classes @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< ea-async:1.2.1:instrument (default) < process-classes @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- ea-async:1.2.1:instrument (default) @ orbit-actor-tests ---
+[INFO] Orbit Async main-classes instrumented: 0
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ orbit-actor-tests ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ orbit-actor-tests ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_JQKfnKIRGgpEX80F1YgwEyt313xO6gcdkbE4WcvolzE=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.049 sec <<< FAILURE! - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+testClassWithInnerValues(cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.LinkageError: loader 'app' attempted duplicate class definition for cloud.orbit.core.shaded.javassist.CtClassType. (cloud.orbit.core.shaded.javassist.CtClassType is in unnamed module of loader 'app')
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at cloud.orbit.actors.runtime.ActorFactoryGenerator.<clinit>(ActorFactoryGenerator.java:73)
+	at cloud.orbit.actors.runtime.DefaultDescriptorFactory.<init>(DefaultDescriptorFactory.java:48)
+	at cloud.orbit.actors.runtime.DefaultDescriptorFactory.<clinit>(DefaultDescriptorFactory.java:45)
+	at cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.<init>(JsonReferenceSerializationTest.java:54)
+
+
+Results :
+
+Tests in error: 
+  JsonReferenceSerializationTest.<init>:54 » Linkage loader 'app' attempted dupl...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+INFO: Surefire failed when running tests for clean_JQKfnKIRGgpEX80F1YgwEyt313xO6gcdkbE4WcvolzE= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.285 s
+[INFO] Finished at: 2026-10-29T18:06:55-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2011
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 2 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest#testClassWithInnerValues' -pl actors/test/actor-tests
+# cwd     : /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374
+# started : 2026-10-29T23:06:56.032Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< cloud.orbit:orbit-actor-tests >--------------------
+[INFO] Building Orbit Actor Tests 1.10.2-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> ea-async:1.2.1:instrument (default) > process-classes @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< ea-async:1.2.1:instrument (default) < process-classes @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- ea-async:1.2.1:instrument (default) @ orbit-actor-tests ---
+[INFO] Orbit Async main-classes instrumented: 0
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ orbit-actor-tests ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ orbit-actor-tests ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_xCfCis0bnWTpnu6wEFR0cKwvGiQsUkZNKpT0WYlT988=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.23 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_KU4uflH4pWdvYoG2UmuN0Ors4qx4gbiG5fnZqui7Zs8=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_am+K5mdg2yvyXhDCkEWEhGfEjD477iXFXULp01D4to0=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_VCmf5SbjoyD9uZLfDoYvWgA6jbztT3mkBSaTlfk3WKM=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.248 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_QyLZzbzbiRh9QunyAfKDibxQYLDYBZHTI6UwJd7gEo=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.26 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_Nxt4eZFnNYJJzw9umZJ72AVaik2iCFGuzrrRVshQBE=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.212 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_wQ1dI7fTn9utfME8myP6nub2DQHPMyR9a8u1tyRyQ=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_b9ZlYP2xM7ow6F0gbisMEGOc+5lHmtVQwyvvrDguHks=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.229 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.379 s
+[INFO] Finished at: 2026-10-29T18:07:01-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=5322
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 5.3 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest#testClassWithInnerValues' -pl actors/test/actor-tests
+# cwd     : /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374
+# started : 2026-10-29T23:07:01.562Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< cloud.orbit:orbit-actor-tests >--------------------
+[INFO] Building Orbit Actor Tests 1.10.2-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> ea-async:1.2.1:instrument (default) > process-classes @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< ea-async:1.2.1:instrument (default) < process-classes @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- ea-async:1.2.1:instrument (default) @ orbit-actor-tests ---
+[INFO] Orbit Async main-classes instrumented: 0
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ orbit-actor-tests ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ orbit-actor-tests ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.998 s
+[INFO] Finished at: 2026-10-29T18:07:03-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2088
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.1 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest#testClassWithInnerValues' -pl actors/test/actor-tests
+# cwd     : /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374
+# started : 2026-10-29T23:07:03.652Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< cloud.orbit:orbit-actor-tests >--------------------
+[INFO] Building Orbit Actor Tests 1.10.2-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> ea-async:1.2.1:instrument (default) > process-classes @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< ea-async:1.2.1:instrument (default) < process-classes @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- ea-async:1.2.1:instrument (default) @ orbit-actor-tests ---
+[INFO] Orbit Async main-classes instrumented: 0
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ orbit-actor-tests ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ orbit-actor-tests ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] Surefire report directory: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/clean_l6HSqhGjOQpHUYNGShMjDa8NijiLeMl1A68JRMsDEI=
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 sec - in cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.391 s
+[INFO] Finished at: 2026-10-29T18:07:05-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2374
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 2.4 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest#testClassWithInnerValues' -pl actors/test/actor-tests
+# cwd     : /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374
+# started : 2026-10-29T23:07:06.028Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< cloud.orbit:orbit-actor-tests >--------------------
+[INFO] Building Orbit Actor Tests 1.10.2-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] >>> ea-async:1.2.1:instrument (default) > process-classes @ orbit-actor-tests >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orbit-actor-tests ---
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< ea-async:1.2.1:instrument (default) < process-classes @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- ea-async:1.2.1:instrument (default) @ orbit-actor-tests ---
+[INFO] Orbit Async main-classes instrumented: 0
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ orbit-actor-tests ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ orbit-actor-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ orbit-actor-tests <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ orbit-actor-tests ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.910 s
+[INFO] Finished at: 2026-10-29T18:07:07-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project orbit-actor-tests: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/orbit__orbit__c4904af2f374/actors/test/actor-tests/.flakesync/Results-CritSearch/cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=1980
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 13.8 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\orbit_orbit__c4904af2f374__actors_test_actor-tests\flakesync\cloud.orbit.actors.test.serialization.JsonReferenceSerializationTest.testClassWithInnerValues\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 0, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+

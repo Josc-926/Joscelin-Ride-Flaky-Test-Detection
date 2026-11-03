@@ -1,0 +1,1730 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: NonDex
+# Project: https://github.com/jenkinsci/jenkins
+# SHA: d2fa87606246e1f1dc1450d7199778343945197e
+# Flaky tests NonDex found in this log (7):
+#   - hudson.util.CopyOnWriteMapTest.hashSerialization   [module: core] [found by: NonDex] [in IDoFT: Yes]
+#   - hudson.util.CopyOnWriteMapTest.treeSerialization   [module: core] [found by: NonDex] [in IDoFT: Yes]
+#   - hudson.util.RobustReflectionConverterTest.classOwnership   [module: core] [found by: NonDex] [in IDoFT: Yes]
+#   - jenkins.cli.StopBuildsCommandTest.shouldStopSecondJobEvenIfFirstStopFailed   [module: test] [found by: NonDex] [in IDoFT: Yes]
+#   - jenkins.cli.StopBuildsCommandTest.shouldStopWorkingBuildsInSeveralJobs   [module: test] [found by: NonDex] [in IDoFT: Yes]
+#   - lib.layout.IconTest.testBallColorTd   [module: test] [found by: NonDex] [in IDoFT: Yes]
+#   - lib.layout.IconTest.testTasks   [module: test] [found by: NonDex] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/jenkinsci_jenkins__d2fa87606246__core/2026-10-29_02-42-22/nondex.log; logs/jenkinsci_jenkins__d2fa87606246__test/2026-10-29_02-42-22/nondex.log
+#==============================================================================
+
+########## [1/2] logs/jenkinsci_jenkins__d2fa87606246__core/2026-10-29_02-42-22/nondex.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : NonDex
+# project        : jenkinsci/jenkins   https://github.com/jenkinsci/jenkins
+# commit         : d2fa87606246e1f1dc1450d7199778343945197e
+# module         : core
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# tests          : 3 item(s)
+#   - hudson.util.CopyOnWriteMapTest.hashSerialization
+#   - hudson.util.CopyOnWriteMapTest.treeSerialization
+#   - hudson.util.RobustReflectionConverterTest.classOwnership
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_jenkins__d2fa87606246__core\logs\nondex.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_jenkins__d2fa87606246__core\nondex\.nondex
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\jenkinsci__jenkins__d2fa87606246
+# written        : 2026-10-29T14:28:10.261Z
+################################################################
+
+
+==================== NonDex (1 unshuffled run + 3 shuffled runs, 3 test(s)) ====================
+$ mvn -B -pl core edu.illinois:nondex-maven-plugin:2.2.1:nondex '-Dtest=hudson.util.CopyOnWriteMapTest#hashSerialization+treeSerialization,hudson.util.RobustReflectionConverterTest#classOwnership' -DnondexRuns=3 -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoSpecifiedTests=false
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246
+# started : 2026-10-29T14:28:10.272Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.jenkins-ci.main:jenkins-core >------------------
+[INFO] Building Jenkins core 2.323-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> nondex:2.2.1:nondex (default-cli) > test-compile @ jenkins-core >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ jenkins-core ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ jenkins-core ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-banned-dependencies) @ jenkins-core ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ jenkins-core ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-source (add-source) @ jenkins-core ---
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/target/generated-sources/antlr added.
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/target/generated-sources/localizer added.
+[INFO] Source directory: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/target/generated-sources/taglib-interface added.
+[INFO] 
+[INFO] --- localizer:1.31:generate (default) @ jenkins-core ---
+[INFO] 
+[INFO] --- antlr:2.2:generate (cron) @ jenkins-core ---
+[INFO] grammar [crontab.g] was up-to-date; skipping
+[INFO] 
+[INFO] --- antlr:2.2:generate (labelExpr) @ jenkins-core ---
+[INFO] grammar [labelExpr.g] was up-to-date; skipping
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ jenkins-core ---
+[INFO] Preparing remote bundle org.jvnet.hudson:license:1.0
+[INFO] Copying 0 resource from 1 bundle.
+[INFO] 
+[INFO] --- hpi:3.18:generate-taglib-interface (default) @ jenkins-core ---
+[WARNING] Plugin is modifying compileSourceRoots through add(), which will not work in Maven 4.0.0. Use MavenProject.addCompileSourceRoot()/removeCompileSourceRoot() methods instead. If using a plugin, please upgrade to the latest version or report the issue to the plugin maintainer. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+[INFO] 
+[INFO] --- dependency:3.2.0:copy (winsw) @ jenkins-core ---
+[INFO] Configured Artifact: com.sun.winsw:winsw:net4:2.9.0:exe
+[INFO] com.sun.winsw:winsw:net4:2.9.0:exe already exists in /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/target/classes/windows-service
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ jenkins-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 8267 resources
+[INFO] Copying 3 resources
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.2.7:flatten (flatten) @ jenkins-core ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:jenkins-core:jar:2.323-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jenkins-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- encoding:1.1:check-encoding (default) @ jenkins-core ---
+[INFO] 
+[INFO] --- bridge-method-injector:1.21:process (default) @ jenkins-core ---
+[INFO] 
+[INFO] --- access-modifier-checker:1.25:enforce (default) @ jenkins-core ---
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ jenkins-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 44 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jenkins-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< nondex:2.2.1:nondex (default-cli) < test-compile @ jenkins-core <<<
+[INFO] 
+[INFO] 
+[INFO] --- nondex:2.2.1:nondex (default-cli) @ jenkins-core ---
+INFO: The original argline is: 
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_E0cXFso0Fqa9EHt7qqypbepeRCh3vAJYf5D5aYwm7w=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.util.CopyOnWriteMapTest
+[INFO] Running hudson.util.RobustReflectionConverterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.342 s - in hudson.util.CopyOnWriteMapTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 s - in hudson.util.RobustReflectionConverterTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Adding excluded groups to newly created one
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexExecid=qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.util.CopyOnWriteMapTest
+[INFO] Running hudson.util.RobustReflectionConverterTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.31 s <<< FAILURE! - in hudson.util.RobustReflectionConverterTest
+[ERROR] classOwnership  Time elapsed: 0.307 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...><number>2</number><[boot/><lover class='Billy' plugin='p3'/></Moonwalk><Moonwalk plugin='p2'><number>3</number><boot/><jacket/><lover class='Jean' plugin='p4']/></Moonwalk></stepp...> but was:<...><number>2</number><[lover class='Billy' plugin='p3'/><boot/></Moonwalk><Moonwalk plugin='p2'><number>3</number><jacket/><lover class='Jean' plugin='p4'/><boot]/></Moonwalk></stepp...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at hudson.util.RobustReflectionConverterTest.classOwnership(RobustReflectionConverterTest.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.396 s - in hudson.util.CopyOnWriteMapTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   RobustReflectionConverterTest.classOwnership:94 expected:<...><number>2</number><[boot/><lover class='Billy' plugin='p3'/></Moonwalk><Moonwalk plugin='p2'><number>3</number><boot/><jacket/><lover class='Jean' plugin='p4']/></Moonwalk></stepp...> but was:<...><number>2</number><[lover class='Billy' plugin='p3'/><boot/></Moonwalk><Moonwalk plugin='p2'><number>3</number><jacket/><lover class='Jean' plugin='p4'/><boot]/></Moonwalk></stepp...>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI=
+INFO: Adding excluded groups to newly created one
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexExecid=vV9ePBEISZDNxbkaAWQLYGUNfuskakMNOFaEwyMeoM=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.util.CopyOnWriteMapTest
+[INFO] Running hudson.util.RobustReflectionConverterTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.332 s <<< FAILURE! - in hudson.util.RobustReflectionConverterTest
+[ERROR] classOwnership  Time elapsed: 0.329 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...><number>2</number><[boot/><lover class='Billy' plugin='p3'/></Moonwalk><Moonwalk plugin='p2'><number>3</number><boot/><jacket/><lover class='Jean' plugin='p4']/></Moonwalk></stepp...> but was:<...><number>2</number><[lover class='Billy' plugin='p3'/><boot/></Moonwalk><Moonwalk plugin='p2'><number>3</number><lover class='Jean' plugin='p4'/><jacket/><boot]/></Moonwalk></stepp...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at hudson.util.RobustReflectionConverterTest.classOwnership(RobustReflectionConverterTest.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.417 s <<< FAILURE! - in hudson.util.CopyOnWriteMapTest
+[ERROR] hashSerialization  Time elapsed: 0.41 s  <<< FAILURE!
+org.junit.ComparisonFailure: empty maps expected:<...pTest_-HashData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-HashData><map[2/><map1]/></hudson.util.Copy...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at hudson.util.CopyOnWriteMapTest.hashSerialization(CopyOnWriteMapTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[ERROR] treeSerialization  Time elapsed: 0.005 s  <<< FAILURE!
+org.junit.ComparisonFailure: empty maps expected:<...pTest_-TreeData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-TreeData><map[2/><map1]/></hudson.util.Copy...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at hudson.util.CopyOnWriteMapTest.treeSerialization(CopyOnWriteMapTest.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CopyOnWriteMapTest.hashSerialization:52 empty maps expected:<...pTest_-HashData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-HashData><map[2/><map1]/></hudson.util.Copy...>
+[ERROR]   CopyOnWriteMapTest.treeSerialization:94 empty maps expected:<...pTest_-TreeData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-TreeData><map[2/><map1]/></hudson.util.Copy...>
+[ERROR]   RobustReflectionConverterTest.classOwnership:94 expected:<...><number>2</number><[boot/><lover class='Billy' plugin='p3'/></Moonwalk><Moonwalk plugin='p2'><number>3</number><boot/><jacket/><lover class='Jean' plugin='p4']/></Moonwalk></stepp...> but was:<...><number>2</number><[lover class='Billy' plugin='p3'/><boot/></Moonwalk><Moonwalk plugin='p2'><number>3</number><lover class='Jean' plugin='p4'/><jacket/><boot]/></Moonwalk></stepp...>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for vV9ePBEISZDNxbkaAWQLYGUNfuskakMNOFaEwyMeoM=
+INFO: Adding excluded groups to newly created one
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex
+nondexExecid=XqhifrcOUQMHqtwICi68Er1Rdkt7nNLz34jNE58aIg=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hudson.util.CopyOnWriteMapTest
+[INFO] Running hudson.util.RobustReflectionConverterTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.308 s <<< FAILURE! - in hudson.util.RobustReflectionConverterTest
+[ERROR] classOwnership  Time elapsed: 0.305 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...><number>3</number><[boot/><jacke]t/><lover class='Jea...> but was:<...><number>3</number><[jacket/><boo]t/><lover class='Jea...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at hudson.util.RobustReflectionConverterTest.classOwnership(RobustReflectionConverterTest.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.39 s <<< FAILURE! - in hudson.util.CopyOnWriteMapTest
+[ERROR] hashSerialization  Time elapsed: 0.384 s  <<< FAILURE!
+org.junit.ComparisonFailure: empty maps expected:<...pTest_-HashData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-HashData><map[2/><map1]/></hudson.util.Copy...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at hudson.util.CopyOnWriteMapTest.hashSerialization(CopyOnWriteMapTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[ERROR] treeSerialization  Time elapsed: 0.003 s  <<< FAILURE!
+org.junit.ComparisonFailure: empty maps expected:<...pTest_-TreeData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-TreeData><map[2/><map1]/></hudson.util.Copy...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at hudson.util.CopyOnWriteMapTest.treeSerialization(CopyOnWriteMapTest.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CopyOnWriteMapTest.hashSerialization:52 empty maps expected:<...pTest_-HashData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-HashData><map[2/><map1]/></hudson.util.Copy...>
+[ERROR]   CopyOnWriteMapTest.treeSerialization:94 empty maps expected:<...pTest_-TreeData><map[1/><map2]/></hudson.util.Copy...> but was:<...pTest_-TreeData><map[2/><map1]/></hudson.util.Copy...>
+[ERROR]   RobustReflectionConverterTest.classOwnership:94 expected:<...><number>3</number><[boot/><jacke]t/><lover class='Jea...> but was:<...><number>3</number><[jacket/><boo]t/><lover class='Jea...>
+[INFO] 
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for XqhifrcOUQMHqtwICi68Er1Rdkt7nNLz34jNE58aIg=
+[INFO] NonDex SUMMARY:
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex" -DnondexExecid=qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI= -DnondexLogging=CONFIG
+[WARNING] hudson.util.RobustReflectionConverterTest#classOwnership
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex" -DnondexExecid=vV9ePBEISZDNxbkaAWQLYGUNfuskakMNOFaEwyMeoM= -DnondexLogging=CONFIG
+[WARNING] hudson.util.CopyOnWriteMapTest#hashSerialization
+[WARNING] hudson.util.CopyOnWriteMapTest#treeSerialization
+[WARNING] hudson.util.RobustReflectionConverterTest#classOwnership
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex" -DnondexExecid=XqhifrcOUQMHqtwICi68Er1Rdkt7nNLz34jNE58aIg= -DnondexLogging=CONFIG
+[WARNING] hudson.util.CopyOnWriteMapTest#hashSerialization
+[WARNING] hudson.util.CopyOnWriteMapTest#treeSerialization
+[WARNING] hudson.util.RobustReflectionConverterTest#classOwnership
+[INFO] *********
+[INFO] All tests pass without NonDex shuffling
+[INFO] ####################
+[INFO] Across all seeds:
+[INFO] hudson.util.RobustReflectionConverterTest#classOwnership
+[INFO] hudson.util.CopyOnWriteMapTest#hashSerialization
+[INFO] hudson.util.CopyOnWriteMapTest#treeSerialization
+[INFO] Test results can be found at: 
+[INFO] file:///home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex/qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI=/test_results.html
+[INFO] [NonDex] The id of this run is: qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI=
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.023 s
+[INFO] Finished at: 2026-10-29T09:28:20-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.illinois:nondex-maven-plugin:2.2.1:nondex (default-cli) on project jenkins-core: Unable to execute mojo: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/core/.nondex/qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI= for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=10043
+==================== end NonDex (1 unshuffled run + 3 shuffled runs, 3 test(s)): FAILED, exit 1, 10 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 10 s
+# flaky reported : 3
+#   - hudson.util.CopyOnWriteMapTest#hashSerialization
+#   - hudson.util.CopyOnWriteMapTest#treeSerialization
+#   - hudson.util.RobustReflectionConverterTest#classOwnership
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_jenkins__d2fa87606246__core\nondex\.nondex   (each <execution id>/failures file lists the tests that failed in that run)
+# note           : execution XqhifrcOUQMHqtwICi68Er1Rdkt7nNLz34jNE58aIg=: 3 failing test(s)
+# note           : execution qR9Nvcv8aRwLp+yJ8eDJHNjKUJaBixZzJte2SYInCI=: 1 failing test(s)
+# note           : execution vV9ePBEISZDNxbkaAWQLYGUNfuskakMNOFaEwyMeoM=: 3 failing test(s)
+########################################################
+
+
+########## [2/2] logs/jenkinsci_jenkins__d2fa87606246__test/2026-10-29_02-42-22/nondex.log
+################################################################
+# FLAKY RUNNER LOG
+# tool           : NonDex
+# project        : jenkinsci/jenkins   https://github.com/jenkinsci/jenkins
+# commit         : d2fa87606246e1f1dc1450d7199778343945197e
+# module         : test
+# dataset        : pr-data
+# run            : 2026-10-29_02-42-22
+# tests          : 4 item(s)
+#   - jenkins.cli.StopBuildsCommandTest.shouldStopSecondJobEvenIfFirstStopFailed
+#   - jenkins.cli.StopBuildsCommandTest.shouldStopWorkingBuildsInSeveralJobs
+#   - lib.layout.IconTest.testBallColorTd
+#   - lib.layout.IconTest.testTasks
+# this log       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_jenkins__d2fa87606246__test\logs\nondex.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_jenkins__d2fa87606246__test\nondex\.nondex
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\jenkinsci__jenkins__d2fa87606246
+# written        : 2026-10-29T14:37:37.105Z
+################################################################
+
+
+==================== NonDex (1 unshuffled run + 3 shuffled runs, 4 test(s)) ====================
+$ mvn -B -pl test edu.illinois:nondex-maven-plugin:2.2.1:nondex '-Dtest=jenkins.cli.StopBuildsCommandTest#shouldStopSecondJobEvenIfFirstStopFailed+shouldStopWorkingBuildsInSeveralJobs,lib.layout.IconTest#testBallColorTd+testTasks' -DnondexRuns=3 -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoSpecifiedTests=false
+# cwd     : /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246
+# started : 2026-10-29T14:37:37.116Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.jenkins-ci.main:jenkins-test >------------------
+[INFO] Building Tests for Jenkins core 2.323-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> nondex:2.2.1:nondex (default-cli) > test-compile @ jenkins-test >>>
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:display-info (display-info) @ jenkins-test ---
+[INFO] Maven Version: 3.9.12
+[INFO] JDK Version: 11.0.32.1 normalized as: 11.0.32-1
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 6.18.54.1-microsoft-standard-wsl2
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (display-info) @ jenkins-test ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[INFO] --- enforcer:3.0.0-M3:enforce (enforce-banned-dependencies) @ jenkins-test ---
+[INFO] 
+[INFO] --- checkstyle:3.1.2:check (validate) @ jenkins-test ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (default) @ jenkins-test ---
+[INFO] Preparing remote bundle org.jvnet.hudson:license:1.0
+[INFO] Copying 0 resource from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ jenkins-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/src/main/resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/src/filter/resources
+[INFO] 
+[INFO] --- flatten:1.2.7:flatten (flatten) @ jenkins-test ---
+[INFO] Generating flattened POM of project org.jenkins-ci.main:jenkins-test:jar:2.323-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ jenkins-test ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- dependency:3.2.0:copy (old-remoting-for-test) @ jenkins-test ---
+[INFO] Configured Artifact: org.jenkins-ci.main:remoting:3.14:jar
+[INFO] org.jenkins-ci.main:remoting:3.14:jar already exists in /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/classes/old-remoting
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ jenkins-test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 362 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ jenkins-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< nondex:2.2.1:nondex (default-cli) < test-compile @ jenkins-test <<<
+[INFO] 
+[INFO] 
+[INFO] --- nondex:2.2.1:nondex (default-cli) @ jenkins-test ---
+INFO: The original argline is: 
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_IaKFxeMADvhAEJGetsjDXfA8nn++HhTI4SatACpnhs=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running jenkins.cli.StopBuildsCommandTest
+[INFO] Running lib.layout.IconTest
+=== Starting testTasks(lib.layout.IconTest)
+=== Starting shouldStopSecondJobEvenIfFirstStopFailed(jenkins.cli.StopBuildsCommandTest)
+   0.049 [id=25]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.050 [id=25]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.178 [id=25]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:40631/jenkins/
+   0.181 [id=25]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:34209/jenkins/
+   0.368 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.363 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.396 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.397 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   1.000 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.008 [id=47]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.001 [id=70]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.012 [id=52]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.010 [id=70]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.014 [id=70]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.486 [id=69]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   1.487 [id=48]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   1.488 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   1.489 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   1.535 [id=55]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   1.536 [id=69]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   1.537 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   1.538 [id=52]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   1.608 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   1.645 [id=41]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   1.979 [id=25]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   2.099 [id=25]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+   2.100 [id=71]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   2.133 [id=71]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move atomically, falling back to non-atomic move.
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/atomic2369374162614801991tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/build.xml
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+	at hudson.XmlFile.write(XmlFile.java:216)
+	at hudson.model.Run.save(Run.java:2059)
+	at hudson.model.Run.execute(Run.java:1945)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   2.134 [id=71]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/atomic2369374162614801991tmp to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/build.xml. Attempting to delete /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/atomic2369374162614801991tmp and abandoning.
+   2.134 [id=71]	SEVERE	hudson.model.Run#execute: Failed to save build record
+Also:   java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/atomic2369374162614801991tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/build.xml
+		at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+		at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+		at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+		at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+		at java.base/java.nio.file.Files.move(Files.java:1422)
+		at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h2518245878762472218/jobs/jobName/builds/1/atomic2369374162614801991tmp
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:430)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:209)
+	at hudson.XmlFile.write(XmlFile.java:216)
+	at hudson.model.Run.save(Run.java:2059)
+	at hudson.model.Run.execute(Run.java:1945)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+=== Starting shouldStopWorkingBuildsInSeveralJobs(jenkins.cli.StopBuildsCommandTest)
+   0.015 [id=108]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:36101/jenkins/
+   0.027 [id=123]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.030 [id=137]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.121 [id=145]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.125 [id=150]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.127 [id=129]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.232 [id=129]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.232 [id=147]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.233 [id=147]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.233 [id=131]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.244 [id=139]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   0.376 [id=154]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.376 [id=155]	INFO	hudson.model.Run#execute: jobName2 #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.842 [id=108]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   0.877 [id=108]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.647 s - in jenkins.cli.StopBuildsCommandTest
+   4.916 [id=25]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   5.016 [id=25]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+   0.014 [id=106]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:34443/jenkins/
+   0.026 [id=121]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.029 [id=134]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+=== Starting testBallColorTd(lib.layout.IconTest)
+   0.100 [id=143]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.104 [id=148]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.108 [id=150]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.392 [id=141]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.392 [id=143]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.392 [id=151]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.393 [id=151]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.399 [id=147]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   2.069 [id=106]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   2.093 [id=106]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.651 s - in lib.layout.IconTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Adding excluded groups to newly created one
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexExecid=uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running lib.layout.IconTest
+[INFO] Running jenkins.cli.StopBuildsCommandTest
+=== Starting testTasks(lib.layout.IconTest)
+=== Starting shouldStopSecondJobEvenIfFirstStopFailed(jenkins.cli.StopBuildsCommandTest)
+   0.045 [id=26]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.042 [id=26]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.176 [id=26]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:39705/jenkins/
+   0.181 [id=26]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:33465/jenkins/
+   0.353 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.345 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.378 [id=64]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.373 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   1.142 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.149 [id=55]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.156 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.170 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.181 [id=48]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.187 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.598 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   1.599 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   1.600 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   1.601 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   1.745 [id=68]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   1.746 [id=68]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   1.746 [id=68]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   1.749 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   1.764 [id=49]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   1.892 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   2.106 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   2.196 [id=72]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   2.199 [id=73]	INFO	hudson.model.Run#execute: jobName2 #1 aborted
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at hudson.util.ProcessTree$UnixProcess.kill(ProcessTree.java:832)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:867)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:862)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:854)
+	at hudson.util.ProcessTree.killAll(ProcessTree.java:184)
+	at hudson.Proc$LocalProc.destroy(Proc.java:390)
+	at hudson.Proc$LocalProc.join(Proc.java:363)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   2.329 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+   2.333 [id=73]	WARNING	h.model.listeners.RunListener#report: RunListener failed
+java.lang.IllegalStateException: Jenkins.instance is missing. Read the documentation of Jenkins.getInstanceOrNull to see what you are doing wrong.
+	at jenkins.model.Jenkins.get(Jenkins.java:803)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.calculateCache(ReverseBuildTrigger.java:249)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.onCompleted(ReverseBuildTrigger.java:275)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   2.371 [id=72]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move atomically, falling back to non-atomic move.
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/atomic1233122892288476313tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/permalinks
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:195)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   2.371 [id=72]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/atomic1233122892288476313tmp to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/permalinks. Attempting to delete /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/atomic1233122892288476313tmp and abandoning.
+   2.372 [id=72]	WARNING	jenkins.model.PeepholePermalink#updateCache: failed to update /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/permalinks
+Also:   java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/atomic1233122892288476313tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/permalinks
+		at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+		at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+		at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+		at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+		at java.base/java.nio.file.Files.move(Files.java:1422)
+		at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h14089382798197224504/jobs/jobName/builds/atomic1233122892288476313tmp
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:430)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:209)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:195)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.000 [id=72]	WARNING	h.model.listeners.RunListener#report: RunListener failed
+java.lang.IllegalStateException: Jenkins.instance is missing. Read the documentation of Jenkins.getInstanceOrNull to see what you are doing wrong.
+	at jenkins.model.Jenkins.get(Jenkins.java:803)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.calculateCache(ReverseBuildTrigger.java:249)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.onCompleted(ReverseBuildTrigger.java:275)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.026 [id=107]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:34385/jenkins/
+   0.044 [id=124]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.047 [id=138]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+=== Starting shouldStopWorkingBuildsInSeveralJobs(jenkins.cli.StopBuildsCommandTest)
+   0.282 [id=147]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.285 [id=149]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.287 [id=130]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.425 [id=146]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.426 [id=153]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.427 [id=123]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.428 [id=141]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.437 [id=147]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   0.553 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   0.569 [id=156]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at hudson.util.ProcessTree$UnixProcess.kill(ProcessTree.java:832)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:867)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:854)
+	at hudson.util.ProcessTree.killAll(ProcessTree.java:184)
+	at hudson.Proc$LocalProc.destroy(Proc.java:390)
+	at hudson.Proc$LocalProc.join(Proc.java:363)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.570 [id=155]	INFO	hudson.model.Run#execute: jobName2 #1 aborted
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at hudson.util.ProcessTree$UnixProcess.kill(ProcessTree.java:832)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:867)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:862)
+	at hudson.util.ProcessTree$UnixProcess.killRecursively(ProcessTree.java:854)
+	at hudson.util.ProcessTree.killAll(ProcessTree.java:184)
+	at hudson.Proc$LocalProc.destroy(Proc.java:390)
+	at hudson.Proc$LocalProc.join(Proc.java:363)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.585 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+   0.590 [id=156]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move atomically, falling back to non-atomic move.
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/atomic18031620171640090821tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/permalinks
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:195)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.623 [id=155]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move atomically, falling back to non-atomic move.
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/atomic18073240551895720599tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/permalinks
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:195)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.623 [id=156]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/atomic18031620171640090821tmp to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/permalinks. Attempting to delete /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/atomic18031620171640090821tmp and abandoning.
+   0.624 [id=155]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/atomic18073240551895720599tmp to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/permalinks. Attempting to delete /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/atomic18073240551895720599tmp and abandoning.
+   0.624 [id=156]	WARNING	jenkins.model.PeepholePermalink#updateCache: failed to update /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/permalinks
+Also:   java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/atomic18031620171640090821tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/permalinks
+		at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+		at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+		at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+		at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+		at java.base/java.nio.file.Files.move(Files.java:1422)
+		at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName/builds/atomic18031620171640090821tmp
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:430)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:209)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:195)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.624 [id=156]	WARNING	h.model.listeners.RunListener#report: RunListener failed
+java.lang.IllegalStateException: Jenkins.instance is missing. Read the documentation of Jenkins.getInstanceOrNull to see what you are doing wrong.
+	at jenkins.model.Jenkins.get(Jenkins.java:803)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.calculateCache(ReverseBuildTrigger.java:249)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.onCompleted(ReverseBuildTrigger.java:275)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.625 [id=155]	WARNING	jenkins.model.PeepholePermalink#updateCache: failed to update /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/permalinks
+Also:   java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/atomic18073240551895720599tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/permalinks
+		at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+		at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+		at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+		at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+		at java.base/java.nio.file.Files.move(Files.java:1422)
+		at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17432509168770270023/jobs/jobName2/builds/atomic18073240551895720599tmp
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:430)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:209)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:195)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.625 [id=155]	WARNING	h.model.listeners.RunListener#report: RunListener failed
+java.lang.IllegalStateException: Jenkins.instance is missing. Read the documentation of Jenkins.getInstanceOrNull to see what you are doing wrong.
+	at jenkins.model.Jenkins.get(Jenkins.java:803)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.calculateCache(ReverseBuildTrigger.java:249)
+	at jenkins.triggers.ReverseBuildTrigger$RunListenerImpl.onCompleted(ReverseBuildTrigger.java:275)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.447 s <<< FAILURE! - in jenkins.cli.StopBuildsCommandTest
+[ERROR] shouldStopWorkingBuildsInSeveralJobs(jenkins.cli.StopBuildsCommandTest)  Time elapsed: 0.626 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: "Build '#1' stopped for job 'jobName'\nBuild '#1' stopped for job 'jobName2'\n"
+     but: was "Build '#1' stopped for job 'jobName2'\nBuild '#1' stopped for job 'jobName'\n"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at jenkins.cli.StopBuildsCommandTest.setupAndAssertTwoBuildsStop(StopBuildsCommandTest.java:181)
+	at jenkins.cli.StopBuildsCommandTest.shouldStopWorkingBuildsInSeveralJobs(StopBuildsCommandTest.java:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.jvnet.hudson.test.JenkinsRule$1.evaluate(JenkinsRule.java:601)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+   5.335 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   5.419 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+=== Starting testBallColorTd(lib.layout.IconTest)
+   0.012 [id=107]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:45627/jenkins/
+   0.023 [id=122]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.025 [id=135]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.199 [id=144]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.202 [id=123]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.204 [id=140]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.275 [id=129]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.275 [id=148]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.276 [id=151]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.276 [id=151]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.285 [id=146]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   1.961 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   1.987 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 7.957 s <<< FAILURE! - in lib.layout.IconTest
+[ERROR] testTasks(lib.layout.IconTest)  Time elapsed: 5.932 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: is "icon-package icon-xlg"
+     but: was "icon-package icon-md"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at lib.layout.IconTest.assertIconToImageOkay(IconTest.java:170)
+	at lib.layout.IconTest.testTasks(IconTest.java:146)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.jvnet.hudson.test.JenkinsRule$1.evaluate(JenkinsRule.java:601)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+[ERROR] testBallColorTd(lib.layout.IconTest)  Time elapsed: 2.024 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: is "icon-user icon-xlg"
+     but: was "icon-user icon-md"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at lib.layout.IconTest.assertIconToImageOkay(IconTest.java:170)
+	at lib.layout.IconTest.testBallColorTd(IconTest.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.jvnet.hudson.test.JenkinsRule$1.evaluate(JenkinsRule.java:601)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   StopBuildsCommandTest.shouldStopWorkingBuildsInSeveralJobs:114->setupAndAssertTwoBuildsStop:181 
+Expected: "Build '#1' stopped for job 'jobName'\nBuild '#1' stopped for job 'jobName2'\n"
+     but: was "Build '#1' stopped for job 'jobName2'\nBuild '#1' stopped for job 'jobName'\n"
+[ERROR]   IconTest.testBallColorTd:101->assertIconToImageOkay:170 
+Expected: is "icon-user icon-xlg"
+     but: was "icon-user icon-md"
+[ERROR]   IconTest.testTasks:146->assertIconToImageOkay:170 
+Expected: is "icon-package icon-xlg"
+     but: was "icon-package icon-md"
+[INFO] 
+[ERROR] Tests run: 4, Failures: 3, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0=
+INFO: Adding excluded groups to newly created one
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexExecid=2pxXLK8UEa5yVpOlKIkPfOha6EtwBPTISyRL3u3PtM=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running lib.layout.IconTest
+[INFO] Running jenkins.cli.StopBuildsCommandTest
+=== Starting testTasks(lib.layout.IconTest)
+=== Starting shouldStopSecondJobEvenIfFirstStopFailed(jenkins.cli.StopBuildsCommandTest)
+   0.044 [id=26]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.045 [id=26]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.195 [id=26]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:43627/jenkins/
+   0.205 [id=26]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:40311/jenkins/
+   0.358 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.360 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.393 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.395 [id=63]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   1.186 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.192 [id=48]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.200 [id=49]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.226 [id=66]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.236 [id=56]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.249 [id=54]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.588 [id=71]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   1.589 [id=49]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   1.591 [id=49]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   1.600 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   1.751 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   1.796 [id=49]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   1.797 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   1.797 [id=43]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   1.801 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   1.983 [id=55]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   2.329 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   2.473 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+=== Starting shouldStopWorkingBuildsInSeveralJobs(jenkins.cli.StopBuildsCommandTest)
+   0.008 [id=72]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.030 [id=108]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:41621/jenkins/
+   0.056 [id=125]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.060 [id=139]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.345 [id=148]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.350 [id=136]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.352 [id=134]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.479 [id=127]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.479 [id=127]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.480 [id=127]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.480 [id=127]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.502 [id=148]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   0.640 [id=157]	INFO	hudson.model.Run#execute: jobName2 #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.641 [id=156]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   1.117 [id=108]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   1.149 [id=108]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.118 s - in jenkins.cli.StopBuildsCommandTest
+   5.364 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   5.445 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+=== Starting testBallColorTd(lib.layout.IconTest)
+   0.013 [id=107]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:33071/jenkins/
+   0.025 [id=122]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.028 [id=136]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.206 [id=145]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.208 [id=121]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.210 [id=128]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.320 [id=126]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.321 [id=126]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.321 [id=126]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.322 [id=130]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.331 [id=151]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   2.033 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   2.056 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.017 s - in lib.layout.IconTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Adding excluded groups to newly created one
+INFO: Adding NonDex argLine to existing argLine specified by the project
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexJarDir=/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex
+nondexExecid=1kgPFh1rs2h6hVf3Yn1gUlN0pU835yNOlO5kN9U4QvA=
+nondexLogging=CONFIG
+test=
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running lib.layout.IconTest
+[INFO] Running jenkins.cli.StopBuildsCommandTest
+=== Starting testTasks(lib.layout.IconTest)
+=== Starting shouldStopSecondJobEvenIfFirstStopFailed(jenkins.cli.StopBuildsCommandTest)
+   0.048 [id=26]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.052 [id=26]	INFO	o.jvnet.hudson.test.WarExploder#explode: Using jenkins.war resources from /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/war/target/jenkins
+   0.215 [id=26]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:45099/jenkins/
+   0.229 [id=26]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:36841/jenkins/
+   0.442 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.454 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.488 [id=63]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.504 [id=64]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   1.901 [id=65]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.909 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.919 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   1.920 [id=66]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   1.943 [id=42]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   1.951 [id=54]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   2.533 [id=60]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   2.534 [id=48]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   2.535 [id=48]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   2.537 [id=62]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   2.616 [id=50]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   2.616 [id=65]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   2.617 [id=56]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   2.619 [id=63]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   2.693 [id=44]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   2.763 [id=51]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   3.050 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   3.096 [id=73]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   3.099 [id=72]	INFO	hudson.model.Run#execute: jobName2 #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   3.232 [id=72]	WARNING	jenkins.model.PeepholePermalink#updateCache: failed to update /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName2/builds/permalinks
+java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:162)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:285)
+	at hudson.util.FileChannelWriter.write(FileChannelWriter.java:72)
+	at java.base/java.io.Writer.write(Writer.java:290)
+	at hudson.util.AtomicFileWriter.write(AtomicFileWriter.java:162)
+	at java.base/java.io.Writer.write(Writer.java:249)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:190)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   3.233 [id=72]	WARNING	jenkins.model.PeepholePermalink#updateCache: failed to update /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName2/builds/permalinks
+java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:162)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:285)
+	at hudson.util.FileChannelWriter.write(FileChannelWriter.java:72)
+	at java.base/java.io.Writer.write(Writer.java:290)
+	at hudson.util.AtomicFileWriter.write(AtomicFileWriter.java:162)
+	at java.base/java.io.Writer.write(Writer.java:249)
+	at jenkins.model.PeepholePermalink.updateCache(PeepholePermalink.java:190)
+	at jenkins.model.PeepholePermalink.resolve(PeepholePermalink.java:124)
+	at jenkins.model.PeepholePermalink$RunListenerImpl.onCompleted(PeepholePermalink.java:230)
+	at hudson.model.listeners.RunListener.fireCompleted(RunListener.java:208)
+	at hudson.model.Run.execute(Run.java:1933)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   3.234 [id=72]	SEVERE	hudson.model.Run#execute: Failed to save build record
+java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:162)
+	at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:285)
+	at hudson.util.FileChannelWriter.write(FileChannelWriter.java:72)
+	at java.base/java.io.Writer.write(Writer.java:290)
+	at hudson.util.AtomicFileWriter.write(AtomicFileWriter.java:162)
+	at java.base/java.io.Writer.write(Writer.java:249)
+	at hudson.XmlFile.write(XmlFile.java:207)
+	at hudson.model.Run.save(Run.java:2059)
+	at hudson.model.Run.execute(Run.java:1945)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   3.243 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+=== Starting shouldStopWorkingBuildsInSeveralJobs(jenkins.cli.StopBuildsCommandTest)
+   0.005 [id=73]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move atomically, falling back to non-atomic move.
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/atomic1534717272140437582tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/build.xml
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+	at hudson.XmlFile.write(XmlFile.java:216)
+	at hudson.model.Run.save(Run.java:2059)
+	at hudson.model.Run.execute(Run.java:1945)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.006 [id=73]	WARNING	hudson.util.AtomicFileWriter#commit: Unable to move /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/atomic1534717272140437582tmp to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/build.xml. Attempting to delete /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/atomic1534717272140437582tmp and abandoning.
+   0.006 [id=73]	SEVERE	hudson.model.Run#execute: Failed to save build record
+Also:   java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/atomic1534717272140437582tmp -> /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/build.xml
+		at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+		at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+		at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:417)
+		at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+		at java.base/java.nio.file.Files.move(Files.java:1422)
+		at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:194)
+java.nio.file.NoSuchFileException: /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/target/j h17086237761150952611/jobs/jobName/builds/1/atomic1534717272140437582tmp
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:430)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:267)
+	at java.base/java.nio.file.Files.move(Files.java:1422)
+	at hudson.util.AtomicFileWriter.commit(AtomicFileWriter.java:209)
+	at hudson.XmlFile.write(XmlFile.java:216)
+	at hudson.model.Run.save(Run.java:2059)
+	at hudson.model.Run.execute(Run.java:1945)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.022 [id=108]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:37457/jenkins/
+   0.037 [id=124]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.040 [id=137]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.324 [id=147]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.327 [id=149]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.329 [id=124]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.577 [id=146]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.577 [id=144]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.578 [id=125]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.579 [id=125]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.595 [id=125]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   0.772 [id=156]	INFO	hudson.model.Run#execute: jobName #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   0.774 [id=155]	INFO	hudson.model.Run#execute: jobName2 #1 aborted
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:328)
+	at java.base/java.lang.ProcessImpl.waitFor(ProcessImpl.java:495)
+	at hudson.Proc$LocalProc.join(Proc.java:330)
+	at hudson.tasks.CommandInterpreter.join(CommandInterpreter.java:194)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:144)
+	at hudson.tasks.CommandInterpreter.perform(CommandInterpreter.java:91)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:812)
+	at hudson.model.Build$BuildExecution.build(Build.java:198)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:520)
+	at hudson.model.Run.execute(Run.java:1888)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+   1.248 [id=108]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   1.270 [id=108]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.096 s <<< FAILURE! - in jenkins.cli.StopBuildsCommandTest
+[ERROR] shouldStopSecondJobEvenIfFirstStopFailed(jenkins.cli.StopBuildsCommandTest)  Time elapsed: 3.787 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: "Exception occurred while trying to stop build '#1' for job 'jobName'. Exception class: AccessDeniedException3, message: anonymous is missing the Job/Cancel permission\nBuild '#1' stopped for job 'jobName2'\n"
+     but: was "Build '#1' stopped for job 'jobName2'\nException occurred while trying to stop build '#1' for job 'jobName'. Exception class: AccessDeniedException3, message: anonymous is missing the Job/Cancel permission\n"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at jenkins.cli.StopBuildsCommandTest.shouldStopSecondJobEvenIfFirstStopFailed(StopBuildsCommandTest.java:160)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.jvnet.hudson.test.JenkinsRule$1.evaluate(JenkinsRule.java:601)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:299)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:293)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+   6.687 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   6.766 [id=26]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+=== Starting testBallColorTd(lib.layout.IconTest)
+   0.012 [id=107]	INFO	o.jvnet.hudson.test.JenkinsRule#createWebServer: Running on http://localhost:38623/jenkins/
+   0.027 [id=122]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+   0.030 [id=136]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+   0.239 [id=145]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+   0.245 [id=123]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+   0.247 [id=133]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+   0.353 [id=144]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+   0.353 [id=149]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+   0.354 [id=151]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+   0.354 [id=135]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+   0.363 [id=144]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+   2.115 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Stopping Jenkins
+   2.140 [id=107]	INFO	jenkins.model.Jenkins#cleanUp: Jenkins stopped
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.492 s - in lib.layout.IconTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   StopBuildsCommandTest.shouldStopSecondJobEvenIfFirstStopFailed:160 
+Expected: "Exception occurred while trying to stop build '#1' for job 'jobName'. Exception class: AccessDeniedException3, message: anonymous is missing the Job/Cancel permission\nBuild '#1' stopped for job 'jobName2'\n"
+     but: was "Build '#1' stopped for job 'jobName2'\nException occurred while trying to stop build '#1' for job 'jobName'. Exception class: AccessDeniedException3, message: anonymous is missing the Job/Cancel permission\n"
+[INFO] 
+[ERROR] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for 1kgPFh1rs2h6hVf3Yn1gUlN0pU835yNOlO5kN9U4QvA=
+[INFO] NonDex SUMMARY:
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex" -DnondexExecid=uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0= -DnondexLogging=CONFIG
+[WARNING] lib.layout.IconTest#testTasks
+[WARNING] lib.layout.IconTest#testBallColorTd
+[WARNING] jenkins.cli.StopBuildsCommandTest#shouldStopWorkingBuildsInSeveralJobs
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex" -DnondexExecid=2pxXLK8UEa5yVpOlKIkPfOha6EtwBPTISyRL3u3PtM= -DnondexLogging=CONFIG
+[INFO] No Test Failed with this configuration.
+[INFO] *********
+[INFO] *********
+[INFO] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex" -DnondexJarDir="/home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex" -DnondexExecid=1kgPFh1rs2h6hVf3Yn1gUlN0pU835yNOlO5kN9U4QvA= -DnondexLogging=CONFIG
+[WARNING] jenkins.cli.StopBuildsCommandTest#shouldStopSecondJobEvenIfFirstStopFailed
+[INFO] *********
+[INFO] All tests pass without NonDex shuffling
+[INFO] ####################
+[INFO] Across all seeds:
+[INFO] lib.layout.IconTest#testTasks
+[INFO] lib.layout.IconTest#testBallColorTd
+[INFO] jenkins.cli.StopBuildsCommandTest#shouldStopWorkingBuildsInSeveralJobs
+[INFO] jenkins.cli.StopBuildsCommandTest#shouldStopSecondJobEvenIfFirstStopFailed
+[INFO] Test results can be found at: 
+[INFO] file:///home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex/uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0=/test_results.html
+[INFO] [NonDex] The id of this run is: uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0=
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  39.114 s
+[INFO] Finished at: 2026-10-29T09:38:17-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.illinois:nondex-maven-plugin:2.2.1:nondex (default-cli) on project jenkins-test: Unable to execute mojo: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/ectopic/flaky-work/checkouts/jenkinsci__jenkins__d2fa87606246/test/.nondex/uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0= for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=40200
+==================== end NonDex (1 unshuffled run + 3 shuffled runs, 4 test(s)): FAILED, exit 1, 40.2 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 40.2 s
+# flaky reported : 4
+#   - jenkins.cli.StopBuildsCommandTest#shouldStopSecondJobEvenIfFirstStopFailed
+#   - lib.layout.IconTest#testTasks
+#   - lib.layout.IconTest#testBallColorTd
+#   - jenkins.cli.StopBuildsCommandTest#shouldStopWorkingBuildsInSeveralJobs
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-29_02-42-22\projects\pr-data\jenkinsci_jenkins__d2fa87606246__test\nondex\.nondex   (each <execution id>/failures file lists the tests that failed in that run)
+# note           : execution 1kgPFh1rs2h6hVf3Yn1gUlN0pU835yNOlO5kN9U4QvA=: 1 failing test(s)
+# note           : execution 2pxXLK8UEa5yVpOlKIkPfOha6EtwBPTISyRL3u3PtM=: 0 failing test(s)
+# note           : execution uK8BtcRG1tcXQmnv7OcrCd7oMKhz3jIk2a1gobkLH0=: 3 failing test(s)
+########################################################
+

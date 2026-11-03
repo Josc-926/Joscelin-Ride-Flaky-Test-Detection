@@ -1,0 +1,494 @@
+# Flaky test log - Joscelin_Lake
+# Tester that found it: FlakeSync
+# Project: https://github.com/apache/ignite-3
+# SHA: a1aa7fd4e2398c72827777ec5417d67915ff4da3
+# STATUS: NEEDS VERIFICATION - not counted. The test passes and fails in this log, but it also fails WITHOUT delay injection, so FlakeSync's delays did not prove it.
+# Flaky tests FlakeSync found in this log (1):
+#   - org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure   [module: modules/storage-api] [found by: FlakeSync] [in IDoFT: Yes]
+# Original tool log(s) (flaky-summary-2026-11-02.zip): logs/apache_ignite-3__a1aa7fd4e239__modules_storage-api/2026-10-28_03-39-27/flakesync.org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure.log
+#==============================================================================
+################################################################
+# FLAKY RUNNER LOG
+# tool           : FlakeSync
+# project        : apache/ignite-3   https://github.com/apache/ignite-3
+# commit         : a1aa7fd4e2398c72827777ec5417d67915ff4da3
+# module         : modules/storage-api
+# dataset        : pr-data
+# run            : 2026-10-28_03-39-27
+# test           : org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure
+# this log       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_storage-api\logs\flakesync.org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure.log
+# raw output     : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_storage-api\flakesync\org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure\.flakesync
+# checkout       : \\wsl.localhost\Ubuntu\home\ectopic\flaky-work\checkouts\apache__ignite-3__a1aa7fd4e239
+# written        : 2026-10-28T15:54:40.505Z
+################################################################
+
+
+==================== [1/5] FlakeSync concurrentfind ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:concurrentfind '-Dflakesync.testName=org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest#testGetAndRemoveClosure' -pl modules/storage-api
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:54:40.515Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-storage-api >----------------
+[INFO] Building ignite-storage-api 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) > test-compile @ ignite-storage-api >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-api ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-api ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-api ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) < test-compile @ ignite-storage-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:concurrentfind (default-cli) @ ignite-storage-api ---
+INFO: Running FindTestsRunMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.091 s <<< FAILURE! - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[ERROR] org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure  Time elapsed: 0.08 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: Failed to resolve parameter [org.apache.ignite.configuration.schemas.table.TableConfiguration arg0] in method [public void org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.setUp(org.apache.ignite.configuration.schemas.table.TableConfiguration) throws java.lang.Exception]: loader 'app' attempted duplicate interface definition for it.unimi.dsi.fastutil.ints.IntSet. (it.unimi.dsi.fastutil.ints.IntSet is in unnamed module of loader 'app')
+Caused by: java.lang.LinkageError: loader 'app' attempted duplicate interface definition for it.unimi.dsi.fastutil.ints.IntSet. (it.unimi.dsi.fastutil.ints.IntSet is in unnamed module of loader 'app')
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   ConcurrentHashMapStorageTest.testGetAndRemoveClosure » ParameterResolution Fai...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+[INFO] 
+INFO: Surefire failed when running tests for clean_a5v5wnhIGfsrNqKAwG+eqPoqF0IQ2NfRY7u8GU2abQ= with delay: 0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.414 s
+[INFO] Finished at: 2026-10-28T10:54:43-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3107
+==================== end [1/5] FlakeSync concurrentfind: completed, exit 0, 3.1 s ====================
+
+==================== [2/5] FlakeSync delaylocs ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:delaylocs '-Dflakesync.testName=org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest#testGetAndRemoveClosure' -pl modules/storage-api
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:54:43.624Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-storage-api >----------------
+[INFO] Building ignite-storage-api 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:delaylocs (default-cli) > test-compile @ ignite-storage-api >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-api ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-api ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-api ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:delaylocs (default-cli) < test-compile @ ignite-storage-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:delaylocs (default-cli) @ ignite-storage-api ---
+INFO: Running RunWithDelaysMojo
+Inside createWhiteList
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.399 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.394 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.392 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.391 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.409 s
+[INFO] Finished at: 2026-10-28T10:54:52-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=9124
+==================== end [2/5] FlakeSync delaylocs: completed, exit 0, 9.1 s ====================
+
+==================== [3/5] FlakeSync deltadebug ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:deltadebug '-Dflakesync.testName=org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest#testGetAndRemoveClosure' -pl modules/storage-api
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:54:52.750Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-storage-api >----------------
+[INFO] Building ignite-storage-api 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:deltadebug (default-cli) > test-compile @ ignite-storage-api >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-api ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-api ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-api ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:deltadebug (default-cli) < test-compile @ ignite-storage-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:deltadebug (default-cli) @ ignite-storage-api ---
+INFO: Running DeltaDebugMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.769 s
+[INFO] Finished at: 2026-10-28T10:54:55-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=2568
+==================== end [3/5] FlakeSync deltadebug: completed, exit 0, 2.6 s ====================
+
+==================== [4/5] FlakeSync critsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:critsearch '-Dflakesync.testName=org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest#testGetAndRemoveClosure' -pl modules/storage-api
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:54:55.320Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-storage-api >----------------
+[INFO] Building ignite-storage-api 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:critsearch (default-cli) > test-compile @ ignite-storage-api >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-api ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-api ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-api ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:critsearch (default-cli) < test-compile @ ignite-storage-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:critsearch (default-cli) @ ignite-storage-api ---
+INFO: Running CritSearchMojo
+[WARNING]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.394 s - in org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+This location is not a good one. Go back and run minimizer again.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.707 s
+[INFO] Finished at: 2026-10-28T10:54:58-05:00
+[INFO] ------------------------------------------------------------------------
+
+# exit=0 timedOut=false cancelled=false durationMs=3403
+==================== end [4/5] FlakeSync critsearch: completed, exit 0, 3.4 s ====================
+
+==================== [5/5] FlakeSync barrierpointsearch ====================
+$ mvn -B edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch '-Dflakesync.testName=org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest#testGetAndRemoveClosure' -pl modules/storage-api
+# cwd     : /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239
+# started : 2026-10-28T15:54:58.725Z
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.apache.ignite:ignite-storage-api >----------------
+[INFO] Building ignite-storage-api 3.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) > test-compile @ ignite-storage-api >>>
+[INFO] 
+[INFO] --- enforcer:1.4.1:enforce (enforce-maven-version) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-source (add-test-source) @ ignite-storage-api ---
+[INFO] Test Source directory: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/java added.
+[INFO] 
+[INFO] --- build-helper:3.2.0:add-test-resource (add-test-resource) @ ignite-storage-api ---
+[INFO] 
+[INFO] --- remote-resources:1.7.0:process (process-resource-bundles) @ ignite-storage-api ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- flatten:1.2.2:flatten (flatten) @ ignite-storage-api ---
+[INFO] Generating flattened POM of project org.apache.ignite:ignite-storage-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ ignite-storage-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 2 resources
+[INFO] skip non existing resourceDirectory /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/src/integrationTest/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ ignite-storage-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- modernizer:2.3.0:modernizer (modernizer) @ ignite-storage-api ---
+[INFO] 
+[INFO] <<< flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) < test-compile @ ignite-storage-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- flakesync:1.0-SNAPSHOT:barrierpointsearch (default-cli) @ ignite-storage-api ---
+INFO: Running BarrierPointSearchMojo
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.739 s
+[INFO] Finished at: 2026-10-28T10:55:01-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch (default-cli) on project ignite-storage-api: Execution default-cli of goal edu.utexas.ece:flakesync-maven-plugin:1.0-SNAPSHOT:barrierpointsearch failed: java.io.FileNotFoundException: /home/ectopic/flaky-work/checkouts/apache__ignite-3__a1aa7fd4e239/modules/storage-api/.flakesync/Results-CritSearch/org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure-CriticalPoints.csv (No such file or directory) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+
+# exit=1 timedOut=false cancelled=false durationMs=2496
+==================== end [5/5] FlakeSync barrierpointsearch: FAILED, exit 1, 2.5 s ====================
+
+######################## RESULT ########################
+# status         : tool_failed
+# exit code      : 1
+# duration       : 20.7 s
+# stopped at     : barrierpointsearch
+# flaky reported : 0
+# evidence       : F:\Flaky Tests\flaky-results\2026-10-28_03-39-27\projects\pr-data\apache_ignite-3__a1aa7fd4e239__modules_storage-api\flakesync\org.apache.ignite.internal.storage.ConcurrentHashMapStorageTest.testGetAndRemoveClosure\.flakesync
+# note           : goals: concurrentfind=ok, delaylocs=ok, deltadebug=ok, critsearch=ok, barrierpointsearch=exit 1
+# note           : concurrent methods: 1, delay locations: 1, minimized: 1, critical points: 0
+# note           : delay injection reproduced the failure
+########################################################
+
